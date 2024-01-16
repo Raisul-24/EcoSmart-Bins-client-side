@@ -1,16 +1,7 @@
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import GetData from "../../Hooks/GetDataHook";
 
 const FAQ = () => {
-  const [data, setData] = useState([]);
-  const [dataLoaing, setDataLoading] = useState(true);
-  useEffect(() => {
-    axios("./public/FAQ.json").then((res) => {
-      setData(res.data);
-      setDataLoading(false);
-    });
-  }, []);
+  const [data, dataLoaing] = GetData("./FAQ.json");
   return (
     <div className="max-w-6xl mx-auto xl:px-0 px-5">
       <div className="flex justify-center">
