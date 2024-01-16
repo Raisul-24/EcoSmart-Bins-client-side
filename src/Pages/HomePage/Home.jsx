@@ -1,9 +1,12 @@
+import FAQ from "../../Components/FAQ/FAQ";
+import Service from "../../Components/Service/Service";
 
 
 const Home = () => {
    return (
       <div>
-         <h2>This is home</h2>
+         <Service/>
+         <FAQ/>
       </div>
    );
 };
