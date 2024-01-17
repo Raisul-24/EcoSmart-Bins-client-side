@@ -10,7 +10,7 @@ const ErrorPage = () => {
                <h2 className="text-xl">Back to Home</h2>
             </div></Link>
          <div className="flex justify-center">
-            <img src="https://i.ibb.co/BfDBDHg/error.gif" alt="" className="my-5 rounded-3xl shadow-xl" />
+            <img src="https://i.ibb.co/TqBTwtQ/error3.gif" alt="" className="my-5 rounded-3xl shadow-xl" />
          </div>
       </div>
    );
