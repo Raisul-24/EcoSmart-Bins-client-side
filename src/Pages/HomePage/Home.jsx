@@ -1,11 +1,13 @@
-
+import Bins from "./Bins";
+import Hero from "./Hero";
 
 const Home = () => {
-   return (
-      <div>
-         <h2>This is home</h2>
-      </div>
-   );
+  return (
+    <div>
+      <Hero />
+      {/*<Bins />*/}
+    </div>
+  );
 };
 
 export default Home;
