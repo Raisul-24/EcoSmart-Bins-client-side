@@ -1,3 +1,4 @@
+
 import ContactUs from "../ContactUs/ContactUs";
 import Banner from "./Banner";
 
@@ -8,6 +9,7 @@ const Home = () => {
          
          <Banner></Banner>
          <ContactUs/>
+       
       </div>
    );
 };
