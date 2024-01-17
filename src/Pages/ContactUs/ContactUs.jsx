@@ -2,8 +2,9 @@ import { useRef } from "react";
 
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
-import Map from "../../assets/Components/Map/Map";
-import SectionTitle from "../../assets/Components/SectionTitle/SectionTitle";
+import SectionTitle from "../../Components/SectionTitle/SectionTitle";
+import Map from "../../Components/Map/Map";
+
 
 
 const ContactUs = () => {
