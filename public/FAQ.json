@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "qus": "What is a Smart Waste Management System?",
+        "ans": "A Smart Waste Management System is a technology-driven solution that utilizes sensors, IoT, and data analytics to optimize the collection and management of waste. It helps improve efficiency, reduce costs, and promote sustainable waste practices."
+    },
+    {
+        "id": 2,
+        "qus": "How does the system contribute to environmental sustainability?",
+        "ans": "The system contributes to sustainability by optimizing collection routes, reducing fuel consumption, and promoting recycling through data-driven insights. It helps minimize the environmental impact associated with traditional waste management practices."
+    },
+    {
+        "id": 3,
+        "qus": "Is the system scalable for different-sized municipalities or businesses?",
+        "ans": "Yes, our Smart Waste Management System is designed to be scalable, making it suitable for various settings, from small municipalities to large urban areas. The system can be customized to meet the specific needs and volumes of different locations."
+    },
+    {
+        "id": 4,
+        "qus": "What technologies are used for waste sorting in the system?",
+        "ans": "The system may integrate automated sorting technologies to enhance recycling efficiency. These technologies use advanced sorting mechanisms to separate different types of waste, contributing to sustainable waste management practices."
+    },
+    {
+        "id": 5,
+        "qus": "How secure is the data collected by the system?",
+        "ans": "Data security is a top priority. The system employs encryption protocols and follows industry best practices to ensure the confidentiality and integrity of the collected data. Access to the system is restricted to authorized personnel only."
+    },
+    {
+        "id": 6,
+        "qus": "Is training required to use the Smart Waste Management System?",
+        "ans": "Training requirements are minimal. The system is designed with user-friendly interfaces for both waste management personnel and end-users. We provide onboarding support and documentation to ensure a smooth transition to the system."
+    }
+]

@@ -1,9 +1,15 @@
+import Banner from "./Banner";
+import FAQ from "../../Components/FAQ/FAQ";
+import Service from "../../Components/Service/Service";
 
 
 const Home = () => {
    return (
       <div>
-         <h2>This is home</h2>
+         
+         <Banner></Banner>
+         <Service/>
+         <FAQ/>
       </div>
    );
 };
