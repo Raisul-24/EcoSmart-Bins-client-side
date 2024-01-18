@@ -13,7 +13,7 @@ const Hero = () => {
             src={img1}
             className="h-[400px] w-full"
           />
-          <div className="text-[#ffffff] bg-green-700 h-[400px] w-full flex flex-col justify-center items-center gap-5 px-12">
+          <div className="text-[#ffffff] bg-brand-color md:h-[400px] w-full flex flex-col justify-center items-center gap-5 px-12 py-8">
             <h1 className="md:text-5xl text-4xl font-semibold md:font-bold">
               All Together Cleaner
             </h1>
@@ -21,7 +21,7 @@ const Hero = () => {
             <p className="text-2xl">
               We make your space clean, beautiful, and welcoming.
             </p>
-            <div className="flex gap-6 pt-4">
+            <div className="md:flex gap-6 pt-4 py-8">
               <div>
                 <h5 className="text-xl font-bold py-4">
                   A Fundamentally Better Bin
@@ -63,7 +63,7 @@ const Hero = () => {
             src={img2}
             className="h-[400px] w-full"
           />
-          <div className="text-[#ffffff] bg-[#004f9f] h-[400px] w-full flex flex-col justify-center items-center gap-5 px-12">
+          <div className="text-black bg-yellow-600 md:h-[400px] w-full flex flex-col justify-center items-center gap-5 px-12 py-8">
             <h1 className="md:text-5xl text-4xl font-semibold md:font-bold">
               All Together Smarter
             </h1>
@@ -71,7 +71,7 @@ const Hero = () => {
             <p className="text-2xl">
               Our solution helps you make smarter decisions.
             </p>
-            <div className="flex gap-8 pt-4">
+            <div className="md:flex gap-8 pt-4">
               <div>
                 <h5 className="text-xl font-bold py-4">Know When to Go</h5>
                 <p>
@@ -113,7 +113,7 @@ const Hero = () => {
             src={img3}
             className="h-[400px] w-full"
           />
-          <div className="text-[#ffffff] bg-[#008051] h-[400px] w-full flex flex-col justify-center items-center gap-5 px-12">
+          <div className="text-[#ffffff] bg-brand-color md:h-[400px] w-full flex flex-col justify-center items-center gap-5 px-12 py-8">
             <h1 className="md:text-5xl text-4xl font-semibold md:font-bold">
               All Together Greener
             </h1>
@@ -122,7 +122,7 @@ const Hero = () => {
               Make a visible impact on the environment, your community, and
               beyond.
             </p>
-            <div className="flex gap-8 pt-4">
+            <div className="md:flex gap-8 pt-4">
               <div>
                 <h5 className="text-xl font-bold py-4">Recycling Done Right</h5>
                 <p>

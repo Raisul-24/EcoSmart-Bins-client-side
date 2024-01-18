@@ -44,7 +44,7 @@ const ContactUs = () => {
       );
   };
     return (
-        <div>
+        <div className="px-5">
               <SectionTitle
         heading="Contact with Us"
         subHeading="How To Contact"

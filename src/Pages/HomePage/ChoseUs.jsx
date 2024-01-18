@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import img from "../../assets/images/choose-us.png";
 
 const ChoseUs = () => {
   return (
-    <div className="mt-12 flex justify-start items-center gap-12 bg-white">
+    <div className="mt-12 md:flex p-5 justify-start items-center gap-12 bg-white">
       <div className="">
         <img className="" src={img} alt="" />
       </div>
@@ -43,7 +44,12 @@ const ChoseUs = () => {
               associated with unnecessary pickups and transportation.
             </p>
           </div>
-          <button className="btn btn-ghost bg-green-600 hover:bg-green-800 mt-6 text-white ">Contact Us</button>
+          <Link to="/contact">
+            {" "}
+            <button className="btn btn-ghost bg-green-600 hover:bg-green-800 mt-6 text-white ">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
     </div>
