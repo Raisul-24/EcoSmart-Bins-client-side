@@ -10,7 +10,7 @@ const Navbar = () => {
     <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li>
     </>
     return (
-        <div>
+        <div className="sticky top-0 z-20">
             <div className="navbar bg-base-100 lg:px-10 lg:py-7 drop-shadow-md">
                 <div className="navbar-start">
                     <div className="dropdown">
