@@ -43,7 +43,7 @@ const ChoseUs = () => {
               associated with unnecessary pickups and transportation.
             </p>
           </div>
-          <button className="btn btn-ghost bg-green-600 mt-6 text-white ">Contact Us</button>
+          <button className="btn btn-ghost bg-green-600 hover:bg-green-800 mt-6 text-white ">Contact Us</button>
         </div>
       </div>
     </div>
