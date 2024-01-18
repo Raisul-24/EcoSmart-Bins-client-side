@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -27,7 +28,7 @@ const Footer = () => {
         <nav>
           <header className="footer-title">Company</header> 
           <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
+          <Link to="/contact"><a className="link link-hover">Contact</a></Link>
           <a className="link link-hover">Services</a>
           <a className="link link-hover">Blogs</a>
         </nav> 

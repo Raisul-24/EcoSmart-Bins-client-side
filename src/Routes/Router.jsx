@@ -3,9 +3,9 @@ import MainLayOut from "../LayOut/MainLayOut";
 import Home from "../Pages/HomePage/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Services from "../Pages/Services/Services";
-import Contact from "../Pages/Contact/Contact";
 import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact></Contact>
+        element: <ContactUs></ContactUs>
       },
       {
         path: "/about",
