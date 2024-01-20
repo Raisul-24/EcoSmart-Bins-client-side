@@ -40,7 +40,7 @@ const Banner = () => {
               <div className="lg:w-3/5 mr-auto">
                 <p
                   data-aos="fade-down"
-                  className="text-lime-600 md:text-xl font-bold mb-3"
+                  className="text-brand-color md:text-xl font-bold mb-3"
                 >
                   Empowering Communities for a Cleaner Planet
                 </p>
@@ -56,7 +56,7 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-green-700 hover:bg-green-500 text-white">
+                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
@@ -88,7 +88,7 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-green-700 hover:bg-green-500 text-white">
+                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
@@ -120,7 +120,7 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-green-700 hover:bg-green-500 text-white">
+                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
