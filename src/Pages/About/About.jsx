@@ -1,11 +1,20 @@
+import { useEffect } from "react";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
+import Aos from "aos";
+import { Link } from "react-router-dom";
 
 
 const About = () => {
+    useEffect(() => {
+        Aos.init({
+          duration: 2000,
+          offset: 200,
+        });
+      }, []);
     return (
         <div>
             {/* banner */}
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.imgur.com/Xu0zw5m.jpg)' }}>
+            <div className="hero min-h-screen bg-fixed" style={{ backgroundImage: 'url(https://i.imgur.com/Xu0zw5m.jpg)' }}>
                 <div className="hero-overlay bg-opacity-50"></div>
                 <div className="hero-content text-center text-white">
                     <div className="">
@@ -17,13 +26,13 @@ const About = () => {
             </div>
 
             {/* our story */}
-            <div className="lg:px-20 lg:py-20 p-5">
+            <div className="lg:px-20 lg:py-20 p-5" data-aos="zoom-out">
                 <SectionTitle
                     heading="Our Story"
                     subHeading="Founding Inspiration"
                 ></SectionTitle>
                 <section>
-                    <p className="lg:text-xl">
+                    <p className="lg:text-xl" >
                         EcoSmartBin was born from a shared vision among a group of environmental enthusiasts who believed that technology could play a pivotal role in revolutionizing waste management practices. Fueled by a passion for the planet, our founders set out to create a platform that empowers individuals and communities to make smarter, greener choices. Since our inception, we have embarked on a journey filled with challenges, triumphs, and a growing community of like-minded individuals. From the early days of conceptualization to the development of cutting-edge features, every step has been guided by the belief that small actions, when multiplied, can make a significant impact on our environment.
                     </p>
                 </section>
@@ -50,26 +59,30 @@ const About = () => {
                 <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.imgur.com/TIyh6wG.jpg)' }}>
                     {/* <div className="hero-overlay bg-opacity-60"></div> */}
                     <div >
-                        
+
                         <h1 className="mb-5 lg:text-5xl text-3xl font-bold text-center">Values and Principles</h1>
                         <div className="lg:flex gap-48 mx-10 ">
-                            <div className="card mt-20 bg-green-100 shadow-xl bg-opacity-70">
+                            <div data-aos="fade-right" className="card mt-20 bg-amber-100 shadow-xl bg-opacity-70">
                                 <div className="card-body ">
                                     <h2 className="card-title border-brand-color border-b-4 lg:text-2xl">Commitment to Sustainability!</h2>
                                     <p className="lg:text-xl">EcoSmartBin is built on a foundation of sustainability. We believe that through innovation and collective action, we can create positive change for our planet. Our commitment to eco-friendly practices extends beyond the virtual realm, influencing every aspect of our platform.</p>
-                                    
+
                                 </div>
                             </div>
-                            <div className="card mt-20 bg-green-100 shadow-xl bg-opacity-70">
+                            <div data-aos="fade-left" className="card mt-20 bg-amber-100 shadow-xl bg-opacity-70">
                                 <div className="card-body ">
                                     <h2 className="card-title border-brand-color border-b-4 lg:text-2xl">Community Focus</h2>
                                     <p className="lg:text-xl">We understand that real change happens at the community level. EcoSmartBin is designed to facilitate collaboration and communication among neighbors, local businesses, and municipalities, creating a united front against waste-related challenges.</p>
-                                    
                                 </div>
                             </div>
-
+                        </div>
+                        <div>
                         </div>
                     </div>
+                </div>
+                <div className="flex gap-10 justify-center -mt-7">
+                    <Link><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">Pick up Request</button></Link>
+                    <Link to={"/contact"}><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color">contact us</button></Link>
                 </div>
             </div>
         </div>
