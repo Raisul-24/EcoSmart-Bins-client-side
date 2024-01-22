@@ -11,7 +11,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 const Banner = () => {
   useEffect(() => {
     Aos.init({
-      duration: 3000,
+      duration: 2000,
       offset: 200,
     });
   }, []);
@@ -22,7 +22,7 @@ const Banner = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -50,7 +50,7 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p data-aos="fade-up" className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
@@ -82,7 +82,7 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p data-aos="fade-up" className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
@@ -114,7 +114,7 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p data-aos="fade-up" className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
