@@ -56,7 +56,7 @@ const About = () => {
 
             {/* Values and Principles */}
             <div className="py-20">
-                <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.imgur.com/TIyh6wG.jpg)' }}>
+                <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.imgur.com/LgMf9eF.jpg)' }}>
                     {/* <div className="hero-overlay bg-opacity-60"></div> */}
                     <div >
 
