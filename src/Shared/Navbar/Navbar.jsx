@@ -8,6 +8,7 @@ const Navbar = () => {
     <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/services"}>Services</NavLink></li>
     <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/contact"}>Contact Us</NavLink></li>
     <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li>
+    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/dashboard"}>Dashboard</NavLink></li>
     </>
     return (
         <div className="sticky top-0 z-20">
