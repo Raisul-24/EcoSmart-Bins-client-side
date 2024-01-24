@@ -1,4 +1,4 @@
-import { FaBars, FaEdit, FaEnvelope, FaHome, FaPlusSquare, FaSearch, FaUser } from "react-icons/fa";
+import { FaBars, FaCameraRetro, FaEdit, FaEnvelope, FaHome, FaPlusSquare, FaSearch, FaUser } from "react-icons/fa";
 import { FaCartShopping, } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -61,8 +61,13 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/myProduct">
+                <Link to="/dashboard/cart">
                   <FaCartShopping></FaCartShopping> My Cart
+                </Link>
+              </li>
+              <li className="lg:text-lg">
+                <Link to="/dashboard/addShowcase">
+                <FaCameraRetro /> Showcase
                 </Link>
               </li>
 
