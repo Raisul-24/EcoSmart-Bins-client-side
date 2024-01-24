@@ -6,11 +6,13 @@ import Services from "../Pages/Services/Services";
 import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Registration from "../Pages/Registration/Registration";
 import Dashboard from "../LayOut/Dashboard";
 import AdminProfile from "../Pages/Dashboard/Admin dashboard/AdminProfile";
 import UserProfile from "../Pages/Dashboard/User Dashboard/UserProfile";
 import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
 import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
+import Shop from "../Pages/Shop/Shop";
 
 
 const router = createBrowserRouter([
@@ -32,12 +34,20 @@ const router = createBrowserRouter([
         element: <ContactUs></ContactUs>
       },
       {
+        path: "/shop",
+        element: <Shop></Shop>
+      },
+      {
         path: "/about",
         element: <About></About>
       },
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Registration></Registration>
       }
      ]
    },
@@ -65,22 +75,7 @@ const router = createBrowserRouter([
           path: '/dashboard/userProfile',
           element: <UserProfile></UserProfile>
 
-      },
-      // {
-      //     path: '/dashboard/add-a-camp',
-      //     element: 
-
-      // },
-      // {
-      //     path: '/dashboard/manage-camps',
-      //     element: 
-
-      // },
-      // {
-      //     path: '/dashboard/update-camp/:id',
-      //     element: <ManageCampForm></ManageCampForm>
-      // },
-      
+      },  
     ]
    }
  ]);
