@@ -9,6 +9,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Registration from "../Pages/Registration/Registration";
 import Dashboard from "../LayOut/Dashboard";
 import Shop from "../Pages/Shop/Shop";
+import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetail></ServiceDetail>
       },
       {
         path: "/contact",
