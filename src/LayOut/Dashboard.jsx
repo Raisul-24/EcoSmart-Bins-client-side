@@ -1,7 +1,7 @@
-import { FaEdit, FaEnvelope, FaHome, FaPlusSquare, FaSearch, FaUser } from "react-icons/fa";
+import { FaBars, FaEdit, FaEnvelope, FaHome, FaPlusSquare, FaSearch, FaUser } from "react-icons/fa";
 import { FaCartShopping, } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../public/logo.png";
+import logo from "../assets/logo.png";
 
 const Dashboard = () => {
   return (
@@ -12,9 +12,9 @@ const Dashboard = () => {
           {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className="btn  drawer-button lg:hidden"
           >
-            Open drawer
+            <FaBars className="text-brand-color text-2xl "></FaBars>
           </label>
         </div>
         <div className="drawer-side">
@@ -23,7 +23,7 @@ const Dashboard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className=" p-4 w-64 min-h-full text-base-content bg-green-200">
+          <div className="p-2 lg:p-4 w-52 lg:w-64 min-h-full text-base-content bg-green-200 z-10">
             <div className="text-center mb-10">
               <div className="w-1/3 mx-auto">
                 <img src={logo} className="w-20" alt="" />
@@ -34,18 +34,18 @@ const Dashboard = () => {
             </div>
             <ul className="menu font-semibold">
                 {/* admin routes */}
-              <li className="text-lg">
+              <li className="lg:text-lg">
                 <Link to="/dashboard/adminProfile">
                   <FaUser></FaUser> Admin Profile
                 </Link>
               </li>
-              <li className="text-lg">
+              <li className="lg:text-lg">
                 <Link to="/dashboard/addServices">
                   <FaPlusSquare />
                   Add Services
                 </Link>
               </li>
-              <li className="text-lg">
+              <li className="lg:text-lg">
                 <Link to="/dashboard/manageServices">
                   <FaEdit />
                   Manage Services
@@ -55,12 +55,12 @@ const Dashboard = () => {
               <div className="divider"></div>
              
              {/* user routes */}
-              <li className="text-lg">
+              <li className="lg:text-lg">
                 <Link to="/dashboard/userProfile">
                   <FaUser></FaUser> User Profile
                 </Link>
               </li>
-              <li className="text-lg">
+              <li className="lg:text-lg">
                 <Link to="/dashboard/myProduct">
                   <FaCartShopping></FaCartShopping> My Cart
                 </Link>
@@ -68,19 +68,19 @@ const Dashboard = () => {
 
               {/* shared routes */}
           <div className="divider"></div>
-          <li className="text-lg">
+          <li className="lg:text-lg">
             <Link to="/">
               <FaHome></FaHome>
               Home
             </Link>
           </li>
-          <li className="text-lg">
+          <li className="lg:text-lg">
             <Link to="/services">
               <FaSearch></FaSearch>
               Available Services
             </Link>
           </li>
-          <li className="text-lg">
+          <li className="lg:text-lg">
             <Link to="/contact">
               <FaEnvelope></FaEnvelope>
               Contact
