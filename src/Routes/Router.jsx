@@ -7,6 +7,10 @@ import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Dashboard from "../LayOut/Dashboard";
+import AdminProfile from "../Pages/Dashboard/Admin dashboard/AdminProfile";
+import UserProfile from "../Pages/Dashboard/User Dashboard/UserProfile";
+import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
+import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 
 
 const router = createBrowserRouter([
@@ -39,7 +43,45 @@ const router = createBrowserRouter([
    },
    {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>
+    element: <Dashboard></Dashboard>,
+    children: [ 
+      // admin dashboard
+      {
+          path: '/dashboard/adminProfile',
+          element: <AdminProfile></AdminProfile>
+
+      },
+      {
+        path: '/dashboard/addServices',
+        element: <AddServices></AddServices>
+      },
+      {
+        path: '/dashboard/manageServices',
+        element: <ManageServices></ManageServices>
+      },
+
+      // user dashboard
+      {
+          path: '/dashboard/userProfile',
+          element: <UserProfile></UserProfile>
+
+      },
+      // {
+      //     path: '/dashboard/add-a-camp',
+      //     element: 
+
+      // },
+      // {
+      //     path: '/dashboard/manage-camps',
+      //     element: 
+
+      // },
+      // {
+      //     path: '/dashboard/update-camp/:id',
+      //     element: <ManageCampForm></ManageCampForm>
+      // },
+      
+    ]
    }
  ]);
 
