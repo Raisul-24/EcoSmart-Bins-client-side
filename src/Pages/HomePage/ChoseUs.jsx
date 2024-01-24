@@ -5,7 +5,7 @@ const ChoseUs = () => {
   return (
     <div className="mt-12 md:flex p-5 justify-start items-center gap-12 bg-white">
       <div className="">
-        <img className="h-[800px] w-[500px]" src={img} alt="" />
+        <img className="h-[800px] w-[550px]" src={img} alt="" />
       </div>
       <div className="flex-[1]">
         <h5 className="text-2xl text-green-600 font-bold">Why Choose Us</h5>
