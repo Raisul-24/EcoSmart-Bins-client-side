@@ -11,7 +11,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 const Banner = () => {
   useEffect(() => {
     Aos.init({
-      duration: 3000,
+      duration: 2000,
       offset: 200,
     });
   }, []);
@@ -22,7 +22,7 @@ const Banner = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -40,7 +40,7 @@ const Banner = () => {
               <div className="lg:w-3/5 mr-auto">
                 <p
                   data-aos="fade-down"
-                  className="text-lime-600 md:text-xl font-bold mb-3"
+                  className="text-brand-color md:text-xl font-bold mb-3"
                 >
                   Empowering Communities for a Cleaner Planet
                 </p>
@@ -50,13 +50,13 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p data-aos="fade-up" className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-green-700 hover:bg-green-500 text-white">
+                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
@@ -82,13 +82,13 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p data-aos="fade-up" className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-green-700 hover:bg-green-500 text-white">
+                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
@@ -114,13 +114,13 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p data-aos="fade-up" className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-green-700 hover:bg-green-500 text-white">
+                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
