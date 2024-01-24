@@ -9,7 +9,7 @@ const BlogDetails = () => {
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
-    fetch("/blog.json")
+    fetch("/blogs.json")
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);

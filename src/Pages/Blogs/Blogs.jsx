@@ -4,7 +4,7 @@ import BlogCard from "./BlogCard";
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("/blog.json")
+    fetch("/blogs.json")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);

@@ -1,9 +1,34 @@
 import PropTypes from "prop-types";
 import { FaComment, FaUser } from "react-icons/fa";
+import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const BlogCard = ({ blog }) => {
   const { id, shortName, shortDescription, image, commentNumber } = blog || {};
+
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
+
+  const handleLikeClick = () => {
+    setLiked(true);
+    setDisliked(false);
+    showToast("Liked");
+  };
+
+  const handleDislikeClick = () => {
+    setDisliked(true);
+    setLiked(false);
+    showToast("Disliked");
+  };
+
+  const showToast = (message) => {
+    toast.success(message, {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
+    });
+  };
 
   return (
     <>
@@ -14,23 +39,38 @@ const BlogCard = ({ blog }) => {
       >
         <div className="">
           <img
-            className=" h-60 w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
+            className="relative h-60 w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
             src={image}
             alt=""
           />
+          <p className="absolute r-0 t-0 b-0 l-0 -mt-56 ml-64 flex justify-center items-center gap-2 bg-white text-black px-5 p-2 rounded">
+            <span className="text-green-700">
+              <FaUser />
+            </span>
+            Admin
+          </p>
         </div>
-        <div className="flex flex-col pt-6">
-          <div className="flex justify-between items-center pb-5">
-            <p className="flex justify-center items-center gap-2">
-              <span className="text-green-700">
-                <FaUser />
-              </span>
-              Admin
-            </p>
-            <p className="flex justify-center items-center gap-2">
+        <div className="flex flex-col pt-6 ">
+          <div className="flex justify-between items-center pb-5 mx-2">
+            <div className="flex justify-center items-center gap-4 text-green-700 text-xl">
+              <button
+                className={liked ? "liked" : ""}
+                onClick={handleLikeClick}
+              >
+                <AiFillLike />
+              </button>
+              <button
+                className={disliked ? "disliked" : ""}
+                onClick={handleDislikeClick}
+              >
+                <AiFillDislike />
+              </button>
+              <ToastContainer />
+            </div>
+            <p className="flex justify-center items-center gap-2 text-black">
               <span className="text-green-700">
                 <FaComment />
-              </span>{" "}
+              </span>
               {commentNumber} Comment
             </p>
           </div>
