@@ -13,71 +13,73 @@ import UserProfile from "../Pages/Dashboard/User Dashboard/UserProfile";
 import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
 import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
-
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
-   {
-     path: "/",
-     element: <MainLayOut></MainLayOut>,
-     errorElement:<ErrorPage></ErrorPage>,
-     children: [
+  {
+    path: "/",
+    element: <MainLayOut></MainLayOut>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-         path:"/",
-         element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
         path: "/services",
-        element: <Services></Services>
+        element: <Services></Services>,
       },
       {
         path: "/contact",
-        element: <ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
       {
         path: "/shop",
-        element: <Shop></Shop>
+        element: <Shop></Shop>,
       },
       {
         path: "/about",
-        element: <About></About>
+        element: <About></About>,
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Registration></Registration>
-      }
-     ]
-   },
-   {
+        path: "/register",
+        element: <Registration></Registration>,
+      },
+    ],
+  },
+  {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    children: [ 
+    children: [
       // admin dashboard
       {
-          path: '/dashboard/adminProfile',
-          element: <AdminProfile></AdminProfile>
-
+        path: "/dashboard/adminProfile",
+        element: <AdminProfile></AdminProfile>,
       },
       {
-        path: '/dashboard/addServices',
-        element: <AddServices></AddServices>
+        path: "/dashboard/addServices",
+        element: <AddServices></AddServices>,
       },
       {
-        path: '/dashboard/manageServices',
-        element: <ManageServices></ManageServices>
+        path: "/dashboard/manageServices",
+        element: <ManageServices></ManageServices>,
       },
 
       // user dashboard
       {
-          path: '/dashboard/userProfile',
-          element: <UserProfile></UserProfile>
-
-      },  
-    ]
-   }
- ]);
+        path: "/dashboard/userProfile",
+        element: <UserProfile></UserProfile>,
+      },
+    ],
+  },
+]);
 
 export default router;
