@@ -8,10 +8,10 @@ const Home = () => {
     <div>
       <Banner />
       <Service />
-       {/* <ChoseUs /> */}
+      <ChoseUs />
       <FAQ />
     </div>
   );
-}
+};
 
 export default Home;
