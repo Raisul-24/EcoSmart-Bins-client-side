@@ -8,6 +8,10 @@ import Login from "../Pages/Login/Login";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Registration from "../Pages/Registration/Registration";
 import Dashboard from "../LayOut/Dashboard";
+import AdminProfile from "../Pages/Dashboard/Admin dashboard/AdminProfile";
+import UserProfile from "../Pages/Dashboard/User Dashboard/UserProfile";
+import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
+import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
 
 
@@ -49,7 +53,30 @@ const router = createBrowserRouter([
    },
    {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>
+    element: <Dashboard></Dashboard>,
+    children: [ 
+      // admin dashboard
+      {
+          path: '/dashboard/adminProfile',
+          element: <AdminProfile></AdminProfile>
+
+      },
+      {
+        path: '/dashboard/addServices',
+        element: <AddServices></AddServices>
+      },
+      {
+        path: '/dashboard/manageServices',
+        element: <ManageServices></ManageServices>
+      },
+
+      // user dashboard
+      {
+          path: '/dashboard/userProfile',
+          element: <UserProfile></UserProfile>
+
+      },  
+    ]
    }
  ]);
 

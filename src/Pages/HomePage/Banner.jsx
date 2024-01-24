@@ -72,7 +72,7 @@ const Banner = () => {
               <div className="lg:w-3/5 mr-auto">
                 <p
                   data-aos="fade-down"
-                  className="text-lime-600 md:text-xl font-bold mb-3"
+                  className="text-brand-color md:text-xl font-bold mb-3"
                 >
                   Empowering Communities for a Cleaner Planet
                 </p>
@@ -104,7 +104,7 @@ const Banner = () => {
               <div className="lg:w-3/5 mr-auto">
                 <p
                   data-aos="fade-down"
-                  className="text-lime-600 md:text-xl font-bold mb-3"
+                  className="text-brand-color md:text-xl font-bold mb-3"
                 >
                   Empowering Communities for a Cleaner Planet
                 </p>
