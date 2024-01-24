@@ -56,7 +56,7 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
@@ -88,7 +88,7 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>
@@ -120,7 +120,7 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
-                <button className="btn text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                   Let’s Explore
                 </button>
               </div>

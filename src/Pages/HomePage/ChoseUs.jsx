@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import img from "../../assets/images/choose-us.png";
+import img from "../../assets/images/service5.jpg";
 
 const ChoseUs = () => {
   return (
     <div className="mt-12 md:flex p-5 justify-start items-center gap-12 bg-white">
       <div className="">
-        <img className="" src={img} alt="" />
+        <img className="h-[800px] w-[500px]" src={img} alt="" />
       </div>
       <div className="flex-[1]">
         <h5 className="text-2xl text-green-600 font-bold">Why Choose Us</h5>
@@ -46,7 +46,7 @@ const ChoseUs = () => {
           </div>
           <Link to="/contact">
             {" "}
-            <button className="btn btn-ghost bg-green-600 hover:bg-green-800 mt-6 text-white ">
+            <button className="mt-8 border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">
               Contact Us
             </button>
           </Link>
