@@ -4,6 +4,8 @@ import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BlogCard = ({ blog }) => {
   const { id, shortName, shortDescription, image, commentNumber } = blog || {};
@@ -12,12 +14,14 @@ const BlogCard = ({ blog }) => {
   const [disliked, setDisliked] = useState(false);
 
   const handleLikeClick = () => {
+    console.log("Like clicked");
     setLiked(true);
     setDisliked(false);
     showToast("Liked");
   };
 
   const handleDislikeClick = () => {
+    console.log("Dislike clicked");
     setDisliked(true);
     setLiked(false);
     showToast("Disliked");
@@ -25,7 +29,6 @@ const BlogCard = ({ blog }) => {
 
   const showToast = (message) => {
     toast.success(message, {
-      position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,
     });
   };
@@ -54,13 +57,13 @@ const BlogCard = ({ blog }) => {
           <div className="flex justify-between items-center pb-5 mx-2">
             <div className="flex justify-center items-center gap-4 text-green-700 text-xl">
               <button
-                className={liked ? "liked" : ""}
+                className={liked ? "text-green-500" : "#0000"}
                 onClick={handleLikeClick}
               >
                 <AiFillLike />
               </button>
               <button
-                className={disliked ? "disliked" : ""}
+                className={disliked ? "text-green-500" : "#0000"}
                 onClick={handleDislikeClick}
               >
                 <AiFillDislike />
