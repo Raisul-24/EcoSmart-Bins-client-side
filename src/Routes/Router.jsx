@@ -6,6 +6,7 @@ import Services from "../Pages/Services/Services";
 import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Registration from "../Pages/Registration/Registration";
 import Dashboard from "../LayOut/Dashboard";
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Registration></Registration>
       }
      ]
    },
