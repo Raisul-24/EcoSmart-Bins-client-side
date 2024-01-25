@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ShopCard = ({ item }) => {
-  const { id, title, description, img, price } = item || {};
+  const { _id, title, img, price } = item || {};
 
   return (
     <div>
@@ -10,8 +10,8 @@ const ShopCard = ({ item }) => {
         <Link
           data-aos="flip-left"
           data-aos-easing="ease-out-cubic"
-          key={id}
-          to={`/shop/$id}`}
+          key={_id}
+          to={`/shop/${_id}`}
           className="p-4 card rounded bg-[#e9f1ea]"
         >
           <div className="pb-4 ">
