@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGetAService from "../../API/ServiceApi/useGetAService";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
+import toast from "react-hot-toast";
 
 const ServiceDetail = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const ServiceDetail = () => {
         <div className="md:w-1/2 md:p-10 p-5 space-y-4">
           <h3 className="md:text-5xl text-4xl font-bold">{data?.title}</h3>
           <p>{data?.drescaption}</p>
-          <button className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-full">get Service</button>
+          <button onClick={()=> toast.success("Service Added Successfully!")} className="btn lg:px-10 capitalize bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-full">get Service</button>
         </div>
       </div>
     </div>
