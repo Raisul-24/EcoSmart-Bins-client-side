@@ -1,14 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
+import SocialLogin from "../../SharedComponents/SocialLogin/SocialLogin";
 
 
 const Login = () => {
     return (
-        <div className="flex flex-col md:flex-row h-screen py-16 md:py-40 lg:py-32 items-center bg-[url(https://i.ibb.co/17R85wC/authentication.png)]">
+        <div className="flex flex-col md:flex-row h-full py-16 md:py-40 lg:py-32 items-center bg-[url(https://i.ibb.co/17R85wC/authentication.png)]">
          <div className="w-1/2 flex justify-center md:justify-end md:mx-3">
             <img src="https://i.ibb.co/6wPjzpn/user-login.gif" className="rounded-xl hidden md:flex" alt="" />
          </div>
-         <div className="w-1/2 flex justify-center md:mx-3">
+         <div className="w-5/6 md:w-1/2 flex justify-center md:mx-3">
             <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
                <div className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-r from-brand-color to-green-300">
                   <h3 className="block  text-3xl antialiased font-extrabold leading-snug tracking-normal text-white">
@@ -48,6 +49,7 @@ const Login = () => {
                      <p className="flex justify-center mt-6  text-medium antialiased font-light leading-normal text-inherit">
                         Or, Sign In with
                      </p>
+                     <SocialLogin></SocialLogin>
                      <p className="flex justify-center mt-3  text-sm antialiased font-light leading-normal text-inherit">
                         Don't have an account?
                         <Link
