@@ -803,12 +803,7 @@
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.14.2.tgz"
   integrity sha512-ACXpdMM9hmKZww21yEqWwiLws/UPLhNKvimN8RrYSqPSvB3ov7sLvAcfvaxePeLvccTQKGdkDIhLYApZVDFuKg==
 
-"@rollup/rollup-darwin-arm64@4.9.5":
-  version "4.9.5"
-  resolved "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.9.5.tgz"
-  integrity sha512-ndoXeLx455FffL68OIUrVr89Xu1WLzAG4n65R8roDlCoYiQcGGg6MALvs2Ap9zs7AHg8mpHtMpwC8jBBjZrT/w==
-
-"@rollup/rollup-darwin-x64@4.9.5":
+"@rollup/rollup-win32-ia32-msvc@4.9.5":
   version "4.9.5"
   resolved "https://registry.npmjs.org/@rollup/rollup-darwin-x64/-/rollup-darwin-x64-4.9.5.tgz"
   integrity sha512-UmElV1OY2m/1KEEqTlIjieKfVwRg0Zwg4PLgNf0s3glAHXBN99KLpw5A5lrSYCa1Kp63czTpVll2MAqbZYIHoA==
