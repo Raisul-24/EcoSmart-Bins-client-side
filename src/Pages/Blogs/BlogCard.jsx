@@ -46,7 +46,7 @@ const BlogCard = ({ blog }) => {
             src={image}
             alt=""
           />
-          <p className="absolute r-0 t-0 b-0 l-0 -mt-56 ml-64 flex justify-center items-center gap-2 bg-white text-black px-5 p-2 rounded">
+          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded">
             <span className="text-green-700">
               <FaUser />
             </span>
