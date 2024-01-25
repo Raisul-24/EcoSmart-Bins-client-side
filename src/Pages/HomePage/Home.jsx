@@ -2,6 +2,7 @@ import Banner from "./Banner";
 import FAQ from "../../Components/FAQ/FAQ";
 import Service from "../../Components/Service/Service";
 import ChoseUs from "./ChoseUs";
+import Feedback from "./Feedback";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Service />
       <ChoseUs />
       <FAQ />
+      <Feedback/>
     </div>
   );
 };
