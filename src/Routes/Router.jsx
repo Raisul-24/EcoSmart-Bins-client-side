@@ -25,6 +25,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import UpdateServices from "../Pages/UpdateServices/UpdateServices";
 import ManageProducts from './../Pages/Dashboard/Admin dashboard/ManageProducts';
+import PickUpReq from "../Pages/PickUpReq/PickUpReq";
 
 
 const router = createBrowserRouter([
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/pickUpReq",
+        element: <PickUpReq />,
       },
       {
         path: "/login",
