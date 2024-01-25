@@ -6,7 +6,7 @@ const ShopCard = ({ item }) => {
 
   return (
     <div>
-      <div className=" ">
+      <div className="">
         <Link
           data-aos="flip-left"
           data-aos-easing="ease-out-cubic"
