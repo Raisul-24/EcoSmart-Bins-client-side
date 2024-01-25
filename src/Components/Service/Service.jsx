@@ -3,7 +3,7 @@ import useGetService from "../../API/ServiceApi/useGetService";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
 const Service = () => {
-  const [data, dataLoaing] = useGetService(6)
+  const [data, dataLoaing] = useGetService(6);
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5">
       <div className="flex justify-center">
@@ -16,15 +16,22 @@ const Service = () => {
           <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 pb-5">
-            {
-                data?.map(item=><ServiceCard key={item?._id} data={item}/>)
-            }
+        <div>
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 pb-5">
+            {data?.map((item) => (
+              <ServiceCard key={item?._id} data={item} />
+            ))}
+          </div>
+          <div className="text-center pb-10">
+            <Link
+              to={"/services"}
+              className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color"
+            >
+              see All service
+            </Link>
+          </div>
         </div>
       )}
-      <div className="text-center pb-10">
-      <Link to={'/services'} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color">see All service</Link>
-      </div>
     </div>
   );
 };
