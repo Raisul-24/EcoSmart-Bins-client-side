@@ -3,7 +3,7 @@ import GetData from "../../Hooks/GetDataHook";
 const FAQ = () => {
   const [data, dataLoaing] = GetData("./FAQ.json");
   return (
-    <div className="max-w-6xl mx-auto xl:px-0 px-5 mb-20">
+    <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
       <div className="flex justify-center">
         <h3 className="w-fit pt-5 pb-2 text-4xl border-b-4 border-[#3A9E1E] mb-10 font-semibold text-[#101a30]">
           FAQ
@@ -19,6 +19,7 @@ const FAQ = () => {
             <div
               key={item?.id}
               className="collapse collapse-plus bg-[#3A9E1E] text-white"
+              data-aos="fade-up" data-aos-duration={`1000`}
             >
               <input type="radio" name="accordion" />
               <div className="collapse-title text-xl font-medium">

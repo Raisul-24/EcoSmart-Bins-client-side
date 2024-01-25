@@ -1,0 +1,86 @@
+[
+  {
+    "_id": 1,
+    "img": "https://i.ibb.co/fv481Dg/Recycling-Bins.jpg",
+    "title": "Recycling Bins",
+    "price": 5,
+    "description": "Offer a variety of recycling bins and containers for different materials such as paper, plastic, glass, and metal. Help customers sort and dispose of waste responsibly, contributing to a cleaner and greener environment."
+  },
+  {
+    "_id": 2,
+    "img": "https://i.ibb.co/9txSmn1/Compost-Bins.jpg",
+    "title": "Compost Bins",
+    "price": 15,
+    "description": "Promote sustainable living by selling compost bins designed for organic waste. Encourage customers to compost their kitchen scraps, reducing landfill waste and creating nutrient-rich soil for gardens."
+  },
+  {
+    "_id": 3,
+    "img": "https://i.ibb.co/JvnrS8G/Reusable-Bags.jpg",
+    "title": "Reusable Bags",
+    "price": 3,
+    "description": "Make a positive impact on the environment by offering reusable shopping bags. These eco-friendly bags help reduce the need for single-use plastic bags, providing a convenient and sustainable alternative for customers."
+  },
+  {
+    "_id": 4,
+    "img": "https://i.ibb.co/qRhjhGv/Zero-Waste-Kits.jpg",
+    "title": "Zero-Waste Kits",
+    "price": 20,
+    "description": "Empower individuals to embark on a zero-waste journey with our comprehensive starter kits containing reusable items like bamboo utensils, stainless steel straws, and cloth napkins."
+  },
+  {
+    "_id": 5,
+    "img": "https://i.ibb.co/V9wVj7q/Eco-Friendly-Cleaning-Products.jpg",
+    "title": "Eco-Friendly Cleaning",
+    "price": 13,
+    "description": "Sell environmentally friendly cleaning products, such as biodegradable soaps and reusable cleaning cloths. Provide effective cleaning solutions while minimizing the environmental impact of traditional cleaning products."
+  },
+  {
+    "_id": 6,
+    "img": "https://i.ibb.co/Pj1yz1V/Plastic-Shredders.jpg",
+    "title": "Plastic Shredders",
+    "price": 50,
+    "description": "Offer small-scale shredders for individuals to process plastic waste at home, turning items like plastic bottles into smaller pieces for recycling or crafting. Enable DIY recycling and contribute to reducing plastic pollution."
+  },
+  {
+    "_id": 7,
+    "img": "https://i.ibb.co/L00Ky9v/product-1.webp",
+    "title": "32 Gallon Container",
+    "price": 25,
+    "description": "Explore unique upcycled artworks crafted from reclaimed materials, adding a touch of creativity and sustainability to your space. Support local artists and showcase one-of-a-kind pieces that repurpose discarded items into beautiful art."
+  },
+  {
+    "_id": 8,
+    "img": "https://i.ibb.co/D4bgG95/product-3-357x500.webp",
+    "title": "20 Gallon Trash Bin",
+    "price": 8,
+    "description": "Introduce a range of bamboo products, including utensils, toothbrushes, and kitchenware, known for their eco-friendly and renewable properties. Provide customers with sustainable alternatives for daily essentials, promoting a greener lifestyle."
+  },
+  {
+    "_id": 9,
+    "img": "https://i.ibb.co/3dfvgRB/product-8.webp",
+    "title": "15 Gallon Trash Bin",
+    "price": 30,
+    "description": "Embrace sustainable living with our collection of solar-powered gadgets, from chargers to garden lights, harnessing the power of the sun. Provide eco-friendly solutions for everyday needs, reducing reliance on conventional power sources."
+  },
+  {
+    "_id": 10,
+    "img": "https://i.ibb.co/5k50yMj/product-9-393x437.webp",
+    "title": "15 Yard Dumpster",
+    "price": 7,
+    "description": "Encourage eco-friendly note-taking with recycled notebooks made from repurposed paper, contributing to a circular economy. Provide customers with stationery that supports recycling efforts and reduces the environmental impact of paper production."
+  },
+  {
+    "_id": 11,
+    "img": "https://i.ibb.co/FmZBZyy/product-10.webp",
+    "title": "10 Yard Dumpster",
+    "price": 12,
+    "description": "Say goodbye to plastic wrap and try our beeswax wraps, a sustainable alternative for preserving food freshness while reducing single-use plastic waste. Offer an eco-friendly solution for food storage that aligns with sustainable and zero-waste lifestyles."
+  },
+  {
+    "_id": 12,
+    "img": "https://i.ibb.co/JsBdk3z/product-12-393x327.webp",
+    "title": "64 Gallon Container",
+    "price": 40,
+    "description": "Explore a curated collection of sustainable fashion items, from clothing to accessories, promoting ethical and environmentally conscious choices in your wardrobe. Support fashion brands that prioritize sustainability and contribute to a more eco-friendly and responsible industry."
+  }
+]
