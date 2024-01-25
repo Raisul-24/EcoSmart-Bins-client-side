@@ -23,6 +23,7 @@ import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
 import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
+import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/shop/:id",
+		//loader: () => fetch("/shop.json"),
+        element: <SingleShopProduct></SingleShopProduct>,
       },
       {
         path: "/blogs",
