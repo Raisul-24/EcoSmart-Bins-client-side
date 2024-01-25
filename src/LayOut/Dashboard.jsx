@@ -13,7 +13,6 @@ import {
 } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../public/logo.png";
 
 const Dashboard = () => {
   return (
@@ -34,6 +33,7 @@ const Dashboard = () => {
           ></label>
           <div className="p-2 lg:p-4 w-52 lg:w-64 min-h-full text-base-content bg-green-200 z-10">
               <div className="card  items-center mx-auto">
+              <Link to={"/"} className="text-xl lg:text-3xl font-bold"><span className="bold text-brand-color">Eco</span>SmartBin</Link>
                 <figure className="px-10 pt-8">
                   <div className="">
                     <img
