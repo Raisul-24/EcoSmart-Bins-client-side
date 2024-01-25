@@ -59,7 +59,7 @@ const Feedback = () => {
           className="mySwiper flex-1"
         >
           {reviews?.map((review) => (
-            <SwiperSlide key={review._id}>
+            <SwiperSlide key={review?._id}>
               <div className="mx-10 md:ml-5 md:my-16  p-5  border shadow-lg shadow-brand-color  flex flex-col  text-center items-center ">
                 <Rating
                   style={{ maxWidth: 180 }}

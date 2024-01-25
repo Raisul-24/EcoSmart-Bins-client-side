@@ -17,7 +17,6 @@ const FeedbackAndRatings = () => {
       } = useForm();
 
 
-
     const onSubmit = (data) =>{
         // console.log(data);
 
@@ -27,7 +26,6 @@ const FeedbackAndRatings = () => {
              feedback: data.feedback,
              rating:parseInt(data.rating) ,
              date: data.date,
-
 
         }
 
@@ -128,3 +126,5 @@ const FeedbackAndRatings = () => {
 };
 
 export default FeedbackAndRatings;
+
+
