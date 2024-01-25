@@ -23,7 +23,14 @@ import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
 import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
+<<<<<<< HEAD
 import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
+=======
+import UpdateServices from "../Pages/UpdateServices/UpdateServices";
+import ManageProducts from './../Pages/Dashboard/Admin dashboard/ManageProducts';
+import PickUpReq from "../Pages/PickUpReq/PickUpReq";
+
+>>>>>>> 537b5b0310dc095f775e94a62600f59112492b9c
 
 const router = createBrowserRouter([
   {
@@ -70,6 +77,10 @@ const router = createBrowserRouter([
         element: <About></About>,
       },
       {
+        path: "/pickUpReq",
+        element: <PickUpReq />,
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -93,6 +104,10 @@ const router = createBrowserRouter([
         element: <AddServices></AddServices>,
       },
       {
+        path: "/dashboard/updateServices/:id",
+        element: <UpdateServices></UpdateServices>,
+      },
+      {
         path: "/dashboard/manageServices",
         element: <ManageServices></ManageServices>,
       },
@@ -102,7 +117,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/manageProducts",
-        element: <ManageServices></ManageServices>,
+        element: <ManageProducts></ManageProducts>,
       },
       {
         path: "/dashboard/managePickup",

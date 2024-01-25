@@ -1,19 +1,32 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
+import UseAuth from "../../Hooks/UseAuth";
+import { toast } from "react-hot-toast";
 
 
 const Navbar = () => {
+    const { user, logOut } = UseAuth();
+
+
+    const handleLogOut = async () => {
+        try {
+            logOut()
+            toast.success('Log Out Successfully!!');
+        } catch (error) {
+            toast.error(error.message);
+        }
+    }
     const navLinks = <>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/"}>Home</NavLink></li>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/services"}>Services</NavLink></li>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/contact"}>Contact Us</NavLink></li>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/blogs"}>Blogs</NavLink></li>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/shop"}>Shop</NavLink></li>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li>
-    <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/dashboard"}>Dashboard</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/"}>Home</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/services"}>Services</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/contact"}>Contact Us</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/blogs"}>Blogs</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/shop"}>Shop</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/dashboard"}>Dashboard</NavLink></li>
     </>
     return (
-        <div className="sticky top-0 z-20">
+        <div className="sticky bg-white bg-opacity-90 top-0 z-20">
             <div className="navbar bg-base-100 lg:px-10 lg:py-7 drop-shadow-md">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -24,6 +37,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
+
                     <Link to={"/"} className="text-xl lg:text-3xl font-bold"><span className="bold text-brand-color">Eco</span>SmartBin</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -32,7 +46,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"/login"} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">Log in</Link>
+                    {
+                        user ?
+                        <btn onClick={handleLogOut} 
+                        className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                        >Logout</btn>
+                        :
+                        <btn> <Link to={'/login'}
+                            className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                            >Log in</Link></btn>
+                    }
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ const BlogCard = ({ blog }) => {
             src={image}
             alt=""
           />
-          <p className="absolute r-0 t-0 b-0 l-0 -mt-56 ml-64 flex justify-center items-center gap-2 bg-white text-black px-5 p-2 rounded">
+          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 ">
             <span className="text-green-700">
               <FaUser />
             </span>
@@ -55,7 +55,7 @@ const BlogCard = ({ blog }) => {
         </div>
         <div className="flex flex-col pt-6 ">
           <div className="flex justify-between items-center pb-5 mx-2">
-            <div className="flex justify-center items-center gap-4 text-green-700 text-xl">
+            <div className="flex justify-center items-center gap-6 text-green-700 text-xl">
               <button
                 className={liked ? "text-green-500" : "#0000"}
                 onClick={handleLikeClick}
@@ -77,12 +77,7 @@ const BlogCard = ({ blog }) => {
               {commentNumber} Comment
             </p>
           </div>
-          <h5
-            className="mb-5 text-xl font-semibold tracking-tight 
-	  text-[#000000]"
-          >
-            {name}
-          </h5>
+          <h5>{name}</h5>
 
           <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>
           <div className="flex mt-auto justify-center items-center">

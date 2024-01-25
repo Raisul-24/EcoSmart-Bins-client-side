@@ -3,7 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const ServiceCard = ({ data, isTrue,DeleteFun }) => {
   return (
-    <div className="card bg-base-100 shadow-xl mb-10">
+    <div data-aos="zoom-in" data-aos-duration="1000" className="card bg-base-100 shadow-xl mb-10">
       <figure className="">
         <img
           src={data?.img}
@@ -20,9 +20,9 @@ const ServiceCard = ({ data, isTrue,DeleteFun }) => {
         </p>
         {isTrue ? (
           <div className="space-y-4">
-            {/* <button onClick={()=>} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-500 lg:text-xl capitalize text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-full">
+            <Link to={`/dashboard/updateServices/${data?._id}`} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-500 lg:text-xl capitalize text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-full">
               update
-            </button> */}
+            </Link>
             <button onClick={()=>DeleteFun(data?._id)} className="btn lg:px-10 bg-red-500 hover:bg-red-600 lg:text-xl capitalize text-white w-full">
               Delete
             </button>
