@@ -6,7 +6,7 @@ const Service = () => {
   const [data, dataLoaing] = useGetService(6);
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5">
-      <div className="flex justify-center">
+      <div data-aos="fade-up" data-aos-duration="700" className="flex justify-center">
         <h3 className="w-fit capitalize pt-5 pb-2 text-4xl border-b-4 border-[#3A9E1E] mb-10 font-semibold text-[#101a30]">
           our services
         </h3>

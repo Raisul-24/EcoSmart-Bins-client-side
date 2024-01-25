@@ -9,11 +9,9 @@ import {
   FaPlusSquare,
   FaSearch,
   FaStar,
-  FaUser,
 } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { Link, Outlet } from "react-router-dom";
-import logo from "../../public/logo.png";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -34,6 +32,7 @@ const Dashboard = () => {
           ></label>
           <div className="p-2 lg:p-4 w-52 lg:w-64 min-h-full text-base-content bg-green-200 z-10">
               <div className="card  items-center mx-auto">
+              <Link to={"/"} className="text-xl lg:text-3xl font-bold"><span className="bold text-brand-color">Eco</span>SmartBin</Link>
                 <figure className="px-10 pt-8">
                   <div className="">
                     <img
@@ -51,96 +50,86 @@ const Dashboard = () => {
             <ul className="menu font-semibold">
               {/* admin routes */}
               <li className="lg:text-lg">
-                <Link to="/dashboard/adminProfile">
-                  <FaUser></FaUser> Admin Profile
-                </Link>
-              </li>
-              <li className="lg:text-lg">
-                <Link to="/dashboard/addServices">
+                <NavLink to="/dashboard/addServices">
                   <FaPlusSquare />
                   Add Services
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/manageServices">
+                <NavLink to="/dashboard/manageServices">
                   <FaEdit />
                   Manage Services
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/addProducts">
+                <NavLink to="/dashboard/addProducts">
                   <FaPlusSquare />
                   Add Products
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/manageProducts">
+                <NavLink to="/dashboard/manageProducts">
                 <FaEdit />
                   Manage Products
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/managePickup">
+                <NavLink to="/dashboard/managePickup">
                 <FaEdit />
                   Manage Pickup Request
-                </Link>
+                </NavLink>
               </li>
 
               <div className="divider"></div>
 
               {/* user routes */}
               <li className="lg:text-lg">
-                <Link to="/dashboard/userProfile">
-                  <FaUser></FaUser> User Profile
-                </Link>
-              </li>
-              <li className="lg:text-lg">
-                <Link to="/dashboard/cart">
+                <NavLink to="/dashboard/cart">
                   <FaCartShopping></FaCartShopping> My Cart
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/addShowcase">
-                  <FaCameraRetro /> Showcase
-                </Link>
+                <NavLink to="/dashboard/addShowcase">
+                  <FaCameraRetro />Add Showcase
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/dashboard/feedback">
+                <NavLink to="/dashboard/feedback">
                   <FaStar /> Feedback
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-            <Link to="/dashboard/payment">
+            <NavLink to="/dashboard/payment">
               <FaMoneyCheck></FaMoneyCheck>
              Make Payment 
-            </Link>
+            </NavLink>
           </li>
           <li className="lg:text-lg">
-            <Link to="/dashboard/paymentHistory">
+            <NavLink to="/dashboard/paymentHistory">
               <FaHistory></FaHistory>
               Payment History
-            </Link>
+            </NavLink>
           </li>
 
               {/* shared routes */}
               <div className="divider"></div>
               <li className="lg:text-lg">
-                <Link to="/">
+                <NavLink to="/">
                   <FaHome></FaHome>
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/services">
+                <NavLink to="/services">
                   <FaSearch></FaSearch>
                   Available Services
-                </Link>
+                </NavLink>
               </li>
               <li className="lg:text-lg">
-                <Link to="/contact">
+                <NavLink to="/contact">
                   <FaEnvelope></FaEnvelope>
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
