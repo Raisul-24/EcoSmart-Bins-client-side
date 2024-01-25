@@ -8,8 +8,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const BlogCard = ({ blog }) => {
-  const { id, name, shortDescription, image, commentNumber } = blog || {};
-
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
 
@@ -43,10 +41,10 @@ const BlogCard = ({ blog }) => {
         <div className="">
           <img
             className="relative h-60 w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
-            src={image}
+            src={blog?.image}
             alt=""
           />
-          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 rounded-xl">
+          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 ">
             <span className="text-green-700">
               <FaUser />
             </span>
@@ -74,20 +72,24 @@ const BlogCard = ({ blog }) => {
               <span className="text-green-700">
                 <FaComment />
               </span>
-              {commentNumber} Comment
+              {blog?.commentNumber} Comment
             </p>
           </div>
+
           <h5
             className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9"
           >
-            {name}
+            {blog?.name}
           </h5>
 
-          <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>
+
+          <p className="mb-3 font-normal text-[#370000]">
+            {blog?.shortDescription}
+          </p>
           <div className="flex mt-auto justify-center items-center">
             <button className="flex mt-auto w-full text-center ">
               <Link
-                to={`/blog/${id}`}
+                to={`/blog/${blog?._id}`}
                 className="btn btn-ghost flex  bg-green-600 hover:bg-green-800 my-6 w-full text-white"
               >
                 Read More
