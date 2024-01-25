@@ -23,6 +23,9 @@ import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
 import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
+import UpdateServices from "../Pages/UpdateServices/UpdateServices";
+import ManageProducts from './../Pages/Dashboard/Admin dashboard/ManageProducts';
+
 
 const router = createBrowserRouter([
   {
@@ -87,6 +90,10 @@ const router = createBrowserRouter([
         element: <AddServices></AddServices>,
       },
       {
+        path: "/dashboard/updateServices/:id",
+        element: <UpdateServices></UpdateServices>,
+      },
+      {
         path: "/dashboard/manageServices",
         element: <ManageServices></ManageServices>,
       },
@@ -96,7 +103,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/manageProducts",
-        element: <ManageServices></ManageServices>,
+        element: <ManageProducts></ManageProducts>,
       },
       {
         path: "/dashboard/managePickup",
