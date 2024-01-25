@@ -46,13 +46,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                {
+                    {
                         user ?
-                            <li><Link onClick={handleLogOut} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
-                            >Logout</Link></li>
-                            : <li> <Link to="/login"
-                                className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
-                            >Log in</Link></li>
+                        <btn onClick={handleLogOut} 
+                        className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                        >Logout</btn>
+                        :
+                        <btn> <Link to={'/login'}
+                            className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                            >Log in</Link></btn>
                     }
                 </div>
             </div>
