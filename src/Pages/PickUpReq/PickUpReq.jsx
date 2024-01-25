@@ -1,5 +1,5 @@
 import Cover from "../../SharedComponents/Cover/Cover";
-import pickUpCoverImg from "../../SharedComponents/Cover/Cover";
+import pickUpCoverImg from "../../assets/images/ptitle-9-1.webp";
 
 
 const PickUpReq = () => {
@@ -7,8 +7,8 @@ const PickUpReq = () => {
         <div>
             <Cover
         img={pickUpCoverImg}
-        title="Order Product"
-        subHeading="Order with confidence from Farm Fresh for a delightful experience of farm-fresh, organic goodness delivered to your doorstep. Elevate your well-being with every wholesome choice."
+        title="Request Pickup"
+        subHeading="Streamline Waste Pickup Requests for Effortless Management and Environmental Responsibility."
       ></Cover>
             
         </div>
