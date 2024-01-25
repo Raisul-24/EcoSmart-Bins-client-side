@@ -1,0 +1,44 @@
+[
+        {
+        "_id": 1,
+        "img": "https://i.ibb.co/fv481Dg/Recycling-Bins.jpg",
+        "title": "Recycling Bins",
+        "price": 5,
+        "drescaption": "Offer a variety of recycling bins and containers for different materials such as paper, plastic, glass, and metal."
+    },
+    {
+        "_id": 2,
+        "img": "https://i.ibb.co/9txSmn1/Compost-Bins.jpg",
+        "title": "Compost Bins",
+        "price": 15,
+        "drescaption": "Sell compost bins for organic waste, encouraging customers to compost their kitchen scraps."
+    },
+    {
+        "_id": 3,
+        "img": "https://i.ibb.co/JvnrS8G/Reusable-Bags.jpg",
+        "title": "Reusable Bags",
+        "price": 3,
+        "drescaption": "Offer reusable shopping bags, reducing the need for single-use plastic bags."
+    },
+    {
+        "_id": 4,
+        "img": "https://i.ibb.co/qRhjhGv/Zero-Waste-Kits.jpg",
+        "title": "Zero-Waste Kits",
+        "price": 20,
+        "drescaption": "Offer zero-waste starter kits containing reusable items like bamboo utensils, stainless steel straws, and cloth napkins."
+    },
+    {
+        "_id": 5,
+        "img": "https://i.ibb.co/V9wVj7q/Eco-Friendly-Cleaning-Products.jpg",
+        "title": "Eco-Friendly Cleaning Products",
+        "price": 13,
+        "drescaption": "Sell environmentally friendly cleaning products, such as biodegradable soaps and reusable cleaning cloths."
+    },
+    {
+        "_id": 6,
+        "img": "https://i.ibb.co/Pj1yz1V/Plastic-Shredders.jpg",
+        "title": "Plastic Shredders",
+        "price": 50,
+        "drescaption": "Small-scale shredders for individuals to process plastic waste at home, turning items like plastic bottles into smaller pieces for recycling or crafting."
+    }
+]
