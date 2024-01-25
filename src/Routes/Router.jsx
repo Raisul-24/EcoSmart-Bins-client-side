@@ -16,7 +16,8 @@ import Shop from "../Pages/Shop/Shop";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
-
+import AddShowcase from "../Pages/Dashboard/User Dashboard/AddShowcase";
+import Cart from "../Pages/Dashboard/User Dashboard/Cart";
 
 
 const router = createBrowserRouter([
@@ -84,6 +85,18 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageServices",
         element: <ManageServices></ManageServices>,
+      },
+      {
+        path: '/dashboard/addProducts',
+        element: <AddProducts></AddProducts>
+      },
+      {
+        path: '/dashboard/manageProducts',
+        element: <ManageServices></ManageServices>
+      },
+      {
+        path: '/dashboard/managePickup',
+        element: <ManagePickup></ManagePickup>
       },
 
       // user dashboard
