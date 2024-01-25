@@ -44,7 +44,7 @@ const BlogCard = ({ blog }) => {
             src={blog?.image}
             alt=""
           />
-          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 rounded-xl">
+          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 ">
             <span className="text-green-700">
               <FaUser />
             </span>
@@ -75,11 +75,13 @@ const BlogCard = ({ blog }) => {
               {blog?.commentNumber} Comment
             </p>
           </div>
+
           <h5
             className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9"
           >
             {blog?.name}
           </h5>
+
 
           <p className="mb-3 font-normal text-[#370000]">
             {blog?.shortDescription}
