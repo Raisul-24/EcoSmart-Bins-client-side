@@ -11,8 +11,8 @@ const ManageServices = () => {
   const DeleteFun = (id) => {
     axios
       .delete(`/services/${id}`)
+      .then(() => refetch())
       .then(() => toast.success("the Service Delete Successfully"))
-      .then(() => refetch());
   };
   return (
     <div>

@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import useAxiosPublic from './../../axios/axiosPublic';
+import useAxiosPrivate from '../../axios/axiosprivate';
 
 const useGetAService = (id)=>{
-    const axios = useAxiosPublic()
+    const axios = useAxiosPrivate()
     const serviceData = async () =>{
         const {data} = await axios.get(`/services/${id}`)
         return data

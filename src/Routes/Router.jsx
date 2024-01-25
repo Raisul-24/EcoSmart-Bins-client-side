@@ -18,6 +18,9 @@ import BlogDetails from "../Pages/Blogs/BlogDetails";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 import AddShowcase from "../Pages/Dashboard/User Dashboard/AddShowcase";
 import Cart from "../Pages/Dashboard/User Dashboard/Cart";
+import AddProducts from './../Pages/Dashboard/Admin dashboard/AddProducts';
+import ManagePickup from './../Pages/Dashboard/Admin dashboard/ManagePickup';
+import UpdateServices from "../Pages/UpdateServices/UpdateServices";
 
 
 const router = createBrowserRouter([
@@ -81,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addServices",
         element: <AddServices></AddServices>,
+      },
+      {
+        path: "/dashboard/updateServices/:id",
+        element: <UpdateServices></UpdateServices>,
       },
       {
         path: "/dashboard/manageServices",
