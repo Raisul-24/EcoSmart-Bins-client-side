@@ -38,7 +38,7 @@ const BlogDetails = () => {
           <div className="">
             <img
               data-aos="zoom-out"
-              className="md:h-[650px] w-screen"
+              className="md:h-[650px] container mx-auto rounded-xl"
               src={image}
               alt=""
             />
