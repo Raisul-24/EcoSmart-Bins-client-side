@@ -15,6 +15,9 @@ import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
+import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
+
+
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetail></ServiceDetail>
       },
       {
         path: "/contact",
@@ -81,11 +88,12 @@ const router = createBrowserRouter([
 
       // user dashboard
       {
-        path: "/dashboard/userProfile",
-        element: <UserProfile></UserProfile>,
-      },
-    ],
-  },
-]);
+          path: '/dashboard/userProfile',
+          element: <UserProfile></UserProfile>
+
+      },  
+    ]
+   }
+ ]);
 
 export default router;
