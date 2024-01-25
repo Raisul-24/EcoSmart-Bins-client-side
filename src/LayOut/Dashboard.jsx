@@ -1,7 +1,7 @@
 import { FaEdit, FaEnvelope, FaHome, FaPlusSquare, FaSearch, FaUser } from "react-icons/fa";
 import { FaCartShopping, } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../public/logo.png";
+import logo from "/logo.png";
 
 const Dashboard = () => {
   return (
