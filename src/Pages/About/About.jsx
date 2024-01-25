@@ -81,7 +81,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="flex gap-10 justify-center -mt-7">
-                    <Link><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">Pick up Request</button></Link>
+                    <Link to="/pickUpReq"><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">Pick up Request</button></Link>
                     <Link to={"/contact"}><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color">contact us</button></Link>
                 </div>
             </div>

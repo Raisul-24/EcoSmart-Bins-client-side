@@ -19,6 +19,7 @@ const FAQ = () => {
             <div
               key={item?.id}
               className="collapse collapse-plus bg-[#3A9E1E] text-white"
+              data-aos="fade-up" data-aos-duration={`1000`}
             >
               <input type="radio" name="accordion" />
               <div className="collapse-title text-xl font-medium">
