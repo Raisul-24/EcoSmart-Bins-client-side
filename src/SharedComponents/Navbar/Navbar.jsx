@@ -48,9 +48,9 @@ const Navbar = () => {
                 <div className="navbar-end">
                 {
                         user ?
-                            <li><Link onClick={handleLogOut} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                            <li className="list-none"><Link onClick={handleLogOut} className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
                             >Logout</Link></li>
-                            : <li> <Link to="/login"
+                            : <li className="list-none"> <Link to="/login"
                                 className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
                             >Log in</Link></li>
                     }

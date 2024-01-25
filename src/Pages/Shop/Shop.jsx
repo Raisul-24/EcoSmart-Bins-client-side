@@ -8,7 +8,6 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setShop(data));
   }, []);
-  console.log(shop);
   return (
     <div>
       <SectionTitle heading={"shop"} subHeading={"Waste Less, Live More."} />
