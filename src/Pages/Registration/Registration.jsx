@@ -114,7 +114,7 @@ const Registration = () => {
                         Don't have an account?
                         <Link
                            to="/login"
-                           className="block ml-1  text-sm antialiased font-bold leading-normal text-[#FF3811]"
+                           className="block ml-1  text-sm antialiased font-bold leading-normal text-[#033d1b]"
                         >
                            Login
                         </Link>
