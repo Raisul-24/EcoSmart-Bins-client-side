@@ -11,6 +11,9 @@ export default {
       },
     },
   },
+  daisyui: {
+    themes: ["cupcack"],
+  },
   plugins: [require("daisyui")],
 }
 
