@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const BlogCard = ({ blog }) => {
-  const { id, shortName, shortDescription, image, commentNumber } = blog || {};
+  const { id, name, shortDescription, image, commentNumber } = blog || {};
 
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
@@ -78,10 +78,10 @@ const BlogCard = ({ blog }) => {
             </p>
           </div>
           <h5
-            className="mb-5 text-2xl font-bold tracking-tight 
+            className="mb-5 text-xl font-semibold tracking-tight 
 	  text-[#000000]"
           >
-            {shortName}
+            {name}
           </h5>
 
           <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>

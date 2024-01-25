@@ -13,12 +13,16 @@ import UserProfile from "../Pages/Dashboard/User Dashboard/UserProfile";
 import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
 import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
-import Blogs from "../Pages/Blogs/Blogs";
-import BlogDetails from "../Pages/Blogs/BlogDetails";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 import AddShowcase from "../Pages/Dashboard/User Dashboard/AddShowcase";
 import Cart from "../Pages/Dashboard/User Dashboard/Cart";
-
+import FeedbackAndRatings from "../Pages/Dashboard/User Dashboard/FeedbackAndRatings";
+import AddProducts from "../Pages/Dashboard/Admin dashboard/AddProducts";
+import MakePayment from "../Pages/Dashboard/User Dashboard/MakePayment";
+import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
+import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
+import Blogs from "../Pages/Blogs/Blogs";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
 
 const router = createBrowserRouter([
   {
@@ -36,11 +40,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: <ServiceDetail></ServiceDetail>
+        element: <ServiceDetail></ServiceDetail>,
       },
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>,
       },
       {
         path: "/blogs",
@@ -50,10 +58,6 @@ const router = createBrowserRouter([
         path: "/blog/:id",
         loader: () => fetch("/blogs.json"),
         element: <BlogDetails></BlogDetails>,
-      },
-      {
-        path: "/shop",
-        element: <Shop></Shop>,
       },
       {
         path: "/about",
@@ -87,26 +91,45 @@ const router = createBrowserRouter([
         element: <ManageServices></ManageServices>,
       },
       {
-        path: '/dashboard/addProducts',
-        element: <AddProducts></AddProducts>
+        path: "/dashboard/addProducts",
+        element: <AddProducts></AddProducts>,
       },
       {
-        path: '/dashboard/manageProducts',
-        element: <ManageServices></ManageServices>
+        path: "/dashboard/manageProducts",
+        element: <ManageServices></ManageServices>,
       },
       {
-        path: '/dashboard/managePickup',
-        element: <ManagePickup></ManagePickup>
+        path: "/dashboard/managePickup",
+        element: <ManagePickup></ManagePickup>,
       },
 
       // user dashboard
       {
-          path: '/dashboard/userProfile',
-          element: <UserProfile></UserProfile>
-
-      },  
-    ]
-   }
- ]);
+        path: "/dashboard/userProfile",
+        element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/dashboard/addShowcase",
+        element: <AddShowcase></AddShowcase>,
+      },
+      {
+        path: "/dashboard/cart",
+        element: <Cart></Cart>,
+      },
+      {
+        path: "/dashboard/feedback",
+        element: <FeedbackAndRatings></FeedbackAndRatings>,
+      },
+      {
+        path: "/dashboard/payment",
+        element: <MakePayment></MakePayment>,
+      },
+      {
+        path: "/dashboard/paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
+    ],
+  },
+]);
 
 export default router;
