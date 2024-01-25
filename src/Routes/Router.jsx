@@ -13,29 +13,26 @@ import UserProfile from "../Pages/Dashboard/User Dashboard/UserProfile";
 import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
 import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
+import Blogs from "../Pages/Blogs/Blogs";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 import AddShowcase from "../Pages/Dashboard/User Dashboard/AddShowcase";
 import Cart from "../Pages/Dashboard/User Dashboard/Cart";
-import FeedbackAndRatings from "../Pages/Dashboard/User Dashboard/FeedbackAndRatings";
-import AddProducts from "../Pages/Dashboard/Admin dashboard/AddProducts";
-import MakePayment from "../Pages/Dashboard/User Dashboard/MakePayment";
-import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
-import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 
 
 const router = createBrowserRouter([
-   {
-     path: "/",
-     element: <MainLayOut></MainLayOut>,
-     errorElement:<ErrorPage></ErrorPage>,
-     children: [
+  {
+    path: "/",
+    element: <MainLayOut></MainLayOut>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-         path:"/",
-         element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
         path: "/services",
-        element: <Services></Services>
+        element: <Services></Services>,
       },
       {
         path: "/services/:id",
@@ -43,43 +40,51 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/blog/:id",
+        loader: () => fetch("/blogs.json"),
+        element: <BlogDetails></BlogDetails>,
       },
       {
         path: "/shop",
-        element: <Shop></Shop>
+        element: <Shop></Shop>,
       },
       {
         path: "/about",
-        element: <About></About>
+        element: <About></About>,
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Registration></Registration>
-      }
-     ]
-   },
-   {
+        path: "/register",
+        element: <Registration></Registration>,
+      },
+    ],
+  },
+  {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    children: [ 
+    children: [
       // admin dashboard
       {
-          path: '/dashboard/adminProfile',
-          element: <AdminProfile></AdminProfile>
-
+        path: "/dashboard/adminProfile",
+        element: <AdminProfile></AdminProfile>,
       },
       {
-        path: '/dashboard/addServices',
-        element: <AddServices></AddServices>
+        path: "/dashboard/addServices",
+        element: <AddServices></AddServices>,
       },
       {
-        path: '/dashboard/manageServices',
-        element: <ManageServices></ManageServices>
+        path: "/dashboard/manageServices",
+        element: <ManageServices></ManageServices>,
       },
       {
         path: '/dashboard/addProducts',
@@ -96,29 +101,10 @@ const router = createBrowserRouter([
 
       // user dashboard
       {
-        path: '/dashboard/userProfile',
-        element: <UserProfile></UserProfile>
+          path: '/dashboard/userProfile',
+          element: <UserProfile></UserProfile>
+
       },  
-      {
-        path: '/dashboard/addShowcase',
-        element: <AddShowcase></AddShowcase>
-      },  
-      {
-        path: '/dashboard/cart',
-        element: <Cart></Cart>
-      },
-      {
-        path: '/dashboard/feedback',
-        element: <FeedbackAndRatings></FeedbackAndRatings>
-      },
-      {
-        path: '/dashboard/payment',
-        element: <MakePayment></MakePayment>
-    },
-    {
-        path: '/dashboard/paymentHistory',
-        element: <PaymentHistory></PaymentHistory>
-    },
     ]
    }
  ]);
