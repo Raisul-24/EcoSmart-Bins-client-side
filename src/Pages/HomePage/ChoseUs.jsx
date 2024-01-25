@@ -3,7 +3,7 @@ import img from "../../assets/images/service5.jpg";
 
 const ChoseUs = () => {
   return (
-    <div className="mt-12 md:flex p-5 justify-start items-center gap-12 bg-white">
+    <div className="max-w-7xl mx-auto xl:px-0 px-5  mt-12 md:flex justify-start items-center gap-12 bg-white">
       <div className="">
         <img className="h-[800px] w-[550px]" src={img} alt="" />
       </div>
