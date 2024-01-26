@@ -56,7 +56,7 @@ const ManageServices = () => {
                   <td className="text-right">
                     <Link
                       to={`/services/${item?._id}`}
-                      className="btn btn-ghost "
+                      className="btn btn-ghost hover:text-brand-color"
                     >
                       See Details
                     </Link>
