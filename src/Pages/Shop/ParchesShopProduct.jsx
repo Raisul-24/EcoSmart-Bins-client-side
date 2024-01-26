@@ -4,10 +4,9 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../axios/axiosPublic";
 import useGetAProduct from "../../API/ServiceApi/useGetAProduct";
 
-
 const ParchesShopProduct = () => {
   const { user } = useAuth();
-  const axiosPublic = useAxiosPublic;
+  const axiosPublic = useAxiosPublic();
   const { id } = useParams();
 
   const [product, loading] = useGetAProduct(id);
@@ -20,7 +19,7 @@ const ParchesShopProduct = () => {
     );
   }
 
-  const { _id, title, img, quantity } = product || {};
+  const { _id, title, img } = product || {};
 
   const handleOrder = (event) => {
     event.preventDefault();
@@ -28,6 +27,7 @@ const ParchesShopProduct = () => {
     const email = form.email.value;
     const price = form.price.value;
     const date = form.date.value;
+    const quantity = form.quantity.value;
 
     const productValue = {
       _id,
@@ -39,12 +39,14 @@ const ParchesShopProduct = () => {
       img,
     };
 
-    console.log(productValue);
+    //console.log(productValue);
 
-    if (product.quantity > 0) {
+    if (quantity > 0) {
       axiosPublic
         .post("/my-cart", productValue)
         .then((res) => {
+          console.log(res.data);
+
           if (res.data.insertedId) {
             console.log(res.data);
 
@@ -103,7 +105,7 @@ const ParchesShopProduct = () => {
             <label className="label ">product quantity</label>
             <label className="input-group input-group-vertical ">
               <input
-                type="text"
+                type="number"
                 defaultValue={1}
                 name="quantity"
                 placeholder="Enter Food quantity"
