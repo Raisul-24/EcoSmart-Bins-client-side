@@ -18,23 +18,23 @@ const SingleShopProduct = () => {
 
   return (
     <div className="my-20 md:flex p-5 justify-start items-center gap-12 bg-white">
-      <div className="overflow-hidden">
+      <div className="overflow-hidden flex-1">
         <img
-          className="rounded p-20 bg-[#e9f1ea] h-[450px] w-[550px] object-cover"
+          className="rounded p-12 bg-[#e9f1ea] h-[450px] w-[550px]"
           src={img}
           alt=""
         />
       </div>
-      <div className="flex-1 flex justify-between gap-8 items-start flex-col">
+      <div className="flex-1 flex justify-between gap-12 items-start flex-col">
         <div>
-          <h5 className="text-4xl text-green-600 font-bold pb-2">{title}</h5>
+          <h5 className="text-5xl text-green-600 font-bold pb-5">{title}</h5>
           <p>
-            <small>0 review</small>
+            0 review
           </p>
         </div>
-        <h5 className="font-bold text-2xl text-[#f29620]">${price}</h5>
-        <p className="text-black">{description}</p>
-        <button className="mt-8 border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">
+        <h5 className="font-bold text-4xl text-[#f29620]">${price}</h5>
+        <p className="text-black text-lg">{description}</p>
+        <button className="mt-4 border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">
           Add to cart
         </button>
       </div>
