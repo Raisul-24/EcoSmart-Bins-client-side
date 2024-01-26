@@ -24,9 +24,10 @@ import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import UpdateServices from "../Pages/UpdateServices/UpdateServices";
-import ManageProducts from './../Pages/Dashboard/Admin dashboard/ManageProducts';
+import ManageProducts from "./../Pages/Dashboard/Admin dashboard/ManageProducts";
 import PickUpReq from "../Pages/PickUpReq/PickUpReq";
-
+import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
+import ParchesShopProduct from "../Pages/Shop/ParchesShopProduct";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/shop/:id",
+        element: <SingleShopProduct></SingleShopProduct>,
+      },
+      {
+        path: "/shop-parches/:id",
+        element: <ParchesShopProduct></ParchesShopProduct>,
       },
       {
         path: "/blogs",

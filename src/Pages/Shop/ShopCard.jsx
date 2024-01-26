@@ -2,16 +2,14 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ShopCard = ({ item }) => {
-  const { id, title, description, img, price } = item || {};
+  const { _id, title, img, price } = item || {};
 
   return (
     <div>
-      <div className=" ">
-        <Link
+      <div className="">
+        <div
           data-aos="flip-left"
           data-aos-easing="ease-out-cubic"
-          key={id}
-          to={`/shop/$id}`}
           className="p-4 card rounded bg-[#e9f1ea]"
         >
           <div className="pb-4 ">
@@ -24,12 +22,18 @@ const ShopCard = ({ item }) => {
           </div>
           <figure>
             <img
-              className="md:h-80  rounded hover:scale-[1.08] duration-1000"
+              className="md:h-72  rounded hover:scale-[1.08] duration-1000"
               src={img}
               alt="shop item"
             />
           </figure>
-        </Link>
+          <Link
+            to={`/shop/${_id}`}
+            className="mt-4 border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color "
+          >
+            SEE MORE
+          </Link>
+        </div>
       </div>
     </div>
   );
