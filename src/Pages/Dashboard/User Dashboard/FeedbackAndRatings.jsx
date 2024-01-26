@@ -101,7 +101,7 @@ const FeedbackAndRatings = () => {
             <span className="text-red-600">rating is required</span>
           )}
         </div>
-    );
+    
         <div className="form-control flex-1">
           <label className="label">
             <span className="label-text text-lg font-medium">Date</span>
