@@ -23,11 +23,10 @@ import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
 import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 import Blogs from "../Pages/Blogs/Blogs";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
-import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 import UpdateServices from "../Pages/UpdateServices/UpdateServices";
-import ManageProducts from './../Pages/Dashboard/Admin dashboard/ManageProducts';
+import ManageProducts from "./../Pages/Dashboard/Admin dashboard/ManageProducts";
 import PickUpReq from "../Pages/PickUpReq/PickUpReq";
-
+import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop/:id",
-		//loader: () => fetch("/shop.json"),
+        //loader: () => fetch("/shop.json"),
         element: <SingleShopProduct></SingleShopProduct>,
       },
       {
