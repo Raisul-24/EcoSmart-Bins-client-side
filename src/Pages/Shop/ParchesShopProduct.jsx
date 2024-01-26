@@ -1,11 +1,8 @@
-
-
 const ParchesShopProduct = () => {
-	return (
-		<div>
-			
-		</div>
-	);
+ 
+  return (
+ 
+  );
 };
 
 export default ParchesShopProduct;
