@@ -24,6 +24,7 @@ const Navbar = () => {
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/shop"}>Shop</NavLink></li>
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li>
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/dashboard"}>Dashboard</NavLink></li>
+        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to="/pickUpReq">PickUp Request</NavLink></li>
     </>
     return (
         <div className="sticky bg-white bg-opacity-90 top-0 z-20">
