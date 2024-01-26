@@ -5,11 +5,8 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../axios/axiosPublic";
 
 
-
-
-
 const FeedbackAndRatings = () => {
-
+   
     const axiosPublic = useAxiosPublic()
 
     const {
@@ -18,19 +15,17 @@ const FeedbackAndRatings = () => {
         reset,
         formState: { errors },
       } = useForm();
-    
 
 
     const onSubmit = (data) =>{
         // console.log(data);
-     
+
         const reviewItem = {
-            
+
              title: data.title,
              feedback: data.feedback,
              rating:parseInt(data.rating) ,
              date: data.date,
-            
 
         }
 
@@ -49,12 +44,6 @@ const FeedbackAndRatings = () => {
           }
         })
       }
-       
-      
-   
-
-
-  
 
   return (
     <div>
@@ -112,6 +101,7 @@ const FeedbackAndRatings = () => {
             <span className="text-red-600">rating is required</span>
           )}
         </div>
+    
         <div className="form-control flex-1">
           <label className="label">
             <span className="label-text text-lg font-medium">Date</span>
