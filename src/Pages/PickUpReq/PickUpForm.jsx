@@ -59,8 +59,8 @@ const PickUpForm = () => {
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12 ">
         <div className="bg-white max-w-4xl mx-auto w-full">
           <div className="grid grid-cols-6 h-full">
-            <div className="bg-[#3A9E1E] p-10 col-span-2">
-              <h2 className="mb-10 font-bold text-2xl text-white before:block before:absolute before:bg-sky-300 before:content[''] relative before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
+            <div className="bg-[#3A9E1E] p-2 md:p-10 col-span-6 md:col-span-2">
+              <h2 className=" mb-10 font-bold text-sm md:text-2xl text-white before:block before:absolute before:bg-sky-300 before:content[''] relative before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
                 Trusted And Reliable Waste Collection!
               </h2>
               <p className="font-bold text-white py-8 border-b border-blue-700">
@@ -88,7 +88,7 @@ const PickUpForm = () => {
                 </span>
               </p>
             </div>
-            <div className="bg-blue-50 p-14 col-span-4">
+            <div className="bg-blue-50 p-2 md:p-14 col-span-6 md:col-span-4">
               <h2 className="mb-14 font-bold text-4xl text-blue-900 before:block before:absolute before:bg-sky-300 before:content[''] relative before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
                 Request Pickup
               </h2>
