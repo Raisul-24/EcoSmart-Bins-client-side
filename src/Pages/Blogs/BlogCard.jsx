@@ -7,19 +7,20 @@ import toast from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const BlogCard = ({ blog }) => {
+  const { _id, image, name, shortDescription } = blog || {};
+
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
 
   const handleLikeClick = () => {
-    console.log("Like clicked");
     setLiked(true);
     setDisliked(false);
     showToast("Liked");
   };
 
   const handleDislikeClick = () => {
-    console.log("Dislike clicked");
     setDisliked(true);
     setLiked(false);
     showToast("Disliked");
@@ -41,7 +42,7 @@ const BlogCard = ({ blog }) => {
         <div className="">
           <img
             className="relative h-60 w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
-            src={blog?.image}
+            src={image}
             alt=""
           />
           <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 ">
@@ -68,28 +69,55 @@ const BlogCard = ({ blog }) => {
               </button>
               <ToastContainer />
             </div>
-            <p className="flex justify-center items-center gap-2 text-black">
+
+            <div className="drawer drawer-end">
+              <input
+                id="my-drawer-4"
+                type="checkbox"
+                className="drawer-toggle"
+              />
+              <div className="drawer-content">
+                {/* Page content here */}
+                <label
+                  htmlFor="my-drawer-4"
+                  className="drawer-button btn flex justify-center items-center ml-32 border-0  text-black"
+                >
+                  <span className="text-green-700">
+                    <FaComment />
+                  </span>
+                  Comment
+                </label>
+              </div>
+              <div className="drawer-side">
+                <label
+                  htmlFor="my-drawer-4"
+                  aria-label="close sidebar"
+                  className="drawer-overlay"
+                ></label>
+                <div className=" p-4 w-96 min-h-full bg-white text-base-content">
+                  {/* Sidebar content here */}
+                  
+                </div>
+              </div>
+            </div>
+
+            {/*<p className="flex justify-center items-center gap-2 text-black">
               <span className="text-green-700">
                 <FaComment />
               </span>
-              {blog?.commentNumber} Comment
-            </p>
+              Comment
+            </p>*/}
           </div>
 
-          <h5
-            className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9"
-          >
-            {blog?.name}
+          <h5 className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9">
+            {name}
           </h5>
 
-
-          <p className="mb-3 font-normal text-[#370000]">
-            {blog?.shortDescription}
-          </p>
+          <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>
           <div className="flex mt-auto justify-center items-center">
             <button className="flex mt-auto w-full text-center ">
               <Link
-                to={`/blog/${blog?._id}`}
+                to={`/blog/${_id}`}
                 className="btn btn-ghost flex  bg-green-600 hover:bg-green-800 my-6 w-full text-white"
               >
                 Read More
