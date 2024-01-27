@@ -5,11 +5,11 @@ const ChoseUs = () => {
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5  my-12 md:flex justify-start items-center gap-12 bg-white">
       <div className="">
-        <img className="h-[700px] w-[600px] rounded-xl" src={img} alt="" />
+        <img className="h-[400px] md:h-[700px] md:w-[370px] lg:w-[600px] rounded-xl" src={img} alt="" />
       </div>
       <div className="flex-[1]">
         <h5 className="text-2xl text-green-600 font-bold">Why Choose Us</h5>
-        <h1 className="text-5xl font-bold text-black py-6">
+        <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-black py-6">
           Why choose our EcoSmart Bins services
         </h1>
         <p className="text-black">
@@ -17,15 +17,15 @@ const ChoseUs = () => {
           approach to waste management. Our innovative solutions are designed to
           revolutionize the way you handle waste, providing efficiency,
           cost-effectiveness, and environmental responsibility.
-          <br />
-          <br />
+          {/* <br />
+          {/* <br />
           With EcoSmart Bins, you can benefit from state-of-the-art sensor
           technology that enables real-time monitoring of waste levels. This not
           only optimizes collection routes but also reduces operational costs by
           ensuring that bins are emptied only when necessary. Our smart waste
           management system is tailored to meet the unique needs of businesses
-          and municipalities, promoting a cleaner and greener environment.
-        </p>
+          and municipalities, promoting a cleaner and greener environment.  */}
+        </p> 
         <div className="text-black">
           <div className="pt-4">
             <h5 className="font-bold text-xl">Optimized Collection Routes</h5>

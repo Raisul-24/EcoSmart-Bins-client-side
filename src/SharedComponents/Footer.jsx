@@ -45,9 +45,9 @@ const Footer = () => {
         </nav> 
         <nav>
           <header className="footer-title">Company</header> 
-          <a className="group relative cursor-pointer inline-block">About us
+          <Link to={'/about'} className="group relative cursor-pointer inline-block">About us
           <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
+          </Link>
           <Link to="/contact"><a className="group relative cursor-pointer inline-block">Contact 
           <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
           </a></Link>

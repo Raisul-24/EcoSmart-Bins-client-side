@@ -39,8 +39,8 @@ const Feedback = () => {
     <div className="bg-gray-50">
       <div className="md:flex  items-center">
         <div className="flex-1 w-5/6 p-10">
-          <h2 className="text-3xl lg:text-5xl font-bold">What Our Clients Say About Us</h2>
-          <p className="text-xl md:w-4/5  my-5">
+          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold">What Our Clients Say About Us</h2>
+          <p className="text-medium md:text-xl md:w-4/5  my-5">
             We Devote Time And Effort To Provide Quality Services.
           </p>
           <span className="text-amber-500 text-5xl">
@@ -60,7 +60,7 @@ const Feedback = () => {
         >
           {reviews?.map((review) => (
             <SwiperSlide key={review?._id}>
-              <div className="mx-10 md:ml-5 md:my-16  p-5  border shadow-lg shadow-brand-color  flex flex-col  text-center items-center ">
+              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16  p-5  border shadow-lg shadow-brand-color  flex flex-col  text-center items-center ">
                 <Rating
                   style={{ maxWidth: 180 }}
                   itemStyles={customStyles}
