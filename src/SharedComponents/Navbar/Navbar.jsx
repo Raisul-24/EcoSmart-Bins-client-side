@@ -22,8 +22,10 @@ const Navbar = () => {
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/contact"}>Contact Us</NavLink></li>
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/blogs"}>Blogs</NavLink></li>
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/shop"}>Shop</NavLink></li>
-        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li>
-        <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/dashboard"}>Dashboard</NavLink></li>
+        {/* <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/about"}>About Us</NavLink></li> */}
+        {
+            user && <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to={"/dashboard"}>Dashboard</NavLink></li>
+        }
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to="/pickUpReq">PickUp Request</NavLink></li>
     </>
     return (
@@ -50,11 +52,11 @@ const Navbar = () => {
                     {
                         user ?
                         <btn onClick={handleLogOut} 
-                        className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                        className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
                         >Logout</btn>
                         :
                         <btn> <Link to={'/login'}
-                            className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                            className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
                             >Log in</Link></btn>
                     }
                 </div>
