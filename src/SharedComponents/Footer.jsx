@@ -19,6 +19,28 @@ const Footer = () => {
             We recognize that the right service for home is most important chosie, Trashco can provide the waste collection you need for your home, with trusted service.
             </p>
         </aside> 
+
+        <nav>
+        <header className="footer-title">Company</header> 
+          <Link to={'/about'} className="group relative cursor-pointer inline-block">About us
+          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+          </Link>
+          <Link to="/contact"><a className="group relative cursor-pointer inline-block">Contact 
+          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+          </a></Link>
+          <a className="group relative cursor-pointer inline-block">Services
+          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+          </a>
+          <a className="group relative cursor-pointer inline-block">Blogs
+          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+          </a>
+          <h2 className="footer-title font-bold my-2" >Working Hours</h2>
+          <p>Mon - Fri: 9:00AM - 6:00PM</p>
+          <p>Sat - Sun: 8:00AM - 4:00PM</p>
+          
+        </nav> 
+
+
         <nav>
           <header className="footer-title">Services</header> 
           <a className="group relative cursor-pointer inline-block">Recycling Programs
@@ -43,25 +65,7 @@ const Footer = () => {
           <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
           </a>
         </nav> 
-        <nav>
-          <header className="footer-title">Company</header> 
-          <Link to={'/about'} className="group relative cursor-pointer inline-block">About us
-          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </Link>
-          <Link to="/contact"><a className="group relative cursor-pointer inline-block">Contact 
-          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a></Link>
-          <a className="group relative cursor-pointer inline-block">Services
-          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">Blogs
-          <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <h2 className="footer-title font-bold my-2" >Working Hours</h2>
-          <p>Mon - Fri: 9:00AM - 6:00PM</p>
-          <p>Sat - Sun: 8:00AM - 4:00PM</p>
-          
-        </nav> 
+      
         <nav>
           <header className="footer-title">Get In Touch</header> 
           <p className="flex items-center gap-2"><FaLocationDot className="text-brand-color text-xl"></FaLocationDot> New Hyde Park, NY 11040</p>
