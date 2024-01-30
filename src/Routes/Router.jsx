@@ -28,6 +28,7 @@ import ManageProducts from "./../Pages/Dashboard/Admin dashboard/ManageProducts"
 import PickUpReq from "../Pages/PickUpReq/PickUpReq";
 import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 import ParchesShopProduct from "../Pages/Shop/ParchesShopProduct";
+import UpdateProducts from "../Components/UpdateProducts/UpdateProducts";
 
 const router = createBrowserRouter([
   {
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addProducts",
         element: <AddProducts></AddProducts>,
+      },
+      {
+        path: "/dashboard/updateProducts/:id",
+        element: <UpdateProducts></UpdateProducts>,
       },
       {
         path: "/dashboard/manageProducts",
