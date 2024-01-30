@@ -3,15 +3,29 @@ import useGetService from "../../../API/ServiceApi/useGetService";
 import useAxiosPrivate from "../../../axios/axiosprivate";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const ManageServices = () => {
   const axios = useAxiosPrivate();
   const [data, dataLoaing, refetch] = useGetService();
 
   const DeleteFun = (id) => {
-    axios
-      .delete(`/services/${id}`)
-      .then(() => refetch())
-      .then(() => toast.success("the Service Delete Successfully"));
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3A9E1E",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+        .delete(`/services/${id}`)
+        .then(() => refetch())
+        .then(() => toast.success("the Service Delete Successfully"));
+      }
+    });
   };
   return (
     <div>
@@ -71,7 +85,7 @@ const ManageServices = () => {
                   </td>
                   <td>
                     <button
-                      onClick={() => DeleteFun(item)}
+                      onClick={() => DeleteFun(item?._id)}
                       className="btn rounded-lg btn-sm bg-red-600 hover:bg-red-700 text-white"
                     >
                       <FaTrash></FaTrash>
