@@ -85,9 +85,13 @@ const ManageProducts = () => {
                     </Link>
                   </td>
                   <td>
-                    <button className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white">
+                  <Link
+                      to={`/dashboard/updateProducts/${item?._id}`}
+                      className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
+                    >
                       Update
-                    </button>
+                    </Link>
+                  
                   </td>
                   <td>
                     <button

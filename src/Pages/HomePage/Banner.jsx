@@ -46,7 +46,7 @@ const Banner = () => {
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold"
+                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
                 >
                   Best waste pickup solutaions
                 </h1>
