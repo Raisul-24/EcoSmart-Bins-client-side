@@ -51,13 +51,13 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                        <btn onClick={handleLogOut} 
+                        <button onClick={handleLogOut} 
                         className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
-                        >Logout</btn>
+                        >Logout</button>
                         :
-                        <btn> <Link to={'/login'}
+                        <button> <Link to={'/login'}
                             className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
-                            >Log in</Link></btn>
+                            >Log in</Link></button>
                     }
                 </div>
             </div>

@@ -1,12 +1,18 @@
 import toast from "react-hot-toast";
-import useGetService from "../../../API/ServiceApi/useGetService";
 import useAxiosPrivate from "../../../axios/axiosprivate";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchService } from "../../../Redux/ServiceSlice";
+import { useEffect } from "react";
 const ManageServices = () => {
   const axios = useAxiosPrivate();
-  const [data, dataLoaing, refetch] = useGetService();
+  const dispatch = useDispatch()
+  const {service:data, isLoading:dataLoaing} = useSelector((state)=> state.services)
+  useEffect(()=>{
+    dispatch(fetchService())
+  },[dispatch])
 
   const DeleteFun = (id) => {
 
@@ -22,7 +28,7 @@ const ManageServices = () => {
       if (result.isConfirmed) {
         axios
         .delete(`/services/${id}`)
-        .then(() => refetch())
+        .then(() => dispatch(fetchService()))
         .then(() => toast.success("the Service Delete Successfully"));
       }
     });

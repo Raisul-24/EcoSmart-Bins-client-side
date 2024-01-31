@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
-import useGetService from "../../API/ServiceApi/useGetService";
 import ServiceCard from "../ServiceCard/ServiceCard";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchService } from "../../Redux/ServiceSlice";
 
 const Service = () => {
-  const [data, dataLoaing] = useGetService(6);
+  const dispatch = useDispatch()
+  const {service:data, isLoading:dataLoaing} = useSelector((state)=> state.services)
+  useEffect(()=>{
+    dispatch(fetchService(6))
+  },[dispatch])
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5">
       <div data-aos="fade-up" data-aos-duration="700" className="flex justify-center">

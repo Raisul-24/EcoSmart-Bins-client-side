@@ -4,5 +4,7 @@ const axiosPublic = axios.create({
   baseURL: "http://localhost:8085",
   // baseURL: 'https://eco-smart-bin.vercel.app',
 });
-
-export default axiosPublic;
+const useAxiosPublic = () => {
+  return axiosPublic;
+};
+export default useAxiosPublic;
