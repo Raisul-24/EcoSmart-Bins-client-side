@@ -7,9 +7,9 @@ const ManageServices = () => {
   const axios = useAxiosPrivate();
   const [data, dataLoaing, refetch] = useGetService();
 
-  const DeleteFun = (id) => {
+  const DeleteFun = (item) => {
     axios
-      .delete(`/services/${id}`)
+      .delete(`/services/${item._id}`)
       .then(() => refetch())
       .then(() => toast.success("the Service Delete Successfully"));
   };

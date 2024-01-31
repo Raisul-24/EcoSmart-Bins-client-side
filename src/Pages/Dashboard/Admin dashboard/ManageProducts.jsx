@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../../axios/axiosPublic";
 import useProducts from "../../../Hooks/useProducts";
 import { FaTrash } from "react-icons/fa";
+import useAxiosPrivate from "../../../axios/axiosprivate";
 
 const ManageProducts = () => {
   const [products, loading, refetch] = useProducts();
-  const axiosPublic = useAxiosPublic();
+  const axiosPrivate = useAxiosPrivate()
 
   const handleDeleteItem = (item) => {
     Swal.fire({
@@ -19,7 +19,8 @@ const ManageProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosPublic.delete(`/products?/${item._id}`).then((res) => {
+        axiosPrivate.delete(`/products/${item._id}`)
+        .then((res) => {
           console.log(res.data);
           if (res.data.deletedCount > 0) {
             refetch();
