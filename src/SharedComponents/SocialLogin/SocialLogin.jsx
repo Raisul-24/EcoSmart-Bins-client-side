@@ -19,12 +19,12 @@ const SocialLogin = () => {
       googleSignIn()
          .then(result => {
             toast.success('Sign In with Google Successfully');
-            console.log(result.user);
+            // console.log(result.user);
             const userInfo = {
                email: result.user?.email,
                name: result.user?.displayName
             }
-            // axiosPublic.post('/users', userInfo)
+            axiosPublic.post('/users', userInfo)
                .then(res => {
                   console.log(res.data);
                   if (location.state && location.state.from) {
@@ -40,12 +40,12 @@ const SocialLogin = () => {
       githubSignIn()
          .then(result => {
             toast.success('Sign In with Github Successfully');
-            console.log(result.user);
+            // console.log(result.user);
             const userInfo = {
                email: result.user?.email,
                name: result.user?.displayName
             }
-            // axiosPublic.post('/users', userInfo)
+            axiosPublic.post('/users', userInfo)
                .then(res => {
                   console.log(res.data);
                   if (location.state && location.state.from) {
