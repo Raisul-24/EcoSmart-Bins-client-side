@@ -36,7 +36,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className=" menu-sm dropdown-content mt-3 z-[1] p-2  shadow bg-white rounded-box w-52">
+                        <ul tabIndex={0} className="bg-white bg-opacity-90 menu-sm dropdown-content mt-3 z-[1] p-2 shadow space-y-2 rounded-box w-52">
                             {navLinks}
                         </ul>
                     </div>
@@ -52,12 +52,12 @@ const Navbar = () => {
                     {
                         user ?
                         <btn onClick={handleLogOut} 
-                        className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition-all duration-1000"
+                        className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
                         >Logout</btn>
                         :
-                        <btn> <Link to={'/login'}
+                        <button> <Link to={'/login'}
                             className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
-                            >Log in</Link></btn>
+                            >Log in</Link></button>
                     }
                 </div>
             </div>
