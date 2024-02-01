@@ -5,12 +5,20 @@ import useAxiosPublic from "../../axios/axiosPublic";
 const Shop = () => {
   const [shop, setShop] = useState([]);
   const axiosPublic = useAxiosPublic();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axiosPublic.get("/products").then((res) => {
       setShop(res.data);
+      setIsLoading(false);
     });
   }, [axiosPublic]);
+  if (isLoading)
+    return (
+      <div className="text-center py-20">
+        <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+      </div>
+    );
 
   return (
     <div>

@@ -1,9 +1,15 @@
-import useGetService from "../../API/ServiceApi/useGetService";
+import { useDispatch, useSelector } from "react-redux";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import ServiceCard from "../../Components/ServiceCard/ServiceCard";
+import { fetchService } from "../../Redux/ServiceSlice";
+import { useEffect } from "react";
 
 const Services = () => {
-  const [data, dataLoaing] = useGetService();
+  const dispatch = useDispatch()
+  const {service:data, isLoading:dataLoaing} = useSelector((state)=> state.services)
+  useEffect(()=>{
+    dispatch(fetchService(6))
+  },[dispatch])
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
       <SectionTitle
