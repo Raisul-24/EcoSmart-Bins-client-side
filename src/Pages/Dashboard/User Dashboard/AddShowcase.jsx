@@ -6,16 +6,37 @@ import send from "./send.json"
 import img from "../../../assets/images/recycle.jpg"
 import { useEffect } from "react";
 import Aos from "aos";
+import toast from "react-hot-toast";
+import useAxiosPublic from "../../../axios/axiosPublic";
 
 
 const AddShowcase = () => {
+    const axiosPublic = useAxiosPublic()
+
     useEffect(() => {
         Aos.init({
           duration: 1000,
           offset: 200,
         });
       }, []);
-    const { register } = useForm();
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = (data) => {
+        const showcaseData = {
+          name: data.name,
+          img: data.img,
+          title: data.title,
+          date: data.date,
+        }
+
+        axiosPublic.post("/showcase", showcaseData)
+          .then((res) => {
+            console.log(res.data)
+            if (data.insertedId){
+             reset()
+            toast.success("New Art work Added Successfully");
+            }
+          });
+      };
     return (
         <div>
             <SectionTitle
@@ -48,9 +69,15 @@ const AddShowcase = () => {
 
                 {/* form */}
                 <form
-                    // onSubmit={handleSubmit(onSubmit)}
+                    onSubmit={handleSubmit(onSubmit)}
                     className="max-w-xl p-5 shadow-2xl rounded-xl mx-auto space-y-4"
                 >
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        className="input input-bordered w-full"
+                        {...register("name", { required: true })}
+                    />
                     <input
                         type="text"
                         placeholder="Add Image(URL)"
@@ -63,11 +90,12 @@ const AddShowcase = () => {
                         className="input input-bordered w-full"
                         {...register("title", { required: true })}
                     />
-                    <textarea
-                        placeholder="Add Drescaption"
-                        className="input input-bordered w-full min-h-36"
-                        {...register("drescaption", { required: true })}
-                    ></textarea>
+                    <input
+                        type="date"
+                        className="input input-bordered w-full"
+                        {...register("date", { required: true })}
+                    />
+                   
                     <input
                         type="submit"
                         className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-400 lg:text-xl capitalize text-white hover:bg-gradient-to-r hover:from-green-400 hover:to-brand-color w-full"
