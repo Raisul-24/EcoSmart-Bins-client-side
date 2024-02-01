@@ -17,9 +17,7 @@ const CartRow = ({ item, index }) => {
       <td>${price}</td>
 
       <td>
-        <button className="btn rounded-lg btn-sm bg-black hover:bg-black text-white">
-          Pending
-        </button>
+        <p className="badge badge-neutral border-brand-color">Pending</p>
       </td>
 
       <td>
