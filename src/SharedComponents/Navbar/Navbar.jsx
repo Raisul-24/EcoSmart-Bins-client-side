@@ -30,7 +30,7 @@ const Navbar = () => {
     </>
     return (
         <div className="sticky bg-white bg-opacity-90 top-0 z-20">
-            <div className="navbar bg-base-100 lg:px-10 lg:py-7 drop-shadow-md">
+            <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,9 +51,9 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                        <button onClick={handleLogOut} 
+                        <btn onClick={handleLogOut} 
                         className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
-                        >Logout</button>
+                        >Logout</btn>
                         :
                         <button> <Link to={'/login'}
                             className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
