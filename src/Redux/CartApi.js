@@ -6,7 +6,7 @@ export const GetCartsData = async () => {
   console.log(response.data);
   return response.data;
 };
-export default getCartsData;
+export default GetCartsData;
 
 //import useAxiosPublic from "../axios/axiosPublic";
 //
