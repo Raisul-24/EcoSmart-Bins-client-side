@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { GetCartsData } from "./CartApi";
+
+import GetCartsData from "./CartApi";
+
 
 export const fetchCart = createAsyncThunk("Carts/fetchCartsData", async () => {
   const carts = await GetCartsData();
@@ -36,5 +38,4 @@ const cartSlice = createSlice({
   },
 });
 
-//export const { setItems } = cartSlice.actions;
 export default cartSlice.reducer;
