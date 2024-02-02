@@ -26,8 +26,9 @@ const ParchesShopProduct = () => {
     const form = event.target;
     const email = form.email.value;
     const price = form.price.value;
-    const date = form.date.value;
+    const date = new Date();
     const quantity = form.quantity.value;
+    const status = form.status.value;
 
     const productValue = {
       _id,
@@ -37,6 +38,7 @@ const ParchesShopProduct = () => {
       price,
       date,
       img,
+      status,
     };
 
     //console.log(productValue);
@@ -82,6 +84,7 @@ const ParchesShopProduct = () => {
             <label className="input-group input-group-vertical ">
               <input
                 defaultValue={product?.title}
+                readOnly
                 type="text"
                 name="name"
                 placeholder="Enter food name"
@@ -94,6 +97,7 @@ const ParchesShopProduct = () => {
               <input
                 type="text"
                 defaultValue={product?.price}
+                readOnly
                 name="price"
                 placeholder="Enter food price"
                 className="input input-bordered font-sans w-full"
@@ -113,6 +117,18 @@ const ParchesShopProduct = () => {
               />
             </label>
 
+            <label className="label ">product status</label>
+            <label className="input-group input-group-vertical ">
+              <input
+                readOnly
+                type="text"
+                defaultValue="pending"
+                name="status"
+                placeholder="Enter Food status"
+                className="input input-bordered w-full"
+              />
+            </label>
+
             <label className="label ">Buyer Email</label>
             <label className="input-group input-group-vertical ">
               <input
@@ -126,15 +142,6 @@ const ParchesShopProduct = () => {
             </label>
           </div>
         </div>
-        <label className="label ">Order Date</label>
-        <label className="input-group input-group-vertical ">
-          <input
-            type="date"
-            name="date"
-            placeholder="Enter Order Date"
-            className="input input-bordered w-full"
-          />
-        </label>
 
         <input
           className="w-full border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color mt-8"

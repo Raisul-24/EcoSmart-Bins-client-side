@@ -11,8 +11,8 @@ import {
 } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
-import useAxiosPublic from "../axios/axiosPublic";
 import app from "../Firebase/firebase.config";
+import useAxiosPublic from "../axios/axiosPublic";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -47,32 +47,28 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
-       setUser(currentUser);
-       console.log('current user', currentUser);
-       if (currentUser) {
-          // get token and store client
-          const userInfo = { email: currentUser.email };
-          axiosPublic.post('/jwt', userInfo)
-             .then(res => {
-                if (res.data.token) {
-                   localStorage.setItem('access-token', res.data.token);
-                   setLoading(false);
-                }
-             })
-       }
-       else {
-          // todo: remove token (if store in client side, local storage, caching, in memory)
-          localStorage.removeItem('access-token');
-          setLoading(false);
-       }
-
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log("current user", currentUser);
+      if (currentUser) {
+        // get token and store client
+        const userInfo = { email: currentUser.email };
+        axiosPublic.post("/jwt", userInfo).then((res) => {
+          if (res.data.token) {
+            localStorage.setItem("access-token", res.data.token);
+            setLoading(false);
+          }
+        });
+      } else {
+        // todo: remove token (if store in client side, local storage, caching, in memory)
+        localStorage.removeItem("access-token");
+        setLoading(false);
+      }
     });
     return () => {
-       return unsubscribe();
-    }
- }, [axiosPublic]
-  )
+      return unsubscribe();
+    };
+  }, [axiosPublic]);
   const authInfo = {
     user,
     loading,

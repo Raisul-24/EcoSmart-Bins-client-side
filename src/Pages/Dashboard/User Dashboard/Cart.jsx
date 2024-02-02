@@ -42,7 +42,7 @@ const Cart = () => {
                 <th>Image</th>
                 <th>Products Name</th>
                 <th>Price</th>
-                <th>State</th>
+                <th>Status</th>
                 <th>Cancel Action</th>
                 <th>Pay Action</th>
               </tr>
