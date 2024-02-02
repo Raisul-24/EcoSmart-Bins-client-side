@@ -28,6 +28,7 @@ const Navbar = () => {
         }
         <li className="text-xl hover:text-brand-color font-semibold"> <NavLink to="/pickUpReq">PickUp Request</NavLink></li>
     </>
+   
     return (
         <div className="sticky bg-white bg-opacity-90 top-0 z-20">
             <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
@@ -52,11 +53,11 @@ const Navbar = () => {
                     {
                         user ?
                         <btn onClick={handleLogOut} 
-                        className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                        className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r "
                         >Logout</btn>
                         :
                         <button> <Link to={'/login'}
-                            className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color"
+                            className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
                             >Log in</Link></button>
                     }
                 </div>

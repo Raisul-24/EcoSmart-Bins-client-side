@@ -13,8 +13,8 @@ const Service = () => {
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5">
       
-        <h2 className="text-center pt-5 text-4xl font-bold  text-[#101a30] mb-5">Our Services</h2>
-        <p className="text-xl text-center text-brand-color font-semibold mb-10">What We Do</p>
+        <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">Our Services</h2>
+        <p className="text-xl text-center text-brand-color font-semibold mb-10 lg:mb-24">Comprehensive Waste Solutions</p>
      
       {dataLoaing ? (
         <div className="text-center">
