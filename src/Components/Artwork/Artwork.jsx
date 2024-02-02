@@ -46,7 +46,7 @@ const Artwork = () => {
                         slidesPerView: 2,
                     },
                     1024: {
-                        slidesPerView: 3,
+                        slidesPerView: 3.1,
                     },
                 }}
                 spaceBetween={5}
