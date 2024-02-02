@@ -20,11 +20,11 @@ const ManageShowcase = () => {
           });
       }, [axiosPublic]);
 
-      const handleStatus = (data) =>{
-        axiosPublic.post("/artworks", showcase)
+      const handleStatus = (name, img, title, date, oldId) =>{
+        axiosPublic.post("/artworks", {name, img, title, date, oldId})
         .then((res) => {
             console.log(res.data)
-            if (data.insertedId) {
+            if (res.data.insertedId) {
                 
                 toast.success("New Art work Added Successfully");
             }
@@ -98,7 +98,7 @@ const ManageShowcase = () => {
                   <td>{item.title}</td>
                   <td>
                     <button
-                    onClick={() => handleStatus()}
+                    onClick={() => handleStatus(item.name, item.img, item.title, item.date, item._id)}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
                       Add</button>
