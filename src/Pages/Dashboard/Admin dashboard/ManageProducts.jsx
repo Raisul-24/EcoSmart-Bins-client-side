@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../../axios/axiosPublic";
 import useProducts from "../../../Hooks/useProducts";
 import { FaTrash } from "react-icons/fa";
+import useAxiosPrivate from "../../../axios/axiosprivate";
 
 const ManageProducts = () => {
   const [products, loading, refetch] = useProducts();
-  const axiosPublic = useAxiosPublic();
+  const axiosPrivate = useAxiosPrivate()
 
   const handleDeleteItem = (item) => {
     Swal.fire({
@@ -14,12 +14,13 @@ const ManageProducts = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#3A9E1E",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosPublic.delete(`/products?/${item._id}`).then((res) => {
+        axiosPrivate.delete(`/products/${item._id}`)
+        .then((res) => {
           console.log(res.data);
           if (res.data.deletedCount > 0) {
             refetch();
@@ -85,9 +86,13 @@ const ManageProducts = () => {
                     </Link>
                   </td>
                   <td>
-                    <button className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white">
+                  <Link
+                      to={`/dashboard/updateProducts/${item?._id}`}
+                      className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
+                    >
                       Update
-                    </button>
+                    </Link>
+                  
                   </td>
                   <td>
                     <button

@@ -28,6 +28,8 @@ import ManageProducts from "./../Pages/Dashboard/Admin dashboard/ManageProducts"
 import PickUpReq from "../Pages/PickUpReq/PickUpReq";
 import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 import ParchesShopProduct from "../Pages/Shop/ParchesShopProduct";
+import UpdateProducts from "../Components/UpdateProducts/UpdateProducts";
+import ManageShowcase from "../Pages/Dashboard/Admin dashboard/ManageShowcase";
 
 const router = createBrowserRouter([
   {
@@ -116,12 +118,20 @@ const router = createBrowserRouter([
         element: <AddProducts></AddProducts>,
       },
       {
+        path: "/dashboard/updateProducts/:id",
+        element: <UpdateProducts></UpdateProducts>,
+      },
+      {
         path: "/dashboard/manageProducts",
         element: <ManageProducts></ManageProducts>,
       },
       {
         path: "/dashboard/managePickup",
         element: <ManagePickup></ManagePickup>,
+      },
+      {
+        path: "/dashboard/manageShowcase",
+        element: <ManageShowcase></ManageShowcase>,
       },
 
       // user dashboard

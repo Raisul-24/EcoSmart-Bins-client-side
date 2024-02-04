@@ -3,11 +3,12 @@ import SocialLogin from "../../SharedComponents/SocialLogin/SocialLogin";
 import { useForm } from "react-hook-form"
 import UseAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
+import useAxiosPublic from "../../axios/axiosPublic";
 
 const Registration = () => {
    const { register, handleSubmit, formState: { errors }, } = useForm();
    const { createUser } = UseAuth();
-
+   const axiosPublic = useAxiosPublic();
    const navigate = useNavigate();
    const location = useLocation();
 
@@ -20,7 +21,7 @@ const Registration = () => {
             name: data.name,
             phone: data.phone
          }
-         // axiosPublic.post('/users', userInfo)
+        axiosPublic.post('/users', userInfo)
          // console.log("created");
          toast.success('Register In Successfully!!', { id: toastId });
          if (location.state && location.state.from) {
