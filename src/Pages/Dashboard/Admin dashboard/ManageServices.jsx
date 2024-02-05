@@ -1,17 +1,37 @@
 import toast from "react-hot-toast";
-import useGetService from "../../../API/ServiceApi/useGetService";
 import useAxiosPrivate from "../../../axios/axiosprivate";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchService } from "../../../Redux/ServiceSlice";
+import { useEffect } from "react";
 const ManageServices = () => {
   const axios = useAxiosPrivate();
-  const [data, dataLoaing, refetch] = useGetService();
+  const dispatch = useDispatch()
+  const {service:data, isLoading:dataLoaing} = useSelector((state)=> state.services)
+  useEffect(()=>{
+    dispatch(fetchService())
+  },[dispatch])
 
-  const DeleteFun = (item) => {
-    axios
-      .delete(`/services/${item._id}`)
-      .then(() => refetch())
-      .then(() => toast.success("the Service Delete Successfully"));
+  const DeleteFun = (id) => {
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3A9E1E",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+        .delete(`/services/${id}`)
+        .then(() => dispatch(fetchService()))
+        .then(() => toast.success("the Service Delete Successfully"));
+      }
+    });
   };
   return (
     <div>
@@ -71,7 +91,7 @@ const ManageServices = () => {
                   </td>
                   <td>
                     <button
-                      onClick={() => DeleteFun(item)}
+                      onClick={() => DeleteFun(item?._id)}
                       className="btn rounded-lg btn-sm bg-red-600 hover:bg-red-700 text-white"
                     >
                       <FaTrash></FaTrash>
