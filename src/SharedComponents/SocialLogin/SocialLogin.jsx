@@ -26,7 +26,7 @@ const SocialLogin = () => {
             }
             axiosPublic.post('/users', userInfo)
                .then(res => {
-                  console.log(res.data);
+                  // console.log(res.data);
                   if (location.state && location.state.from) {
                      navigate(location.state.from.pathname)
                   }
@@ -47,7 +47,7 @@ const SocialLogin = () => {
             }
             axiosPublic.post('/users', userInfo)
                .then(res => {
-                  console.log(res.data);
+                  // console.log(res.data);
                   if (location.state && location.state.from) {
                      navigate(location.state.from.pathname)
                   }
