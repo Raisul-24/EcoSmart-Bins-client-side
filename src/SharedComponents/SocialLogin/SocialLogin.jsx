@@ -17,23 +17,29 @@ const SocialLogin = () => {
 
    const handleGoogleSignIn = () => {
       googleSignIn()
-         .then(result => {
+         .then(() => {
             toast.success('Sign In with Google Successfully');
             // console.log(result.user);
-            const userInfo = {
-               email: result.user?.email,
-               name: result.user?.displayName
+            if (location.state && location.state.from) {
+               navigate(location.state.from.pathname)
             }
-            axiosPublic.post('/users', userInfo)
-               .then(res => {
-                  console.log(res.data);
-                  if (location.state && location.state.from) {
-                     navigate(location.state.from.pathname)
-                  }
-                  else {
-                     navigate(from, { replace: true });
-                  }
-               })
+            else {
+               navigate(from, { replace: true });
+            }
+            // const userInfo = {
+            //    email: result.user?.email,
+            //    name: result.user?.displayName
+            // }
+            // axiosPublic.post('/users', userInfo)
+            //    .then(res => {
+            //       console.log(res.data);
+            //       if (location.state && location.state.from) {
+            //          navigate(location.state.from.pathname)
+            //       }
+            //       else {
+            //          navigate(from, { replace: true });
+            //       }
+            //    })
          })
    }
    const handleGithubSignIn = () => {
