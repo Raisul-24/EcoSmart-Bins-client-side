@@ -3,9 +3,10 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Map from "../../Components/Map/Map";
+import ExampleDBPedia from "../ChatBot/ChatBot";
 
 const ContactUs = () => {
-    const form = useRef();
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -31,8 +32,8 @@ const ContactUs = () => {
         (result) => {
           console.log(result.text);
           toast.success("Message sent successfully!");
-           // Reset the form after successful submission
-        form.current.reset();
+          // Reset the form after successful submission
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
@@ -40,9 +41,9 @@ const ContactUs = () => {
         }
       );
   };
-    return (
-        <div>
-              <SectionTitle
+  return (
+    <div>
+      <SectionTitle
         heading="Contact with Us"
         subHeading="How To Contact"
       ></SectionTitle>
@@ -58,7 +59,9 @@ const ContactUs = () => {
                   GET IN TOUCH WITH US
                 </h2>
                 <p className="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9">
-                Whether it is a curious inquiry, a problem to solve, or a topic to discuss, share your thoughts, and let us engage in a meaningful conversation!
+                  Whether it is a curious inquiry, a problem to solve, or a
+                  topic to discuss, share your thoughts, and let us engage in a
+                  meaningful conversation!
                 </p>
                 <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
@@ -80,7 +83,7 @@ const ContactUs = () => {
                       Our Location
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
-                    Jln Gombak, 53100 Kuala Lumpur, Selangor. Malaysia
+                      Jln Gombak, 53100 Kuala Lumpur, Selangor. Malaysia
                     </p>
                   </div>
                 </div>
@@ -193,6 +196,9 @@ const ContactUs = () => {
                     </button>
                   </div>
                 </form>
+                <div className="my-20">
+                  <ExampleDBPedia />
+                </div>
                 <div>
                   <span className="absolute -top-10 -right-9 z-[-1]">
                     <svg
@@ -1006,9 +1012,9 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-      <Map />   
-        </div>
-    );
+      <Map />
+    </div>
+  );
 };
 
 export default ContactUs;

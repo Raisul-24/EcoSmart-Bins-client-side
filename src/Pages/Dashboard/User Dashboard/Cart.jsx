@@ -2,23 +2,24 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCart } from "../../../Redux/cartSlice";
 import CartRow from "./CartRow";
+import useAuth from "../../../Hooks/UseAuth";
 
 const Cart = () => {
   const dispatch = useDispatch();
-
+  const { user } = useAuth();
   const { carts, isLoading, isError, error } = useSelector(
     (state) => state.carts
   );
 
   useEffect(() => {
-    dispatch(fetchCart());
-  }, [dispatch]);
+    dispatch(fetchCart(user?.email));
+  }, [dispatch, user?.email]);
 
   let content;
-
   if (isLoading) {
-    content = <p>Loading...</p>;
+    return;
   }
+  console.log(carts);
 
   if (!isLoading && isError) {
     content = <div className="col-span-12">{error}</div>;

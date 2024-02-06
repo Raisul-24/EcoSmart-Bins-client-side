@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const BlogCard = ({ blog }) => {
   const { _id, image, name, shortDescription } = blog || {};
-
+ 
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
 
@@ -96,17 +96,9 @@ const BlogCard = ({ blog }) => {
                 ></label>
                 <div className=" p-4 w-96 min-h-full bg-white text-base-content">
                   {/* Sidebar content here */}
-                  
                 </div>
               </div>
             </div>
-
-            {/*<p className="flex justify-center items-center gap-2 text-black">
-              <span className="text-green-700">
-                <FaComment />
-              </span>
-              Comment
-            </p>*/}
           </div>
 
           <h5 className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9">

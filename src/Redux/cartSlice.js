@@ -1,10 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import GetCartsData from "./CartApi";
 
-export const fetchCart = createAsyncThunk("Carts/fetchCartsData", async () => {
-  const carts = await GetCartsData();
-  return carts;
-});
+export const fetchCart = createAsyncThunk(
+  "Carts/fetchCartsData",
+  async (email) => {
+    const carts = await GetCartsData(email);
+    return carts;
+  }
+);
 
 const initialState = {
   carts: [],
@@ -27,6 +30,7 @@ const cartSlice = createSlice({
       .addCase(fetchCart.fulfilled, (state, action) => {
         state.isLoading = false;
         state.carts = action.payload;
+        state.email = action.payload;
       })
       .addCase(fetchCart.rejected, (state, action) => {
         state.isLoading = false;
