@@ -29,6 +29,8 @@ import PickUpReq from "../Pages/PickUpReq/PickUpReq";
 import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 import ParchesShopProduct from "../Pages/Shop/ParchesShopProduct";
 import UpdateProducts from "../Components/UpdateProducts/UpdateProducts";
+import ManageShowcase from "../Pages/Dashboard/Admin dashboard/ManageShowcase";
+import PriceTable from "../Pages/PriceTable/PriceTable";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +91,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Registration></Registration>,
       },
+      {
+        path: '/priceTable',
+        element: <PriceTable></PriceTable>
+      },
     ],
   },
   {
@@ -127,6 +133,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/managePickup",
         element: <ManagePickup></ManagePickup>,
+      },
+      {
+        path: "/dashboard/manageShowcase",
+        element: <ManageShowcase></ManageShowcase>,
       },
 
       // user dashboard

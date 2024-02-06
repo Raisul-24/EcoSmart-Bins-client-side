@@ -6,17 +6,18 @@ import { fetchService } from "../../Redux/ServiceSlice";
 
 const Service = () => {
   const dispatch = useDispatch()
-  const {service:data, isLoading:dataLoaing} = useSelector((state)=> state.services)
-  useEffect(()=>{
+  const { service: data, isLoading: dataLoaing } = useSelector((state) => state.services)
+  useEffect(() => {
     dispatch(fetchService(6))
-  },[dispatch])
+  }, [dispatch])
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5">
-      <div data-aos="fade-up" data-aos-duration="700" className="flex justify-center">
-        <h3 className="w-fit capitalize pt-5 pb-2 text-4xl border-b-4 border-[#3A9E1E] mb-10 font-semibold text-[#101a30]">
-          our services
-        </h3>
-      </div>
+      
+        <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">Our Services</h2>
+        <p className="text-xl text-center text-brand-color font-semibold mb-10 lg:mb-24">Comprehensive Waste Solutions</p>
+     
+     
+
       {dataLoaing ? (
         <div className="text-center">
           <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>

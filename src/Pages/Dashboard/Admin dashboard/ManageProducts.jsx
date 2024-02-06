@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useProducts from "../../../Hooks/useProducts";
-import { FaTrash } from "react-icons/fa";
+import {  FaRegEdit, FaTrash } from "react-icons/fa";
 import useAxiosPrivate from "../../../axios/axiosprivate";
 
 const ManageProducts = () => {
@@ -90,7 +90,7 @@ const ManageProducts = () => {
                       to={`/dashboard/updateProducts/${item?._id}`}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
-                      Update
+                      <FaRegEdit/>
                     </Link>
                   
                   </td>
