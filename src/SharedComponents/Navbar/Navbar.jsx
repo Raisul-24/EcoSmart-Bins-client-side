@@ -102,6 +102,11 @@ const Navbar = () => {
                     whileTap={{ scale: 1.3, originX: 0, color: '#3A9E1E' }}
                     transition={{ type: 'spring', stiffness: 200 }}
                     className="font-semibold text-white"> <Link to={"/contact"}>Contact Us</Link></motion.li>
+            <span className="border border-slate-600"></span>
+            <motion.li
+            whileHover={{scale: 1.3, originX: 0, color: '#3A9E1E'}}
+            transition={{type: 'spring', stiffness: 300}}
+            className="font-semibold text-white"> <NavLink to={"/priceTable"}>Pricing-Table</NavLink></motion.li>
 
             </ul>
         </li>
