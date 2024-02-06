@@ -1,6 +1,12 @@
+import { useState } from "react";
 
 
 const PriceTable = () => {
+      const [isYearly, setIsYearly] = useState(false);
+    
+      const handleToggle = () => {
+        setIsYearly((prevIsYearly) => !prevIsYearly);
+      };
    return (
       <div>
          <div className="container mx-auto">
@@ -14,7 +20,9 @@ const PriceTable = () => {
                   <div className="form-control w-52">
                      <label className="cursor-pointer label">
                         <span className="text-xl font-extrabold">Monthly</span>
-                        <input type="checkbox" className="toggle toggle-success toggle-lg mx-3" checked />
+                         <input type="checkbox" className="toggle toggle-success toggle-lg mx-3 w-2"  
+                        checked={isYearly}
+                        onChange={handleToggle} />
                         <span className="text-xl font-extrabold">Yearly</span>
                      </label>
                   </div>
@@ -34,8 +42,8 @@ const PriceTable = () => {
                      <h2 className="my-2">Serves: 1-2 people</h2>
                      <h2>Max Weight: Approx 18kg</h2>
                      <h2 className="my-2">Service: Every Day</h2>
-                     <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">$19.99</h2>
-                     <h2>Per month</h2>
+                     <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">{isYearly ? '$199.99' : '$19.99'}</h2>
+                     <h2>Per {isYearly ? 'year' : 'month'}</h2>
                      <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48"
                      >Select Plan</btn>
                   </div>
@@ -52,8 +60,8 @@ const PriceTable = () => {
                      <h2 className="my-2">Serves: 1-2 people</h2>
                      <h2>Max Weight: Approx 18kg</h2>
                      <h2 className="my-2">Service: Every Day</h2>
-                     <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">$49.99</h2>
-                     <h2>Per month</h2>
+                     <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">{isYearly ? '$399.99' : '$49.99'}</h2>
+                     <h2>Per {isYearly ? 'year' : 'month'}</h2>
                      <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48"
                      >Select Plan</btn>
                   </div>
@@ -70,15 +78,13 @@ const PriceTable = () => {
                      <h2 className="my-2">Serves: 1-2 people</h2>
                      <h2>Max Weight: Approx 18kg</h2>
                      <h2 className="my-2">Service: Every Day</h2>
-                     <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">$70.99</h2>
-                     <h2>Per month</h2>
+                     <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">{isYearly ? '$799.99' : '$79.99'}</h2>
+                     <h2>Per {isYearly ? 'year' : 'month'}</h2>
                      <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48"
                      >Select Plan</btn>
                   </div>
                </div>
             </div>
-
-
          </div>
       </div>
    );
