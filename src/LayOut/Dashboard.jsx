@@ -7,6 +7,7 @@ import {
   FaHome,
   FaMoneyCheck,
   FaPlusSquare,
+  FaRegSun,
   FaSearch,
   FaStar,
 } from "react-icons/fa";
@@ -88,6 +89,12 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/managePickup">
                 <FaEdit />
                   Manage Pickup Request
+                </NavLink>
+              </li>
+              <li className="lg:text-lg">
+                <NavLink to="/dashboard/manageShowcase">
+                <FaRegSun />
+                  Manage Showcase
                 </NavLink>
               </li>
 
