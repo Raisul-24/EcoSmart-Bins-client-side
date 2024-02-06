@@ -1,8 +1,8 @@
-import useAuth from "../../API/useAuth/useAuth";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../axios/axiosPublic";
 import useGetAProduct from "../../API/ServiceApi/useGetAProduct";
+import useAuth from "../../Hooks/UseAuth";
 
 const ParchesShopProduct = () => {
   const { user } = useAuth();

@@ -16,6 +16,8 @@ const Service = () => {
         <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">Our Services</h2>
         <p className="text-xl text-center text-brand-color font-semibold mb-10 lg:mb-24">Comprehensive Waste Solutions</p>
      
+     
+
       {dataLoaing ? (
         <div className="text-center">
           <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
