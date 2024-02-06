@@ -1,12 +1,13 @@
+import { HeartSwitch } from "@anatoliygatt/heart-switch";
 import { useState } from "react";
 
 
 const PriceTable = () => {
-      const [isYearly, setIsYearly] = useState(false);
-    
-      const handleToggle = () => {
-        setIsYearly((prevIsYearly) => !prevIsYearly);
-      };
+   const [isYearly, setIsYearly] = useState(false);
+
+   const handleToggle = () => {
+      setIsYearly((prevIsYearly) => !prevIsYearly);
+   };
    return (
       <div>
          <div className="container mx-auto">
@@ -16,19 +17,21 @@ const PriceTable = () => {
                   our pricing plan</h2>
             </div>
             <div className="my-5 flex justify-center">
-               <div className="flex flex-col">
-                  <div className="form-control w-52">
-                     <label className="cursor-pointer label">
-                        <span className="text-xl font-extrabold">Monthly</span>
-                         <input type="checkbox" className="toggle toggle-success toggle-lg mx-3 w-2"  
-                        checked={isYearly}
-                        onChange={handleToggle} />
-                        <span className="text-xl font-extrabold">Yearly</span>
-                     </label>
-                  </div>
-               </div>
+               <span className="text-xl font-extrabold mr-4">Monthly</span>
+               <HeartSwitch
+                  size="lg"
+                  inactiveTrackFillColor="#ebfdc9"
+                  inactiveTrackStrokeColor="#07f92e"
+                  activeTrackFillColor="#70ff76"
+                  activeTrackStrokeColor="#4fff51"
+                  inactiveThumbColor="#ecfeff"
+                  activeThumbColor="#ec230f"
+                  checked={isYearly}
+                  onChange={handleToggle}
+               />
+               <span className="text-xl font-extrabold ml-4">Yearly</span>
             </div>
-            
+
             <div className="my-10 grid grid-cols-1 md:grid-cols-3 gap-6">
                {/* cards 1*/}
                <div className="relative flex max-w-96 flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
