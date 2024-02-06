@@ -1,0 +1,7 @@
+.btn {
+    transition: 0.3s; /* Duration for non-hover transitions */
+  }
+.btn:hover {
+    
+    transition:  0.3s ease-in-out; /* Duration for hover transitions */
+}
