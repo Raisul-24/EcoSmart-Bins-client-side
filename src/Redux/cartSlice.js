@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
 import GetCartsData from "./CartApi";
 
 export const fetchCart = createAsyncThunk("Carts/fetchCartsData", async () => {
@@ -20,6 +19,7 @@ const cartSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
+
       .addCase(fetchCart.pending, (state) => {
         state.isError = false;
         state.isLoading = true;
