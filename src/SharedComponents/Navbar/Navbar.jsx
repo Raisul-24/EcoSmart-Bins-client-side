@@ -70,6 +70,11 @@ const Navbar = () => {
             whileHover={{scale: 1.3, originX: 0, color: '#3A9E1E'}}
             transition={{type: 'spring', stiffness: 300}}
             className="font-semibold text-white"> <NavLink to={"/contact"}>Contact Us</NavLink></motion.li>
+            <span className="border border-slate-600"></span>
+            <motion.li
+            whileHover={{scale: 1.3, originX: 0, color: '#3A9E1E'}}
+            transition={{type: 'spring', stiffness: 300}}
+            className="font-semibold text-white"> <NavLink to={"/priceTable"}>Pricing-Table</NavLink></motion.li>
             
             </ul>
         </div>
