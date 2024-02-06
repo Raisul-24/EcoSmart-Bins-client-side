@@ -5,7 +5,7 @@ import ServiceSlice from "./ServiceSlice";
 const store = configureStore({
   reducer: {
     carts: cartsReducer,
-    services: ServiceSlice
+    services: ServiceSlice,
   },
 });
 

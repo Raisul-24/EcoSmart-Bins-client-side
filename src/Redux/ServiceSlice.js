@@ -7,10 +7,13 @@ export const GetServiceData = async (q) => {
   return response.data;
 };
 
-export const fetchService = createAsyncThunk("Service/GetServiceData", async (q) => {
-  const carts = await GetServiceData(q);
-  return carts;
-});
+export const fetchService = createAsyncThunk(
+  "Service/GetServiceData",
+  async (q) => {
+    const carts = await GetServiceData(q);
+    return carts;
+  }
+);
 
 const initialState = {
   service: [],
@@ -42,5 +45,4 @@ const serviceSlice = createSlice({
   },
 });
 
-//export const { setItems } = cartSlice.actions;
 export default serviceSlice.reducer;

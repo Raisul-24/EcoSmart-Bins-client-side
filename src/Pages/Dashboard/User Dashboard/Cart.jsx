@@ -31,9 +31,6 @@ const Cart = () => {
   if (!isError && !isLoading && carts?.length > 0) {
     content = (
       <div>
-        <div className="border-b-2">
-          {/*<h2 className="text-4xl mb-5 text-center">My carts</h2>*/}
-        </div>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead className="text-center bg-brand-color">
