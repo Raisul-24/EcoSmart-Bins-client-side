@@ -6,7 +6,7 @@ const ShopCard = ({ item }) => {
 
   return (
     <div>
-      <div className="">
+      <Link to={`/shop/${_id}`}>
         <div
           data-aos="flip-left"
           data-aos-easing="ease-out-cubic"
@@ -27,14 +27,14 @@ const ShopCard = ({ item }) => {
               alt="shop item"
             />
           </figure>
-          <Link
+          {/*<Link
             to={`/shop/${_id}`}
             className="mt-4 border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color "
           >
             SEE MORE
-          </Link>
+          </Link>*/}
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
