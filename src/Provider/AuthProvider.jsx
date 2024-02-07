@@ -12,7 +12,7 @@ import {
 
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
-import useAxiosPrivate from "./../axios/axiosprivate";
+import useAxiosPublic from "./../axios/axiosPublic";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -23,7 +23,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const axiosPrivate = useAxiosPrivate();
+  const axiosPublic = useAxiosPublic();
 
   const createUser = (email, password) => {
     setLoading(true);
