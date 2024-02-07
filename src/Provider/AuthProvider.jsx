@@ -61,8 +61,9 @@ const AuthProvider = ({ children }) => {
         };
         axiosPrivate.post("/users", userData)
         // get token and store client
-        const userInfo = { email: currentUser.email };
-        axiosPrivate.post("/jwt", userInfo).then((res) => {
+        const loggedUser = { email: currentUser.email };
+        axiosPrivate.post("/jwt", loggedUser)
+        .then(res => {
           if (res.data.token) {
             localStorage.setItem("access-token", res.data.token);
             setLoading(false);

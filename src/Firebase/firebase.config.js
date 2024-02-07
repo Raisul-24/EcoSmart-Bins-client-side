@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "ecosmart-bins",
   storageBucket: "ecosmart-bins.appspot.com",
   messagingSenderId: "561993376831",
-  appId: "1:561993376831:web:8def8bd746427f96e5048a"
+  appId: "1:561993376831:web:8def8bd746427f96e5048a",
 };
 
 // Initialize Firebase

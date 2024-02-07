@@ -9,7 +9,7 @@ const MainLayOut = () => {
       <div className="max-w-screen-2xl mx-auto">
          <Navbar></Navbar>
          <Outlet></Outlet>
-         <Footer></Footer>
+        <Footer></Footer>
       </div>
    );
 };

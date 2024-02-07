@@ -113,6 +113,11 @@ const Dashboard = () => {
                   Manage Showcase
                 </NavLink>
               </li>
+              <li className="lg:text-lg">
+                <NavLink to="/dashboard/allUsers">
+                All users
+                </NavLink>
+              </li>
 
               <div className="divider"></div>
 

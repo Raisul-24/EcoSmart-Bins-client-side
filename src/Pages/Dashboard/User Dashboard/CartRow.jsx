@@ -5,22 +5,6 @@ const CartRow = ({ item, index }) => {
   //  console.log(_id, title, price, img, status);
   const disabled = true;
   const axios = useAxiosPublic();
-  //
-  //  const handleCancel = async (id) => {
-  //    try {
-  //      const response = await axios.patch(`/myCart/${id}`, {
-  //        status: "cancel",
-  //      });
-  //
-  //      if (response.data?.modifiedCount) {
-  //        console.log("parcel status updated successfully", response.data);
-  //      } else {
-  //        console.log("parcel not found or status not updated", response.data);
-  //      }
-  //    } catch (error) {
-  //      console.error("Error updating status:", error);
-  //    }
-  //  };
 
   const handleCancel = async (_id) => {
     console.log(_id);
@@ -28,9 +12,7 @@ const CartRow = ({ item, index }) => {
       const response = await axios.patch(`/my-cart/${_id}`, {
         status: "cancel",
       });
-
       console.log("Response from server:", response?.data);
-
       if (response?.data?.modifiedCount > 0) {
         console.log("Parcel status updated successfully", response.data);
       } else {
@@ -57,7 +39,7 @@ const CartRow = ({ item, index }) => {
       <td>${price}</td>
 
       <td>
-        <p className="badge badge-neutral border-brand-color">Pending</p>
+        <p className="badge badge-neutral border-brand-color">{status}</p>
       </td>
 
       <td className="p-3">
