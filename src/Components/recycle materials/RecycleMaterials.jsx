@@ -31,7 +31,7 @@ const RecycleMaterials = () => {
             backgroundImage: "url(https://i.ibb.co/56JLyPY/shape-9.png)",
           }}
         >
-          <div className="hero-overlay rounded-xl bg-brand-color opacity-80"></div>
+          <div className="hero-overlay rounded-xl bg-brand-color "></div>
           <div className="z-0 lg:w-4/5 flex flex-col md:flex-row lg:gap-60 gap-12 justify-between">
             <div className="lg:w-80 mx-auto px-5 md:px-0 text-center lg:text-start text-white">
                 <p className="text-xl mb-5 font-bold">Recycle Materials</p>
@@ -41,7 +41,7 @@ const RecycleMaterials = () => {
             <div className="flex flex-col gap-2 lg:gap-5 flex-1">
              <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                 <span className=""> <FaCheckCircle/> </span>
-                <p>Steel</p>
+                <p>Steel</p>    
              </div>
              <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                 <span className=""> <FaCheckCircle/> </span>
