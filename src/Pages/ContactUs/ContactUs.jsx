@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Map from "../../Components/Map/Map";
-import ExampleDBPedia from "../ChatBot/ChatBot";
+import Chatbot from "../ChatBot/ChatBot";
 
 const ContactUs = () => {
   const form = useRef();
@@ -197,7 +197,7 @@ const ContactUs = () => {
                   </div>
                 </form>
                 <div className="my-20">
-                  <ExampleDBPedia />
+                  <Chatbot />
                 </div>
                 <div>
                   <span className="absolute -top-10 -right-9 z-[-1]">
