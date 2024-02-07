@@ -30,6 +30,7 @@ import SingleShopProduct from "../Pages/Shop/SingleShopProduct";
 import ParchesShopProduct from "../Pages/Shop/ParchesShopProduct";
 import UpdateProducts from "../Components/UpdateProducts/UpdateProducts";
 import ManageShowcase from "../Pages/Dashboard/Admin dashboard/ManageShowcase";
+import ManageUser from "../Pages/Dashboard/Admin dashboard/ManageUser";
 import PriceTable from "../Pages/PriceTable/PriceTable";
 import AllUsers from "../Pages/Dashboard/Admin dashboard/AllUsers";
 
@@ -122,6 +123,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addProducts",
         element: <AddProducts></AddProducts>,
+      },
+      {
+        path: "/dashboard/manageUser",
+        element: <ManageUser></ManageUser>,
       },
       {
         path: "/dashboard/updateProducts/:id",
