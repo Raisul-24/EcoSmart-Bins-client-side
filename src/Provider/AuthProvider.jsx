@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
           warning: 0,
           blocked: false,
         };
-        axiosPrivate.post("/users", userData).then((res)=>console.log(res.data))
+        axiosPrivate.post("/users", userData)
         // get token and store client
         const userInfo = { email: currentUser.email };
         axiosPrivate.post("/jwt", userInfo).then((res) => {
