@@ -6,9 +6,9 @@ export const axiosPrivate = axios.create({
   //  baseURL: "https://eco-smart-bin.vercel.app",
   withCredentials: true,
 });
-const useAxiosPrivate = () => {
-  const navigate = useNavigate();
+const UseAxiosPrivate = () => {
   const { logOut } = useAuth();
+  const navigate = useNavigate();
 
   // request interceptor to add authorization header for every secure call to teh api
   axiosPrivate.interceptors.request.use(
@@ -43,4 +43,4 @@ const useAxiosPrivate = () => {
 
   return axiosPrivate;
 };
-export default useAxiosPrivate;
+export default UseAxiosPrivate;

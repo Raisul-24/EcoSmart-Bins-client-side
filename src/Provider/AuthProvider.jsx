@@ -14,6 +14,7 @@ import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
 import useAxiosPublic from "../axios/axiosPublic";
 
+
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -23,7 +24,9 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const axiosPrivate = useAxiosPublic();
+
+  const axiosPublic = useAxiosPublic();
+
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -47,38 +50,29 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("user from on auth state changed", currentUser);
       setUser(currentUser);
       if (currentUser) {
-        const userData = {
-          name: currentUser?.displayName,
-          email: currentUser?.email,
-          photo: currentUser?.photoURL,
-          role: "user",
-          points: 0,
-          warning: 0,
-          blocked: false,
-        };
-        axiosPrivate.post("/users", userData)
-        // get token and store client
-        const loggedUser = { email: currentUser.email };
-        axiosPrivate.post("/jwt", loggedUser)
-        .then(res => {
-          if (res.data.token) {
-            localStorage.setItem("access-token", res.data.token);
-            setLoading(false);
+        const userInfo = { email: currentUser.email };
+        axiosPublic.post("/jwt", userInfo).then((res) => {
+          //console.log(res.data);
+          if (res.data?.token) {
+            localStorage.setItem("access-token", res.data?.token);
           }
         });
       } else {
-        // todo: remove token (if store in client side, local storage, caching, in memory)
         localStorage.removeItem("access-token");
-        setLoading(false);
       }
+      setLoading(false);
     });
+	 
     return () => {
-      return unsubscribe();
+      return unSubscribe();
     };
-  }, [axiosPrivate]);
+  }, [axiosPublic]);
+
+
   const authInfo = {
     user,
     loading,
