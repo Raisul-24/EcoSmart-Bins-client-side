@@ -3,8 +3,9 @@ import FAQ from "../../Components/FAQ/FAQ";
 import Service from "../../Components/Service/Service";
 import ChoseUs from "./ChoseUs";
 import Feedback from "./Feedback";
-import Artwork from "../../Components/Artwork/Artwork";
+
 import Subscribe from "../../Components/subscribe/Subscribe";
+import RecycleMaterials from "../../Components/recycle materials/RecycleMaterials";
 
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
       <Service />
       <ChoseUs />
       <FAQ />
-      <Artwork/>
+      {/* <Artwork/> */}
+      <RecycleMaterials/>
       <Feedback/>
       <div className="">
       <Subscribe/>
