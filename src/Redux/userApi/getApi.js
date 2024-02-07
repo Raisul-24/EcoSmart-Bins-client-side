@@ -3,13 +3,12 @@ import { axiosPrivate } from "../../axios/axiosprivate";
 
 export const getApi = createApi({
   reducerPath: "getApi",
-  baseQuery: fetchBaseQuery({baseUrl: axiosPrivate.defaults.baseURL}),
+  baseQuery: fetchBaseQuery({ baseUrl: axiosPrivate.defaults.baseURL }),
   endpoints: (builder) => ({
     getApi: builder.query({
       query: (query) => query,
-        
     }),
   }),
 });
 export const { useGetApiQuery } = getApi;
-export default getApi
+export default getApi;
