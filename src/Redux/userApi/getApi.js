@@ -5,9 +5,8 @@ export const getApi = createApi({
   reducerPath: "getApi",
   baseQuery: fetchBaseQuery({
     baseUrl: axiosPrivate.defaults.baseURL,
-    headers:{
-      
-      authorization: `Bearer ${token}`
+    headers: {
+      authorization: `Bearer ${token}`,
     },
     credentials: "include",
   }),
