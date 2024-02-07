@@ -16,7 +16,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 
 const Dashboard = () => {
-  const { user } = UseAuth()
+  const { user } = UseAuth();
   return (
     <div>
       <div className="drawer lg:drawer-open flex flex-col lg:flex-row">
@@ -34,30 +34,39 @@ const Dashboard = () => {
             className="drawer-overlay"
           ></label>
           <div className="p-2 lg:p-4 w-52 lg:w-64 min-h-full text-base-content bg-green-200 z-10">
-              <div className="card  items-center mx-auto">
-              <Link to={"/"} className="text-xl lg:text-3xl font-bold"><span className="bold text-brand-color">Eco</span>SmartBin</Link>
-                <figure className="px-10 pt-8">
-                  <div className="">
-                    {
-                      user? <img className="w-28 h-28 rounded-full border-4 border-brand-color" src={user?.photoURL} alt="" /> : <img
+            <div className="card  items-center mx-auto">
+              <Link to={"/"} className="text-xl lg:text-3xl font-bold">
+                <span className="bold text-brand-color">Eco</span>SmartBin
+              </Link>
+              <figure className="px-10 pt-8">
+                <div className="">
+                  {user ? (
+                    <img
+                      className="w-28 h-28 rounded-full border-4 border-brand-color"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  ) : (
+                    <img
                       className="w-28 h-28 rounded-full border-4 border-brand-color"
                       src="https://i.ibb.co/8X8stTp/user.webp"
                     />
-                    }
-                    
-                  </div>
-                </figure>
-                <div className="card-body items-center text-center">
-                  {
-                    user? <h2 className="card-title text-xl"> {user?.displayName}</h2> :
-                    <h2 className="card-title text-xl"> displayName</h2>
-                  }
-                  {
-                    user? <p className=" font-bold">{user?.email}</p> : <p className=" font-bold">useremail</p>
-                  }
-                  
+                  )}
                 </div>
+              </figure>
+              <div className="card-body items-center text-center">
+                {user ? (
+                  <h2 className="card-title text-xl"> {user?.displayName}</h2>
+                ) : (
+                  <h2 className="card-title text-xl"> displayName</h2>
+                )}
+                {user ? (
+                  <p className=" font-bold">{user?.email}</p>
+                ) : (
+                  <p className=" font-bold">useremail</p>
+                )}
               </div>
+            </div>
 
             <ul className="menu font-semibold">
               {/* admin routes */}
@@ -81,13 +90,13 @@ const Dashboard = () => {
               </li>
               <li className="">
                 <NavLink to="/dashboard/manageProducts">
-                <FaEdit />
+                  <FaEdit />
                   Manage Products
                 </NavLink>
               </li>
               <li className="">
                 <NavLink to="/dashboard/managePickup">
-                <FaEdit />
+                  <FaEdit />
                   Manage Pickup Request
                 </NavLink>
               </li>
@@ -114,7 +123,8 @@ const Dashboard = () => {
               </li>
               <li className="">
                 <NavLink to="/dashboard/addShowcase">
-                  <FaCameraRetro />Add Showcase
+                  <FaCameraRetro />
+                  Add Showcase
                 </NavLink>
               </li>
               <li className="">
