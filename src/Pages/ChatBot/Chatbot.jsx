@@ -1,6 +1,10 @@
 import ChatBot, { Loading } from "react-simple-chatbot";
 
 const Chatbot = () => {
+  if (Loading) {
+    return;
+  }
+
   const steps = [
     {
       id: "Greet",

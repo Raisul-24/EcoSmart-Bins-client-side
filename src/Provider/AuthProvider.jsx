@@ -13,10 +13,6 @@ import {
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
 import useAxiosPublic from "../axios/axiosPublic";
-<<<<<<<<< Temporary merge branch 1
-=========
-//import useAxiosPrivate from "./../axios/axiosprivate";
->>>>>>>>> Temporary merge branch 2
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -27,11 +23,8 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-<<<<<<<<< Temporary merge branch 1
-  const axiosPrivate = useAxiosPublic();
-=========
+
   const axiosPublic = useAxiosPublic();
->>>>>>>>> Temporary merge branch 2
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -67,11 +60,10 @@ const AuthProvider = ({ children }) => {
           warning: 0,
           blocked: false,
         };
-        axiosPublic.post("/users", userData)
+        axiosPublic.post("/users", userData);
         // get token and store client
         const loggedUser = { email: currentUser.email };
-        axiosPublic.post("/jwt", loggedUser)
-        .then(res => {
+        axiosPublic.post("/jwt", loggedUser).then((res) => {
           if (res.data.token) {
             localStorage.setItem("access-token", res.data.token);
             setLoading(false);
@@ -83,7 +75,7 @@ const AuthProvider = ({ children }) => {
         setLoading(false);
       }
     });
-	 
+
     return () => {
       return unsubscribe();
     };
