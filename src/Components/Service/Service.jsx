@@ -5,18 +5,21 @@ import { useEffect } from "react";
 import { fetchService } from "../../Redux/ServiceSlice";
 
 const Service = () => {
-  const dispatch = useDispatch()
-  const { service: data, isLoading: dataLoaing } = useSelector((state) => state.services)
+  const dispatch = useDispatch();
+  const { service: data, isLoading: dataLoaing } = useSelector(
+    (state) => state.services
+  );
   useEffect(() => {
-    dispatch(fetchService(6))
-  }, [dispatch])
+    dispatch(fetchService(6));
+  }, [dispatch]);
   return (
     <div className="max-w-7xl mx-auto xl:px-0 px-5">
-      
-        <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">Our Services</h2>
-        <p className="text-xl text-center text-brand-color font-semibold mb-10 lg:mb-24">Comprehensive Waste Solutions</p>
-     
-     
+      <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">
+        Our Services
+      </h2>
+      <p className="text-xl text-center text-brand-color font-semibold mb-10 lg:mb-24">
+        Comprehensive Waste Solutions
+      </p>
 
       {dataLoaing ? (
         <div className="text-center">

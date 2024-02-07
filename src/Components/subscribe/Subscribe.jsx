@@ -45,17 +45,17 @@ const Subscribe = () => {
           </div>
           <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]  shadow-2xl  ">
             <form onSubmit={handleSubscribe} className="card-body outline-none  items-center flex-row gap-0">
-              <div className="w-full ">
+              <div className="w-full">
                 <input
                   type="email"
                   name="email"
                   placeholder="Enter Your Email"
-                  className="input  w-full lg:py-9 rounded-none text-black bg-white"
+                  className="input focus:outline-none focus:border-none  w-full lg:py-9 rounded-r-none text-black bg-white"
                   required
                 />
               </div>
               <div className=" ">
-                <button className="btn bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color  lg:h-[76px]  text-white rounded-none md:text-xl font-bold capitalize">
+                <button className="btn border-none bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color  lg:h-[73px]  text-white rounded-l-none md:text-xl font-bold capitalize">
                   Subscribe
                 </button>
               </div>

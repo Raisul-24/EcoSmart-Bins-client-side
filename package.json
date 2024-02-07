@@ -16,7 +16,7 @@
     "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "^2.1.0",
     "@smastrom/react-rating": "^1.4.0",
-    "@tanstack/react-query": "^5.17.19",
+    "@tanstack/react-query": "^5.18.1",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "firebase": "^10.7.2",
@@ -32,7 +32,11 @@
     "react-rating": "^2.0.5",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.2",
+<<<<<<< HEAD
     "react-scroll-trigger": "^0.6.14",
+=======
+    "react-simple-chatbot": "^0.6.1",
+>>>>>>> bcbff8375435e54ae88f8c809c607a6565f5a629
     "react-toastify": "^10.0.4",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.4",
