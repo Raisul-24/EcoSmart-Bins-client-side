@@ -4,6 +4,7 @@ import Service from "../../Components/Service/Service";
 import ChoseUs from "./ChoseUs";
 import Feedback from "./Feedback";
 import Subscribe from "../../Components/subscribe/Subscribe";
+import RecycleMaterials from "../../Components/recycle materials/RecycleMaterials";
 import Artwork from "./Artwork/Artwork";
 
 
@@ -15,6 +16,7 @@ const Home = () => {
       <ChoseUs />
       <FAQ />
       <Artwork/>
+      <RecycleMaterials/>
       <Feedback/>
       <div className="">
       <Subscribe/>

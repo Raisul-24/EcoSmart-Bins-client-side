@@ -3,12 +3,12 @@ import SocialLogin from "../../SharedComponents/SocialLogin/SocialLogin";
 import { useForm } from "react-hook-form"
 import UseAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
-import useAxiosPublic from "../../axios/axiosPublic";
+// import useAxiosPublic from "../../axios/axiosPublic";
 
 const Registration = () => {
    const { register, handleSubmit, formState: { errors }, } = useForm();
    const { createUser } = UseAuth();
-   const axiosPublic = useAxiosPublic();
+   // const axiosPublic = useAxiosPublic();
    const navigate = useNavigate();
    const location = useLocation();
 
@@ -16,12 +16,12 @@ const Registration = () => {
       const toastId = toast.loading('Logging In...');
       try {
          await createUser(data.email, data.password);
-         const userInfo = {
-            email: data.email,
-            name: data.name,
-            phone: data.phone
-         }
-        axiosPublic.post('/users', userInfo)
+      //    const userInfo = {
+      //       email: data.email,
+      //       name: data.name,
+      //       phone: data.phone
+      //    }
+      //   axiosPublic.post('/users', userInfo)
          // console.log("created");
          toast.success('Register In Successfully!!', { id: toastId });
          if (location.state && location.state.from) {
@@ -112,7 +112,7 @@ const Registration = () => {
                      </p>
                      <SocialLogin></SocialLogin>
                      <p className="flex justify-center mt-3  text-sm antialiased font-light leading-normal text-inherit">
-                        Don't have an account?
+                        {"Don't"} have an account?
                         <Link
                            to="/login"
                            className="block ml-1  text-sm antialiased font-bold leading-normal text-[#033d1b]"
