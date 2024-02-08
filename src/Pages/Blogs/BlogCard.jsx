@@ -7,10 +7,9 @@ import toast from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const BlogCard = ({ blog }) => {
   const { _id, image, name, shortDescription } = blog || {};
- 
+
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
 
@@ -35,8 +34,7 @@ const BlogCard = ({ blog }) => {
   return (
     <>
       <div
-        data-aos="zoom-in"
-        className="bg-white border flex flex-col h-full p-4 border-white rounded-lg 
+        className="bg-white border flex flex-col h-full  p-4 border-white rounded-lg 
 	 shadow-2xl pb-4"
       >
         <div className="">
