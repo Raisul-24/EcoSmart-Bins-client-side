@@ -9,13 +9,12 @@ const Checkout = () => {
          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* 1 */}
             <CustomerInfo></CustomerInfo>
-
-
-
-            {/* 2 */}
+            
             <Payment></Payment>
             {/* 3 */}
             <Delivery></Delivery>
+            <div className=""></div>
+            
          </div>
 
 
