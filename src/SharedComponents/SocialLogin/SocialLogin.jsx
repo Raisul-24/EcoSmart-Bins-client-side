@@ -1,13 +1,11 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import UseAuth from "../../Hooks/UseAuth";
-import useAxiosPublic from "../../axios/axiosPublic";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const SocialLogin = () => {
    const { googleSignIn, githubSignIn } = UseAuth();
-   const axiosPublic = useAxiosPublic();
 
    const navigate = useNavigate();
    const location = useLocation();
@@ -17,44 +15,28 @@ const SocialLogin = () => {
 
    const handleGoogleSignIn = () => {
       googleSignIn()
-         .then(result => {
+         .then(() => {
             toast.success('Sign In with Google Successfully');
             // console.log(result.user);
-            const userInfo = {
-               email: result.user?.email,
-               name: result.user?.displayName
+            if (location.state && location.state.from) {
+               navigate(location.state.from.pathname)
             }
-            axiosPublic.post('/users', userInfo)
-               .then(res => {
-                  // console.log(res.data);
-                  if (location.state && location.state.from) {
-                     navigate(location.state.from.pathname)
-                  }
-                  else {
-                     navigate(from, { replace: true });
-                  }
-               })
+            else {
+               navigate(from, { replace: true });
+            }
          })
    }
    const handleGithubSignIn = () => {
       githubSignIn()
-         .then(result => {
+         .then(() => {
             toast.success('Sign In with Github Successfully');
             // console.log(result.user);
-            const userInfo = {
-               email: result.user?.email,
-               name: result.user?.displayName
+            if (location.state && location.state.from) {
+               navigate(location.state.from.pathname)
             }
-            axiosPublic.post('/users', userInfo)
-               .then(res => {
-                  // console.log(res.data);
-                  if (location.state && location.state.from) {
-                     navigate(location.state.from.pathname)
-                  }
-                  else {
-                     navigate(from, { replace: true });
-                  }
-               })
+            else {
+               navigate(from, { replace: true });
+            }
          })
    }
    return (

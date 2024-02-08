@@ -23,6 +23,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   const axiosPublic = useAxiosPublic();
 
   const createUser = (email, password) => {
@@ -49,12 +50,20 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("current user", currentUser);
       if (currentUser) {
+        const userData = {
+          name: currentUser?.displayName,
+          email: currentUser?.email,
+          photo: currentUser?.photoURL,
+          role: "user",
+          points: 0,
+          warning: 0,
+          blocked: false,
+        };
+        axiosPublic.post("/users", userData);
         // get token and store client
         const loggedUser = { email: currentUser.email };
-        axiosPublic.post("/jwt", loggedUser)
-        .then(res => {
+        axiosPublic.post("/jwt", loggedUser).then((res) => {
           if (res.data.token) {
             localStorage.setItem("access-token", res.data.token);
             setLoading(false);
@@ -66,10 +75,12 @@ const AuthProvider = ({ children }) => {
         setLoading(false);
       }
     });
+
     return () => {
       return unsubscribe();
     };
   }, [axiosPublic]);
+
   const authInfo = {
     user,
     loading,
