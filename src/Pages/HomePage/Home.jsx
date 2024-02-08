@@ -1,6 +1,6 @@
 import Banner from "./Banner";
 import FAQ from "../../Components/FAQ/FAQ";
-import Service from "../../Components/Service/Service";
+import Service from "../../Components/AllService/AllService";
 import ChoseUs from "./ChoseUs";
 import Feedback from "./Feedback";
 import Subscribe from "../../Components/subscribe/Subscribe";
