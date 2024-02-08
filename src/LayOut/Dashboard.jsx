@@ -179,11 +179,11 @@ const Dashboard = () => {
                   <FaStar /> Feedback
                 </NavLink>
               </li>
-              <li className="">
+              {/* <li className="">
                 <NavLink to="/dashboard/RewardPoints">
                   <VscActivateBreakpoints /> Reward Points
                 </NavLink>
-              </li>
+              </li> */}
               <li className="">
                 <NavLink to="/dashboard/payment">
                   <FaMoneyCheck></FaMoneyCheck>
