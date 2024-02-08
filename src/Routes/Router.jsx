@@ -36,6 +36,7 @@ import PickupWork from "../Pages/Dashboard/Worker Dashboard/PickupWork";
 import OnGoingWork from "../Pages/Dashboard/Worker Dashboard/OnGoingWork";
 import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
 import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
+import Checkout from "../Components/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
       {
         path: '/priceTable',
         element: <PriceTable></PriceTable>
+      },
+      {
+        path: '/checkout',
+        element: <Checkout></Checkout>
       },
     ],
   },
