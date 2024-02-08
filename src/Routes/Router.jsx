@@ -36,6 +36,7 @@ import PickupWork from "../Pages/Dashboard/Worker Dashboard/PickupWork";
 import OnGoingWork from "../Pages/Dashboard/Worker Dashboard/OnGoingWork";
 import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
 import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
+import Teams from "../Pages/teams/Teams";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/team",
+        element: <Teams></Teams>,
       },
       {
         path: "/shop/:id",
@@ -97,8 +102,8 @@ const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path: '/priceTable',
-        element: <PriceTable></PriceTable>
+        path: "/priceTable",
+        element: <PriceTable></PriceTable>,
       },
     ],
   },
