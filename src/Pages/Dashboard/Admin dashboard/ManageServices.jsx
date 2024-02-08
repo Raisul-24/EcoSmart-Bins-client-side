@@ -46,7 +46,7 @@ const ManageServices = () => {
         <div className="overflow-x-auto">
           <table className="table w-full">
             {/* head */}
-            <thead className="text-center bg-brand-color ">
+            <thead className="text-center bg-brand-color text-white">
               <tr>
                 <th>#</th>
                 <th>Image</th>
