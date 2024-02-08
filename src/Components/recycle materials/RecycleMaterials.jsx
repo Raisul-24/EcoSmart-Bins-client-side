@@ -49,30 +49,6 @@ const RecycleMaterials = () => {
               </h1>
             </div>
             <div className="flex px-5 md:gap-5 lg:gap-10">
-<<<<<<< HEAD
-            <div className="flex flex-col gap-2 lg:gap-5 flex-1">
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""> <FaCheckCircle/> </span>
-                <p>Steel</p>    
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""> <FaCheckCircle/> </span>
-                <p>Plastic</p>
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""> <FaCheckCircle/> </span>
-                <p>Lights & Bulbs</p>
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""><FaCheckCircle/> </span>
-                <p>Books & Papers</p>
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""><FaCheckCircle/> </span>
-                <p>Bottles</p>
-             </div>
-            </div>
-=======
               <div className="flex flex-col gap-2 lg:gap-5 flex-1">
                 <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                   <span className="">
@@ -108,7 +84,6 @@ const RecycleMaterials = () => {
                   <p>Bottles</p>
                 </div>
               </div>
->>>>>>> f5f7e033ea90b61ed6e8d2a73c90c4f06be3f69c
 
               <div className="">
                 <div className="flex flex-col gap-5 flex-1">
