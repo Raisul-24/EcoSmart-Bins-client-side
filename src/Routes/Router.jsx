@@ -32,6 +32,10 @@ import UpdateProducts from "../Components/UpdateProducts/UpdateProducts";
 import ManageShowcase from "../Pages/Dashboard/Admin dashboard/ManageShowcase";
 import ManageUser from "../Pages/Dashboard/Admin dashboard/ManageUser";
 import PriceTable from "../Pages/PriceTable/PriceTable";
+import PickupWork from "../Pages/Dashboard/Worker Dashboard/PickupWork";
+import OnGoingWork from "../Pages/Dashboard/Worker Dashboard/OnGoingWork";
+import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
+import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
 
 const router = createBrowserRouter([
   {
@@ -144,6 +148,20 @@ const router = createBrowserRouter([
         element: <ManageShowcase></ManageShowcase>,
       },
 
+      // worker dashboard
+      {
+        path: "/dashboard/PickupWork",
+        element: <PickupWork></PickupWork>,
+      },
+      {
+        path: "/dashboard/OnGoingWork",
+        element: <OnGoingWork></OnGoingWork>,
+      },
+      {
+        path: "/dashboard/CompleteWorks",
+        element: <CompleteWorks></CompleteWorks>,
+      },
+
       // user dashboard
       {
         path: "/dashboard/userProfile",
@@ -156,6 +174,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/cart",
         element: <Cart></Cart>,
+      },
+      {
+        path: "/dashboard/RewardPoints",
+        element: <RewardPoints></RewardPoints>,
       },
       {
         path: "/dashboard/feedback",
