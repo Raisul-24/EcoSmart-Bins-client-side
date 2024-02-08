@@ -8,13 +8,13 @@ import Lottie from "lottie-react";
 
 const ChoseUs = () => {
   return (
-    <div className=" bg-cover bg-no-repeat bg-center relative" style={{backgroundImage: 'url(https://i.imgur.com/iciuKcq.png)'}}>
+    <div className=" bg-cover bg-no-repeat bg-center relative bg-fixed" style={{backgroundImage: 'url(https://i.imgur.com/iciuKcq.png)'}}>
       <div className="max-w-7xl mx-auto xl:px-0 px-5  my-12 md:flex justify-start items-center gap-12 ">
 
         {/* image section */}
         <div className=" lg:w-1/2 ">
-          <div className="lg:w-5/6 "><img src={img2} alt="" /></div>
-          <div className=" lg:-mt-36 lg:ml-72 w-2/3 lg:w-fit -mt-16  "><Lottie className=" mx-auto" animationData={animation} loop={true} /></div>
+          <div className="lg:w-5/6"><img src={img2} alt="" className="rounded-xl" /></div>
+          <div className=" lg:-mt-40 lg:ml-72 w-2/3 lg:w-fit -mt-16 "><Lottie className=" mx-auto" animationData={animation} loop={true} /></div>
         </div>
 
         {/*content section  */}
@@ -31,14 +31,15 @@ const ChoseUs = () => {
           </p>
 
           {/* card sections */}
-          <div className="md:flex md:gap-5">
-            <div className="p-6 text-center my-10 shadow-md md:w-1/2">
+          <div className="">
+            <div className="p-3 my-5 ">
 
               <motion.img src={icon1} alt=""
-                className="w-20 mx-auto"
+                className="w-20 "
                 whileHover={{ scale: 1.2 }}
                 transition={{ duration: 0.3 }}
               />
+              <div>
               <h5 className="font-bold text-xl  my-3 text-brand-color">Optimized Collection</h5>
               <p>
                 Our sensor-equipped bins communicate real-time data, allowing for
@@ -46,10 +47,11 @@ const ChoseUs = () => {
                 and time savings, contributing to a more sustainable waste
                 management process.
               </p>
+              </div>
             </div>
-            <div className="p-6 my-10 text-center shadow-md md:w-1/2">
+            <div className="p-3 my-5 ">
               <motion.img src={icon2} alt=""
-                className="w-20 mx-auto"
+                className="w-20"
                 whileHover={{ scale: 1.2 }}
                 transition={{ duration: 0.3 }}
               />

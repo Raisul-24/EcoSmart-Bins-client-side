@@ -1,58 +1,54 @@
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import useAuth from "../../Hooks/UseAuth";
+import UseAxiosPrivate from "../../axios/axiosprivate";
 
 const PickUpForm = () => {
-    const formRef = useRef(null);
+  const formRef = useRef(null);
+  const axios = UseAxiosPrivate();
+  const { user } = useAuth();
+  const handleReqPickup = (e) => {
+    e.preventDefault();
+    const currentDate = new Date();
+    const currentDateTime = currentDate.toISOString();
 
-    const handleReqPickup = e =>{
-        e.preventDefault();
-        
-        const currentDate = new Date();
-        const currentDateTime = currentDate.toISOString();
+    const form = e.target;
+    const address = form.address.value;
 
-        const form = e.target;
-        const address =form.address.value;
-        const name =form.name.value;
-        const lastName =form.lastName.value;
-        const email =form.email.value;
-        const number =parseInt(form.number.value);
-       
+    const newData = {
+      name: user?.displayName,
+      email: user?.email,
+      photo: user?.photoURL,
+      address,
+      status: "requested",
+      currentDateTime,
+      workerEmail: null,
+    };
 
-        const newData ={address,name,lastName,email,number, currentDateTime};
-       
-        console.log(newData);
-        
-        
-        //send data to the server
-        fetch('http://localhost:8085/pickupReq',{
-            method:'POST',
-            headers:{
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newData)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.insertedId){
-               
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Request Sent Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
-        })
+    // console.log(newData);
 
+    //send data to the server
+    axios.post("/pickupReq", newData).then((data) => {
+      console.log(data.data);
+      if (data.data.insertedId) {
+        Swal.fire({
+          title: "Success!",
+          text: "Request Sent Successfully and you get 5 reward points collect from Dashboard > reward points page",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+      } else if (data.data.message) {
+        Swal.fire({
+          title: "warning!",
+          text: data.data.message,
+          icon: "warning",
+          confirmButtonText: "Cool",
+        });
+      }
+    });
 
-        formRef.current.reset();
-    }
-
-
-
-
-
+    formRef.current.reset();
+  };
 
   return (
     <div>
@@ -97,85 +93,25 @@ const PickUpForm = () => {
                 be in touch. Or you can call us +880123456789 and our
                 specialists will provide the necessary help!
               </p>
-              <form ref={formRef} onSubmit={handleReqPickup} className="font-semibold  text-blue-900 ">
+              <form
+                ref={formRef}
+                onSubmit={handleReqPickup}
+                className="font-semibold  text-blue-900 "
+              >
                 {/* form name and address row */}
-                <div className="form-control md:w-full">
+                <div className="form-control md:w-full mb-8">
                   <label className="label">
                     <span className="label-text">Address</span>
                   </label>
                   <label className="input-group">
-                    <input
-                      type="text"
+                    <textarea
                       name="address"
                       required
                       placeholder="Your Address"
-                      className="input input-bordered w-full"
-                    />
+                      className="input input-bordered w-full min-h-32"
+                    ></textarea>
                   </label>
                 </div>
-                {/* form name and address row */}
-                <div className="md:flex mb-8">
-                  <div className="form-control md:w-1/2">
-                    <label className="label">
-                      <span className="label-text">Name</span>
-                    </label>
-                    <label className="input-group">
-                      <input
-                        type="text"
-                        required
-                        name="name"
-                        placeholder="First Name"
-                        className="input input-bordered w-full"
-                      />
-                    </label>
-                  </div>
-                  <div className="form-control md:w-1/2 ml-4">
-                    <label className="label">
-                      <span className="label-text">Last Name</span>
-                    </label>
-                    <label className="input-group">
-                      <input
-                        type="text"
-                        required
-                        name="lastName"
-                        placeholder="Last Name"
-                        className="input input-bordered w-full"
-                      />
-                    </label>
-                  </div>
-                </div>
-                {/* form supplier and taste row */}
-                <div className="md:flex mb-8">
-                  <div className="form-control md:w-1/2">
-                    <label className="label">
-                      <span className="label-text">Email</span>
-                    </label>
-                    <label className="input-group">
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="Email"
-                        className="input input-bordered w-full"
-                      />
-                    </label>
-                  </div>
-                  <div className="form-control md:w-1/2 ml-4">
-                    <label className="label">
-                      <span className="label-text">Phone</span>
-                    </label>
-                    <label className="input-group">
-                      <input
-                        type="number"
-                        name="number"
-                        required
-                        placeholder="Phone"
-                        className="input input-bordered w-full"
-                      />
-                    </label>
-                  </div>
-                </div>
-
                 <input
                   type="submit"
                   value="Confirm Request"

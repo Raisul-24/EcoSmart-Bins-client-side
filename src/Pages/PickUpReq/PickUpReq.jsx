@@ -13,8 +13,7 @@ const PickUpReq = () => {
         subHeading="Streamline Waste Pickup Requests for Effortless Management and Environmental Responsibility."
       ></Cover>
       <SectionTitle heading="Request Pickup"
-        subHeading="24 Hour">
-        
+        subHeading="24 Hour"> 
       </SectionTitle>
             <PickUpForm/>
             
