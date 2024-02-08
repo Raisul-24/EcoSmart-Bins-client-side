@@ -1,11 +1,35 @@
+import useAuth from "../../../Hooks/UseAuth";
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
+import { IoMdCheckmark } from "react-icons/io";
+import UseAxiosPrivate from "../../../axios/axiosprivate";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
-const ManagePickup = () => {
-  const { data, isLoading } = useGetApiQuery("/pickupReq");
+const PickupWork = () => {
+  const { data, isLoading, refetch } = useGetApiQuery("/pickupReqAll");
+  const Navigate = useNavigate();
+  const axios = UseAxiosPrivate();
+  const { user } = useAuth();
+  const handleClick = (id) => {
+    const email = user?.email;
+    const status = {status: 'ongoing'}
+    axios
+      .patch(`/pickupReq/${id}`, { email })
+      .then(() => {
+        axios.patch(`/statusUpdate/${id}`,status);
+        toast.success("you accept the request");
+        refetch();
+        Navigate("/dashboard/OnGoingWork");
+      })
+      .catch(() => {
+        toast.error("fail to accept");
+      });
+  };
+
   return (
     <div>
       <div className="border-b-2">
-        <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
+        <h2 className="text-4xl mb-5 text-center ">Pickup Work</h2>
       </div>
       {isLoading ? (
         <div className="text-center mt-20">
@@ -18,10 +42,10 @@ const ManagePickup = () => {
             <thead className="text-center bg-brand-color text-white">
               <tr>
                 <th>Image</th>
-                <th>Name</th>
                 <th>Email</th>
                 <th>status</th>
                 <th>details</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody className="text-center font-medium">
@@ -44,7 +68,6 @@ const ManagePickup = () => {
                       )}
                     </div>
                   </th>
-                  <td>{item?.name}</td>
                   <td>{item?.email}</td>
                   <td>
                     <h2
@@ -125,6 +148,14 @@ const ManagePickup = () => {
                       </form>
                     </dialog>
                   </td>
+                  <td>
+                    <button
+                      onClick={() => handleClick(item?._id)}
+                      className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
+                    >
+                      <IoMdCheckmark />
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -135,4 +166,4 @@ const ManagePickup = () => {
   );
 };
 
-export default ManagePickup;
+export default PickupWork;

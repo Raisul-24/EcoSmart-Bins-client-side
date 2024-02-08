@@ -12,12 +12,29 @@ import {
   FaStar,
   FaUser,
 } from "react-icons/fa";
+import { VscActivateBreakpoints } from "react-icons/vsc";
+import {
+  MdOutlineWorkHistory,
+  MdOutlineWork,
+  MdWorkOutline,
+} from "react-icons/md";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
+import { useGetApiQuery } from "../Redux/userApi/getApi";
 
 const Dashboard = () => {
-  const { user } = UseAuth();
+  const { user, loading } = UseAuth();
+  const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
+  if (loading) {
+    return (
+      <div>
+        <div className="text-center mt-20">
+          <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       <div className="drawer lg:drawer-open flex flex-col lg:flex-row">
@@ -56,6 +73,15 @@ const Dashboard = () => {
                 </div>
               </figure>
               <div className="card-body items-center text-center">
+                {data?.role === "user" &&
+                  (isLoading ? (
+                    ""
+                  ) : (
+                    <p className="px-5 py-3 bg-white flex items-center gap-2 rounded-full">
+                      <VscActivateBreakpoints className="text-brand-color text-xl" />{" "}
+                      <p className="font-bold">{data?.points}</p>
+                    </p>
+                  ))}
                 {user ? (
                   <h2 className="card-title text-xl"> {user?.displayName}</h2>
                 ) : (
@@ -115,6 +141,27 @@ const Dashboard = () => {
               </li>
 
               <div className="divider"></div>
+              {/* worker routes */}
+              <li className="lg:text-lg">
+                <NavLink to="/dashboard/PickupWork">
+                  <MdOutlineWorkHistory />
+                  Pickup Work
+                </NavLink>
+              </li>
+              <li className="lg:text-lg">
+                <NavLink to="/dashboard/OnGoingWork">
+                  <MdWorkOutline />
+                  OnGoing Works
+                </NavLink>
+              </li>
+              <li className="lg:text-lg">
+                <NavLink to="/dashboard/CompleteWorks">
+                  <MdOutlineWork />
+                  Complete Works
+                </NavLink>
+              </li>
+
+              <div className="divider"></div>
 
               {/* user routes */}
               <li className="lg:text-lg">
@@ -131,6 +178,11 @@ const Dashboard = () => {
               <li className="lg:text-lg">
                 <NavLink to="/dashboard/feedback">
                   <FaStar /> Feedback
+                </NavLink>
+              </li>
+              <li className="lg:text-lg">
+                <NavLink to="/dashboard/RewardPoints">
+                  <VscActivateBreakpoints /> Reward Points
                 </NavLink>
               </li>
               <li className="lg:text-lg">
