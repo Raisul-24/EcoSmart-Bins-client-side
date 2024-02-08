@@ -122,7 +122,7 @@ const Navbar = () => {
             className="font-semibold text-white pb-2"
           >
             {" "}
-            <NavLink to={"/about"}>Team</NavLink>
+            <NavLink to={"/team"}>Team</NavLink>
           </motion.li>
           <span className="border border-slate-600"></span>
           <motion.li
