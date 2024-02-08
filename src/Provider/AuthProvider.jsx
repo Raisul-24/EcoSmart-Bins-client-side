@@ -14,7 +14,6 @@ import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
 import useAxiosPublic from "../axios/axiosPublic";
 
-
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -26,7 +25,6 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const axiosPublic = useAxiosPublic();
-
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -62,11 +60,10 @@ const AuthProvider = ({ children }) => {
           warning: 0,
           blocked: false,
         };
-        axiosPublic.post("/users", userData)
+        axiosPublic.post("/users", userData);
         // get token and store client
         const loggedUser = { email: currentUser.email };
-        axiosPublic.post("/jwt", loggedUser)
-        .then(res => {
+        axiosPublic.post("/jwt", loggedUser).then((res) => {
           if (res.data.token) {
             localStorage.setItem("access-token", res.data.token);
             setLoading(false);
@@ -78,11 +75,11 @@ const AuthProvider = ({ children }) => {
         setLoading(false);
       }
     });
+
     return () => {
       return unsubscribe();
     };
   }, [axiosPublic]);
-
 
   const authInfo = {
     user,
