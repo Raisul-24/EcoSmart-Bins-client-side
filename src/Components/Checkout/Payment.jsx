@@ -14,14 +14,8 @@ const Payment = () => {
                <h2 className="font-semibold">Select a payment method</h2>
                
                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                  <input type="radio" name="Cash on Delivery" className="radio radio-primary " checked />
-                  <h2>ca</h2>
-                  </div>
-                  
-                  <input type="radio" name="POS on Delivery" className="radio radio-primary" />
-                  <input type="radio" name="Online Payment" className="radio radio-primary" />
-                  {/* <div class="relative flex flex-col ">
+                 
+                  <div class="relative flex flex-col ">
                      <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
                         <div role="button"
                            class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
@@ -91,7 +85,7 @@ const Payment = () => {
                            </label>
                         </div>
                      </nav>
-                  </div> */}
+                  </div>
                </div>
 
 
