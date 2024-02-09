@@ -3,6 +3,8 @@ import CustomerInfo from './CustomerInfo';
 import Payment from './Payment';
 import Delivery from './Delivery';
 import { Link } from 'react-router-dom';
+import OrderOverview from './OrderOverview';
+import Voucher from './Voucher';
 
 const Checkout = () => {
    return (
@@ -10,11 +12,22 @@ const Checkout = () => {
          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* 1 */}
             <CustomerInfo></CustomerInfo>
-
-            <Payment></Payment>
-            {/* 3 */}
-            <Delivery></Delivery>
-            <div className=""></div>
+            {/* 2 */}
+            <div className="md:col-span-2"> 
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {/* Payment component */}
+                  <Payment />
+                  {/* Delivery component */}
+                  <Delivery />
+               </div>
+               {/* Additional section below Payment and Delivery */}
+               <div className="my-5">
+                  <Voucher></Voucher>
+               </div>
+               <div className="my-5">
+                  <OrderOverview></OrderOverview>
+               </div>
+            </div>
 
          </div>
          <div className="py-3 border-t-2 border-lime-950 text-green-950 mb-10">
@@ -57,14 +70,14 @@ const Checkout = () => {
                </div>
                {/*  */}
                <button>
-              {" "}
-              <Link
-                to={"/"}
-                className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
-              >
-               Checkout
-              </Link>
-            </button>
+                  {" "}
+                  <Link
+                     to={"/"}
+                     className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
+                  >
+                     Checkout
+                  </Link>
+               </button>
             </div>
          </div>
 
