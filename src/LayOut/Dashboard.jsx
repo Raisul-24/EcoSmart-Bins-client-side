@@ -196,18 +196,6 @@ const Dashboard = () => {
                   Payment History
                 </NavLink>
               </li>
-              <li className="">
-                <NavLink to="/dashboard/payment">
-                  <FaMoneyCheck></FaMoneyCheck>
-                  Make Payment
-                </NavLink>
-              </li>
-              <li className="">
-                <NavLink to="/dashboard/paymentHistory">
-                  <FaHistory></FaHistory>
-                  Payment History
-                </NavLink>
-              </li>
 
               {/* shared routes */}
               <div className="divider"></div>
