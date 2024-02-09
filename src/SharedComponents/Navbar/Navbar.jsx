@@ -3,21 +3,11 @@ import { motion } from "framer-motion";
 import "./Navbar.css";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
-import { useState } from "react";
-import { FaAngleDown } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isPagesDropdownOpen, setIsPagesDropdownOpen] = useState(false);
-
-  const togglePagesDropdown = () => {
-    setIsPagesDropdownOpen(!isPagesDropdownOpen);
-  };
-
-  const toggleServicesDropdown = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-};
+ 
+ 
 
   const handleLogOut = async () => {
     try {
