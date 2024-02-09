@@ -19,7 +19,7 @@ const Teams = () => {
         <h5 className="text-2xl text-white mb-4 font-semibold w-72 bg-brand-color px-4 py-2 rounded-r-full ">
           Meet Our Experts
         </h5>
-        <h3 className=" md:w-[800px]">
+        <h3 className="md:w-[800px]">
           Our dedicated team of experts is passionate about waste management and
           sustainability. Each member brings a unique set of skills and
           experience to contribute to our mission of creating a cleaner
