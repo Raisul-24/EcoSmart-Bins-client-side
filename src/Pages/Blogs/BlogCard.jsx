@@ -34,8 +34,7 @@ const BlogCard = ({ blog }) => {
   return (
     <>
       <div
-        className="bg-white border flex flex-col h-full  p-4 border-white rounded-lg 
-	 shadow-2xl pb-4 font-montserrat"
+
       >
         <div className="">
           <img
