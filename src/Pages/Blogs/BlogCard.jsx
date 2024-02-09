@@ -42,7 +42,7 @@ const BlogCard = ({ blog }) => {
           />
         </div>
         <div className="flex flex-col  ">
-          <div className="flex  items-center pb-5 ">
+          <div className="flex  items-center pb-5 px-5">
             <div className="flex justify-center items-center gap-6 text-green-700 text-xl">
               <button
                 className={liked ? "text-green-500" : "#0000"}
@@ -97,16 +97,18 @@ const BlogCard = ({ blog }) => {
             </div>
           </div>
 
-          <h5 className="my-6 text-4xl font-bold tracking-tight text-[#000000] h-9">
+          <h5 className="my-4 text-4xl font-bold tracking-tight text-[#000000] h-9">
             {name}
           </h5>
-          <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>
+          <p className="my-3 text-2xl font-semibold text-[#370000]">
+            {shortDescription}
+          </p>
           <p className="mb-3 font-normal text-[#370000]">{description}</p>
           <div className="flex mt-auto justify-center items-center">
             <button className="flex mt-auto w-full text-center ">
               <Link
                 to={`/blog/${_id}`}
-                className="btn btn-ghost flex  text-green-600  my-6  "
+                className="btn btn-ghost flex text-2xl hover:underline text-green-600 "
               >
                 Read More
               </Link>
