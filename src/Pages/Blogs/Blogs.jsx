@@ -1,6 +1,6 @@
 import BlogCard from "./BlogCard";
 import useGetBlog from "../../API/BlogApi/useGetBlog";
-import { FaSearch } from "react-icons/fa";
+import { FaArrowRight, FaSearch } from "react-icons/fa";
 
 const Blog = () => {
   const [blogs, loading] = useGetBlog();
@@ -39,16 +39,62 @@ const Blog = () => {
                 <BlogCard key={blog?._id} blog={blog}></BlogCard>
               ))}
             </div>
-            <div>
-              <div className="flex col-span-3 w-96 p-10 bg-[#ebf5e9] mt-4">
+            <div className=" col-span-3">
+              {/* search input field */}
+              <div className="flex w-96 p-10 bg-[#ebf5e9] my-4">
                 <input
-                  className="h-12 w-80 relative p-4"
+                  className="h-12 w-72 relative p-4 "
                   placeholder="Search..."
                   label="Input With Icon"
                 />
-                <span className="absolute top-0 bottom-0 right-0 left-0 -ml-[10px] mt-[435px] text-gray-400 text-xl">
+                <button className="absolute ml-60 mt-4 text-gray-400 text-xl">
                   <FaSearch />
-                </span>
+                </button>
+              </div>
+              {/* categories buttons part */}
+              <div className="w-96 p-10 bg-[#ebf5e9] mt-4">
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Waste Reduction
+                </button>
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Recycling Solutions
+                </button>
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Waste Management
+                </button>
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Sorting Reimagined
+                </button>
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Waste Collection
+                </button>
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Waste Practices
+                </button>
+                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                  Waste Traceability
+                </button>
               </div>
             </div>
           </div>
