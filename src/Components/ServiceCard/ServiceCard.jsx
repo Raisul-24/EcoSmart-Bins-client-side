@@ -3,7 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const ServiceCard = ({ data, isTrue, DeleteFun }) => {
   return (
-    <div className="card bg-base-100 shadow-xl mb-10">
+    <div className="card bg-base-100 shadow-xl mb-10 font-montserrat">
       <figure className="">
         <img
           src={data?.img}

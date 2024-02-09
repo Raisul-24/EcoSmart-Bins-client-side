@@ -3,7 +3,7 @@ import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 const ManagePickup = () => {
   const { data, isLoading } = useGetApiQuery("/pickupReq");
   return (
-    <div>
+    <div className="font-montserrat">
       <div className="border-b-2">
         <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
       </div>

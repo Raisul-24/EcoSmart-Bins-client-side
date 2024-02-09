@@ -3,7 +3,7 @@ import GetData from "../../Hooks/GetDataHook";
 const FAQ = () => {
   const [data, dataLoaing] = GetData("./FAQ.json");
   return (
-    <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
+    <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20 font-montserrat">
       <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">FAQ</h2>
         <p className="text-xl text-center text-brand-color font-semibold mb-10 capitalize lg:mb-20">frequently asked questions</p>
       {dataLoaing ? (

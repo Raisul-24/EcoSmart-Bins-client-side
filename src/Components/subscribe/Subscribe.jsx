@@ -22,7 +22,7 @@ const Subscribe = () => {
 
 
   return (
-    <div className="">
+    <div className="font-montserrat">
         
       <div className="z-0 relative md:px-10 py-5 lg:py-0" style={{backgroundImage: 'url(https://i.ibb.co/vdg30h5/shape-27.png)'}}>
         <div>
