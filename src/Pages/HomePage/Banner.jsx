@@ -32,7 +32,7 @@ const Banner = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className="font-montserrat">
           <div className="hero min-h-screen bg-gradient-to-r from-green-100 to-slate-100 ...">
             <div className="hero-content  flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
@@ -64,7 +64,7 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="font-montserrat">
           <div className="hero min-h-screen bg-gradient-to-r from-green-100 to-slate-100 ...">
             <div className="hero-content  flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
@@ -96,7 +96,7 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="font-montserrat">
           <div className="hero min-h-screen bg-gradient-to-r from-green-100 to-slate-100 ...">
             <div className="hero-content  flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">

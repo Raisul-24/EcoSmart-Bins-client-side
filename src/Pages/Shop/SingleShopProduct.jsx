@@ -17,7 +17,7 @@ const SingleShopProduct = () => {
   const { _id, title, img, description, price } = details || {};
 
   return (
-    <div className="my-20 md:flex p-5 justify-start items-center gap-12 bg-white">
+    <div className="font-montserrat my-20 md:flex p-5 justify-start items-center gap-12 bg-white">
       <div className="overflow-hidden flex-1">
         <img
           className="rounded p-12 bg-[#e9f1ea] h-[450px] w-[550px]"

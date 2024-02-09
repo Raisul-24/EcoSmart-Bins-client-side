@@ -6,11 +6,16 @@ const Blog = () => {
   const [blogs, loading] = useGetBlog();
 
   return (
+
+    <div className="font-montserrat">
+      <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/OmENS5F.jpg)' }}>
+
     <div>
       <div
         className="hero h-96 relative"
         style={{ backgroundImage: "url(https://i.imgur.com/OmENS5F.jpg)" }}
       >
+
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">
           <div className="max-w-md text-white">

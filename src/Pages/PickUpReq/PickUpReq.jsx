@@ -3,10 +3,10 @@ import PickUpForm from "./PickUpForm";
 
 
 const PickUpReq = () => {
-    return (
-        <div>
-           {/* banner */}
-           <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/8Byjy1H.jpg)' }}>
+  return (
+    <div className="font-montserrat">
+      {/* banner */}
+      <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/8Byjy1H.jpg)' }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">
           <div className="max-w-md text-white">
@@ -16,12 +16,12 @@ const PickUpReq = () => {
         </div>
       </div>
       <SectionTitle heading="Request Pickup"
-        subHeading="24 Hour"> 
+        subHeading="24 Hour">
       </SectionTitle>
-            <PickUpForm/>
-            
-        </div>
-    );
+      <PickUpForm />
+
+    </div>
+  );
 };
 
 export default PickUpReq;

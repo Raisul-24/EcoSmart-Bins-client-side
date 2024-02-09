@@ -24,7 +24,7 @@ const AddProducts = () => {
       });
   };
   return (
-    <div>
+    <div className="font-montserrat">
       <SectionTitle heading={"add product"} subHeading={"Add New Product"} />
       <form
         onSubmit={handleSubmit(onSubmit)}

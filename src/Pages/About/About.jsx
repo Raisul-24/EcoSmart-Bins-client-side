@@ -12,7 +12,7 @@ const About = () => {
         });
     }, []);
     return (
-        <div>
+        <div className="font-montserrat">
             {/* banner */}
             <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/Xu0zw5m.jpg)' }}>
                 <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
@@ -26,7 +26,7 @@ const About = () => {
             
 
             {/* our story */}
-            <div className="lg:px-20 lg:py-20 p-5" data-aos="zoom-out">
+            <div className="lg:px-20 lg:py-20 p-5">
                 <SectionTitle
                     heading="Our Story"
                     subHeading="Founding Inspiration"
@@ -56,8 +56,8 @@ const About = () => {
 
             {/* Values and Principles */}
             <div className="py-20">
-                <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.imgur.com/LgMf9eF.jpg)' }}>
-                    {/* <div className="hero-overlay bg-opacity-60"></div> */}
+                <div className="hero min-h-screen relative" style={{ backgroundImage: 'url(https://i.imgur.com/LgMf9eF.jpg)' }}>
+                <div className=" bg-black bg-opacity-60 absolute inset-0"></div>
                     <div >
 
                         <h1 className="mb-5 lg:text-5xl text-3xl font-bold text-center">Values and Principles</h1>
@@ -80,7 +80,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-10 justify-center -mt-7">
+                <div className="flex gap-10 justify-center mt-7">
                     <Link to="/pickUpReq"><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">Pick up Request</button></Link>
                     <Link to={"/contact"}><button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color">contact us</button></Link>
                 </div>
