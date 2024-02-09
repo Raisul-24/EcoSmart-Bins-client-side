@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useGetAProduct from "../../API/ServiceApi/useGetAProduct";
 import { useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
@@ -105,9 +105,9 @@ const SingleShopProduct = () => {
         </div>
         <p className="text-black text-lg">{description}</p>
         <div className="flex gap-4 flex-wrap">
-          <button className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r ">
+          <Link to={'/checkout'} className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r ">
             Buy Product
-          </button>
+          </Link>
           <button
             onClick={handleOrder}
             className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r "
