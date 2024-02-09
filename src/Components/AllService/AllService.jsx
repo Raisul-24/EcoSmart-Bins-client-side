@@ -16,12 +16,12 @@ const Service = () => {
   }, [dispatch])
 
   return (
-    <div className=" bg-cover bg-no-repeat bg-center relative bg-fixed" style={{backgroundImage: 'url(https://i.imgur.com/5tmRtTh.png)'}}>
+    <div className="font-montserrat bg-cover bg-no-repeat bg-center relative bg-fixed" style={{backgroundImage: 'url(https://i.imgur.com/5tmRtTh.png)'}}>
       <div className="max-w-7xl mx-auto xl:px-0 px-5">
         <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">
           Our Services
         </h2>
-        <p className="text-xl text-center text-brand-color font-semibold mb-10 ">
+        <p className=" text-xl text-center text-brand-color font-semibold mb-10 ">
           Comprehensive Waste Solutions
         </p>
 

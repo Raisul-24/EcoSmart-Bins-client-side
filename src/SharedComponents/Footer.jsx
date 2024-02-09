@@ -8,7 +8,7 @@ const Footer = () => {
  
 
     return (
-      <div className="bg-green-950 text-white">
+      <div className="bg-green-950 text-white font-montserrat">
           <footer className="footer grid-cols-2 md:grid-cols-4 p-10">
         <aside>
           <img src="logo.png" className="w-24 h-24 rounded-xl border-4 border-green-400 shadow-xl" alt="" />

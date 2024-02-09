@@ -8,7 +8,7 @@ const PriceTable = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
   };
   return (
-    <div>
+    <div className="font-montserrat">
       {/* banner */}
       <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/EaaOyjv.jpg)' }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>

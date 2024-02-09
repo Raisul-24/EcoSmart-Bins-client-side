@@ -4,7 +4,7 @@ const Teams = () => {
   const [team, loading] = useGetTeam();
   console.log(team);
   return (
-    <div className="py-20">
+    <div className="py-20 font-montserrat">
       <h5 className="text-2xl text-green-600 font-semibold text-center pb-5">
         Our Articles
       </h5>
