@@ -7,11 +7,7 @@ const ShopCard = ({ item }) => {
   return (
     <div className="font-montserrat">
       <Link to={`/shop/${_id}`}>
-        <div
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          className="p-4 card rounded bg-[#e9f1ea]"
-        >
+        <div className="p-4 card rounded bg-[#e9f1ea]">
           <div className="pb-4 ">
             <h2 className="text-brand-color md:text-2xl font-bold pb-2 text-center">
               {title}
@@ -27,7 +23,6 @@ const ShopCard = ({ item }) => {
               alt="shop item"
             />
           </figure>
-          
         </div>
       </Link>
     </div>
