@@ -105,7 +105,7 @@ const SingleShopProduct = () => {
         </div>
         <p className="text-black text-lg">{description}</p>
         <div className="flex gap-4 flex-wrap">
-          <Link to={'/checkout'} className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r ">
+          <Link to={`/checkout/${_id}`} className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r ">
             Buy Product
           </Link>
           <button
