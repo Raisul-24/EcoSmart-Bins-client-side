@@ -3,16 +3,11 @@ import { motion } from "framer-motion";
 import "./Navbar.css";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
-import { useState } from "react";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isPagesDropdownOpen, setIsPagesDropdownOpen] = useState(false);
-
-  const togglePagesDropdown = () => {
-    setIsPagesDropdownOpen(!isPagesDropdownOpen);
-  };
+ 
+ 
 
   const handleLogOut = async () => {
     try {
@@ -32,13 +27,14 @@ const Navbar = () => {
         <div
           tabIndex={0}
           role="button"
-          className="text-xl hover:text-brand-color font-semibold"
+          className="lg:text-xl hover:text-brand-color font-semibold"
         >
           Services+
         </div>
         <ul
           tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-blue-950 rounded-md w-52"
+          // onClick={toggleServicesDropdown}
+          className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-80 shadow bg-blue-950 rounded-md w-40 lg:w-52" 
         >
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
@@ -46,9 +42,9 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <NavLink to={"/services"}>All Services</NavLink>
+            <Link to={"/services"}>All Services</Link>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
@@ -57,7 +53,7 @@ const Navbar = () => {
             {" "}
             <NavLink to={"/pickup"}>Garbage Pickup</NavLink>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
@@ -66,7 +62,7 @@ const Navbar = () => {
             {" "}
             <Link to={""}>Waste Collection</Link>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
@@ -75,7 +71,7 @@ const Navbar = () => {
             {" "}
             <Link to={""}>Dumpster Service</Link>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -89,23 +85,20 @@ const Navbar = () => {
 
       <li className="text-xl hover:text-brand-color font-semibold">
         {" "}
-        <NavLink to={"/blogs"}>Blogs</NavLink>
-      </li>
-      <li className="text-xl hover:text-brand-color font-semibold">
-        {" "}
         <NavLink to={"/shop"}>Shop</NavLink>
       </li>
       <div className="dropdown dropdown-hover">
         <div
           tabIndex={0}
           role="button"
-          className="text-xl hover:text-brand-color font-semibold"
+          className="lg:text-xl hover:text-brand-color font-semibold"
         >
           Pages+{" "}
         </div>
         <ul
           tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-blue-950 rounded-md w-52"
+          // onClick={togglePagesDropdown}
+          className= "dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52"
         >
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
@@ -113,34 +106,43 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <NavLink to={"/about"}>About Us</NavLink>
+            <Link to={"/about"}>About Us</Link>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
             className="font-semibold text-white pb-2"
           >
             {" "}
-            <NavLink to={"/about"}>Team</NavLink>
+            <Link to={"/team"}>Team</Link>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
             {" "}
-            <NavLink to={"/contact"}>Contact Us</NavLink>
+            <Link to={"/contact"}>Contact Us</Link>
           </motion.li>
-          <span className="border border-slate-600"></span>
+          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
             {" "}
-            <NavLink to={"/priceTable"}>Pricing-Table</NavLink>
+            <Link to={"/blogs"}>Blog</Link>
+          </motion.li>
+          <span className="border border-slate-400"></span>
+          <motion.li
+            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="font-semibold text-white"
+          >
+            {" "}
+            <Link to={"/priceTable"}>Pricing-Table</Link>
           </motion.li>
         </ul>
       </div>
@@ -157,18 +159,34 @@ const Navbar = () => {
     </>
   );
 
-    return (
-        <div className="sticky bg-white bg-opacity-90 top-0 z-20">
-            <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </div>
-                        <ul tabIndex={0} className="bg-white bg-opacity-90 menu-sm dropdown-content mt-3 z-[2] p-2 shadow space-y-2 rounded-box w-52">
-                            {navLinks}
-                        </ul>
-                    </div>
+  return (
+    <div className="sticky bg-white bg-opacity-90 top-0 z-20 font-montserrat">
+      <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="bg-white bg-opacity-90 menu-sm dropdown-content mt-3 z-[2] p-2 shadow space-y-2 rounded-box w-52"
+            >
+              {navLinks}
+            </ul>
+          </div>
 
           <Link to={"/"} className="text-xl lg:text-3xl font-bold">
             <span className="bold text-brand-color">Eco</span>SmartBin
@@ -203,3 +221,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

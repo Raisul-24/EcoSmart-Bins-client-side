@@ -8,7 +8,19 @@ const PriceTable = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
   };
   return (
-    <div>
+    <div className="font-montserrat">
+      {/* banner */}
+      <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/EaaOyjv.jpg)' }}>
+        <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
+        <div className="hero-content text-center text-neutral-content relative z-10">
+          <div className="max-w-md text-white">
+            <h1 className="mb-5 text-5xl font-bold">Our Pricing</h1>
+            <p className="mb-5">Choose the Plan That Fits Your Needs and Budget</p>
+          </div>
+        </div>
+      </div>
+
+      {/*content  */}
       <div className="container mx-auto">
         <h2 className="text-lg md:text-xl lg:text-3xl font-bold text-center text-green-600 my-5">
           Pricing Table

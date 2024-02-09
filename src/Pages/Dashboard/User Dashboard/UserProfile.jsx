@@ -3,7 +3,7 @@ const UserProfile = () => {
     <div>
       <div>
         <div>
-          <div className="card md:w-96 items-center mx-auto bg-base-100 shadow-xl">
+          <div className="font-montserrat card md:w-96 items-center mx-auto bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
               <div className="">
                 <img
