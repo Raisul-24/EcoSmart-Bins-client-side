@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const RecycleMaterials = () => {
   return (
-    <div>
+    <div className="font-montserrat">
       <div className="">
         <div
           className="hero h-[600px]"

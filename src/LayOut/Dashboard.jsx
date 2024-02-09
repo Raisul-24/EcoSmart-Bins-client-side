@@ -36,7 +36,7 @@ const Dashboard = () => {
   }
   return (
     <div>
-      <div className="drawer lg:drawer-open flex flex-col lg:flex-row">
+      <div className="drawer lg:drawer-open flex flex-col lg:flex-row font-montserrat">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}

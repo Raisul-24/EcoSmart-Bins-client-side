@@ -23,7 +23,7 @@ const AddServices = () => {
       });
   };
   return (
-    <div>
+    <div className="font-montserrat">
       <SectionTitle heading={"add service"} subHeading={"Add New Service"} />
       <form
         onSubmit={handleSubmit(onSubmit)}

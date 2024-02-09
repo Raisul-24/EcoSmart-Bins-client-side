@@ -65,7 +65,7 @@ const AddShowcase = () => {
     
    
     return (
-        <div>
+        <div className="font-montserrat">
             <SectionTitle
                 heading="Upload Your Artwork"
                 subHeading="Ready to showcase your creativity?"

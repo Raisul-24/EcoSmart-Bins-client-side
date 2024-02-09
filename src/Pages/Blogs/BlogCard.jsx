@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const BlogCard = ({ blog }) => {
-  const { _id, image, name, shortDescription } = blog || {};
+  const { _id, image, name, shortDescription, description } = blog || {};
 
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
@@ -33,13 +33,10 @@ const BlogCard = ({ blog }) => {
 
   return (
     <>
-      <div
-        className="flex flex-col h-full p-4   
-	  "
-      >
+      <div className="mb-20">
         <div className="overflow-hidden rounded-2xl">
           <img
-            className="h-full w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
+            className="h-full w-full mb-2 rounded-2xl hover:scale-[1.07] duration-1000   rounded-t-lg"
             src={image}
             alt=""
           />
@@ -100,10 +97,11 @@ const BlogCard = ({ blog }) => {
             </div>
           </div>
 
-          <h5 className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9">
+          <h5 className="my-6 text-4xl font-bold tracking-tight text-[#000000] h-9">
             {name}
           </h5>
           <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>
+          <p className="mb-3 font-normal text-[#370000]">{description}</p>
           <div className="flex mt-auto justify-center items-center">
             <button className="flex mt-auto w-full text-center ">
               <Link

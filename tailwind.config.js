@@ -9,6 +9,10 @@ export default {
       colors: {
         'brand-color': '#3A9E1E',
       },
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+      },
+      
     },
   },
   daisyui: {
