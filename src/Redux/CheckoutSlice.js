@@ -18,7 +18,10 @@ const CounterReducer = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount } =
-  CounterReducer.actions;
+export const {
+  increment,
+  decrement,
+  incrementByAmount,
+} = CounterReducer.actions;
 
 export default CounterReducer;

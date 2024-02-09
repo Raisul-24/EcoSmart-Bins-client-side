@@ -6,7 +6,7 @@ export const axiosPrivate = axios.create({
   //  baseURL: "https://eco-smart-bin.vercel.app",
   withCredentials: true,
 });
-const UseAxiosPrivate = () => {
+export const UseAxiosPrivate = () => {
   const { logOut } = useAuth();
   const navigate = useNavigate();
 
