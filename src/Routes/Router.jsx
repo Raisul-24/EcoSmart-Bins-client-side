@@ -32,7 +32,13 @@ import UpdateProducts from "../Components/UpdateProducts/UpdateProducts";
 import ManageShowcase from "../Pages/Dashboard/Admin dashboard/ManageShowcase";
 import ManageUser from "../Pages/Dashboard/Admin dashboard/ManageUser";
 import PriceTable from "../Pages/PriceTable/PriceTable";
-import AllUsers from "../Pages/Dashboard/Admin dashboard/AllUsers";
+import PickupWork from "../Pages/Dashboard/Worker Dashboard/PickupWork";
+import OnGoingWork from "../Pages/Dashboard/Worker Dashboard/OnGoingWork";
+import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
+import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
+import Checkout from "../Components/Checkout/Checkout";
+import Teams from "../Pages/teams/Teams";
+
 
 const router = createBrowserRouter([
   {
@@ -59,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/team",
+        element: <Teams></Teams>,
       },
       {
         path: "/shop/:id",
@@ -94,8 +104,12 @@ const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path: '/priceTable',
-        element: <PriceTable></PriceTable>
+        path: "/priceTable",
+        element: <PriceTable></PriceTable>,
+      },
+      {
+        path: '/checkout',
+        element: <Checkout></Checkout>
       },
     ],
   },
@@ -144,9 +158,19 @@ const router = createBrowserRouter([
         path: "/dashboard/manageShowcase",
         element: <ManageShowcase></ManageShowcase>,
       },
+
+      // worker dashboard
       {
-        path: "/dashboard/allUsers",
-        element: <AllUsers></AllUsers>,
+        path: "/dashboard/PickupWork",
+        element: <PickupWork></PickupWork>,
+      },
+      {
+        path: "/dashboard/OnGoingWork",
+        element: <OnGoingWork></OnGoingWork>,
+      },
+      {
+        path: "/dashboard/CompleteWorks",
+        element: <CompleteWorks></CompleteWorks>,
       },
 
       // user dashboard
@@ -161,6 +185,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/cart",
         element: <Cart></Cart>,
+      },
+      {
+        path: "/dashboard/RewardPoints",
+        element: <RewardPoints></RewardPoints>,
       },
       {
         path: "/dashboard/feedback",

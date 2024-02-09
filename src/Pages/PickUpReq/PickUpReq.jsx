@@ -16,8 +16,7 @@ const PickUpReq = () => {
         </div>
       </div>
       <SectionTitle heading="Request Pickup"
-        subHeading="24 Hour">
-        
+        subHeading="24 Hour"> 
       </SectionTitle>
             <PickUpForm/>
             

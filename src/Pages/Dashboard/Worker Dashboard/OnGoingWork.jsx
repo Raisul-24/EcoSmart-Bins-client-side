@@ -1,11 +1,29 @@
+import { IoMdCheckmark } from "react-icons/io";
+import useAuth from "../../../Hooks/UseAuth";
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
+import UseAxiosPrivate from "../../../axios/axiosprivate";
+import { useNavigate } from 'react-router-dom';
+import toast from "react-hot-toast";
 
-const ManagePickup = () => {
-  const { data, isLoading } = useGetApiQuery("/pickupReq");
+const OnGoingWork = () => {
+  const axios = UseAxiosPrivate();
+  const { user } = useAuth();
+  const Navigate = useNavigate()
+  const { data, isLoading ,refetch} = useGetApiQuery(
+    `/pickupReq/${user?.email}?status=ongoing`
+  );
+  const handleClick = (id) => {
+    const status = "complete"
+    axios.patch(`/statusUpdate/${id}`,{status}).then(()=>{
+        Navigate('/dashboard/CompleteWorks')
+        toast.success('task complete')
+        refetch()
+    }).catch(()=>toast.error('fail to update'))
+  };
   return (
     <div>
       <div className="border-b-2">
-        <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
+        <h2 className="text-4xl mb-5 text-center ">OnGoing Work</h2>
       </div>
       {isLoading ? (
         <div className="text-center mt-20">
@@ -18,10 +36,10 @@ const ManagePickup = () => {
             <thead className="text-center bg-brand-color text-white">
               <tr>
                 <th>Image</th>
-                <th>Name</th>
                 <th>Email</th>
                 <th>status</th>
                 <th>details</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody className="text-center font-medium">
@@ -44,7 +62,6 @@ const ManagePickup = () => {
                       )}
                     </div>
                   </th>
-                  <td>{item?.name}</td>
                   <td>{item?.email}</td>
                   <td>
                     <h2
@@ -125,6 +142,14 @@ const ManagePickup = () => {
                       </form>
                     </dialog>
                   </td>
+                  <td>
+                    <button
+                      onClick={() => handleClick(item?._id)}
+                      className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
+                    >
+                      <IoMdCheckmark />
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -135,4 +160,4 @@ const ManagePickup = () => {
   );
 };
 
-export default ManagePickup;
+export default OnGoingWork;
