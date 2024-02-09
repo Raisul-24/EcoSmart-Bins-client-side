@@ -39,6 +39,7 @@ const Teams = () => {
         </div>
       )}
     </div>
+    </div>
   );
 };
 
