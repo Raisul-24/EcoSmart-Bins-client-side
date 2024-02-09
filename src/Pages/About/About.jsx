@@ -7,23 +7,23 @@ import { Link } from "react-router-dom";
 const About = () => {
     useEffect(() => {
         Aos.init({
-          duration: 2000,
-          offset: 200,
+            duration: 2000,
+            offset: 200,
         });
-      }, []);
+    }, []);
     return (
         <div>
             {/* banner */}
-            <div className="hero min-h-screen bg-fixed" style={{ backgroundImage: 'url(https://i.imgur.com/Xu0zw5m.jpg)' }}>
-                <div className="hero-overlay bg-opacity-50"></div>
-                <div className="hero-content text-center text-white">
-                    <div className="">
-                        <h1 className="mb-5 text-6xl font-bold ">About us</h1>
+            <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/Xu0zw5m.jpg)' }}>
+                <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
+                <div className="hero-content text-center text-neutral-content relative z-10">
+                    <div className="max-w-md text-white">
+                    <h1 className="mb-5 text-6xl font-bold ">About us</h1>
                         <p className="text-xl">Welcome to EcoSmartBin: Navigating a Greener Future</p>
-
                     </div>
                 </div>
             </div>
+            
 
             {/* our story */}
             <div className="lg:px-20 lg:py-20 p-5" data-aos="zoom-out">
