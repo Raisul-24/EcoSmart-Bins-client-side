@@ -4,6 +4,7 @@ import "./Navbar.css";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -89,10 +90,6 @@ const Navbar = () => {
 
       <li className="text-xl hover:text-brand-color font-semibold">
         {" "}
-        <NavLink to={"/blogs"}>Blogs</NavLink>
-      </li>
-      <li className="text-xl hover:text-brand-color font-semibold">
-        {" "}
         <NavLink to={"/shop"}>Shop</NavLink>
       </li>
       <div className="dropdown dropdown-hover">
@@ -113,7 +110,7 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <NavLink to={"/about"}>About Us</NavLink>
+            <Link to={"/about"}>About Us</Link>
           </motion.li>
           <span className="border border-slate-600"></span>
           <motion.li
@@ -122,7 +119,7 @@ const Navbar = () => {
             className="font-semibold text-white pb-2"
           >
             {" "}
-            <NavLink to={"/about"}>Team</NavLink>
+            <Link to={"/teams"}>Team</Link>
           </motion.li>
           <span className="border border-slate-600"></span>
           <motion.li
@@ -131,7 +128,7 @@ const Navbar = () => {
             className="font-semibold text-white"
           >
             {" "}
-            <NavLink to={"/contact"}>Contact Us</NavLink>
+            <Link to={"/contact"}>Contact Us</Link>
           </motion.li>
           <span className="border border-slate-600"></span>
           <motion.li
@@ -140,7 +137,16 @@ const Navbar = () => {
             className="font-semibold text-white"
           >
             {" "}
-            <NavLink to={"/priceTable"}>Pricing-Table</NavLink>
+            <Link to={"/blogs"}>Blog</Link>
+          </motion.li>
+          <span className="border border-slate-600"></span>
+          <motion.li
+            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="font-semibold text-white"
+          >
+            {" "}
+            <Link to={"/priceTable"}>Pricing-Table</Link>
           </motion.li>
         </ul>
       </div>

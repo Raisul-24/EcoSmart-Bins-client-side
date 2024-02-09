@@ -43,6 +43,16 @@ const ContactUs = () => {
   };
   return (
     <div>
+      {/* banner */}
+      <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/AqxEdqd.jpg)' }}>
+        <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
+        <div className="hero-content text-center text-neutral-content relative z-10">
+          <div className="max-w-md text-white">
+            <h1 className="mb-5 text-5xl font-bold">Contact Us</h1>
+            <p className="mb-5">Reach Out to Us for Inquiries, Support, or Collaborations</p>
+          </div>
+        </div>
+      </div>
       <SectionTitle
         heading="Contact with Us"
         subHeading="How To Contact"
