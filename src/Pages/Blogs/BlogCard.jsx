@@ -34,24 +34,18 @@ const BlogCard = ({ blog }) => {
   return (
     <>
       <div
-        className="bg-white border flex flex-col h-full mb-12 p-4 border-white rounded-lg 
-	 shadow-2xl pb-4"
+        className="flex flex-col h-full p-4   
+	  "
       >
-        <div className="">
+        <div className="overflow-hidden rounded-2xl">
           <img
-            className="relative h-60 w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
+            className="h-full w-full border-b-8 hover:scale-[1.07] duration-1000 hover:border-[#005c97] border-[#001535] rounded-t-lg"
             src={image}
             alt=""
           />
-          <p className="absolute top-1 right-0 flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded bg-slate-400 bg-opacity-50 mt-3 mr-4 ">
-            <span className="text-green-700">
-              <FaUser />
-            </span>
-            Admin
-          </p>
         </div>
-        <div className="flex flex-col pt-6 ">
-          <div className="flex justify-between items-center pb-5 mx-2">
+        <div className="flex flex-col  ">
+          <div className="flex  items-center pb-5 ">
             <div className="flex justify-center items-center gap-6 text-green-700 text-xl">
               <button
                 className={liked ? "text-green-500" : "#0000"}
@@ -67,7 +61,6 @@ const BlogCard = ({ blog }) => {
               </button>
               <ToastContainer />
             </div>
-
             <div className="drawer drawer-end">
               <input
                 id="my-drawer-4"
@@ -78,7 +71,7 @@ const BlogCard = ({ blog }) => {
                 {/* Page content here */}
                 <label
                   htmlFor="my-drawer-4"
-                  className="drawer-button btn flex justify-center items-center ml-32 border-0  text-black"
+                  className="drawer-button flex justify-center items-center gap-2 text-black font-bold px-5 rounded  "
                 >
                   <span className="text-green-700">
                     <FaComment />
@@ -97,18 +90,25 @@ const BlogCard = ({ blog }) => {
                 </div>
               </div>
             </div>
+            <div>
+              <p className="flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded mr-4">
+                <span className="text-green-700">
+                  <FaUser />
+                </span>
+                Admin
+              </p>
+            </div>
           </div>
 
           <h5 className="mb-5 text-xl font-semibold tracking-tight text-[#000000] h-9">
             {name}
           </h5>
-
           <p className="mb-3 font-normal text-[#370000]">{shortDescription}</p>
           <div className="flex mt-auto justify-center items-center">
             <button className="flex mt-auto w-full text-center ">
               <Link
                 to={`/blog/${_id}`}
-                className="btn btn-ghost flex  bg-green-600 hover:bg-green-800 my-6 w-full text-white"
+                className="btn btn-ghost flex  text-green-600  my-6  "
               >
                 Read More
               </Link>
