@@ -1,4 +1,4 @@
-//import "./styles.css";
+import "./styles.css";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
@@ -10,12 +10,6 @@ import ActionProvider from "./ActionProvider";
 const ChatKit = () => {
   const [showBot, toggleBot] = useState(false);
 
-const Chatbot = ({ show }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const text = e.target.text.value;
-    axios.post("/messages", text).then((res)=>console.log(res.data))
-  }}
   return (
     <div className="App">
       <button className="btn btn-outline " onClick={() => toggleBot(!showBot)}>
@@ -45,7 +39,6 @@ const Chatbot = ({ show }) => {
       </Flip>
     </div>
   );
-}
-
+};
 
 export default ChatKit;

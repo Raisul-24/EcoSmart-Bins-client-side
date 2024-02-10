@@ -7,7 +7,7 @@ import Subscribe from "../../Components/subscribe/Subscribe";
 import RecycleMaterials from "../../Components/recycle materials/RecycleMaterials";
 import Artwork from "./Artwork/Artwork";
 import Counter from "./Counter";
-import ChatKit from "../ChatBot/Chatbot";
+import ChatKit from "../ChatBot/ChatKit";
 
 const Home = () => {
   return (
