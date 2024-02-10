@@ -7,21 +7,22 @@ import Subscribe from "../../Components/subscribe/Subscribe";
 import RecycleMaterials from "../../Components/recycle materials/RecycleMaterials";
 import Artwork from "./Artwork/Artwork";
 import Counter from "./Counter";
-
+import ChatKit from "../ChatBot/Chatbot";
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      <ChatKit />
       <Service />
-      <Counter/>
+      <Counter />
       <ChoseUs />
       <FAQ />
-      <Artwork/>
-      <RecycleMaterials/>
-      <Feedback/>
+      <Artwork />
+      <RecycleMaterials />
+      <Feedback />
       <div className="">
-      <Subscribe/>
+        <Subscribe />
       </div>
     </div>
   );
