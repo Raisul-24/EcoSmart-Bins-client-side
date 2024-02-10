@@ -10,6 +10,12 @@ import ActionProvider from "./ActionProvider";
 const ChatKit = () => {
   const [showBot, toggleBot] = useState(false);
 
+const Chatbot = ({ show }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const text = e.target.text.value;
+    axios.post("/messages", text).then((res)=>console.log(res.data))
+  }}
   return (
     <div className="App">
       <button className="btn btn-outline " onClick={() => toggleBot(!showBot)}>
@@ -39,6 +45,7 @@ const ChatKit = () => {
       </Flip>
     </div>
   );
-};
+}
+
 
 export default ChatKit;
