@@ -1,59 +1,18 @@
-import ChatBot, { Loading } from "react-simple-chatbot";
+import axios from "axios";
 
-const Chatbot = () => {
-  if (Loading) {
-    return;
-  }
-
-  const steps = [
-    {
-      id: "Greet",
-      message: "Hello, Welcome to our EcoSmart-Bin",
-      trigger: "Done",
-    },
-    {
-      id: "Done",
-      message: "Please enter your name!",
-      trigger: "waiting1",
-    },
-    {
-      id: "waiting1",
-      user: true,
-      trigger: "Name",
-    },
-    {
-      id: "Name",
-      message: "Hi {previousValue}, Please select your desired option.",
-      trigger: "issues",
-    },
-    {
-      id: "issues",
-      options: [
-        {
-          value: "React",
-          label: "React",
-          trigger: "React",
-        },
-        { value: "Angular", label: "Angular", trigger: "Angular" },
-      ],
-    },
-    {
-      id: "React",
-      message:
-        "Thanks for letting us know about your React issue. Our team will resolve it ASAP",
-      end: false,
-    },
-    {
-      id: "Angular",
-      message:
-        "Thanks for letting us know about your Angular issue. Our team will resolve it ASAP",
-      end: false,
-    },
-  ];
-
+const Chatbot = ({ show }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const text = e.target.text.value;
+    axios.post("/messages", text).then((res)=>console.log(res.data))
+  };
   return (
-    <div>
-      <ChatBot steps={steps} />
+    <div className={`fixed ${show ? "right-24" : "right-full"} z-20 bottom-20`}>
+      {/* <div className="artboard bg-green-300 rounded-xl phone-1">320×568</div> */}
+      <form onSubmit={handleSubmit}>
+        <input name="text" className="input input-primary" type="text" />
+        <button className="btn btn-primary">submin</button>
+      </form>
     </div>
   );
 };

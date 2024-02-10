@@ -3726,6 +3726,18 @@ random-id@0.0.2:
   resolved "https://registry.npmjs.org/random-id/-/random-id-0.0.2.tgz"
   integrity sha512-e1E0fCzmRQcSxeAFnCybHkVi4filc7c07INtA1BAjKFRfKyO+upZ3q0OhxMnyJ2PRwTSpy/jiMN0ZXwLtyQaBw==
 
+react-chatbot-kit@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.npmjs.org/react-chatbot-kit/-/react-chatbot-kit-2.2.2.tgz"
+  integrity sha512-8p/i0KkzkhoyG2XsL6Pb6f72k9j7GYNAc5SOa4f9OZwbCD3Q34uEruNPc06qa1wZHKfT6aFna19PA2plFuO2NA==
+  dependencies:
+    react-conditionally-render "^1.0.2"
+
+react-conditionally-render@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/react-conditionally-render/-/react-conditionally-render-1.0.2.tgz"
+  integrity sha512-CtjIgaLHVDSgHis3gv/PT/8EnD6GPUL8PrhUjh7DP6S5Y3p56dGu7y2nVg6pYv1kv+fGznRhRmX3assr/vRw3A==
+
 react-countup@^6.5.0:
   version "6.5.0"
   resolved "https://registry.npmjs.org/react-countup/-/react-countup-6.5.0.tgz"
