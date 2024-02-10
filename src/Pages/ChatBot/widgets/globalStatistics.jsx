@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
-import { getData } from "../data";
 
-const Statistics = () => {
+const GlobalStatistics = () => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getStats = async () => {
-      const stats = await getData();
+//   useEffect(() => {
+//     const getStats = async () => {
+//       const stats = await getData();
 
-      // const filteredFlights = flights.filter((item) => item.Status === null);
+//       // const filteredFlights = flights.filter((item) => item.Status === null);
 
-      setStats(stats);
-      setLoading(false);
-    };
-    getStats();
-  }, []);
+//       setStats(stats);
+//       setLoading(false);
+//     };
+//     getStats();
+//   }, []);
 
   return (
     <div className="stats">
@@ -28,15 +27,15 @@ const Statistics = () => {
         <p> Deaths :</p>
       </div>
 
-      <div className="column-right">
+     {/* <div className="column-right"> */}
         {/* <ClipLoader color={"#fff"} loading={loading} /> */}
-        <p>{stats.global_total_cases}</p>
+        {/* <p>{stats.global_total_cases}</p>
         <p>{stats.global_new_cases}</p>
         <p>{stats.global_recovered}</p>
         <p>{stats.global_deaths}</p>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default Statistics;
+export default GlobalStatistics;

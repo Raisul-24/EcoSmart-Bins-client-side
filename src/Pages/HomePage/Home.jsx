@@ -13,7 +13,6 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <ChatKit />
       <Service />
       <Counter />
       <ChoseUs />

@@ -1,21 +1,11 @@
 import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
-import { getData } from "../data";
 
-const Statistics = () => {
+const LocalStatistics = () => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getStats = async () => {
-      const stats = await getData();
-
-      setStats(stats);
-      setLoading(false);
-    };
-    getStats();
-  }, []);
 
   return (
     <div className="stats">
@@ -40,4 +30,4 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default LocalStatistics;

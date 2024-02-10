@@ -1,6 +1,6 @@
 import UrlIcon from "../icons/call.svg";
 
-const ContactLink = () => {
+const Contact = () => {
   return (
     <a href="tel:1999" className="tel-link">
       <img className="url-icon" alt="CallIcon" src={UrlIcon} />
@@ -9,4 +9,4 @@ const ContactLink = () => {
   );
 };
 
-export default ContactLink;
+export default Contact;
