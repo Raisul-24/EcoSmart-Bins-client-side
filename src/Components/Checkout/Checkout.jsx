@@ -29,7 +29,7 @@ const Checkout = () => {
             <Delivery />
           </div>
           {/* Additional section below Payment and Delivery */}
-          <div className="my-5">
+          <div className="mb-5">
             <Voucher></Voucher>
           </div>
           <div className="my-5">
