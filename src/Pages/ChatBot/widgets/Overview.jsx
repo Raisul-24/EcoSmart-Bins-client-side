@@ -1,6 +1,6 @@
 import Options from "./Options";
 
-const GeneralOptions = (props) => {
+const Overview = (props) => {
   const options = [
     {
       name: "Show global statistics",
@@ -26,4 +26,4 @@ const GeneralOptions = (props) => {
   return <Options options={options} title="Options" {...props} />;
 };
 
-export default GeneralOptions;
+export default Overview;
