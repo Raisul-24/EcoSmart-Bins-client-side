@@ -17,12 +17,12 @@ const Checkout = () => {
 //     );
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-3 lg:gap-5">
         {/* 1 */}
         <CustomerInfo></CustomerInfo>
         {/* 2 */}
         <div className="md:col-span-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-3 lg:gap-5">
             {/* Payment component */}
             <Payment />
             {/* Delivery component */}
@@ -71,25 +71,25 @@ const Checkout = () => {
               className="mt-px font-light text-green-700 cursor-pointer select-none"
               htmlFor="link"
             >
-              <p className="flex font-sans text-base antialiased font-medium leading-relaxed text-green-900">
+              <p className="flex  text-xs lg:text-base font-medium leading-relaxed text-green-900">
                 I agree with the&nbsp;
                 <a
                   href="#"
-                  className="block font-sans text-base antialiased font-medium leading-relaxed text-red-500 transition-colors hover:underline"
+                  className="block  text-xs lg:text-base font-medium leading-relaxed text-red-500 transition-colors hover:underline"
                 >
                   terms and conditions
                 </a>
                 ,&nbsp;
                 <a
                   href="#"
-                  className="block font-sans text-base antialiased font-medium leading-relaxed text-red-500 transition-colors hover:underline"
+                  className="block  text-xs lg:text-base font-medium leading-relaxed text-red-500 transition-colors hover:underline"
                 >
                   Privacy Policy
                 </a>
                 &nbsp;and&nbsp;
                 <a
                   href="#"
-                  className="block font-sans text-base antialiased font-medium leading-relaxed text-red-500 transition-colors hover:underline"
+                  className="block  text-xs lg:text-base font-medium leading-relaxed text-red-500 transition-colors hover:underline"
                 >
                   Refund and Return Policy
                 </a>
