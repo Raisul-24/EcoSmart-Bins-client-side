@@ -31,23 +31,7 @@ const OrderOverview = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* <tr>
-        <td className="p-4 border-b border-blue-gray-50">
-          <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-            Alexa Liras
-          </p>
-        </td>
-        <td className="p-4 border-b border-blue-gray-50">
-          <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-            Developer
-          </p>
-        </td>
-        <td className="p-4 border-b border-blue-gray-50">
-          <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-            23/04/18
-          </p>
-        </td>
-      </tr> */}
+
               </tbody>
             </table>
           </div>
