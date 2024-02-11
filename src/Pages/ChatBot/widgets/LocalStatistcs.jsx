@@ -1,21 +1,12 @@
 import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
-import { getData } from "../data";
 
 const LocalStatistcs = () => {
+
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getStats = async () => {
-      const stats = await getData();
-
-      setStats(stats);
-      setLoading(false);
-    };
-    getStats();
-  }, []);
 
   return (
     <div className="stats">
@@ -27,17 +18,18 @@ const LocalStatistcs = () => {
         <p> New Deaths :</p>
         <p> Hospitalized :</p>
       </div>
-      <div className="column-right">
+      {/* <div className="column-right"> */}
         {/* <ClipLoader color={"#fff"} loading={loading} /> */}
-        <p>{stats.local_total_cases}</p>
+        {/* <p>{stats.local_total_cases}</p>
         <p>{stats.local_new_cases}</p>
         <p>{stats.local_recovered}</p>
         <p>{stats.local_deaths}</p>
         <p>{stats.local_new_deaths}</p>
-        <p>{stats.local_active_cases}</p>
-      </div>
+        <p>{stats.local_active_cases}</p> */}
+      {/* </div> */}
     </div>
   );
 };
 
 export default LocalStatistcs;
+
