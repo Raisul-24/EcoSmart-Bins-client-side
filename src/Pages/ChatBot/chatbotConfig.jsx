@@ -1,10 +1,9 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-import Overview from "./widgets/Overview";
-import GlobalStatistics from "./widgets/GlobalStatistics";
-import LocalStatistics from "./widgets/LocalStatistics";
-import Contact from "./widgets/Contact";
-import MedicineDelivery from "./widgets/MedicineDelivery";
+import GlobalStatistics from "./widgets/globalStatistics";
+import LocalStatistics from "./widgets/LocalStatistcs";
+import Contact from "./widgets/Contant";
 import CoBotAvatar from "./CoBotAvatar";
+import Overview from "./widgets/Overview";
 
 const config = {
   lang: "no",
@@ -19,14 +18,6 @@ const config = {
   },
   initialMessages: [
     createChatBotMessage(`Hi, I'm here to provide you guide for waste service`),
-    createChatBotMessage(
-      "Here's a quick overview of what I can help you with. You can also type in.",
-      {
-        withAvatar: false,
-        delay: 400,
-        widget: "overview",
-      }
-    ),
   ],
   state: {},
   customComponents: { botAvatar: (props) => <CoBotAvatar {...props} /> },
@@ -47,10 +38,6 @@ const config = {
     {
       widgetName: "emergencyContact",
       widgetFunc: () => <Contact />,
-    },
-    {
-      widgetName: "medicineDelivery",
-      widgetFunc: () => <MedicineDelivery />,
     },
   ],
 };
