@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import { getData } from "../data";
 
-const Statistics = () => {
+const LocalStatistcs = () => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,4 +40,4 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default LocalStatistcs;

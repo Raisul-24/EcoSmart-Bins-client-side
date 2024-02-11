@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
-import { getData } from "../data";
+//import { getData } from "../data";
 
-const Statistics = () => {
+const GlobalStatistics = () => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getStats = async () => {
-      const stats = await getData();
+    //  const stats = await getData();
 
       // const filteredFlights = flights.filter((item) => item.Status === null);
 
@@ -17,7 +17,7 @@ const Statistics = () => {
       setLoading(false);
     };
     getStats();
-  }, []);
+  }, [stats]);
 
   return (
     <div className="stats">
@@ -39,4 +39,4 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default GlobalStatistics;
