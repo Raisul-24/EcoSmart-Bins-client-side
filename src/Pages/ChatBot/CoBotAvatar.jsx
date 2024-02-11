@@ -7,7 +7,7 @@ const CoBotAvatar = () => {
         className="react-chatbot-kit-chat-bot-avatar-container"
         style={{ background: "none" }}
       >
-        <img alt="BotAvatar" src={BotAvatar} className="w-20" />
+        <img alt="BotAvatar" src={BotAvatar} className="w-10" />
       </div>
     </div>
   );
