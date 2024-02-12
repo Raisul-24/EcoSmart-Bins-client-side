@@ -2,21 +2,29 @@ import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
 
+//import { getData } from "../data";
+
+
 const GlobalStatistics = () => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
+
+    //  const stats = await getData();
 
 //   useEffect(() => {
 //     const getStats = async () => {
 //       const stats = await getData();
 
+
 //       // const filteredFlights = flights.filter((item) => item.Status === null);
+
 
 //       setStats(stats);
 //       setLoading(false);
 //     };
 //     getStats();
 //   }, []);
+
 
   return (
     <div className="stats">

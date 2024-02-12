@@ -21,12 +21,12 @@ const CustomerInfo = () => {
 
    return (
       <div>
-         <div className="p-3 px-6 rounded-xl bg-lime-50 my-5">
+         <div className="p-3 lg:px-6 rounded-xl bg-lime-50 my-5">
             <div className="flex items-center gap-2 pb-3 border-b-2 border-lime-950 text-green-950">
                <button className="btn-circle bg-green-100 ">
-                  <h2 className="text-xl font-bold text-center p-2">1</h2>
+                  <h2 className="text-base lg:text-xl font-bold text-center p-2">1</h2>
                </button>
-               <h2 className="text-xl font-bold">Customer Information</h2>
+               <h2 className="text-base lg:text-xl font-bold">Customer Information</h2>
             </div>
             <div className="my-5">
                <form onSubmit={handleSubmit(onSubmit)}>
