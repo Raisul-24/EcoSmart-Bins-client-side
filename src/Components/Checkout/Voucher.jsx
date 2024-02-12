@@ -14,13 +14,13 @@ const Voucher = () => {
    };
    return (
       <div>
-         <div className="p-3 px-6 rounded-xl bg-lime-50 my-5">
+         <div className="p-3 py-5 rounded-xl bg-lime-50 mb-5">
 
 
             <form onSubmit={handleSubmit(onSubmit)}>
                <div className="flex flex-col lg:flex-row justify-between items-center gap-5 text-green-950">
-                  <div className="flex gap-2 justify-between items-center">
-                     <div class="relative h-10 w-32 md:w-60">
+                  <div className="flex flex-col md:flex-row gap-2 justify-between items-center">
+                     <div class="relative h-10 w-full md:w-60">
                         <input type='text' {...register("voucher")}
                            class="peer h-full w-full rounded-[7px] border border-green-900 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-green-950 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-green-900 placeholder-shown:border-t-green-900 focus:border-2 focus:border-green-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                            placeholder='' />
@@ -29,11 +29,11 @@ const Voucher = () => {
                            Gift Voucher
                         </label>
                      </div>
-                     <button className="btn btn-sm btn-outline h-10 w-24 md:w-32 text-sm text-center rounded-[7px] border border-green-900 ">Apply Voucher</button>  
+                     <button className="btn btn-sm btn-outline h-10 w-full md:w-32 text-sm text-center rounded-[7px] border border-green-900 ">Apply Voucher</button>  
                   </div>
                   {/*  */}
-                  <div className="flex gap-2 justify-between items-center">
-                     <div class="relative h-10 w-32 md:w-60">
+                  <div className="flex flex-col md:flex-row gap-2 justify-between items-center">
+                     <div class="relative h-10 w-full md:w-60">
                         <input type='text' {...register("voucher")}
                            class="peer h-full w-full rounded-[7px] border border-green-900 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-green-950 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-green-900 placeholder-shown:border-t-green-900 focus:border-2 focus:border-green-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                            placeholder='' />
@@ -42,7 +42,7 @@ const Voucher = () => {
                            Promo/Coupon Code
                         </label>
                      </div>
-                     <button className="btn btn-sm btn-outline h-10 w-24 md:w-32 text-sm text-center rounded-[7px] border border-green-900 ">Apply Coupon</button>  
+                     <button className="btn btn-sm btn-outline h-10 w-full md:w-32 text-sm text-center rounded-[7px] border border-green-900 ">Apply Coupon</button>  
                   </div>
                
                </div>

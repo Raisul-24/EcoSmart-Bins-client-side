@@ -38,6 +38,7 @@ import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
 import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
 import Checkout from "../Components/Checkout/Checkout";
 import Teams from "../Pages/teams/Teams";
+import Profile from "../Components/Profile/Profile";
 
 
 const router = createBrowserRouter([
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
       {
         path: "/priceTable",
         element: <PriceTable></PriceTable>,
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
       },
       {
         path: '/checkout',
