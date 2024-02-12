@@ -28,7 +28,8 @@ const PickUpForm = () => {
     // console.log(newData);
 
     //send data to the server
-    axios.post("/pickupReq", newData).then((data) => {
+    axios.post("/pickupReq", newData)
+    .then((data) => {
       console.log(data.data);
       if (data.data.insertedId) {
         Swal.fire({
