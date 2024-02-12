@@ -164,13 +164,13 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex min-h-16 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
+      <div className="flex lg:min-h-16 min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
         <div ><p className="flex items-center gap-2"><FaPhone className=" text-xl"></FaPhone> Phone: 333 666 0000</p></div>
        
       <div className=" flex gap-5 lg:gap-10 ">
         <div className="flex">
           <FaShoppingCart className="md:text-3xl text-2xl" />
-        <div className="badge badge-secondary ml-2">{cart.length}</div>
+        <div className="badge badge-secondary ml-2 bg-white text-brand-color">{cart.length}</div>
         </div>
         <div><FaRegBell className="md:text-3xl text-2xl"/></div>
       </div>
