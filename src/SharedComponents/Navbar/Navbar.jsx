@@ -1,16 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
-import { FaRegBell, FaRegUser, FaShoppingCart, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaRegBell,
+  FaRegUser,
+  FaShoppingCart,
+  FaSignOutAlt,
+} from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
+  const location = useLocation();
   const { user, logOut } = useAuth();
-  const [cart] = useCart()
-
+  const [cart] = useCart();
 
   const handleLogOut = async () => {
     try {
@@ -165,21 +170,33 @@ const Navbar = () => {
   return (
     <div>
       <div className="flex lg:min-h-16 min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
-        <div ><p className="flex items-center gap-2"><FaPhone className=" text-xl"></FaPhone> Phone: 333 666 0000</p></div>
-       
-      <div className=" flex gap-5 lg:gap-10 ">
-        <div className="flex">
-          <FaShoppingCart className="md:text-3xl text-2xl" />
-        <div className="badge badge-secondary ml-2 bg-white text-brand-color">{cart.length}</div>
+        <div>
+          <p className="flex items-center gap-2">
+            <FaPhone className=" text-xl"></FaPhone> Phone: 333 666 0000
+          </p>
         </div>
-        <div><FaRegBell className="md:text-3xl text-2xl"/></div>
-      </div>
+
+        <div className=" flex gap-5 lg:gap-10 ">
+          <div className="flex">
+            <FaShoppingCart className="md:text-3xl text-2xl" />
+            <div className="badge badge-secondary ml-2 bg-white text-brand-color">
+              {cart.length}
+            </div>
+          </div>
+          <div>
+            <FaRegBell className="md:text-3xl text-2xl" />
+          </div>
+        </div>
       </div>
       <div className="sticky bg-white bg-opacity-90 top-0 z-20 font-montserrat">
         <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
           <div className="navbar-start">
             <div className="dropdown">
-              <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -211,24 +228,27 @@ const Navbar = () => {
             <ul className=" flex gap-8 px-1 ">{navLinks}</ul>
           </div>
 
-          {
-            user ? <div className="navbar-end">
+          {user ? (
+            <div className="navbar-end">
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className=" rounded-full">
-                    <img src={user.photoURL
-                    } alt="" className="rounded-full" />
+                    <img src={user.photoURL} alt="" className="rounded-full" />
                   </div>
                 </label>
-                <ul tabIndex={0} className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52 text-white">
-
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52 text-white"
+                >
                   <motion.li
                     whileHover={{ scale: 1.3, originX: 0 }}
                     transition={{ type: "spring", stiffness: 300 }}
                     className="text-white"
                   >
                     {" "}
-                    <Link to={'/profile'}>View Profile <FaRegUser /></Link>
+                    <Link to={"/profile"}>
+                      View Profile <FaRegUser />
+                    </Link>
                   </motion.li>
                   <span className="border border-slate-400"></span>
                   <motion.li
@@ -237,13 +257,32 @@ const Navbar = () => {
                     className="text-white"
                   >
                     {" "}
-                    <button onClick={handleLogOut}>Logout <FaSignOutAlt></FaSignOutAlt></button>
+                    <button onClick={handleLogOut}>
+                      Logout <FaSignOutAlt></FaSignOutAlt>
+                    </button>
                   </motion.li>
                 </ul>
               </div>
             </div>
-              : ''
-          }
+          ) : (
+            <div className="navbar-end capitalize">
+              {location.pathname === "/login" ? (
+                <Link
+                  to={"/register"}
+                  className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color "
+                >
+                  register
+                </Link>
+              ) : (
+                <Link
+                  to={"/login"}
+                  className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color "
+                >
+                  login
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -251,5 +290,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
