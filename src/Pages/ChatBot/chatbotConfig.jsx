@@ -10,10 +10,10 @@ const config = {
   botName: "CoBot",
   customStyles: {
     botMessageBox: {
-      backgroundColor: "#04668a",
+      backgroundColor: "#3a9e1e",
     },
     chatButton: {
-      backgroundColor: "#0f5faf",
+      backgroundColor: "#3a9e1e",
     },
   },
   initialMessages: [

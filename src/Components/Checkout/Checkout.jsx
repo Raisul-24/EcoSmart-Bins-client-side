@@ -1,39 +1,81 @@
 import CustomerInfo from "./CustomerInfo";
 import Payment from "./Payment";
 import Delivery from "./Delivery";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import OrderOverview from "./OrderOverview";
 import Voucher from "./Voucher";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const Checkout = () => {
-//   const { id } = useParams();
-//   const {data, isLoading} = useGetApiQuery(`/products/${id}`)
-//   if (isLoading)
-//     return (
-//       <div className="text-center py-20">
-//         <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
-//       </div>
-//     );
+  const { id } = useParams();
+  const { data: product, isLoading } = useGetApiQuery(`/products/${id}`);
+  const [paymentData, setPaymentdata] = useState("");
+  const [deliveryData, setDeliverydata] = useState(0);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  if (isLoading)
+    return (
+      <div className="text-center py-20">
+        <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+      </div>
+    );
+  const { _id, img, title, price, description } = product;
+  const totalPrice = price + deliveryData;
+  const onSubmit = async (data) => {
+    const {
+      name: CustomerName,
+      mobile: CustomerMobile,
+      email: CustomerEmail,
+      city: CustomerCity,
+      address: CustomerAddress,
+      comment: CustomerComment,
+    } = data;
+    // Log the form data
+    const checkoutData = {
+      CustomerName,
+      CustomerMobile,
+      CustomerEmail,
+      CustomerCity,
+      CustomerAddress,
+      CustomerComment,
+      img,
+      title,
+      price,
+      description,
+      paymentData,
+      totalPrice,
+      product_id: _id,
+    };
+    console.log(checkoutData);
+    // Reset the form after submission
+    reset();
+  };
+  const OrderOverviewData = {title, price,totalPrice}
   return (
-    <div className="container mx-auto">
+    <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {/* 1 */}
-        <CustomerInfo></CustomerInfo>
+        <CustomerInfo register={register} errors={errors}></CustomerInfo>
         {/* 2 */}
         <div className="md:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Payment component */}
-            <Payment />
+            <Payment setPaymentdata={setPaymentdata} />
             {/* Delivery component */}
-            <Delivery />
+            <Delivery setDeliverydata={setDeliverydata} />
           </div>
           {/* Additional section below Payment and Delivery */}
           <div className="my-5">
             <Voucher></Voucher>
           </div>
           <div className="my-5">
-            <OrderOverview></OrderOverview>
+            <OrderOverview OrderOverviewData={OrderOverviewData}></OrderOverview>
           </div>
         </div>
       </div>
@@ -47,6 +89,7 @@ const Checkout = () => {
             >
               <input
                 type="checkbox"
+                required
                 className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-green-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-green-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
                 id="link"
               />
@@ -98,18 +141,16 @@ const Checkout = () => {
             </label>
           </div>
           {/*  */}
-          <button>
+          <button
+            type="submit"
+            className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
+          >
             {" "}
-            <Link
-              to={"/"}
-              className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
-            >
-              Checkout
-            </Link>
+            Checkout
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
