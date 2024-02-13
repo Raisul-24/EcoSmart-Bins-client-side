@@ -28,14 +28,14 @@ const Navbar = () => {
       </li>
       <div className="dropdown dropdown-hover">
         <div
-          tabIndex={0}
+          tabIndex={-1}
           role="button"
           className="lg:text-xl hover:text-brand-color font-semibold"
         >
           Services+
         </div>
         <ul
-          tabIndex={0}
+          tabIndex={-1}
           // onClick={toggleServicesDropdown}
           className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-80 shadow bg-blue-950 rounded-md w-40 lg:w-52"
         >
@@ -92,14 +92,14 @@ const Navbar = () => {
       </li>
       <div className="dropdown dropdown-hover">
         <div
-          tabIndex={0}
+          tabIndex={-2}
           role="button"
           className="lg:text-xl hover:text-brand-color font-semibold"
         >
           Pages+{" "}
         </div>
         <ul
-          tabIndex={0}
+          tabIndex={-2}
           // onClick={togglePagesDropdown}
           className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52"
         >
