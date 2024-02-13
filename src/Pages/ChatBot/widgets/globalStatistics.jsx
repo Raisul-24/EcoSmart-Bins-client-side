@@ -11,13 +11,23 @@ const GlobalStatistics = () => {
   //     const getStats = async () => {
   //       const stats = await getData();
 
-  //       // const filteredFlights = flights.filter((item) => item.Status === null);
+  useEffect(() => {
+    const getStats = async () => {
+      //  const stats = await getData();
 
-  //       setStats(stats);
-  //       setLoading(false);
-  //     };
-  //     getStats();
-  //   }, []);
+      //       // const filteredFlights = flights.filter((item) => item.Status === null);
+
+      //       setStats(stats);
+      //       setLoading(false);
+      //     };
+      //     getStats();
+      //   }, []);
+
+      setStats(stats);
+      setLoading(false);
+    };
+    getStats();
+  }, [stats]);
 
   return (
     <div className="stats">

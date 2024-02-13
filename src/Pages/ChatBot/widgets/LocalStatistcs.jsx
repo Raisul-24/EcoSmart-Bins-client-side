@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
+
 const LocalStatistics = () => {
+
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,4 +30,6 @@ const LocalStatistics = () => {
   );
 };
 
+
 export default LocalStatistics;
+
