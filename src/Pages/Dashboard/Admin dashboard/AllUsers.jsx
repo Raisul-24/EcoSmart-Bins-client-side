@@ -1,9 +1,10 @@
 import { FaTrashAlt } from "react-icons/fa";
-import UseAxiosPrivate from '../../../axios/axiosprivate';
-import { useQuery } from '@tanstack/react-query';
+import useAxiosPrivate from "../../../axios/axiosprivate";
+import { useQuery } from "@tanstack/react-query";
+
 
 const AllUsers = () => {
-   const axiosPrivate = UseAxiosPrivate();
+   const axiosPrivate = useAxiosPrivate();
    const { data: users = [], refetch } = useQuery({
        queryKey: ['users'],
        queryFn: async () => {
@@ -11,6 +12,7 @@ const AllUsers = () => {
            return res.data;
        }
    })
+
 
    return (
       <div>
@@ -54,7 +56,6 @@ const AllUsers = () => {
             </div>
         </div>
       </div>
-
    );
 };
 

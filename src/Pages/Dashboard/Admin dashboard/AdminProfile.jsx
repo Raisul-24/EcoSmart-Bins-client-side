@@ -18,7 +18,9 @@ const AdminProfile = () => {
               <button className="btn bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
                 Update Profile
               </button>
+
             </div>
+            <img src="https://pimage.vercel.app/image/600x400.jpeg?background=1125&textcolor=white&text=welcomes&weight=400&font=Arial" alt="" />
           </div>
         </div>
       </div>
