@@ -39,6 +39,8 @@ import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
 import Checkout from "../Components/Checkout/Checkout";
 import Teams from "../Pages/teams/Teams";
 import Profile from "../Components/Profile/Profile";
+import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
+import PaymentFailed from "../Pages/Payment/PaymentFailed";
 
 
 const router = createBrowserRouter([
@@ -119,6 +121,14 @@ const router = createBrowserRouter([
       {
         path: '/checkout/:id',
         element: <Checkout></Checkout>
+      },
+      {
+        path: '/payment/success/:transaction_id',
+        element: <PaymentSuccess></PaymentSuccess>
+      },
+      {
+        path: '/payment/fail/:transaction_id',
+        element: <PaymentFailed></PaymentFailed>
       },
     ],
   },

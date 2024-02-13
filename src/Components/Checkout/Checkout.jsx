@@ -54,23 +54,15 @@ const Checkout = () => {
       totalPrice,
       product_id: _id,
     };
-    // console.log(checkoutData);
+    console.log(checkoutData);
 
-//     fetch("http://localhost:8085/order", {
-//       method: "POST",
-// headers:{ "content-type": "application/json" },
-//     body: JSON.stringify(data),
-// })
-//   .then((res)=> res.json())
-// .then((result) =>{
-// // window.location.replace(result.url);
-// console.log(result);
-// })
+
     axiosPublic.post('/order', checkoutData)
     .then(res =>{
       // window.location.replace(data.url)
       console.log(res);
-      console.log('Redirect URL:', res.data.redirectUrl);
+      window.location.replace(res.data.url)
+      console.log('Redirect URL:', res.data.url);
     })
 
     // Reset the form after submission
