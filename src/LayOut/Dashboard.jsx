@@ -21,13 +21,23 @@ import { FaCartShopping } from "react-icons/fa6";
 import {Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { useGetApiQuery } from "../Redux/userApi/getApi";
+import useUsers from "../API/UserApi/useUsers";
 
 const Dashboard = () => {
   const { user, loading } = UseAuth();
   console.log(user);
-  const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
+  // const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
+  const[allUsers, isPending, refetch] = useUsers()
+  console.log(allUsers);
   
-  
+  const isAdmin = allUsers?.filter(data => data?.role === "admin" && data?.email === user?.email)
+  // console.log(isAdmin);
+  const isUser = allUsers?.filter(data => data?.role === "user" && data?.email === user?.email)
+  // console.log(isUser);
+  const isWorker = allUsers?.filter(data => data?.role === "worker" && data?.email === user?.email)
+  // console.log(isWorker);
+
+
   if (loading) {
     return (
       <div>
@@ -75,7 +85,7 @@ const Dashboard = () => {
                 </div>
               </figure>
               <div className="card-body px-0 pt-5 items-center text-center">
-                {data?.role === "user" &&
+                {/* {data?.role === "user" &&
                   (isLoading ? (
                     ""
                   ) : (
@@ -83,7 +93,7 @@ const Dashboard = () => {
                       <VscActivateBreakpoints className="text-brand-color text-xl" />{" "}
                       <p className="font-bold">{data?.points}</p>
                     </p>
-                  ))}
+                  ))} */}
               
                   <h2 className="font-bold lg:text-xl"> {user?.displayName}</h2>
                 
@@ -94,9 +104,11 @@ const Dashboard = () => {
 
             <ul className="menu px-0 font-semibold ">
               {/* admin routes */}
-              <li className="">
+              {
+                isAdmin?.length > 0 ?
+                 <>
+                  <li className="">
                 <NavLink to="/dashboard/addServices"
-                activeClassName="active"
                  className={({ isActive, isPending }) =>
                  isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
                }
@@ -165,10 +177,15 @@ const Dashboard = () => {
                   Manage User
                 </NavLink>
               </li>
+             
+                </> : ""
+              }
 
-              <div className="divider"></div>
               {/* worker routes */}
-              <li className="">
+
+             {
+              isWorker?.length > 0 ? <>
+               <li className="">
                 <NavLink to="/dashboard/PickupWork"
                  className={({ isActive, isPending }) =>
                  isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
@@ -198,71 +215,78 @@ const Dashboard = () => {
                   Complete Works
                 </NavLink>
               </li>
-
-              <div className="divider"></div>
+              </> : ""
+             }
 
               {/* user routes */}
-              <li className="">
-                <NavLink to="/dashboard/cart"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
-               }
-                >
-                  <FaCartShopping></FaCartShopping> My Cart
-                </NavLink>
-              </li>
-              <li className="">
-                <NavLink to="/dashboard/addShowcase"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
-               }
-                >
-                  <FaCameraRetro />
-                  Add Showcase
-                </NavLink>
-               </li>
-              <li className="">
-                <NavLink to="/dashboard/feedback"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
-               }
-                >
-                  <FaStar /> Feedback
-                </NavLink>
-              </li>
+
+           { 
+            isUser?.length > 0 ? 
+              <>
                <li className="">
-                <NavLink to="/dashboard/RewardPoints"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
-               }
-                >
-                  <VscActivateBreakpoints /> Reward Points
-                </NavLink>
-              </li> 
-              <li className="">
-                <NavLink to="/dashboard/payment"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
-               }
-                >
-                  <FaMoneyCheck></FaMoneyCheck>
-                  Make Payment
-                </NavLink>
+               <NavLink to="/dashboard/cart"
+                className={({ isActive, isPending }) =>
+                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+              }
+               >
+                 <FaCartShopping></FaCartShopping> My Cart
+               </NavLink>
+             </li>
+             <li className="">
+               <NavLink to="/dashboard/addShowcase"
+                className={({ isActive, isPending }) =>
+                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+              }
+               >
+                 <FaCameraRetro />
+                 Add Showcase
+               </NavLink>
               </li>
+             <li className="">
+               <NavLink to="/dashboard/feedback"
+                className={({ isActive, isPending }) =>
+                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+              }
+               >
+                 <FaStar /> Feedback
+               </NavLink>
+             </li>
               <li className="">
-                <NavLink to="/dashboard/paymentHistory"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
-               }
-                >
-                  <FaHistory></FaHistory>
-                  Payment History
-                </NavLink>
-              </li> 
+               <NavLink to="/dashboard/RewardPoints"
+                className={({ isActive, isPending }) =>
+                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+              }
+               >
+                 <VscActivateBreakpoints /> Reward Points
+               </NavLink>
+             </li> 
+             <li className="">
+               <NavLink to="/dashboard/payment"
+                className={({ isActive, isPending }) =>
+                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+              }
+               >
+                 <FaMoneyCheck></FaMoneyCheck>
+                 Make Payment
+               </NavLink>
+             </li>
+             <li className="">
+               <NavLink to="/dashboard/paymentHistory"
+                className={({ isActive, isPending }) =>
+                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+              }
+               >
+                 <FaHistory></FaHistory>
+                 Payment History
+               </NavLink>
+             </li> 
+             </> : ""
+
+            }
 
               {/* shared routes */}
-              <div className="divider"></div>
-              <li className="">
+             
+              {/* <li className="">
                 <NavLink to="/">
                   <FaHome></FaHome>
                   Home
@@ -279,7 +303,7 @@ const Dashboard = () => {
                   <FaEnvelope></FaEnvelope>
                   Contact
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
