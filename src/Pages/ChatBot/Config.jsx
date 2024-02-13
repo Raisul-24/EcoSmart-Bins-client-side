@@ -1,11 +1,10 @@
 //import { createChatBotMessage } from "react-chatbot-kit";
 //import CoBotAvatar from "./CoBotAvatar";
 //import Overview from "./widgets/Overview";
-//import LocalStatistcs from "./widgets/LocalStatistcs";
 //import GlobalStatistics from "./widgets/globalStatistics";
 //import ContactLink from "./widgets/Contant";
+//import LocalStatistics from "./widgets/LocalStatistcs";
 ////import MedicineDelivery from "./widgets/MedicineDelivery";
-///
 //
 //const Config = {
 //  lang: "no",
@@ -43,7 +42,7 @@
 //    },
 //    {
 //      widgetName: "localStatistics",
-//      widgetFunc: () => <LocalStatistcs />,
+//      widgetFunc: () => <LocalStatistics />,
 //    },
 //    {
 //      widgetName: "emergencyContact",
@@ -54,17 +53,14 @@
 //
 //export default Config;
 
-
 import { createChatBotMessage } from "react-chatbot-kit";
+import GlobalStatistics from "./widgets/globalStatistics";
+import LocalStatistics from "./widgets/LocalStatistcs";
+import Contact from "./widgets/Contant";
 import CoBotAvatar from "./CoBotAvatar";
 import Overview from "./widgets/Overview";
-import LocalStatistcs from "./widgets/LocalStatistcs";
-import GlobalStatistics from "./widgets/globalStatistics";
-import ContactLink from "./widgets/Contant";
-//import MedicineDelivery from "./widgets/MedicineDelivery";
-/
 
-const Config = {
+const config = {
   lang: "no",
   botName: "CoBot",
   customStyles: {
@@ -77,14 +73,6 @@ const Config = {
   },
   initialMessages: [
     createChatBotMessage(`Hi, I'm here to provide you guide for waste service`),
-    createChatBotMessage(
-      "Here's a quick overview of what I can help you with. You can also type in.",
-      {
-        withAvatar: false,
-        delay: 400,
-        widget: "overview",
-      }
-    ),
   ],
   state: {},
   customComponents: { botAvatar: (props) => <CoBotAvatar {...props} /> },
@@ -100,13 +88,13 @@ const Config = {
     },
     {
       widgetName: "localStatistics",
-      widgetFunc: () => <LocalStatistcs />,
+      widgetFunc: () => <LocalStatistics />,
     },
     {
       widgetName: "emergencyContact",
-      widgetFunc: () => <ContactLink />,
+      widgetFunc: () => <Contact />,
     },
   ],
 };
 
-export default Config;
+export default config;

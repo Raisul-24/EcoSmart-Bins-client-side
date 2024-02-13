@@ -40,67 +40,67 @@ const Blog = () => {
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="md:grid grid-cols-9 gap-12 items-start justify-center">
-            <div className="col-span-6 mb-5 lg:grid-cols-3 ">
+          <div className="md:grid grid-cols-9 gap-20 items-start justify-center">
+            <div className=" mb-5 col-span-6">
               {blogs?.map((blog) => (
                 <BlogCard key={blog?._id} blog={blog}></BlogCard>
               ))}
             </div>
-            <div className=" col-span-3">
+            <div className="col-span-3">
               {/* search input field */}
-              <div className="flex w-96 p-10 bg-[#ebf5e9] ">
+              <div className="flex p-10 bg-[#e9f1ea]">
                 <input
-                  className="h-12 w-72 relative p-4 "
+                  className="h-12 w-96 relative p-4 "
                   placeholder="Search..."
                   label="Input With Icon"
                 />
-                <button className="absolute ml-60 mt-4 text-gray-400 text-xl">
+                <button className="absolute ml-60 mt-4 text-gray-400 text-lg">
                   <FaSearch />
                 </button>
               </div>
               {/* categories buttons part */}
-              <div className="w-96 p-10 bg-[#ebf5e9] mt-4">
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Waste Reduction
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
+              <div className=" p-10 bg-[#e9f1ea] mt-4">
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
                     <FaArrowRight />
                   </span>
                   Recycling Solutions
                 </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
                     <FaArrowRight />
                   </span>
-                  Waste Management
+                  Waste Reduction
                 </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
                     <FaArrowRight />
                   </span>
-                  Sorting Reimagined
+                  Residential Waste
                 </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
                     <FaArrowRight />
                   </span>
-                  Waste Collection
+                  Commercial Waste
                 </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
                     <FaArrowRight />
                   </span>
-                  Waste Practices
+                  Dumpster Rental
                 </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
                     <FaArrowRight />
                   </span>
-                  Waste Traceability
+                  Retail & Institutional
+                </button>
+                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
+                  <span className="p-3 text-black rounded-full bg-white">
+                    <FaArrowRight />
+                  </span>
+                  Commercial Liquid
                 </button>
               </div>
             </div>

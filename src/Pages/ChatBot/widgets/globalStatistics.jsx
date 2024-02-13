@@ -1,30 +1,33 @@
 import { useState, useEffect } from "react";
 // import ClipLoader from "react-spinners/ClipLoader";
 
-
 //import { getData } from "../data";
-
 
 const GlobalStatistics = () => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
-    //  const stats = await getData();
+  //   useEffect(() => {
+  //     const getStats = async () => {
+  //       const stats = await getData();
 
-//   useEffect(() => {
-//     const getStats = async () => {
-//       const stats = await getData();
+  useEffect(() => {
+    const getStats = async () => {
+      //  const stats = await getData();
 
+      //       // const filteredFlights = flights.filter((item) => item.Status === null);
 
-//       // const filteredFlights = flights.filter((item) => item.Status === null);
+      //       setStats(stats);
+      //       setLoading(false);
+      //     };
+      //     getStats();
+      //   }, []);
 
-
-//       setStats(stats);
-//       setLoading(false);
-//     };
-//     getStats();
-//   }, []);
-
+      setStats(stats);
+      setLoading(false);
+    };
+    getStats();
+  }, [stats]);
 
   return (
     <div className="stats">
@@ -35,9 +38,9 @@ const GlobalStatistics = () => {
         <p> Deaths :</p>
       </div>
 
-     {/* <div className="column-right"> */}
-        {/* <ClipLoader color={"#fff"} loading={loading} /> */}
-        {/* <p>{stats.global_total_cases}</p>
+      {/* <div className="column-right"> */}
+      {/* <ClipLoader color={"#fff"} loading={loading} /> */}
+      {/* <p>{stats.global_total_cases}</p>
         <p>{stats.global_new_cases}</p>
         <p>{stats.global_recovered}</p>
         <p>{stats.global_deaths}</p>
