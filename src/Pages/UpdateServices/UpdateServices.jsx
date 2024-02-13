@@ -25,7 +25,7 @@ const UpdateServices = () => {
       .then(() => refetch());
   };
   return (
-    <div>
+    <div className="font-montserrat">
       <SectionTitle heading={"update service"} subHeading={data?.title} />
       {dataLoaing ? (
         ""

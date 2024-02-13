@@ -34,7 +34,7 @@ const ManageServices = () => {
     });
   };
   return (
-    <div>
+    <div className="font-montserrat">
       <div className="border-b-2">
         <h2 className="text-4xl mb-5 text-center ">Manage Service Data</h2>
       </div>
@@ -46,7 +46,7 @@ const ManageServices = () => {
         <div className="overflow-x-auto">
           <table className="table w-full">
             {/* head */}
-            <thead className="text-center bg-brand-color ">
+            <thead className="text-center bg-brand-color text-white">
               <tr>
                 <th>#</th>
                 <th>Image</th>

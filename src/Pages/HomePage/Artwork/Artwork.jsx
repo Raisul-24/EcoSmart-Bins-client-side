@@ -32,7 +32,7 @@ const Artwork = () => {
     }, [axiosPublic]);
 
     return (
-        <div className="bg-slate-50 mb-10">
+        <div className="bg-slate-50 mb-10 font-montserrat">
             <div className=" xl:px-0 px-5  lg:py-20">
                 <h2 className=" text-center pt-5 text-4xl font-bold  text-[#101a30] mb-5">Welcome to Our Waste Art Showcase!</h2>
                 <p className="text-xl text-brand-color text-center font-semibold mb-10">Discover the Beauty of Waste Transformation</p>

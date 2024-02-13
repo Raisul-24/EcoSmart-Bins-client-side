@@ -1,56 +1,56 @@
 [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "img_url": "https://example.com/john_doe.jpg",
-      "role": "Software Engineer",
-      "github": "https://github.com/johndoe",
-      "linkedin": "https://www.linkedin.com/in/johndoe",
-      "facebook": "https://www.facebook.com/johndoe"
-    },
-    {
-      "id": 2,
-      "name": "Jane Smith",
-      "img_url": "https://example.com/jane_smith.jpg",
-      "role": "UX Designer",
-      "github": "https://github.com/janesmith",
-      "linkedin": "https://www.linkedin.com/in/janesmith",
-      "facebook": "https://www.facebook.com/janesmith"
-    },
-    {
-      "id": 3,
-      "name": "Bob Johnson",
-      "img_url": "https://example.com/bob_johnson.jpg",
-      "role": "Data Scientist",
-      "github": "https://github.com/bobjohnson",
-      "linkedin": "https://www.linkedin.com/in/bobjohnson",
-      "facebook": "https://www.facebook.com/bobjohnson"
-    },
-    {
-      "id": 4,
-      "name": "Alice Brown",
-      "img_url": "https://example.com/alice_brown.jpg",
-      "role": "Marketing Manager",
-      "github": "https://github.com/alicebrown",
-      "linkedin": "https://www.linkedin.com/in/alicebrown",
-      "facebook": "https://www.facebook.com/alicebrown"
-    },
-    {
-      "id": 5,
-      "name": "Charlie Davis",
-      "img_url": "https://example.com/charlie_davis.jpg",
-      "role": "Project Manager",
-      "github": "https://github.com/charliedavis",
-      "linkedin": "https://www.linkedin.com/in/charliedavis",
-      "facebook": "https://www.facebook.com/charliedavis"
-    },
-    {
-      "id": 6,
-      "name": "Eva White",
-      "img_url": "https://example.com/eva_white.jpg",
-      "role": "Graphic Designer",
-      "github": "https://github.com/evawhite",
-      "linkedin": "https://www.linkedin.com/in/evawhite",
-      "facebook": "https://www.facebook.com/evawhite"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Raisul Islam",
+    "img_url": "https://i.ibb.co/CMVMjHk/risul.jpg",
+    "role": "Software Engineer",
+    "github": "https://github.com/johndoe",
+    "linkedin": "https://www.linkedin.com/in/johndoe",
+    "facebook": "https://www.facebook.com/johndoe"
+  },
+  {
+    "id": 2,
+    "name": "Samit Intesar",
+    "img_url": "https://i.ibb.co/1zVg6kC/samit.jpg",
+    "role": "UX Designer",
+    "github": "https://github.com/janesmith",
+    "linkedin": "https://www.linkedin.com/in/janesmith",
+    "facebook": "https://www.facebook.com/janesmith"
+  },
+  {
+    "id": 3,
+    "name": "Farhad Ahmed",
+    "img_url": "https://i.ibb.co/0D3s3Bs/farhad.jpg",
+    "role": "Data Scientist",
+    "github": "https://github.com/bobjohnson",
+    "linkedin": "https://www.linkedin.com/in/bobjohnson",
+    "facebook": "https://www.facebook.com/bobjohnson"
+  },
+  {
+    "id": 4,
+    "name": "Mahbuba Muna",
+    "img_url": "https://i.ibb.co/8NK9p5Y/muna.jpg",
+    "role": "Marketing Manager",
+    "github": "https://github.com/alicebrown",
+    "linkedin": "https://www.linkedin.com/in/alicebrown",
+    "facebook": "https://www.facebook.com/alicebrown"
+  },
+  {
+    "id": 5,
+    "name": "Rawshanara Eity",
+    "img_url": "https://i.ibb.co/j5pFkXM/Ety.jpg",
+    "role": "Project Manager",
+    "github": "https://github.com/charliedavis",
+    "linkedin": "https://www.linkedin.com/in/charliedavis",
+    "facebook": "https://www.facebook.com/charliedavis"
+  },
+  {
+    "id": 6,
+    "name": "Mahdi hasan",
+    "img_url": "https://i.ibb.co/bQfGXFC/mahdi.png",
+    "role": "Graphic Designer",
+    "github": "https://github.com/evawhite",
+    "linkedin": "https://www.linkedin.com/in/evawhite",
+    "facebook": "https://www.facebook.com/evawhite"
+  }
+]

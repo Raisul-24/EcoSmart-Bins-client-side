@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Map from "../../Components/Map/Map";
-import Chatbot from "../ChatBot/ChatBot";
 
 const ContactUs = () => {
   const form = useRef();
@@ -42,7 +41,22 @@ const ContactUs = () => {
       );
   };
   return (
-    <div>
+    <div className="font-montserrat">
+      {/* banner */}
+      <div
+        className="hero h-96 relative"
+        style={{ backgroundImage: "url(https://i.imgur.com/AqxEdqd.jpg)" }}
+      >
+        <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
+        <div className="hero-content text-center text-neutral-content relative z-10">
+          <div className="max-w-md text-white">
+            <h1 className="mb-5 text-5xl font-bold">Contact Us</h1>
+            <p className="mb-5">
+              Reach Out to Us for Inquiries, Support, or Collaborations
+            </p>
+          </div>
+        </div>
+      </div>
       <SectionTitle
         heading="Contact with Us"
         subHeading="How To Contact"
@@ -196,9 +210,6 @@ const ContactUs = () => {
                     </button>
                   </div>
                 </form>
-                <div className="my-20">
-                  <Chatbot />
-                </div>
                 <div>
                   <span className="absolute -top-10 -right-9 z-[-1]">
                     <svg

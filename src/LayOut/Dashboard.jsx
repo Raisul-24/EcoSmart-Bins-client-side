@@ -11,15 +11,32 @@ import {
   FaStar,
   FaUsers,
 } from "react-icons/fa";
+import { VscActivateBreakpoints } from "react-icons/vsc";
+import {
+  MdOutlineWorkHistory,
+  MdOutlineWork,
+  MdWorkOutline,
+} from "react-icons/md";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
+import { useGetApiQuery } from "../Redux/userApi/getApi";
 
 const Dashboard = () => {
-  const { user } = UseAuth();
+  const { user, loading } = UseAuth();
+  const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
+  if (loading) {
+    return (
+      <div>
+        <div className="text-center mt-20">
+          <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
-      <div className="drawer lg:drawer-open flex flex-col lg:flex-row">
+      <div className="drawer lg:drawer-open flex flex-col lg:flex-row font-montserrat">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
@@ -55,6 +72,15 @@ const Dashboard = () => {
                 </div>
               </figure>
               <div className="card-body items-center text-center">
+                {data?.role === "user" &&
+                  (isLoading ? (
+                    ""
+                  ) : (
+                    <p className="px-5 py-3 bg-white flex items-center gap-2 rounded-full">
+                      <VscActivateBreakpoints className="text-brand-color text-xl" />{" "}
+                      <p className="font-bold">{data?.points}</p>
+                    </p>
+                  ))}
                 {user ? (
                   <h2 className="card-title text-xl"> {user?.displayName}</h2>
                 ) : (
@@ -102,14 +128,35 @@ const Dashboard = () => {
               </li>
               <li className="">
                 <NavLink to="/dashboard/manageShowcase">
-                <FaEdit />
+                  <FaEdit />
                   Manage Showcase
                 </NavLink>
               </li>
               <li className="">
-                <NavLink to="/dashboard/allUsers">
-                  <FaUsers/>
-                All users
+                <NavLink to="/dashboard/manageUser">
+                  <FaUsers />
+                  Manage User
+                </NavLink>
+              </li>
+
+              <div className="divider"></div>
+              {/* worker routes */}
+              <li className="">
+                <NavLink to="/dashboard/PickupWork">
+                  <MdOutlineWorkHistory />
+                  Pickup Work
+                </NavLink>
+              </li>
+              <li className="">
+                <NavLink to="/dashboard/OnGoingWork">
+                  <MdWorkOutline />
+                  OnGoing Works
+                </NavLink>
+              </li>
+              <li className="">
+                <NavLink to="/dashboard/CompleteWorks">
+                  <MdOutlineWork />
+                  Complete Works
                 </NavLink>
               </li>
 
@@ -132,18 +179,23 @@ const Dashboard = () => {
                   <FaStar /> Feedback
                 </NavLink>
               </li>
+              {/* <li className="">
+                <NavLink to="/dashboard/RewardPoints">
+                  <VscActivateBreakpoints /> Reward Points
+                </NavLink>
+              </li> */}
               <li className="">
-            <NavLink to="/dashboard/payment">
-              <FaMoneyCheck></FaMoneyCheck>
-             Make Payment 
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink to="/dashboard/paymentHistory">
-              <FaHistory></FaHistory>
-              Payment History
-            </NavLink>
-          </li>
+                <NavLink to="/dashboard/payment">
+                  <FaMoneyCheck></FaMoneyCheck>
+                  Make Payment
+                </NavLink>
+              </li>
+              <li className="">
+                <NavLink to="/dashboard/paymentHistory">
+                  <FaHistory></FaHistory>
+                  Payment History
+                </NavLink>
+              </li>
 
               {/* shared routes */}
               <div className="divider"></div>
