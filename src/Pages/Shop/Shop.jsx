@@ -1,25 +1,31 @@
 import SectionTitle from "./../../Components/SectionTitle/SectionTitle";
-import { useEffect, useState } from "react";
 import ShopCard from "./ShopCard";
-import useAxiosPublic from "../../axios/axiosPublic";
+import ShopSearch from "./ShopSearch";
+import ShopCategorie from "./ShopCategorie";
+import { useGetApiQuery } from "../../Redux/userApi/getApi";
+import { useState } from "react";
 const Shop = () => {
-  const [shop, setShop] = useState([]);
-  const axiosPublic = useAxiosPublic();
-  const [isLoading, setIsLoading] = useState(true);
+  const [category, setCategory] = useState("");
+  const [search, setSearch] = useState("");
+  const {
+    data: shop,
+    isLoading,
+    refetch,
+  } = useGetApiQuery(`/products?search=${search}&&category=${category}`);
+  const {data,isLoading:loading} = useGetApiQuery('/productsCategory')
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const searchData = e.target.search.value;
+    setSearch(searchData);
+    refetch();
+  };
 
-  useEffect(() => {
-    axiosPublic.get("/products").then((res) => {
-      setShop(res.data);
-      setIsLoading(false);
-    });
-  }, [axiosPublic]);
-  if (isLoading)
+  if (isLoading || loading)
     return (
       <div className="text-center py-20">
         <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
       </div>
     );
-  console.log(shop);
   return (
     <div className="font-montserrat">
       {/* banner */}
@@ -40,11 +46,24 @@ const Shop = () => {
 
       {/* content */}
       <SectionTitle heading={"shop"} subHeading={"Waste Less, Live More."} />
-      <div>
-        <div className="mx-8 my-12 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 pt-8">
-          {shop?.map((item) => (
-            <ShopCard key={item?.id} item={item}></ShopCard>
-          ))}
+      <div className="grid grid-cols-12 mx-8 space-x-4">
+        <div className="lg:col-span-9 col-span-12">
+          <div className=" my-12 grid md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-8 pt-8">
+            {shop?.map((item) => (
+              <ShopCard key={item?.id} item={item}></ShopCard>
+            ))}
+          </div>
+        </div>
+        <div className="lg:col-span-3 col-span-12 mt-20 lg:order-last order-first">
+          {/* search input field */}
+          <ShopSearch handelSubmit={handelSubmit} />
+          {/* categories buttons part */}
+          <div className="py-10 px-7 flex flex-col justify-center bg-[#e9f1ea] mt-4">
+          <ShopCategorie data={'all products'} setCategory={setCategory} />
+            {data?.map((item, idx) => (
+              <ShopCategorie data={item} key={idx} setCategory={setCategory} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
