@@ -60,20 +60,20 @@ const Feedback = () => {
         >
           {reviews?.map((review) => (
             <SwiperSlide key={review?._id}>
-              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16  p-5  border shadow-lg shadow-brand-color  flex flex-col  text-center items-center ">
+              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16  p-5  flex flex-col border text-center items-center ">
                 <Rating
                   style={{ maxWidth: 180 }}
                   itemStyles={customStyles}
                   value={review.rating}
                   readOnly
                 />
-                <p className="py-5 font-semibold text-gray-500">
+                <p className="py-3 font-semibold text-gray-500">
                   {review?.date}
                 </p>
-                <h3 className="text-xl md:text-3xl font-semibold text-amber-500">
+                <h3 className="text-lg lg:text-3xl font-semibold text-amber-500">
                   {review?.title}
                 </h3>
-                <p className="py-5  md:text-lg">{review?.feedback}</p>
+                <p className="py-3 text-base  lg:text-lg">{review?.feedback}</p>
               </div>
             </SwiperSlide>
           ))}

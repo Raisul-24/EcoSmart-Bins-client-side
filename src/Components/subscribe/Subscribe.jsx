@@ -43,7 +43,7 @@ const Subscribe = () => {
             </p>
             
           </div>
-          <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]  shadow-2xl  ">
+          <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]    ">
             <form onSubmit={handleSubscribe} className="card-body outline-none  items-center flex-row gap-0">
               <div className="w-full">
                 <input
