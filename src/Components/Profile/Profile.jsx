@@ -72,6 +72,7 @@ const Profile = () => {
                     )}
                     
                         <p className=" font-bold">{users?.role}</p>
+                       
                     
                 </div>
             </div>

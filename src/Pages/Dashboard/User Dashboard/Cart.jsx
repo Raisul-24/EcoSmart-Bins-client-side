@@ -47,7 +47,7 @@ const Cart = () => {
             </thead>
             <tbody className="text-center font-medium">
               {carts.map((item, index) => (
-                <CartRow key={item.id} item={item} index={index} />
+                <CartRow key={item._id} item={item} index={index} />
               ))}
             </tbody>
           </table>
