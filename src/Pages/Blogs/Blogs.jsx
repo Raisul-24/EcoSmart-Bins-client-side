@@ -1,9 +1,14 @@
 import BlogCard from "./BlogCard";
 import useGetBlog from "../../API/BlogApi/useGetBlog";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
+import getBlogCategories from "../../API/BlogApi/getBlogCategories";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Blog = () => {
   const [blogs, loading] = useGetBlog();
+
+  };
 
   return (
     <div className="font-montserrat">
@@ -48,60 +53,40 @@ const Blog = () => {
             </div>
             <div className="col-span-3">
               {/* search input field */}
-              <div className="flex p-10 bg-[#e9f1ea]">
+              <form
+                onSubmit={handleSearch}
+                className="flex p-10 pt-20 rounded-lg bg-[#f59e0b]"
+              >
                 <input
-                  className="h-12 w-96 relative p-4 "
+                  type="text"
+                  name="search"
+                  id=""
+                  className="h-12 w-96 relative p-4 overflow-hidden"
                   placeholder="Search..."
                   label="Input With Icon"
                 />
-                <button className="absolute ml-60 mt-4 text-gray-400 text-lg">
-                  <FaSearch />
-                </button>
-              </div>
+
+                <button
+                  className="absolute ml-60 mt-4 text-gray-400 text-lg"
+                > <FaSearch/></button>
+              </form>
               {/* categories buttons part */}
-              <div className=" p-10 bg-[#e9f1ea] mt-4">
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Recycling Solutions
-                </button>
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Waste Reduction
-                </button>
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Residential Waste
-                </button>
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Commercial Waste
-                </button>
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Dumpster Rental
-                </button>
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Retail & Institutional
-                </button>
-                <button className="h-14 px-8 bg-[#182822] hover:bg-[#257830] rounded-md text-start w-72 flex justify-start items-center gap-4 text-white text-md font-bold mb-6">
-                  <span className="p-3 text-black rounded-full bg-white">
-                    <FaArrowRight />
-                  </span>
-                  Commercial Liquid
-                </button>
+              <div className="rounded-lg p-10 bg-[#e9f1ea] mt-4">
+                {categories?.map((category) => (
+                  <button key={category.id}>
+                    <Link
+                      to={`/category=${category?.title?.toLowerCase()}`}
+                      className="h-14 px-8 bg-[#182822] hover:bg-[#257830]
+                      rounded-md text-start w-72 flex justify-start items-center
+                      gap-4 text-white text-md font-bold mb-6"
+                    >
+                      <span className="p-3 text-black rounded-full bg-white">
+                        <FaArrowRight />
+                      </span>
+                      {category?.title}
+                    </Link>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
