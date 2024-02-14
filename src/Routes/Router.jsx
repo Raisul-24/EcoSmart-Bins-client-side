@@ -42,6 +42,7 @@ import Profile from "../Components/Profile/Profile";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFailed from "../Pages/Payment/PaymentFailed";
 import Overview from "../Pages/Dashboard/Admin dashboard/Overview";
+import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
 
 
 const router = createBrowserRouter([
@@ -120,7 +121,7 @@ const router = createBrowserRouter([
         element: <Checkout></Checkout>
       },
       {
-        path: '/checkout/:id',
+        path: '/checkout/:id/:quantity',
         element: <Checkout></Checkout>
       },
       {
@@ -130,6 +131,10 @@ const router = createBrowserRouter([
       {
         path: '/payment/fail/:transaction_id',
         element: <PaymentFailed></PaymentFailed>
+      },
+      {
+        path: '/placeOrder',
+        element: <PlacedOrder></PlacedOrder>
       },
     ],
   },
