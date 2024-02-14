@@ -30,7 +30,13 @@
   box-shadow: inset 195px 0px 0px #3a9e1e;
   color: #ffffff;
 }
-
+.service {
+  color: white;
+  background: #3a9e1e;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
 .stats {
   color: white;
   font-size: 0.9rem;
@@ -170,12 +176,15 @@
 .react-chatbot-kit-chat-btn-send {
   width: 20%;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   background: #3a9e1e !important;
+  height: 50px;
 }
 .react-chatbot-kit-chat-btn-send-icon {
-  width: 30px;
-  margin: auto;
+  display: none;
+}
+.react-chatbot-kit-chat-btn-send::after {
+  content: url("./icons/sendLogo.png");
 }
 
 .app-chatbot-button-icon {

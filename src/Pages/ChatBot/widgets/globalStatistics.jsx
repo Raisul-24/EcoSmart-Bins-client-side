@@ -1,50 +1,16 @@
-import { useState, useEffect } from "react";
-// import ClipLoader from "react-spinners/ClipLoader";
-
-//import { getData } from "../data";
+import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 
 const GlobalStatistics = () => {
-  const [stats, setStats] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  //   useEffect(() => {
-  //     const getStats = async () => {
-  //       const stats = await getData();
-
-  useEffect(() => {
-    const getStats = async () => {
-      //  const stats = await getData();
-
-      //       // const filteredFlights = flights.filter((item) => item.Status === null);
-
-      //       setStats(stats);
-      //       setLoading(false);
-      //     };
-      //     getStats();
-      //   }, []);
-
-      setStats(stats);
-      setLoading(false);
-    };
-    getStats();
-  }, [stats]);
-
+  const { data } = useGetApiQuery("/services");
   return (
-    <div className="stats">
-      <div className="column-left">
-        <p> Total Cases :</p>
-        <p> New Cases :</p>
-        <p> Recovered :</p>
-        <p> Deaths :</p>
-      </div>
-
-      {/* <div className="column-right"> */}
-      {/* <ClipLoader color={"#fff"} loading={loading} /> */}
-      {/* <p>{stats.global_total_cases}</p>
-        <p>{stats.global_new_cases}</p>
-        <p>{stats.global_recovered}</p>
-        <p>{stats.global_deaths}</p>
-      </div> */}
+    <div className="service">
+      <h3 className="capitalize text-xl font-bold border-b">services</h3>
+      {data?.map((service, idx) => (
+        <div key={idx} className="flex ">
+          <p className="my-2 pr-2">{++idx}:</p>
+          <p className="my-2">{service?.title}</p>
+        </div>
+      ))}
     </div>
   );
 };

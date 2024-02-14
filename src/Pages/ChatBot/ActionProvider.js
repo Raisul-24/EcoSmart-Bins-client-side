@@ -20,7 +20,7 @@ class ActionProvider {
 
   handleGlobalStats = () => {
     const message = this.createChatBotMessage(
-      "Here's the latest global stats.",
+      "Below are some possible service.",
       {
         widget: "globalStatistics",
         loading: true,
@@ -34,7 +34,7 @@ class ActionProvider {
 
   handleLocalStats = () => {
     const message = this.createChatBotMessage(
-      "Here's the latest stats in Sri Lanka.",
+      "you can Request any service on PickUp Request page",
       {
         widget: "localStatistics",
         loading: true,
@@ -47,22 +47,19 @@ class ActionProvider {
   };
 
   handleContact = () => {
-    const message = this.createChatBotMessage(
-      "Call 1999 for Trilingual Health Assistance.",
-      {
-        widget: "emergencyContact",
-        loading: true,
-        terminateLoading: true,
-        withAvatar: true,
-      }
-    );
+    const message = this.createChatBotMessage("contact with us", {
+      widget: "emergencyContact",
+      loading: true,
+      terminateLoading: true,
+      withAvatar: true,
+    });
 
     this.addMessageToState(message);
   };
 
   handleMedicine = () => {
     const message = this.createChatBotMessage(
-      "To have clinical medicine safely delivered to your home, please refer to the link below.",
+      "EcoSmartBin is a smart waste management system.",
       {
         widget: "medicineDelivery",
         loading: true,
@@ -106,4 +103,3 @@ class ActionProvider {
 }
 
 export default ActionProvider;
-

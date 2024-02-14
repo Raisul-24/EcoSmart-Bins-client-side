@@ -12,7 +12,7 @@ const ChatKit = () => {
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
-      /> 
+      />
     </div>
   );
 };
