@@ -11,7 +11,8 @@ import useAxiosPublic from "../../axios/axiosPublic";
 
 const Checkout = () => {
   const axiosPublic = useAxiosPublic();
-  const { id } = useParams();
+  const { id,quantity } = useParams();
+  const itemQuantity = parseInt(quantity ? quantity : 1)
   const { data: product, isLoading } = useGetApiQuery(`/products/${id}`);
   const [paymentData, setPaymentdata] = useState("");
   const [deliveryData, setDeliverydata] = useState(0);
@@ -28,7 +29,7 @@ const Checkout = () => {
       </div>
     );
   const { _id, img, title, price, description } = product;
-  const totalPrice = price + deliveryData;
+  const totalPrice = (price * itemQuantity) + deliveryData;
   const onSubmit = async (data) => {
     const {
       name: CustomerName,
@@ -49,34 +50,27 @@ const Checkout = () => {
       img,
       title,
       price,
+      quantity: itemQuantity,
       description,
       paymentData,
       totalPrice,
       product_id: _id,
     };
-    // console.log(checkoutData);
+    console.log(checkoutData);
 
-//     fetch("http://localhost:8085/order", {
-//       method: "POST",
-// headers:{ "content-type": "application/json" },
-//     body: JSON.stringify(data),
-// })
-//   .then((res)=> res.json())
-// .then((result) =>{
-// // window.location.replace(result.url);
-// console.log(result);
-// })
+
     axiosPublic.post('/order', checkoutData)
     .then(res =>{
       // window.location.replace(data.url)
       console.log(res);
-      console.log('Redirect URL:', res.data.redirectUrl);
+      window.location.replace(res.data.url)
+      console.log('Redirect URL:', res.data.url);
     })
 
     // Reset the form after submission
     // reset();
   };
-const OrderOverviewData = { title, price, totalPrice }
+const OrderOverviewData = { title, price, itemQuantity, totalPrice }
 return (
   <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
