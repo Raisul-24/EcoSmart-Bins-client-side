@@ -41,6 +41,7 @@ import Teams from "../Pages/teams/Teams";
 import Profile from "../Components/Profile/Profile";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFailed from "../Pages/Payment/PaymentFailed";
+import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
 
 
 const router = createBrowserRouter([
@@ -129,6 +130,10 @@ const router = createBrowserRouter([
       {
         path: '/payment/fail/:transaction_id',
         element: <PaymentFailed></PaymentFailed>
+      },
+      {
+        path: '/placeOrder',
+        element: <PlacedOrder></PlacedOrder>
       },
     ],
   },

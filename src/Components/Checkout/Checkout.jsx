@@ -1,7 +1,7 @@
 import CustomerInfo from "./CustomerInfo";
 import Payment from "./Payment";
 import Delivery from "./Delivery";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import OrderOverview from "./OrderOverview";
 import Voucher from "./Voucher";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
@@ -70,7 +70,11 @@ const Checkout = () => {
     // Reset the form after submission
     // reset();
   };
-const OrderOverviewData = { title, price, itemQuantity, totalPrice }
+const OrderOverviewData = { title, price, itemQuantity, totalPrice };
+
+
+  const isOnlinePaymentSelected = paymentData === "Online Payment";
+   
 return (
   <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -155,13 +159,29 @@ return (
           </label>
         </div>
         {/*  */}
-        <button
-          type="submit"
-          className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
-        >
-          {" "}
-          Checkout
-        </button>
+        
+       {/* Conditional rendering of the checkout button */}
+       {isOnlinePaymentSelected ? (
+            // Render checkout button for online payment
+            <button
+              type="submit"
+              className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
+            >
+              {" "}
+              Checkout
+            </button>
+          ) : (
+            // Render place order button for other payment methods
+           <Link to="/placeOrder">
+            <button
+              type="submit"
+              className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color transition duration-300"
+            >
+              {" "}
+              Place Order
+            </button>
+            </Link>
+          )}
       </div>
     </div>
   </form>
