@@ -41,6 +41,7 @@ import Teams from "../Pages/teams/Teams";
 import Profile from "../Components/Profile/Profile";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFailed from "../Pages/Payment/PaymentFailed";
+import Overview from "../Pages/Dashboard/Admin dashboard/Overview";
 
 
 const router = createBrowserRouter([
@@ -137,6 +138,10 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       // admin dashboard
+      {
+        path: "/dashboard/overview",
+        element: <Overview></Overview>,
+      },
       {
         path: "/dashboard/adminProfile",
         element: <AdminProfile></AdminProfile>,
