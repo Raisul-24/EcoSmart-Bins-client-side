@@ -11,7 +11,8 @@ import useAxiosPublic from "../../axios/axiosPublic";
 
 const Checkout = () => {
   const axiosPublic = useAxiosPublic();
-  const { id } = useParams();
+  const { id,quantity } = useParams();
+  const itemQuantity = parseInt(quantity ? quantity : 1)
   const { data: product, isLoading } = useGetApiQuery(`/products/${id}`);
   const [paymentData, setPaymentdata] = useState("");
   const [deliveryData, setDeliverydata] = useState(0);
@@ -28,7 +29,7 @@ const Checkout = () => {
       </div>
     );
   const { _id, img, title, price, description } = product;
-  const totalPrice = price + deliveryData;
+  const totalPrice = (price * itemQuantity) + deliveryData;
   const onSubmit = async (data) => {
     const {
       name: CustomerName,
@@ -49,6 +50,7 @@ const Checkout = () => {
       img,
       title,
       price,
+      quantity: itemQuantity,
       description,
       paymentData,
       totalPrice,
@@ -68,7 +70,7 @@ const Checkout = () => {
     // Reset the form after submission
     // reset();
   };
-const OrderOverviewData = { title, price, totalPrice }
+const OrderOverviewData = { title, price, itemQuantity, totalPrice }
 return (
   <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
