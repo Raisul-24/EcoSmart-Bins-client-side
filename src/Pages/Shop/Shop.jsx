@@ -4,28 +4,34 @@ import ShopSearch from "./ShopSearch";
 import ShopCategorie from "./ShopCategorie";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import { useState } from "react";
+import Pagination from "../../Components/Pagination/Pagination";
 const Shop = () => {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const { data: totalData, isLoading: isPending } =
+    useGetApiQuery("/totalproducts");
+  const itemPerPage = 6;
   const {
     data: shop,
     isLoading,
     refetch,
-  } = useGetApiQuery(`/products?search=${search}&&category=${category}`);
-  const {data,isLoading:loading} = useGetApiQuery('/productsCategory')
+  } = useGetApiQuery(`/products?search=${search}&category=${category}&Page=${currentPage}&size=${itemPerPage}`);
+  const { data, isLoading: loading } = useGetApiQuery("/productsCategory");
   const handelSubmit = (e) => {
     e.preventDefault();
     const searchData = e.target.search.value;
     setSearch(searchData);
     refetch();
   };
-
-  if (isLoading || loading)
+  if (isLoading || loading || isPending)
     return (
       <div className="text-center py-20">
         <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
       </div>
     );
+  const totalPage = Math.ceil(totalData?.count / itemPerPage);
+  const pageCount = [...Array(totalPage).keys()];
   return (
     <div className="font-montserrat">
       {/* banner */}
@@ -59,13 +65,18 @@ const Shop = () => {
           <ShopSearch handelSubmit={handelSubmit} />
           {/* categories buttons part */}
           <div className="py-10 px-7 flex flex-col justify-center bg-[#e9f1ea] mt-4">
-          <ShopCategorie data={'all products'} setCategory={setCategory} />
+            <ShopCategorie data={"all products"} setCategory={setCategory} />
             {data?.map((item, idx) => (
               <ShopCategorie data={item} key={idx} setCategory={setCategory} />
             ))}
           </div>
         </div>
       </div>
+      <Pagination
+        data={pageCount}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
