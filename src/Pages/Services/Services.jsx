@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const Services = () => {
   const dispatch = useDispatch()
-  const { service: data, isLoading: dataLoaing } = useSelector((state) => state.services)
+  const { service: data, isLoading: dataLoading } = useSelector((state) => state.services)
   useEffect(() => {
     dispatch(fetchService(6))
   }, [dispatch])
@@ -28,7 +28,7 @@ const Services = () => {
           heading={"Services"}
           subHeading={"Your Needs, Our Expertise."}
         />
-        {dataLoaing ? (
+        {dataLoading ? (
           <div className="text-center py-20">
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
