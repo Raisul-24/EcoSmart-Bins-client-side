@@ -13,11 +13,11 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
       </figure>
       <div className="card-body text-center relative">
         <h2 className="card-title justify-center">{data?.title}</h2>
-        {/* <p className="pb-10">
-          {data?.drescaption.slice(0, 80) === data?.drescaption?.length
+        <p className="pb-10">
+          {data?.drescaption.slice(0, 80) === data?.drescaption.length
             ? data?.drescaption
-            : `${data?.drescaption?.slice(0, 80)} ...`}
-        </p> */}
+            : `${data?.drescaption.slice(0, 80)} ...`}
+        </p>
         {isTrue ? (
           <div className="space-y-4">
             <Link
