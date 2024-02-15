@@ -46,7 +46,7 @@ const FeedbackAndRatings = () => {
       }
 
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
         <SectionTitle
                 heading=""
                 subHeading="Share Your FeedBack"

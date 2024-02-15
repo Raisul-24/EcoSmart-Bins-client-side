@@ -3,7 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const ServiceCard = ({ data, isTrue, DeleteFun }) => {
   return (
-    <div className="card bg-base-100 shadow-xl mb-10 font-montserrat">
+    <div className="card bg-base-100 shadow-xl mb-10 font-andika">
       <figure className="">
         <img
           src={data?.img}
@@ -13,11 +13,11 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
       </figure>
       <div className="card-body text-center relative">
         <h2 className="card-title justify-center">{data?.title}</h2>
-        <p className="pb-10">
+        {/* <p className="pb-10">
           {data?.drescaption.slice(0, 80) === data?.drescaption.length
             ? data?.drescaption
             : `${data?.drescaption.slice(0, 80)} ...`}
-        </p>
+        </p> */}
         {isTrue ? (
           <div className="space-y-4">
             <Link

@@ -2,7 +2,7 @@
 
 const MakePayment = () => {
     return (
-        <div className="font-montserrat">
+        <div className="font-andika">
             make payment
         </div>
     );

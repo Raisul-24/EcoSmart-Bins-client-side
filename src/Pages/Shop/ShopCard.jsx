@@ -5,7 +5,7 @@ const ShopCard = ({ item }) => {
   const { _id, title, img, price } = item || {};
 
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <Link to={`/shop/${_id}`}>
         <div className="p-4 card h-[400px] rounded bg-[#e9f1ea]">
           <figure>
