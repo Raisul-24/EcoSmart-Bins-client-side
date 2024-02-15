@@ -4,7 +4,7 @@ import PickUpForm from "./PickUpForm";
 
 const PickUpReq = () => {
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       {/* banner */}
       <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/8Byjy1H.jpg)' }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>

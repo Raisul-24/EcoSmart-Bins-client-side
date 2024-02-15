@@ -7,7 +7,7 @@ const BlogDetails = () => {
 
   return (
     <div>
-      <div className="font-montserrat ">
+      <div className="font-andika ">
         <h4 className="text-5xl font-bold bg-[#f4f4f4] text-center py-8 text-[#001335]">
           Blog Details
         </h4>

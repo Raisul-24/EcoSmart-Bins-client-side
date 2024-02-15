@@ -31,7 +31,7 @@ const Cart = () => {
 
   if (!isError && !isLoading && carts?.length > 0) {
     content = (
-      <div className="font-montserrat">
+      <div className="font-andika">
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead className="text-center bg-brand-color">

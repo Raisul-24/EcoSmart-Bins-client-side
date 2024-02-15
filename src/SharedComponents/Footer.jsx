@@ -4,24 +4,24 @@ import { MdOutlineMail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className="bg-green-950 text-white font-montserrat">
-      <footer className="footer grid-cols-2 md:grid-cols-4 sm:p-10 p-5">
-        <aside className="sm:col-span-1 col-span-2">
+    <div className="bg-green-950 text-white font-andika">
+      <footer className="footer grid-cols-2 md:grid-cols-4 px-5 py-10">
+        <nav className="">
           <img
             src="logo.png"
-            className="w-24 h-24 rounded-xl border-4 border-green-400 shadow-xl"
+            className="w-16 h-16 rounded-lg "
             alt=""
           />
-          <p className="font-bold">Eco Smart Bins</p>
-          <p className="w-4/5">
+          <p className="font-bold py-2">Eco Smart Bins</p>
+          <p className="w-4/5 ">
             We recognize that the right service for home is most important
-            chosie, Trashco can provide the waste collection you need for your
-            home, with trusted service.
+            choice.we provide the waste collection you need for your
+            home with trusted service.
           </p>
-        </aside>
+        </nav>
 
         <nav>
-          <header className="footer-title">Company</header>
+          <header className="footer-title ">Company</header>
           <Link
             to={"/about"}
             className="group relative cursor-pointer inline-block"
@@ -50,7 +50,7 @@ const Footer = () => {
 
         <nav>
           <header className="footer-title">Services</header>
-          <a className="group relative cursor-pointer inline-block">
+          <a className="group relative cursor-pointer inline-block text-xm lg:text-lg">
             Recycling Programs
             <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
           </a>
@@ -80,21 +80,27 @@ const Footer = () => {
           </a>
         </nav>
 
-        <nav className="sm:col-span-1 col-span-2">
+        <nav className="">
           <header className="footer-title">Get In Touch</header>
+          <a>
           <p className="flex items-center gap-2">
             <FaLocationDot className="text-brand-color text-xl"></FaLocationDot>{" "}
-            New Hyde Park, NY 11040
+            New Park, NY 11040
           </p>
-          <p className="flex items-center gap-2 my-2">
+          </a>
+         <a>
+         <p className="flex items-center gap-2 my-2">
             <MdOutlineMail className="text-brand-color text-xl"></MdOutlineMail>{" "}
             EcoSmart@Bins.com
           </p>
-          <p className="flex items-center gap-2">
+         </a>
+         <a>
+         <p className="flex items-center gap-2">
             <FaPhone className="text-brand-color text-xl"></FaPhone> Phone: 333
             666 0000
           </p>
-          <h2 className="footer-title font-bold my-2">Follow Us On</h2>
+         </a>
+          <h2 className="footer-title font-bold mt-8">Follow Us On</h2>
           <div className="grid grid-flow-col gap-4">
             <a href="https://twitter.com/">
               <svg

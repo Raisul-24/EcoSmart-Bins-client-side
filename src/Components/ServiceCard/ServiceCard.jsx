@@ -15,6 +15,7 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
           {data?.title}
         </Link>
         <p className="pb-6">{data?.shortDescription}...</p>
+
         {isTrue ? (
           <div className="space-y-4">
             <Link

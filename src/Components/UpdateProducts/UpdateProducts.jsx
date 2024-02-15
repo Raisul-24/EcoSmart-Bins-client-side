@@ -28,7 +28,7 @@ const UpdateProducts = () => {
       .then(() => refetch());
   };
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <SectionTitle heading={"update product"} subHeading={data?.title} />
       {isPending ? (
         ""

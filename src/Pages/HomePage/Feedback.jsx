@@ -36,7 +36,7 @@ const Feedback = () => {
   }, [axiosPublic]);
 
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <div className="md:flex  items-center">
         <div className="flex-1 text-center md:text-start md:w-5/6 p-10">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500">What Our Clients Say About Us</h2>
@@ -60,20 +60,20 @@ const Feedback = () => {
         >
           {reviews?.map((review) => (
             <SwiperSlide key={review?._id}>
-              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16  p-5  border shadow-lg shadow-brand-color  flex flex-col  text-center items-center ">
+              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16  p-5  flex flex-col border text-center items-center ">
                 <Rating
                   style={{ maxWidth: 180 }}
                   itemStyles={customStyles}
                   value={review.rating}
                   readOnly
                 />
-                <p className="py-5 font-semibold text-gray-500">
+                <p className="py-3 font-semibold text-gray-500">
                   {review?.date}
                 </p>
-                <h3 className="text-xl md:text-3xl font-semibold text-amber-500">
+                <h3 className="text-lg lg:text-3xl font-semibold text-amber-500">
                   {review?.title}
                 </h3>
-                <p className="py-5  md:text-lg">{review?.feedback}</p>
+                <p className="py-3 text-base  lg:text-lg">{review?.feedback}</p>
               </div>
             </SwiperSlide>
           ))}

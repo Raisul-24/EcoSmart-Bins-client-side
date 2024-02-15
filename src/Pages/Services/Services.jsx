@@ -11,7 +11,7 @@ const Services = () => {
     dispatch(fetchService(6))
   }, [dispatch])
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       {/* banner */}
       <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/WTXqvCy.jpg)' }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>

@@ -19,8 +19,7 @@ const Service = () => {
 
   return (
     <div
-      className="font-montserrat bg-cover bg-no-repeat bg-center relative bg-fixed"
-      style={{ backgroundImage: "url(https://i.imgur.com/5tmRtTh.png)" }}
+      className="font-andika"
     >
       <div className="max-w-7xl mx-auto xl:px-0 px-5">
         <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">

@@ -3,57 +3,99 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/UseAuth";
 import UseAxiosPrivate from "../../axios/axiosprivate";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const PickUpForm = () => {
+  const [selectedContainer, setSelectedContainer] = useState("");
+  const [dependentInputValue, setDependentInputValue] = useState("");
+
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const axios = UseAxiosPrivate();
   const { user } = useAuth();
+
+  const containerInfo = [
+
+    {
+      container: "Select",
+    },
+    {
+      container: "32 Gallon Trash",
+      containerValue: 32,
+      containerPrice: 100
+    },
+    {
+      container: "64 Gallon Trash",
+      containerValue: 64,
+      containerPrice: 200
+    },
+    {
+      container: "76 Gallon Trash",
+      containerValue: 76,
+      containerPrice: 300
+    }
+  ]
+
+
   const handleReqPickup = (data) => {
-
-    const currentDate = new Date();
-    const currentDateTime = currentDate.toISOString();
-
 
     const newData = {
       name: user?.displayName,
       email: user?.email,
       photo: user?.photoURL,
       address: data.address,
+      date: data.date,
       status: "requested",
-      currentDateTime,
       enquiryType: data.enquiryType,
       workerEmail: null,
+      industry: data.industry,
+      container: data.container,
+      price: parseFloat(data.price)
+
     };
 
-    // console.log(newData);
+    console.log(newData);
 
     //send data to the server
     axios.post("/pickupReq", newData)
-    .then((data) => {
-      console.log(data.data);
-      if (data.data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "Request Sent Successfully and you get 5 reward points collect from Dashboard > reward points page",
-          icon: "success",
-          confirmButtonText: "Cool",
-        });
-      } else if (data.data.message) {
-        Swal.fire({
-          title: "warning!",
-          text: data.data.message,
-          icon: "warning",
-          confirmButtonText: "Cool",
-        });
-      }
-    });
+      .then((data) => {
+        console.log(data.data);
+        if (data.data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Request Sent Successfully and you get 5 reward points collect from Dashboard > reward points page",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        } else if (data.data.message) {
+          Swal.fire({
+            title: "warning!",
+            text: data.data.message,
+            icon: "warning",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
 
     reset();
+  };
+  const handleContainerChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedContainer(selectedValue);
+
+    // Find the selected container's price
+    const selectedContainerInfo = containerInfo.find(container => container.containerValue === parseInt(selectedValue));
+
+    // Set the dependent input value based on the selected container's price
+    if (selectedContainerInfo) {
+      setDependentInputValue(selectedContainerInfo.containerPrice.toString());
+    } else {
+      setDependentInputValue("");
+    }
   };
 
   return (
     <div>
-      <div className="relative font-montserrat flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 mx-5 lg:py-20 lg:mx-20 py-12">
+      <div className="relative font-andika flex flex-col justify-center overflow-hidden bg-gray-50 mx-5 lg:py-20 lg:mx-20 py-12">
         <div className="bg-white  mx-auto w-full">
           <div className="grid grid-cols-6 h-full ">
             <div className="bg-[#3A9E1E] p-2 md:p-10 col-span-6 md:col-span-2">
@@ -88,10 +130,10 @@ const PickUpForm = () => {
               </p>
             </div>
             <div className=" p-2 md:p-14 col-span-6 md:col-span-4">
-              <h2 className="mb-14 font-bold text-4xl  before:block before:absolute before:bg-brand-color before:content[''] relative before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
+              <h2 className="mb-14 font-bold text-4xl ">
                 Request Pickup
               </h2>
-              <p className="mb-14 font-semibold   before:block before:absolute before:bg-brand-color before:content[''] relative before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
+              <p className="mb-14 font-semibold">
                 Please complete the form below, to request a quote, and we will
                 be in touch. Or you can call us +880123456789 and our
                 specialists will provide the necessary help!
@@ -113,7 +155,7 @@ const PickUpForm = () => {
                       className="select select-bordered w-full text-gray-500"
                       {...register("enquiryType", { required: true })}
                     >
-                      
+
                       <option value="residential">Residential Service</option>
                       <option value="dumpster">Dumpster Service</option>
                       <option value="commercial">Commercial Service</option>
@@ -133,7 +175,7 @@ const PickUpForm = () => {
                       className="select select-bordered w-full text-gray-500"
                       {...register("industry", { required: true })}
                     >
-                      
+
                       <option value="manufacturing">Manufacturing Facilities</option>
                       <option value="educational">Educational Facilities</option>
                       <option value="commercial">Medical And Pharmaceutical</option>
@@ -146,7 +188,8 @@ const PickUpForm = () => {
                 </div>
 
                 {/* container */}
-                <div className="lg:flex gap-10 lg:my-10">
+
+                <div className="lg:flex gap-10 my-10">
                   <div className="form-control lg:w-1/2">
                     <label className="label">
                       <span className="label-text">Container Size</span>
@@ -154,116 +197,42 @@ const PickUpForm = () => {
                     <select
                       className="select select-bordered w-full text-gray-500"
                       {...register("container", { required: true })}
+                      value={selectedContainer}
+                      onChange={handleContainerChange}
                     >
-                      
-                      <option value="32">32 Gallon Trash</option>
-                      <option value="64">64 Gallon Trash</option>
-                      <option value="76">76 Gallon Trash</option>
-
+                      {containerInfo.map((container) => (
+                        <option key={container.containerValue} value={container.containerValue}>
+                          {container.container}
+                        </option>
+                      ))}
                     </select>
                     {errors.container && (
-                      <span className="text-red-600">Container Size is required</span>
+                      <span className="text-red-600">Address is required</span>
                     )}
-                  </div>
 
-                  {/*  */}
+
+                  </div>
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">Quantity Of Containers</span>
+                      <span className="label-text">price</span>
                     </label>
-                    <select
-                      className="select select-bordered w-full text-gray-500"
-                      {...register("quantity", { required: true })}
-                    >
-                      
-                      <option value="2">2 Containers</option>
-                      <option value="3">3 Containers</option>
-                      <option value="5">5 Containers</option>
+                    <input
+                      type="text"
+                      value={dependentInputValue}
+                      className="input input-bordered w-full text-gray-500"
+                      onChange={(e) => setDependentInputValue(e.target.value)}
+                      disabled={selectedContainer === ""}
+                      {...register("price", { required: true })}
+                    />
 
-                    </select>
-                    {errors.quantity && (
-                      <span className="text-red-600">Quantity Of Containers is required</span>
-                    )}
                   </div>
-                </div>
 
-                {/* radio */}
-                <div className="relative flex w-full my-4 lg:my-10 flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                  <nav className="flex min-w-[240px] flex-row gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
-                    <div role="button"
-                      className="lg:flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-brand-color focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-brand-color active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-brand-color">
-                      <label htmlFor="horizontal-list-react" className="flex items-center w-full px-3 py-2 cursor-pointer">
-                        <div className="grid mr-3 place-items-center">
-                          <div className="inline-flex items-center">
-                            <label className="relative flex items-center p-0 rounded-full cursor-pointer"
-                              htmlFor="horizontal-list-react">
-                              <input name="horizontal-list" id="horizontal-list-react" type="radio"
-                                className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-brand-color transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-brand-color checked:before:bg-brand-color hover:before:opacity-0" />
-                              <span
-                                className="absolute text-brand-color transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
-                                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-                                </svg>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                        <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-400">
-                          Once Per Week
-                        </p>
-                      </label>
-                    </div>
-                    <div role="button"
-                      className="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-brand-color focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-brand-color active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-brand-color">
-                      <label htmlFor="horizontal-list-vue" className="flex items-center w-full px-3 py-2 cursor-pointer">
-                        <div className="grid mr-3 place-items-center">
-                          <div className="inline-flex items-center">
-                            <label className="relative flex items-center p-0 rounded-full cursor-pointer" htmlFor="horizontal-list-vue">
-                              <input name="horizontal-list" id="horizontal-list-vue" type="radio"
-                                className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-brand-color transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-brand-color checked:before:bg-brand-color hover:before:opacity-0" />
-                              <span
-                                className="absolute text-brand-color transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
-                                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-                                </svg>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                        <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-400">
-                          Twice Per week
-                        </p>
-                      </label>
-                    </div>
-                    <div role="button"
-                      className="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-brand-color focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-brand-color active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-brand-color">
-                      <label htmlFor="horizontal-list-svelte" className="flex items-center w-full px-3 py-2 cursor-pointer">
-                        <div className="grid mr-3 place-items-center">
-                          <div className="inline-flex items-center">
-                            <label className="relative flex items-center p-0 rounded-full cursor-pointer"
-                              htmlFor="horizontal-list-svelte">
-                              <input name="horizontal-list" id="horizontal-list-svelte" type="radio"
-                                className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-brand-color transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-brand-color checked:before:bg-brand-color hover:before:opacity-0" />
-                              <span
-                                className="absolute text-brand-color transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
-                                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-                                </svg>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                        <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-400">
-                          Thrice Per Week
-                        </p>
-                      </label>
-                    </div>
-                  </nav>
                 </div>
 
                 {/* personal */}
-                
-                  <div className="form-control">
+
+                <div className="lg:flex gap-10">
+                  <div className="form-control lg:w-1/2">
                     <label className="label">
                       <span className="label-text">Full Name</span>
                     </label>
@@ -275,8 +244,23 @@ const PickUpForm = () => {
                     />
                   </div>
 
+                  <div className="form-control lg:w-1/2">
+                  <label className="label">
+                      <span className="label-text">Date</span>
+                    </label>
+                    <input
+                      type="date"
+                      className="input input-bordered w-full text-gray-500"
+                      {...register("date", { required: true })}
+                    />
+                    {errors.name && (
+                      <span className="text-red-600">date is required</span>
+                    )}
+                  </div>
+                </div>
+
                 <div className="lg:flex gap-10 lg:my-10">
-                <div className="form-control lg:w-1/2">
+                  <div className="form-control lg:w-1/2">
                     <label className="label">
                       <span className="label-text">Email</span>
                     </label>
@@ -286,8 +270,9 @@ const PickUpForm = () => {
                       className="input input-bordered w-full text-gray-500"
                       {...register("email", { required: true })}
                     />
+
                   </div>
-                  <div className="form-control l:w-1/2">
+                  <div className="form-control lg:w-1/2">
                     <label className="label">
                       <span className="label-text">Phone</span>
                     </label>
@@ -297,6 +282,9 @@ const PickUpForm = () => {
                       className="input input-bordered w-full text-gray-500"
                       {...register("phone", { required: true })}
                     />
+                    {errors.phone && (
+                      <span className="text-red-600">Phone Number is required</span>
+                    )}
                   </div>
                 </div>
                 <div className="form-control">

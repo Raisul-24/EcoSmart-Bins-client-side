@@ -1,9 +1,13 @@
+
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 
 const ManagePickup = () => {
   const { data, isLoading } = useGetApiQuery("/pickupReq");
+  
+
+  
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <div className="border-b-2">
         <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
       </div>
@@ -20,6 +24,7 @@ const ManagePickup = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Price</th>
                 <th>status</th>
                 <th>details</th>
               </tr>
@@ -46,6 +51,7 @@ const ManagePickup = () => {
                   </th>
                   <td>{item?.name}</td>
                   <td>{item?.email}</td>
+                  <td>{item?.price} tk</td>
                   <td>
                     <h2
                       className={`badge ${item?.status === "requested" &&
@@ -56,6 +62,7 @@ const ManagePickup = () => {
                       {item?.status}
                     </h2>
                   </td>
+                  
                   <td>
                     <button
                       onClick={() =>
@@ -89,11 +96,20 @@ const ManagePickup = () => {
                           <div className="text-start">
                             <h4>{item?.name}</h4>
                             <p>{item?.email}</p>
+                            <p>{item?.date}</p>
                           </div>
                         </div>
                         <div className="text-start text-lg capitalize mt-5 flex gap-1">
                           <p className="text-brand-color">pickup address:</p>
                           <p>{item?.address}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Service Type:</p>
+                          <p>{item?.enquiryType}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Container:</p>
+                          <p>{item?.container} Gallon Trash</p>
                         </div>
                         <div className="text-start">
                           <p className="space-x-2">
