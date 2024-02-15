@@ -14,7 +14,7 @@ const PickUpForm = () => {
   const { user } = useAuth();
 
   const containerInfo = [
-   
+
     {
       container: "Select",
     },
@@ -38,17 +38,13 @@ const PickUpForm = () => {
 
   const handleReqPickup = (data) => {
 
-    const currentDate = new Date();
-    const currentDateTime = currentDate.toISOString();
-
-
     const newData = {
       name: user?.displayName,
       email: user?.email,
       photo: user?.photoURL,
       address: data.address,
+      date: data.date,
       status: "requested",
-      currentDateTime,
       enquiryType: data.enquiryType,
       workerEmail: null,
       industry: data.industry,
@@ -192,7 +188,7 @@ const PickUpForm = () => {
                 </div>
 
                 {/* container */}
-                
+
                 <div className="lg:flex gap-10 my-10">
                   <div className="form-control lg:w-1/2">
                     <label className="label">
@@ -211,9 +207,9 @@ const PickUpForm = () => {
                       ))}
                     </select>
                     {errors.container && (
-                    <span className="text-red-600">Address is required</span>
-                  )}
-                    
+                      <span className="text-red-600">Address is required</span>
+                    )}
+
 
                   </div>
                   <div className="form-control lg:w-1/2">
@@ -228,26 +224,40 @@ const PickUpForm = () => {
                       disabled={selectedContainer === ""}
                       {...register("price", { required: true })}
                     />
-                   
+
                   </div>
 
                 </div>
 
                 {/* personal */}
 
-                <div className="form-control">
+                <div className="lg:flex gap-10">
+                  <div className="form-control lg:w-1/2">
+                    <label className="label">
+                      <span className="label-text">Full Name</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={user?.displayName}
+                      className="input input-bordered w-full text-gray-500"
+                      {...register("name", { required: true })}
+                    />
+                  </div>
+
+                  <div className="form-control lg:w-1/2">
                   <label className="label">
-                    <span className="label-text">Full Name</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={user?.displayName}
-                    className="input input-bordered w-full text-gray-500"
-                    {...register("name", { required: true })}
-                  />
+                      <span className="label-text">Date</span>
+                    </label>
+                    <input
+                      type="date"
+                      className="input input-bordered w-full text-gray-500"
+                      {...register("date", { required: true })}
+                    />
+                    {errors.name && (
+                      <span className="text-red-600">date is required</span>
+                    )}
+                  </div>
                 </div>
-
-
 
                 <div className="lg:flex gap-10 lg:my-10">
                   <div className="form-control lg:w-1/2">
@@ -260,7 +270,7 @@ const PickUpForm = () => {
                       className="input input-bordered w-full text-gray-500"
                       {...register("email", { required: true })}
                     />
-                    
+
                   </div>
                   <div className="form-control lg:w-1/2">
                     <label className="label">
@@ -273,8 +283,8 @@ const PickUpForm = () => {
                       {...register("phone", { required: true })}
                     />
                     {errors.phone && (
-                    <span className="text-red-600">Phone Number is required</span>
-                  )}
+                      <span className="text-red-600">Phone Number is required</span>
+                    )}
                   </div>
                 </div>
                 <div className="form-control">

@@ -1,7 +1,22 @@
+import toast from "react-hot-toast";
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
+import UseAxiosPrivate from "../../../axios/axiosprivate";
 
 const ManagePickup = () => {
-  const { data, isLoading } = useGetApiQuery("/pickupReq");
+  const { data, isLoading, refetch } = useGetApiQuery("/pickupReq");
+  const axios = UseAxiosPrivate()
+  ();
+
+  const handleStatus = (e, id) => {
+    const changeRole = { role: e.target.value };
+    axios
+      .patch(`/statusUpdate/${id}`, changeRole)
+      .then(() => {
+        refetch();
+        toast.success("Status update successfully");
+      })
+      .catch(() => toast.error("Fail to update"));
+  };
   return (
     <div className="font-montserrat">
       <div className="border-b-2">
@@ -20,7 +35,9 @@ const ManagePickup = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Price</th>
                 <th>status</th>
+                <th>Change status</th>
                 <th>details</th>
               </tr>
             </thead>
@@ -46,6 +63,7 @@ const ManagePickup = () => {
                   </th>
                   <td>{item?.name}</td>
                   <td>{item?.email}</td>
+                  <td>{item?.price} tk</td>
                   <td>
                     <h2
                       className={`badge ${item?.status === "requested" &&
@@ -55,6 +73,17 @@ const ManagePickup = () => {
                     >
                       {item?.status}
                     </h2>
+                  </td>
+                  <td>
+                    <select
+                      onChange={(e) => handleStatus(e, item?._id)}
+                      className="select select-bordered select-sm w-full capitalize"
+                      defaultValue={item.status}
+                    >
+                      <option>requested</option>
+                      <option>ongoing</option>
+                      <option>complete</option>
+                    </select>
                   </td>
                   <td>
                     <button
@@ -89,11 +118,20 @@ const ManagePickup = () => {
                           <div className="text-start">
                             <h4>{item?.name}</h4>
                             <p>{item?.email}</p>
+                            <p>{item?.date}</p>
                           </div>
                         </div>
                         <div className="text-start text-lg capitalize mt-5 flex gap-1">
                           <p className="text-brand-color">pickup address:</p>
                           <p>{item?.address}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Service Type:</p>
+                          <p>{item?.enquiryType}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Container:</p>
+                          <p>{item?.container} Gallon Trash</p>
                         </div>
                         <div className="text-start">
                           <p className="space-x-2">
