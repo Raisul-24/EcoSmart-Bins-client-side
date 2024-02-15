@@ -3,23 +3,23 @@ import Options from "./Options";
 const Overview = (props) => {
   const options = [
     {
-      name: "Show global statistics",
-      handler: props.actionProvider.handleGlobalStats,
+      name: "What is EcoSmartBin",
+      handler: props.actionProvider.handleMedicine,
       id: 1,
     },
     {
-      name: "Show local statistics",
+      name: "What is PickUp Request",
       handler: props.actionProvider.handleLocalStats,
       id: 2,
     },
     {
-      name: "Emergency contact",
+      name: "How to contact",
       handler: props.actionProvider.handleContact,
       id: 3,
     },
     {
-      name: "Clinical medicine delivery",
-      handler: props.actionProvider.handleMedicine,
+      name: "What service we provite",
+      handler: props.actionProvider.handleGlobalStats,
       id: 4,
     },
   ];
