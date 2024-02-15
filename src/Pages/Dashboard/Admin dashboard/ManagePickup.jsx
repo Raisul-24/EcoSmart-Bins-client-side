@@ -18,8 +18,9 @@ const ManagePickup = () => {
       .catch(() => toast.error("Fail to update"));
   };
   return (
-    <div className="font-montserrat">
-      <div className="border-b-2">
+   <div>
+     <div className="">
+      <div className="border-b-2 ">
         <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
       </div>
       {isLoading ? (
@@ -170,6 +171,7 @@ const ManagePickup = () => {
         </div>
       )}
     </div>
+   </div>
   );
 };
 

@@ -59,9 +59,9 @@ const ManageShowcase = () => {
 
   };
   return (
-    <div className="font-montserrat">
+    <div className="">
       <div>
-        <div className="border-b-2">
+        <div className="border-b-2 font-montserrat">
           <h2 className="text-4xl mb-5 text-center ">Manage Showcase</h2>
         </div>
 

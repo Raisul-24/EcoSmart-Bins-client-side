@@ -139,96 +139,96 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <Dashboard></Dashboard>,
     children: [
       // admin dashboard
       {
-        path: "/dashboard/overview",
+        path: "overview",
         element: <Overview></Overview>,
       },
       {
-        path: "/dashboard/adminProfile",
+        path: "adminProfile",
         element: <AdminProfile></AdminProfile>,
       },
       {
-        path: "/dashboard/addServices",
+        path: "addServices",
         element: <AddServices></AddServices>,
       },
       {
-        path: "/dashboard/updateServices/:id",
+        path: "updateServices/:id",
         element: <UpdateServices></UpdateServices>,
       },
       {
-        path: "/dashboard/manageServices",
+        path: "manageServices",
         element: <ManageServices></ManageServices>,
       },
       {
-        path: "/dashboard/addProducts",
+        path: "addProducts",
         element: <AddProducts></AddProducts>,
       },
       {
-        path: "/dashboard/manageUser",
+        path: "manageUser",
         element: <ManageUser></ManageUser>,
       },
       {
-        path: "/dashboard/updateProducts/:id",
+        path: "updateProducts/:id",
         element: <UpdateProducts></UpdateProducts>,
       },
       {
-        path: "/dashboard/manageProducts",
+        path: "manageProducts",
         element: <ManageProducts></ManageProducts>,
       },
       {
-        path: "/dashboard/managePickup",
+        path: "managePickup",
         element: <ManagePickup></ManagePickup>,
       },
       {
-        path: "/dashboard/manageShowcase",
+        path: "manageShowcase",
         element: <ManageShowcase></ManageShowcase>,
       },
 
       // worker dashboard
       {
-        path: "/dashboard/PickupWork",
+        path: "PickupWork",
         element: <PickupWork></PickupWork>,
       },
       {
-        path: "/dashboard/OnGoingWork",
+        path: "OnGoingWork",
         element: <OnGoingWork></OnGoingWork>,
       },
       {
-        path: "/dashboard/CompleteWorks",
+        path: "CompleteWorks",
         element: <CompleteWorks></CompleteWorks>,
       },
 
       // user dashboard
       {
-        path: "/dashboard/userProfile",
+        path: "userProfile",
         element: <UserProfile></UserProfile>,
       },
       {
-        path: "/dashboard/addShowcase",
+        path: "addShowcase",
         element: <AddShowcase></AddShowcase>,
       },
       {
-        path: "/dashboard/cart",
+        path: "cart",
         element: <Cart></Cart>,
       },
       {
-        path: "/dashboard/RewardPoints",
+        path: "RewardPoints",
         element: <RewardPoints></RewardPoints>,
       },
       {
-        path: "/dashboard/feedback",
+        path: "feedback",
         element: <FeedbackAndRatings></FeedbackAndRatings>,
       },
       {
-        path: "/dashboard/payment",
+        path: "payment",
         element: <MakePayment></MakePayment>,
       },
       {
-        path: "/dashboard/paymentHistory",
+        path: "paymentHistory",
         element: <PaymentHistory></PaymentHistory>,
       },
     ],
