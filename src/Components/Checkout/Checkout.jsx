@@ -15,7 +15,7 @@ const Checkout = () => {
   const itemQuantity = parseInt(quantity ? quantity : 1)
   const { data: product, isLoading } = useGetApiQuery(`/products/${id}`);
   const [paymentData, setPaymentdata] = useState("");
-  const [deliveryData, setDeliverydata] = useState(0);
+  const [deliveryData, setDeliverydata] = useState(100);
   const {
     register,
     handleSubmit,
