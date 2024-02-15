@@ -50,7 +50,7 @@ const Footer = () => {
 
         <nav>
           <header className="footer-title">Services</header>
-          <a className="group relative cursor-pointer inline-block text-xm lg:text-lg">
+          <a className="group relative cursor-pointer inline-block">
             Recycling Programs
             <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
           </a>

@@ -114,13 +114,15 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <ul className="pl-2 lg:pl-4 menu px-0 font-semibold ">
+            <ul className="pl-2 lg:pl-4 z-20 px-0 font-semibold ">
 
-            <li className="">
+            <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/overview"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                 className={({ isActive}) =>
+                 isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
+                
                }
+        
                 >
                   <FaPlusSquare />
                   Overview
@@ -131,70 +133,70 @@ const Dashboard = () => {
               {
                 isAdmin?.length > 0 ?
                  <>
-                  <li className="">
+                  <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/addServices"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                   className={({ isActive}) =>
+                   isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaPlusSquare />
                   Add Services
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/manageServices"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                     className={({ isActive}) =>
+                     isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaEdit />
                   Manage Services
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/addProducts"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaPlusSquare />
                   Add Products
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/manageProducts"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaEdit />
                   Manage Products
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/managePickup"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaEdit />
                   Manage Pickup Request
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/manageShowcase"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaEdit />
                   Manage Showcase
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/manageUser"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                   className={({ isActive}) =>
+                   isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <FaUsers />
@@ -209,30 +211,30 @@ const Dashboard = () => {
 
              {
               isWorker?.length > 0 ? <>
-               <li className="">
+               <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/PickupWork"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <MdOutlineWorkHistory />
                   Pickup Work
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/OnGoingWork"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <MdWorkOutline />
                   OnGoing Works
                 </NavLink>
               </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink to="/dashboard/CompleteWorks"
-                 className={({ isActive, isPending }) =>
-                 isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                }
                 >
                   <MdOutlineWork />
@@ -247,57 +249,57 @@ const Dashboard = () => {
            { 
             isUser?.length > 0 ? 
               <>
-               <li className="">
+               <li className="text-xs md:text-sm w-full">
                <NavLink to="/dashboard/cart"
-                className={({ isActive, isPending }) =>
-                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
                  <FaCartShopping></FaCartShopping> My Cart
                </NavLink>
              </li>
-             <li className="">
+             <li className="text-xs md:text-sm w-full">
                <NavLink to="/dashboard/addShowcase"
-                className={({ isActive, isPending }) =>
-                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                   className={({ isActive}) =>
+                   isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
                  <FaCameraRetro />
                  Add Showcase
                </NavLink>
               </li>
-             <li className="">
+             <li className="text-xs md:text-sm w-full">
                <NavLink to="/dashboard/feedback"
-                className={({ isActive, isPending }) =>
-                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                   className={({ isActive}) =>
+                   isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
                  <FaStar /> Feedback
                </NavLink>
              </li>
-              <li className="">
+              <li className="text-xs md:text-sm w-full">
                <NavLink to="/dashboard/RewardPoints"
-                className={({ isActive, isPending }) =>
-                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
                  <VscActivateBreakpoints /> Reward Points
                </NavLink>
              </li> 
-             <li className="">
+             <li className="text-xs md:text-sm w-full">
                <NavLink to="/dashboard/payment"
-                className={({ isActive, isPending }) =>
-                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
                  <FaMoneyCheck></FaMoneyCheck>
                  Make Payment
                </NavLink>
              </li>
-             <li className="">
+             <li className="text-xs md:text-sm w-full">
                <NavLink to="/dashboard/paymentHistory"
-                className={({ isActive, isPending }) =>
-                isActive ? " bg-white text-black lg:rounded-r-none" : isPending ? "pending"  : ""
+                   className={({ isActive}) =>
+                   isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
                  <FaHistory></FaHistory>
@@ -310,8 +312,10 @@ const Dashboard = () => {
 
               {/* shared routes */}
              
-              <li className="">
-                <NavLink to="/">
+              <li className="text-xs md:text-sm w-full">
+                <NavLink to="/"
+                className="flex gap-2 pl-2 lg:pl-4 items-center"
+                >
                   <FaHome></FaHome>
                   Home
                 </NavLink>
@@ -333,7 +337,6 @@ const Dashboard = () => {
         </div>
         <div className="flex-1 p-5 md:p-8 z-0">
           <Outlet></Outlet>
-        
         </div>
       </div>
       <div>

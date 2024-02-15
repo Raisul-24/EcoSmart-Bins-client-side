@@ -7,8 +7,14 @@ const ManagePickup = () => {
 
   
   return (
+<<<<<<< HEAD
+   <div>
+     <div className="">
+      <div className="border-b-2 ">
+=======
     <div className="font-andika">
       <div className="border-b-2">
+>>>>>>> d6efde9ea50aaade55074c1e5b496f33630c5606
         <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
       </div>
       {isLoading ? (
@@ -148,6 +154,7 @@ const ManagePickup = () => {
         </div>
       )}
     </div>
+   </div>
   );
 };
 

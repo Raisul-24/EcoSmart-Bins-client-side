@@ -134,7 +134,7 @@ const Navbar = () => {
       {user && (
         <li className="text-xl hover:text-brand-color font-semibold">
           {" "}
-          <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          <NavLink to={"/dashboard/overview"}>Dashboard</NavLink>
         </li>
       )}
       <li className="text-xl hover:text-brand-color font-semibold">
