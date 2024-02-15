@@ -6,7 +6,7 @@ const Blog = () => {
   const [blogs, loading] = useGetBlog();
 
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <div
         className="hero h-[desired-height] relative"
         style={{ backgroundImage: "url(https://i.imgur.com/OmENS5F.jpg)" }}

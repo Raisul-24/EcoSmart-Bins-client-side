@@ -95,7 +95,7 @@ const PickUpForm = () => {
 
   return (
     <div>
-      <div className="relative font-montserrat flex flex-col justify-center overflow-hidden bg-gray-50 mx-5 lg:py-20 lg:mx-20 py-12">
+      <div className="relative font-andika flex flex-col justify-center overflow-hidden bg-gray-50 mx-5 lg:py-20 lg:mx-20 py-12">
         <div className="bg-white  mx-auto w-full">
           <div className="grid grid-cols-6 h-full ">
             <div className="bg-[#3A9E1E] p-2 md:p-10 col-span-6 md:col-span-2">

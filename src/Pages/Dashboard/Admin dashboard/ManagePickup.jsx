@@ -1,24 +1,13 @@
-import toast from "react-hot-toast";
+
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
-import UseAxiosPrivate from "../../../axios/axiosprivate";
 
 const ManagePickup = () => {
-  const { data, isLoading, refetch } = useGetApiQuery("/pickupReq");
-  const axios = UseAxiosPrivate()
-  ();
+  const { data, isLoading } = useGetApiQuery("/pickupReq");
+  
 
-  const handleStatus = (e, id) => {
-    const changeRole = { role: e.target.value };
-    axios
-      .patch(`/statusUpdate/${id}`, changeRole)
-      .then(() => {
-        refetch();
-        toast.success("Status update successfully");
-      })
-      .catch(() => toast.error("Fail to update"));
-  };
+  
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <div className="border-b-2">
         <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
       </div>
@@ -37,7 +26,6 @@ const ManagePickup = () => {
                 <th>Email</th>
                 <th>Price</th>
                 <th>status</th>
-                <th>Change status</th>
                 <th>details</th>
               </tr>
             </thead>
@@ -74,17 +62,7 @@ const ManagePickup = () => {
                       {item?.status}
                     </h2>
                   </td>
-                  <td>
-                    <select
-                      onChange={(e) => handleStatus(e, item?._id)}
-                      className="select select-bordered select-sm w-full capitalize"
-                      defaultValue={item.status}
-                    >
-                      <option>requested</option>
-                      <option>ongoing</option>
-                      <option>complete</option>
-                    </select>
-                  </td>
+                  
                   <td>
                     <button
                       onClick={() =>

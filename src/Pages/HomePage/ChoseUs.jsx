@@ -8,7 +8,7 @@ import Lottie from "lottie-react";
 
 const ChoseUs = () => {
   return (
-    <div className=" bg-cover bg-no-repeat bg-center relative bg-fixed font-montserrat" style={{backgroundImage: 'url(https://i.imgur.com/iciuKcq.png)'}}>
+    <div className=" font-andika" >
       <div className="max-w-7xl mx-auto xl:px-0 px-5  my-12 md:flex justify-start items-center gap-12 ">
 
         {/* image section */}

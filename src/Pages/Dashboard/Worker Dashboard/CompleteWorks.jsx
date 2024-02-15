@@ -11,7 +11,7 @@ const CompleteWorks = () => {
         refetch()
       },[refetch])
       return (
-        <div className="font-montserrat">
+        <div className="font-andika">
           <div className="border-b-2">
             <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
           </div>

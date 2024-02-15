@@ -41,7 +41,7 @@ const ContactUs = () => {
       );
   };
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       {/* banner */}
       <div
         className="hero h-96 relative"

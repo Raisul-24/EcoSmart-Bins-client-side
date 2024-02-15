@@ -33,7 +33,7 @@ const Shop = () => {
   const totalPage = Math.ceil(totalData?.count / itemPerPage);
   const pageCount = [...Array(totalPage).keys()];
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       {/* banner */}
       <div
         className="hero h-96 relative"

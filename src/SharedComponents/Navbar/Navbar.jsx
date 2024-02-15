@@ -188,7 +188,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="sticky bg-white bg-opacity-90 top-0 z-20 font-montserrat">
+      <div className="sticky bg-white bg-opacity-90 top-0 z-20 font-andika">
         <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
           <div className="navbar-start">
             <div className="dropdown">
