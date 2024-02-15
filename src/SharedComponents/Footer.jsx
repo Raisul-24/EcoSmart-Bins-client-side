@@ -4,7 +4,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className="bg-green-950 text-white font-montserrat">
+    <div className="bg-green-950 text-white font-andika">
       <footer className="footer grid-cols-2 md:grid-cols-4 px-5 py-10">
         <nav className="">
           <img

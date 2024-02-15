@@ -36,7 +36,7 @@ const Registration = () => {
       }
    }
    return (
-      <div className="font-montserrat flex flex-col md:flex-row h-full py-16 md:py-40 lg:py-32 items-center bg-[url(https://i.ibb.co/17R85wC/authentication.png)]">
+      <div className="font-andika flex flex-col md:flex-row h-full py-16 md:py-40 lg:py-32 items-center bg-[url(https://i.ibb.co/17R85wC/authentication.png)]">
          <div className="w-1/2 flex justify-center md:justify-end md:mx-3">
             <img src="https://i.ibb.co/mNJj89X/login.gif" className="rounded-xl hidden md:flex" alt="" />
          </div>

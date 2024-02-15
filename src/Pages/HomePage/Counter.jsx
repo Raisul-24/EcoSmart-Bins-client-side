@@ -10,7 +10,7 @@ const Counter = () => {
 
     return (
         <ScrollTrigger onEnter={() => { setCounterOn(true) }} onExit={() => { setCounterOn(false) }}>
-            <div className="mb-28 font-montserrat">
+            <div className="mb-28 font-andika">
                 <div className="bg-brand-color p-10 my-10 md:flex md:justify-center">
 
                     <div className="flex gap-7 border-b-2 md:border-b-0 md:border-r-2 lg:py-10 lg:px-16 py-5 px-8">
