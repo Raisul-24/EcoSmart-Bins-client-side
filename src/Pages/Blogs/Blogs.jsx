@@ -3,12 +3,10 @@ import useGetBlog from "../../API/BlogApi/useGetBlog";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import getBlogCategories from "../../API/BlogApi/getBlogCategories";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const Blog = () => {
   const [blogs, loading] = useGetBlog();
-
-  };
+  const [categories] = getBlogCategories();
 
   return (
     <div className="font-montserrat">
@@ -53,10 +51,7 @@ const Blog = () => {
             </div>
             <div className="col-span-3">
               {/* search input field */}
-              <form
-                onSubmit={handleSearch}
-                className="flex p-10 pt-20 rounded-lg bg-[#f59e0b]"
-              >
+              <form className="flex p-10 pt-20 rounded-lg bg-[#f59e0b]">
                 <input
                   type="text"
                   name="search"
@@ -66,9 +61,10 @@ const Blog = () => {
                   label="Input With Icon"
                 />
 
-                <button
-                  className="absolute ml-60 mt-4 text-gray-400 text-lg"
-                > <FaSearch/></button>
+                <button className="absolute ml-60 mt-4 text-gray-400 text-lg">
+                  {" "}
+                  <FaSearch />
+                </button>
               </form>
               {/* categories buttons part */}
               <div className="rounded-lg p-10 bg-[#e9f1ea] mt-4">
