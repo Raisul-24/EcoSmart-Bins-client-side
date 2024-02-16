@@ -52,37 +52,65 @@ const ServiceDetail = () => {
         </div>
       </div>
 
-      <div className="md:grid grid-cols-9 mx-6 xl:px-0 px-5 font-andika">
-        <div className="col-span-3">
+      <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
+        <div className="col-span-3 mt-16">
           {/* categories buttons part */}
           <div className="rounded-lg p-10 bg-[#e9f1ea] mt-4">
             <p className="text-2xl font-extrabold py-5">Our Services</p>
-            <button>
-              <Link
-                to={`/services/${data?._id}`}
-                className="h-16 px-8 bg-[#182822] hover:bg-[#257830]
+            {categories?.map((category) => (
+              <button key={category?._id}>
+                <Link
+                  to={`/services/${data?._id}`}
+                  className="h-16 px-8 bg-[#182822] hover:bg-[#257830]
                       rounded-md text-start w-72 flex justify-start items-center
-                      gap-4 text-white text-md text-xl font-bold mb-6"
-              >
-                {categories?.servicesCategory}
-                <span className="text-2xl">
-                  <FaArrowCircleRight />
-                </span>
-              </Link>
-            </button>
+                      gap-4 text-white text-md font-bold mb-6"
+                >
+                  {category?.servicesCategory}
+                  <span className="text-2xl">
+                    <FaArrowCircleRight />
+                  </span>
+                </Link>
+              </button>
+            ))}
           </div>
         </div>
-        <div className=" col-span-6    ">
+        <div className=" col-span-6">
           <div className="py-20 flex md:flex-row flex-col items-center">
-            {/*<div className="md:w-1/2 overflow-hidden rounded-lg">
-              <img src={data?.img} alt="" className="w-full" />
-            </div>*/}
-            <div className="md:w-1/2 md:p-10 p-5 space-y-4">
-              <h3 className="md:text-5xl text-4xl font-bold">{data?.title}</h3>
-              <p>{data?.description1}</p>
+            <div className="">
+              <p className="text-3xl font-extrabold pb-8">Overview</p>
+
+              <p className="pr-5">{data?.description1}</p>
+              <div className="md:w-full my-8 overflow-hidden rounded-xl">
+                <img src={data?.img} alt="" className="w-full" />
+              </div>
+              <p className="pr-5">{data?.description2}</p>
+
+              <div className="md:w-full my-8 overflow-hidden rounded-xl flex justify-center items-center gap-12">
+                <img
+                  src={data?.img1}
+                  alt=""
+                  className="w-full h-96 rounded-xl "
+                />
+                <img
+                  src={data?.img2}
+                  alt=""
+                  className="w-full h-96 rounded-xl "
+                />
+              </div>
+              <div className="my-8">
+                <p className="text-3xl font-extrabold pb-8">Key Benefits</p>
+                <p className="pr-5 text-lg">
+                  We’ve been helping cities, utilities, automakers, EVSE
+                  suppliers and commercial businesses take advantage of clean
+                  energy benefits that smart charging infrastructure affords.
+                  Our solutions deliver savings to drivers, businesses and grid
+                  operators.
+                </p>
+              </div>
+
               <button
                 onClick={() => toast.success("Service Added Successfully!")}
-                className="btn lg:px-10 capitalize bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-full"
+                className="btn lg:px-10 capitalize bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-1/2"
               >
                 get Service
               </button>
