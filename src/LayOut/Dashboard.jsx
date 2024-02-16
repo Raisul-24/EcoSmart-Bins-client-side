@@ -389,7 +389,7 @@ const Dashboard = () => {
             </ul>
           </div>
         </div>
-        <div className="flex-1 p-5 z-0">
+        <div className="flex-1 px-5 pb-5 z-0">
           <Outlet></Outlet>
         </div>
       </div>

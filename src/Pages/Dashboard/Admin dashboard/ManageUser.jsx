@@ -35,7 +35,7 @@ const ManageUser = () => {
   return (
     <div>
       <div className="font-andika">
-        <div className="flex justify-evenly mb-5 text-2xl md:text-3xl font-semibold">
+        <div className="flex justify-evenly my-5 text-2xl md:text-3xl font-semibold">
           <h2 className="">All Users</h2>
           <h2 className="">Total Users: {users.length}</h2>
          

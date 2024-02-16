@@ -20,20 +20,21 @@ const RecycleMaterials = () => {
               </h1>
               <div className="flex gap-5 justify-center">
                 <Link to={"/contact"}>
-                  {" "}
                   <button className="btn btn-primary px-5 text-lg bg-brand-color">
                     Contact Us
                   </button>
                 </Link>
-                <button className="btn btn-primary px-5 text-lg hover:bg-brand-color">
-                  Get a Quote
+               <Link to={"/services"}>
+               <button className="btn btn-primary px-5 text-lg hover:bg-brand-color">
+                  Get services
                 </button>
+               </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="relative -left-0 -top-28 w-11/12 mx-auto rounded-xl z-10">
+      <div className="relative -left-0 -top-28 w-11/12 mx-auto rounded-lg z-10">
         <div
           className="hero h-[370px] rounded-xl"
           style={{
@@ -100,7 +101,7 @@ const RecycleMaterials = () => {
                   </div>
                 </div>
               </div>
-              <div></div>
+             
             </div>
           </div>
         </div>
