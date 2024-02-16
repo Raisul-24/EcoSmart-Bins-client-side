@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
+import { Badge } from "@material-tailwind/react";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
 import {
@@ -177,14 +178,15 @@ const Navbar = () => {
         </div>
 
         <div className=" flex gap-5 lg:gap-10 ">
-          <div className="flex">
-            <FaShoppingCart className="md:text-3xl text-2xl" />
-            <div className="badge badge-secondary ml-2 bg-white text-brand-color">
-              {cart.length}
-            </div>
-          </div>
+          
+          <Badge content={cart.length}>
+            <FaShoppingCart className="md:text-2xl text-xl" />
+          </Badge>
           <div>
-            <FaRegBell className="md:text-3xl text-2xl" />
+          <Badge content="0">
+          <FaRegBell className="md:text-2xl text-xl" />
+          </Badge>
+            
           </div>
         </div>
       </div>
