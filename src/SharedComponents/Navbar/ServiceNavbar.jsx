@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const ServiceNavbar = ({ data }) => {
   console.log(data);
   return (
-    <div>
+    <div className="overflow-hidden">
       <motion.li
         whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
         transition={{ type: "spring", stiffness: 200 }}

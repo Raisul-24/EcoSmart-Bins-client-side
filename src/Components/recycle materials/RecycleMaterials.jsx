@@ -77,25 +77,25 @@ const RecycleMaterials = () => {
                 <div className="flex flex-col gap-5 flex-1">
                   <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                     <span className="">
-                      <FaCheckCircle />{" "}
+                      <FaCheckCircle />
                     </span>
                     <p>Food & Grocery</p>
                   </div>
                   <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                     <span className="">
-                      <FaCheckCircle />{" "}
+                      <FaCheckCircle />
                     </span>
                     <p>Common Waste</p>
                   </div>
                   <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                     <span className="">
-                      <FaCheckCircle />{" "}
+                      <FaCheckCircle />
                     </span>
                     <p>Newspaper</p>
                   </div>
                   <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
                     <span className="">
-                      <FaCheckCircle />{" "}
+                      <FaCheckCircle />
                     </span>
                     <p>Food & Grocery</p>
                   </div>
