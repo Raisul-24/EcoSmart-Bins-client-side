@@ -79,11 +79,11 @@ const ServiceDetail = () => {
             <div className="">
               <p className="text-3xl font-extrabold pb-8">Overview</p>
 
-              <p className="pr-5">{data?.description1}</p>
+              <p className=" text-lg">{data?.description1}</p>
               <div className="md:w-full my-8 overflow-hidden rounded-xl">
                 <img src={data?.img} alt="" className="w-full" />
               </div>
-              <p className="pr-5">{data?.description2}</p>
+              <p className=" text-lg">{data?.description2}</p>
 
               <div className="md:w-full my-8 overflow-hidden rounded-xl flex justify-center items-center gap-12">
                 <img
@@ -99,7 +99,7 @@ const ServiceDetail = () => {
               </div>
               <div className="my-8">
                 <p className="text-3xl font-extrabold pb-8">Key Benefits</p>
-                <p className="pr-5 text-lg">
+                <p className=" text-lg">
                   We’ve been helping cities, utilities, automakers, EVSE
                   suppliers and commercial businesses take advantage of clean
                   energy benefits that smart charging infrastructure affords.
