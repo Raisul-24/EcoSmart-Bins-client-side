@@ -1,5 +1,6 @@
 import { HeartSwitch } from "@anatoliygatt/heart-switch";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PriceTable = () => {
   const [isYearly, setIsYearly] = useState(false);
@@ -8,7 +9,7 @@ const PriceTable = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
   };
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       {/* banner */}
       <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/EaaOyjv.jpg)' }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
@@ -65,9 +66,10 @@ const PriceTable = () => {
                 {isYearly ? "$199.99" : "$19.99"}
               </h2>
               <h2>Per {isYearly ? "year" : "month"}</h2>
+              <Link to='/'>
               <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48">
                 Select Plan
-              </btn>
+              </btn></Link>
             </div>
           </div>
           {/* cards 2*/}
@@ -88,9 +90,10 @@ const PriceTable = () => {
                 {isYearly ? "$399.99" : "$49.99"}
               </h2>
               <h2>Per {isYearly ? "year" : "month"}</h2>
+              <Link to='/'>
               <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48">
                 Select Plan
-              </btn>
+              </btn></Link>
             </div>
           </div>
           {/* cards 3*/}
@@ -111,9 +114,10 @@ const PriceTable = () => {
                 {isYearly ? "$799.99" : "$79.99"}
               </h2>
               <h2>Per {isYearly ? "year" : "month"}</h2>
+              <Link to='/'>
               <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48">
                 Select Plan
-              </btn>
+              </btn></Link>
             </div>
           </div>
         </div>

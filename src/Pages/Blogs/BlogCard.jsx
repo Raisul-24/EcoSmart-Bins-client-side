@@ -75,7 +75,9 @@ const BlogCard = ({ blog }) => {
             </div>
           </div>
           <div className="flex flex-col mt-2 justify-center items-start">
-            <h5 className=" text-4xl font-serif font-bold tracking-tight pb-4">{name}</h5>
+            <h5 className=" text-4xl font-serif font-bold tracking-tight pb-4">
+              {name}
+            </h5>
             <p className="mb-3 font-normal text-[#370000]">{description}</p>
             <Link
               to={`/blog/${_id}`}

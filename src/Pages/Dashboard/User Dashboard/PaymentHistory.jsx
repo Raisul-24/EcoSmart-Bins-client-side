@@ -2,7 +2,7 @@
 
 const PaymentHistory = () => {
     return (
-        <div className="font-montserrat">
+        <div className="font-andika">
             payment history
         </div>
     );

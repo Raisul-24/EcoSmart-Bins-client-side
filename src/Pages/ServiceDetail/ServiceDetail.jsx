@@ -14,7 +14,7 @@ const ServiceDetail = () => {
     );
   }
   return (
-    <div className="max-w-7xl font-montserrat mx-auto xl:px-0 px-5">
+    <div className="max-w-7xl font-andika mx-auto xl:px-0 px-5">
       <SectionTitle heading={"Detail"} subHeading={data?.title} />
       <div className="py-20 flex md:flex-row flex-col items-center">
         <div className="md:w-1/2 overflow-hidden rounded-lg">

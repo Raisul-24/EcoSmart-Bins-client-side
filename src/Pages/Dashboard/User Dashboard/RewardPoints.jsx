@@ -2,7 +2,7 @@
 
 const RewardPoints = () => {
     return (
-        <div className="font-montserrat">
+        <div className="font-andika">
             RewardPoints
         </div>
     );
