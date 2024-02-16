@@ -180,7 +180,7 @@ const Dashboard = () => {
                }
                 >
                   <FaEdit />
-                  Manage Pickup Request
+                  Manage Pickup
                 </NavLink>
               </li>
               <li className="text-xs md:text-sm w-full">
@@ -335,7 +335,7 @@ const Dashboard = () => {
             </ul>
           </div>
         </div>
-        <div className="flex-1 p-5 md:p-8 z-0">
+        <div className="flex-1 p-5 z-0">
           <Outlet></Outlet>
         </div>
       </div>

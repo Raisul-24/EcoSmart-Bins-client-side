@@ -24,10 +24,11 @@ const AddServices = () => {
   };
   return (
     <div className="font-andika">
-      <SectionTitle heading={"add service"} subHeading={"Add New Service"} />
+      <SectionTitle heading={"add new service"} />
+      <div className="border max-w-xl lg:max-w-3xl rounded-xl  mx-auto p-5">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-xl p-5 shadow-2xl rounded-xl mx-auto space-y-4"
+        className=" rounded-xl space-y-4"
       >
         <input
           type="text"
@@ -52,6 +53,7 @@ const AddServices = () => {
           value={"add service"}
         />
       </form>
+      </div>
     </div>
   );
 };
