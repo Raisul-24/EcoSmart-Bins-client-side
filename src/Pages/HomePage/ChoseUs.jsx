@@ -8,7 +8,7 @@ import Lottie from "lottie-react";
 
 const ChoseUs = () => {
   return (
-    <div className=" bg-cover bg-no-repeat bg-center relative bg-fixed font-montserrat" style={{backgroundImage: 'url(https://i.imgur.com/iciuKcq.png)'}}>
+    <div className=" font-andika" >
       <div className="max-w-7xl mx-auto xl:px-0 px-5  my-12 md:flex justify-start items-center gap-12 ">
 
         {/* image section */}
@@ -65,14 +65,6 @@ const ChoseUs = () => {
           </div>
         </div>
 
-      </div>
-      <div className="w-fit mx-auto">
-      <Link to="/contact">
-            {" "}
-            <button className=" border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">
-              Contact Us
-            </button>
-          </Link>
       </div>
      
     </div>

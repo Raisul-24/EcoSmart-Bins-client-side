@@ -72,7 +72,7 @@ const ParchesShopProduct = () => {
   };
 
   return (
-    <div className=" p-20 font-montserrat">
+    <div className=" p-20 font-andika">
       <h2 className="text-4xl font-bold text-center text-brand-color">
         Product add to cart Page
       </h2>

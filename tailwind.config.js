@@ -1,23 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'brand-color': '#3A9E1E',
+        "brand-color": "#257830",
       },
       fontFamily: {
-        'montserrat': ['Montserrat', 'sans-serif'],
+        andika: ["Andika", "sans-serif"],
       },
-      
     },
   },
   daisyui: {
     themes: ["cupcack"],
   },
   plugins: [require("daisyui")],
-}
-
+};

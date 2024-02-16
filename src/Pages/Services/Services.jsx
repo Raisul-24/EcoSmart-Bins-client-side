@@ -6,12 +6,12 @@ import { useEffect } from "react";
 
 const Services = () => {
   const dispatch = useDispatch()
-  const { service: data, isLoading: dataLoaing } = useSelector((state) => state.services)
+  const { service: data, isLoading: dataLoading } = useSelector((state) => state.services)
   useEffect(() => {
     dispatch(fetchService(6))
   }, [dispatch])
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       {/* banner */}
       <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/WTXqvCy.jpg)' }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
@@ -25,15 +25,14 @@ const Services = () => {
 
       <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
         <SectionTitle
-          heading={"Services"}
-          subHeading={"Your Needs, Our Expertise."}
+          heading={"Your Needs, Our Expertise."}
         />
-        {dataLoaing ? (
+        {dataLoading ? (
           <div className="text-center py-20">
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 py-20">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mx-8 py-20">
             {data?.map((item) => (
               <ServiceCard key={item?._id} data={item} />
             ))}

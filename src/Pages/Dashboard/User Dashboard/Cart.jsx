@@ -31,7 +31,7 @@ const Cart = () => {
 
   if (!isError && !isLoading && carts?.length > 0) {
     content = (
-      <div className="font-montserrat">
+      <div className="font-andika">
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead className="text-center bg-brand-color">
@@ -47,7 +47,7 @@ const Cart = () => {
             </thead>
             <tbody className="text-center font-medium">
               {carts.map((item, index) => (
-                <CartRow key={item.id} item={item} index={index} />
+                <CartRow key={item._id} item={item} index={index} />
               ))}
             </tbody>
           </table>

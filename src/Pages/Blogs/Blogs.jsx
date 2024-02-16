@@ -1,12 +1,26 @@
+import { useState } from "react";
 import BlogCard from "./BlogCard";
-import useGetBlog from "../../API/BlogApi/useGetBlog";
-import { FaArrowRight, FaSearch } from "react-icons/fa";
+import { useGetApiQuery } from "../../Redux/userApi/getApi";
+import ShopSearch from "../Shop/ShopSearch";
+import ShopCategorie from "../Shop/ShopCategorie";
 
 const Blog = () => {
-  const [blogs, loading] = useGetBlog();
-
+  const [category, setCategory] = useState("");
+  const [search, setSearch] = useState("");
+  const {
+    data: blogs,
+    isLoading: loading,
+    refetch,
+  } = useGetApiQuery(`/blogs?search=${search}&category=${category}`);
+  const { data, isLoading } = useGetApiQuery("/blogsCategory");
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const searchData = e.target.search.value;
+    setSearch(searchData);
+    refetch();
+  };
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <div
         className="hero h-[desired-height] relative"
         style={{ backgroundImage: "url(https://i.imgur.com/OmENS5F.jpg)" }}
@@ -35,73 +49,30 @@ const Blog = () => {
         <h3 className="text-5xl font-bold text-[#000000] text-center mb-20">
           Get more updates from Eco-Smart Bins
         </h3>
-        {loading ? (
+        {loading || isLoading ? (
           <div className="text-center">
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="md:grid grid-cols-9 gap-12 items-start justify-center">
-            <div className="col-span-6 mb-5 lg:grid-cols-3 ">
+          <div className="md:grid grid-cols-9 gap-20 items-start justify-center">
+            <div className=" mb-5 col-span-6">
               {blogs?.map((blog) => (
                 <BlogCard key={blog?._id} blog={blog}></BlogCard>
               ))}
             </div>
-            <div className=" col-span-3">
+            <div className="lg:col-span-3 col-span-12 mt-20 lg:order-last order-first">
               {/* search input field */}
-              <div className="flex w-96 p-10 bg-[#ebf5e9] ">
-                <input
-                  className="h-12 w-72 relative p-4 "
-                  placeholder="Search..."
-                  label="Input With Icon"
-                />
-                <button className="absolute ml-60 mt-4 text-gray-400 text-xl">
-                  <FaSearch />
-                </button>
-              </div>
+              <ShopSearch handelSubmit={handelSubmit} />
               {/* categories buttons part */}
-              <div className="w-96 p-10 bg-[#ebf5e9] mt-4">
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Waste Reduction
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Recycling Solutions
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Waste Management
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Sorting Reimagined
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Waste Collection
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Waste Practices
-                </button>
-                <button className="h-12 px-6 hover:bg-[#3a9e1e] rounded-md text-start w-72 flex justify-start items-center gap-4 hover:text-white bg-white text-xl font-semibold mb-6">
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  Waste Traceability
-                </button>
+              <div className="py-10 px-7 flex flex-col justify-center bg-[#e9f1ea] mt-4">
+                <ShopCategorie data={"all blogs"} setCategory={setCategory} isTrue={true} />
+                {data?.map((item, idx) => (
+                  <ShopCategorie
+                    data={item}
+                    key={idx}
+                    setCategory={setCategory}
+                  />
+                ))}
               </div>
             </div>
           </div>

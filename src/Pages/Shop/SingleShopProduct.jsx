@@ -68,7 +68,7 @@ const SingleShopProduct = () => {
   };
 
   return (
-    <div className="font-montserrat my-20 md:flex p-5 justify-start items-center gap-12 bg-white">
+    <div className="font-andika my-20 md:flex p-5 justify-start items-center gap-12 bg-white">
       <div className="overflow-hidden flex-1">
         <img
           className="rounded p-12 bg-[#e9f1ea] h-[450px] w-[550px]"
@@ -81,7 +81,9 @@ const SingleShopProduct = () => {
           <h5 className="text-5xl text-green-600 font-bold pb-5">{title}</h5>
           <p>0 review</p>
         </div>
-        <h5 className="font-bold text-4xl text-[#f29620]">${price}</h5>
+        <h5 className="font-bold text-4xl text-[#f29620]">
+          ${price * quantity}
+        </h5>
         <div className="flex gap-3">
           <button
             onClick={() =>
@@ -105,7 +107,10 @@ const SingleShopProduct = () => {
         </div>
         <p className="text-black text-lg">{description}</p>
         <div className="flex gap-4 flex-wrap">
-          <Link to={`/checkout/${_id}`} className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r ">
+          <Link
+            to={`/checkout/${_id}/${quantity}`}
+            className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r "
+          >
             Buy Product
           </Link>
           <button

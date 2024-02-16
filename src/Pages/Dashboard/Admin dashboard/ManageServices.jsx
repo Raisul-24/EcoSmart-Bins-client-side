@@ -1,11 +1,12 @@
 import toast from "react-hot-toast";
 import useAxiosPrivate from "../../../axios/axiosprivate";
-import { FaTrash } from "react-icons/fa";
+import { FaRegEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchService } from "../../../Redux/ServiceSlice";
 import { useEffect } from "react";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 const ManageServices = () => {
   const axios = useAxiosPrivate();
   const dispatch = useDispatch()
@@ -34,9 +35,9 @@ const ManageServices = () => {
     });
   };
   return (
-    <div className="font-montserrat">
-      <div className="border-b-2">
-        <h2 className="text-4xl mb-5 text-center ">Manage Service Data</h2>
+    <div className="font-andika">
+      <div className="">
+      <SectionTitle heading={"manage all service"}/>
       </div>
       {dataLoaing ? (
         <div className="text-center mt-20">
@@ -61,9 +62,9 @@ const ManageServices = () => {
                 <tr key={item?._id}>
                   <td>{index + 1}</td>
                   <td>
-                    <div className="flex items-center gap-3">
+                    <div className="">
                       <div className="avatar">
-                        <div className="mask mask-decagon  w-12 h-12">
+                        <div className="mask rounded-full w-12 h-12">
                           <img
                             src={item?.img}
                             alt="Avatar Tailwind CSS Component"
@@ -73,12 +74,12 @@ const ManageServices = () => {
                     </div>
                   </td>
                   <td>{item?.title}</td>
-                  <td className="text-right">
+                  <td className="text-center">
                     <Link
                       to={`/services/${item?._id}`}
-                      className="btn btn-ghost hover:text-brand-color"
+                      className="btn btn-sm rounded-full w-8 h-8 bg-brand-color text-white hover:bg-white hover:text-brand-color font-bold"
                     >
-                      See Details
+                      i
                     </Link>
                   </td>
                   <td>
@@ -86,7 +87,7 @@ const ManageServices = () => {
                       to={`/dashboard/updateServices/${item?._id}`}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
-                      Update
+                     <FaRegEdit/>
                     </Link>
                   </td>
                   <td>

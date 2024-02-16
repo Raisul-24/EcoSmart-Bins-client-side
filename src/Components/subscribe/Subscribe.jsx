@@ -22,7 +22,7 @@ const Subscribe = () => {
 
 
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
         
       <div className="z-0 relative md:px-10 py-5 lg:py-0" style={{backgroundImage: 'url(https://i.ibb.co/vdg30h5/shape-27.png)'}}>
         <div>
@@ -43,7 +43,7 @@ const Subscribe = () => {
             </p>
             
           </div>
-          <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]  shadow-2xl  ">
+          <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]    ">
             <form onSubmit={handleSubscribe} className="card-body outline-none  items-center flex-row gap-0">
               <div className="w-full">
                 <input

@@ -7,7 +7,6 @@ import Subscribe from "../../Components/subscribe/Subscribe";
 import RecycleMaterials from "../../Components/recycle materials/RecycleMaterials";
 import Artwork from "./Artwork/Artwork";
 import Counter from "./Counter";
-import ChatKit from "../ChatBot/ChatKit";
 
 const Home = () => {
   return (
@@ -16,13 +15,11 @@ const Home = () => {
       <Service />
       <Counter />
       <ChoseUs />
+      <RecycleMaterials />
       <FAQ />
       <Artwork />
-      <RecycleMaterials />
       <Feedback />
-      <div className="">
-        <Subscribe />
-      </div>
+      <Subscribe />
     </div>
   );
 };

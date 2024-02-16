@@ -24,7 +24,7 @@ const CartRow = ({ item, index }) => {
   };
 
   return (
-    <tr className="font-montserrat">
+    <tr className="font-andika">
       <td>{index + 1}</td>
       <td>
         <div className="flex items-center gap-3">

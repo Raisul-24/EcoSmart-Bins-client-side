@@ -1,9 +1,10 @@
 import { FaTrashAlt } from "react-icons/fa";
-import UseAxiosPrivate from '../../../axios/axiosprivate';
-import { useQuery } from '@tanstack/react-query';
+import useAxiosPrivate from "../../../axios/axiosprivate";
+import { useQuery } from "@tanstack/react-query";
+
 
 const AllUsers = () => {
-   const axiosPrivate = UseAxiosPrivate();
+   const axiosPrivate = useAxiosPrivate();
    const { data: users = [], refetch } = useQuery({
        queryKey: ['users'],
        queryFn: async () => {
@@ -12,9 +13,10 @@ const AllUsers = () => {
        }
    })
 
+
    return (
       <div>
-          <div className="font-montserrat">
+          <div className="font-andika">
             <div className="flex justify-evenly my-4">
                 <h2 className="text-3xl">All Users</h2>
                 <h2 className="text-3xl">Total Users: {users.length}</h2>
@@ -54,7 +56,6 @@ const AllUsers = () => {
             </div>
         </div>
       </div>
-
    );
 };
 

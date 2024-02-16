@@ -14,7 +14,7 @@ const Voucher = () => {
    };
    return (
       <div>
-         <div className="p-3 py-5 rounded-xl bg-lime-50 my-5">
+         <div className="p-3 py-5 rounded-xl bg-lime-50 mb-5">
 
 
             <form onSubmit={handleSubmit(onSubmit)}>

@@ -38,7 +38,11 @@ import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
 import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
 import Checkout from "../Components/Checkout/Checkout";
 import Teams from "../Pages/teams/Teams";
-
+import Profile from "../Components/Profile/Profile";
+import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
+import PaymentFailed from "../Pages/Payment/PaymentFailed";
+import Overview from "../Pages/Dashboard/Admin dashboard/Overview/Overview";
+import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
 
 const router = createBrowserRouter([
   {
@@ -108,102 +112,122 @@ const router = createBrowserRouter([
         element: <PriceTable></PriceTable>,
       },
       {
-        path: '/checkout',
-        element: <Checkout></Checkout>
+        path: "/profile",
+        element: <Profile></Profile>,
       },
       {
-        path: '/checkout/:id',
-        element: <Checkout></Checkout>
+        path: "/checkout",
+        element: <Checkout></Checkout>,
+      },
+      {
+        path: "/checkout/:id/:quantity",
+        element: <Checkout></Checkout>,
+      },
+      {
+        path: "/payment/success/:transaction_id",
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+      {
+        path: "/payment/fail/:transaction_id",
+        element: <PaymentFailed></PaymentFailed>,
+      },
+      {
+        path: "/placeOrder",
+        element: <PlacedOrder></PlacedOrder>,
       },
     ],
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <Dashboard></Dashboard>,
     children: [
       // admin dashboard
       {
-        path: "/dashboard/adminProfile",
+        path: "overview",
+        element: <Overview></Overview>,
+      },
+      {
+        path: "adminProfile",
         element: <AdminProfile></AdminProfile>,
       },
       {
-        path: "/dashboard/addServices",
+        path: "addServices",
         element: <AddServices></AddServices>,
       },
       {
-        path: "/dashboard/updateServices/:id",
+        path: "updateServices/:id",
         element: <UpdateServices></UpdateServices>,
       },
       {
-        path: "/dashboard/manageServices",
+        path: "manageServices",
         element: <ManageServices></ManageServices>,
       },
       {
-        path: "/dashboard/addProducts",
+        path: "addProducts",
         element: <AddProducts></AddProducts>,
       },
       {
-        path: "/dashboard/manageUser",
+        path: "manageUser",
         element: <ManageUser></ManageUser>,
       },
       {
-        path: "/dashboard/updateProducts/:id",
+        path: "updateProducts/:id",
         element: <UpdateProducts></UpdateProducts>,
       },
       {
-        path: "/dashboard/manageProducts",
+        path: "manageProducts",
         element: <ManageProducts></ManageProducts>,
       },
       {
-        path: "/dashboard/managePickup",
+        path: "managePickup",
         element: <ManagePickup></ManagePickup>,
       },
       {
-        path: "/dashboard/manageShowcase",
+        path: "manageShowcase",
         element: <ManageShowcase></ManageShowcase>,
       },
 
       // worker dashboard
       {
-        path: "/dashboard/PickupWork",
+        path: "PickupWork",
         element: <PickupWork></PickupWork>,
       },
       {
-        path: "/dashboard/OnGoingWork",
+        path: "OnGoingWork",
         element: <OnGoingWork></OnGoingWork>,
       },
       {
-        path: "/dashboard/CompleteWorks",
+        path: "CompleteWorks",
         element: <CompleteWorks></CompleteWorks>,
       },
 
       // user dashboard
       {
-        path: "/dashboard/userProfile",
+        path: "userProfile",
         element: <UserProfile></UserProfile>,
       },
       {
-        path: "/dashboard/addShowcase",
+        path: "addShowcase",
         element: <AddShowcase></AddShowcase>,
       },
       {
-        path: "/dashboard/cart",
+        path: "cart",
         element: <Cart></Cart>,
       },
       {
-        path: "/dashboard/RewardPoints",
+        path: "RewardPoints",
         element: <RewardPoints></RewardPoints>,
       },
       {
-        path: "/dashboard/feedback",
+        path: "feedback",
         element: <FeedbackAndRatings></FeedbackAndRatings>,
       },
       {
-        path: "/dashboard/payment",
+        path: "payment",
         element: <MakePayment></MakePayment>,
       },
       {
-        path: "/dashboard/paymentHistory",
+        path: "paymentHistory",
         element: <PaymentHistory></PaymentHistory>,
       },
     ],
