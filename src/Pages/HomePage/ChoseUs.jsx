@@ -66,14 +66,6 @@ const ChoseUs = () => {
         </div>
 
       </div>
-      <div className="w-fit mx-auto">
-      <Link to="/contact">
-            {" "}
-            <button className=" border-0 btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">
-              Contact Us
-            </button>
-          </Link>
-      </div>
      
     </div>
   );

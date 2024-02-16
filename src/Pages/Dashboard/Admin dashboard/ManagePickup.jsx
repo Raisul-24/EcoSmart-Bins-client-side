@@ -1,4 +1,5 @@
 
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 
 const ManagePickup = () => {
@@ -7,9 +8,10 @@ const ManagePickup = () => {
 
   
   return (
-    <div className="font-andika">
-      <div className="border-b-2">
-        <h2 className="text-4xl mb-5 text-center ">Manage Pickup</h2>
+   <div>
+     <div className="">
+      <div className="font-andika ">
+      <SectionTitle heading={"Manage pickup request"}/>
       </div>
       {isLoading ? (
         <div className="text-center mt-20">
@@ -148,6 +150,7 @@ const ManagePickup = () => {
         </div>
       )}
     </div>
+   </div>
   );
 };
 

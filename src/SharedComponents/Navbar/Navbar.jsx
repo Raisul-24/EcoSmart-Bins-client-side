@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
+import { Badge } from "@material-tailwind/react";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
 import {
@@ -134,7 +135,7 @@ const Navbar = () => {
       {user && (
         <li className="text-xl hover:text-brand-color font-semibold">
           {" "}
-          <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          <NavLink to={"/dashboard/overview"}>Dashboard</NavLink>
         </li>
       )}
       <li className="text-xl hover:text-brand-color font-semibold">
@@ -154,18 +155,19 @@ const Navbar = () => {
         </div>
 
         <div className=" flex gap-5 lg:gap-10 ">
-          <div className="flex">
-            <FaShoppingCart className="md:text-3xl text-2xl" />
-            <div className="badge badge-secondary ml-2 bg-white text-brand-color">
-              {cart.length}
-            </div>
-          </div>
+          
+          <Badge content={cart.length}>
+            <FaShoppingCart className="md:text-2xl text-xl" />
+          </Badge>
           <div>
-            <FaRegBell className="md:text-3xl text-2xl" />
+          <Badge content="0">
+          <FaRegBell className="md:text-2xl text-xl" />
+          </Badge>
+            
           </div>
         </div>
       </div>
-      <div className="sticky bg-white bg-opacity-90 top-0 z-20 font-andika">
+      <div className="sticky border-b-2 border bg-white bg-opacity-90 top-0 z-20 font-andika">
         <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
           <div className="navbar-start">
             <div className="dropdown">

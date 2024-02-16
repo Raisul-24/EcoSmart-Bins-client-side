@@ -29,7 +29,7 @@ const UpdateProducts = () => {
   };
   return (
     <div className="font-andika">
-      <SectionTitle heading={"update product"} subHeading={data?.title} />
+     <SectionTitle heading={"update product"}/>
       {isPending ? (
         ""
       ) : (
