@@ -25,10 +25,11 @@ const AddProducts = () => {
   };
   return (
     <div className="font-andika">
-      <SectionTitle heading={"add product"} subHeading={"Add New Product"} />
-      <form
+      <SectionTitle heading={"add new product"}/>
+     <div className="max-w-xl lg:max-w-3xl border rounded-xl mx-auto p-5">
+     <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-xl p-5 shadow-2xl rounded-xl mx-auto space-y-4"
+        className=" space-y-4"
       >
         <input
           type="text"
@@ -61,6 +62,7 @@ const AddProducts = () => {
           value={"add product"}
         />
       </form>
+     </div>
     </div>
   );
 };

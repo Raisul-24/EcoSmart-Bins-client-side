@@ -12,8 +12,17 @@ import {
 } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import useCart from "../../Hooks/useCart";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchService } from "../../Redux/ServiceSlice";
+import ServiceNavbar from "./ServiceNavbar";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { service: data } = useSelector((state) => state.services);
+  useEffect(() => {
+    dispatch(fetchService(6));
+  }, [dispatch]);
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
@@ -54,41 +63,9 @@ const Navbar = () => {
             <Link to={"/services"}>All Services</Link>
           </motion.li>
           <span className="border border-slate-400"></span>
-          <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="font-semibold text-white pb-2"
-          >
-            {" "}
-            <NavLink to={"/pickup"}>Garbage Pickup</NavLink>
-          </motion.li>
-          <span className="border border-slate-400"></span>
-          <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="font-semibold text-white pb-2"
-          >
-            {" "}
-            <Link to={""}>Waste Collection</Link>
-          </motion.li>
-          <span className="border border-slate-400"></span>
-          <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="font-semibold text-white pb-2"
-          >
-            {" "}
-            <Link to={""}>Dumpster Service</Link>
-          </motion.li>
-          <span className="border border-slate-400"></span>
-          <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white"
-          >
-            {" "}
-            <Link to={""}>Residential Service</Link>
-          </motion.li>
+          {data?.map((service) => (
+            <ServiceNavbar key={service?._id} data={service} />
+          ))}
         </ul>
       </div>
 
@@ -158,7 +135,7 @@ const Navbar = () => {
       {user && (
         <li className="text-xl hover:text-brand-color font-semibold">
           {" "}
-          <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          <NavLink to={"/dashboard/overview"}>Dashboard</NavLink>
         </li>
       )}
       <li className="text-xl hover:text-brand-color font-semibold">
@@ -190,7 +167,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="sticky bg-white bg-opacity-90 top-0 z-20 font-andika">
+      <div className="sticky border-b-2 border bg-white bg-opacity-90 top-0 z-20 font-andika">
         <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
           <div className="navbar-start">
             <div className="dropdown">
