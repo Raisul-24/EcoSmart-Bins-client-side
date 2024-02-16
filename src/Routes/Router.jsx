@@ -41,9 +41,8 @@ import Teams from "../Pages/teams/Teams";
 import Profile from "../Components/Profile/Profile";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFailed from "../Pages/Payment/PaymentFailed";
-import Overview from "../Pages/Dashboard/Admin dashboard/Overview";
+import Overview from "../Pages/Dashboard/Admin dashboard/Overview/Overview";
 import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
-
 
 const router = createBrowserRouter([
   {
@@ -117,24 +116,24 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-        path: '/checkout',
-        element: <Checkout></Checkout>
+        path: "/checkout",
+        element: <Checkout></Checkout>,
       },
       {
-        path: '/checkout/:id/:quantity',
-        element: <Checkout></Checkout>
+        path: "/checkout/:id/:quantity",
+        element: <Checkout></Checkout>,
       },
       {
-        path: '/payment/success/:transaction_id',
-        element: <PaymentSuccess></PaymentSuccess>
+        path: "/payment/success/:transaction_id",
+        element: <PaymentSuccess></PaymentSuccess>,
       },
       {
-        path: '/payment/fail/:transaction_id',
-        element: <PaymentFailed></PaymentFailed>
+        path: "/payment/fail/:transaction_id",
+        element: <PaymentFailed></PaymentFailed>,
       },
       {
-        path: '/placeOrder',
-        element: <PlacedOrder></PlacedOrder>
+        path: "/placeOrder",
+        element: <PlacedOrder></PlacedOrder>,
       },
     ],
   },
@@ -144,8 +143,8 @@ const router = createBrowserRouter([
     children: [
       // admin dashboard
       {
-        path: "overview",
         element: <Overview></Overview>,
+        index: true,
       },
       {
         path: "adminProfile",

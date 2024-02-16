@@ -16,7 +16,9 @@ const Shop = () => {
     data: shop,
     isLoading,
     refetch,
-  } = useGetApiQuery(`/products?search=${search}&category=${category}&Page=${currentPage}&size=${itemPerPage}`);
+  } = useGetApiQuery(
+    `/products?search=${search}&category=${category}&Page=${currentPage}&size=${itemPerPage}`
+  );
   const { data, isLoading: loading } = useGetApiQuery("/productsCategory");
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +67,11 @@ const Shop = () => {
           <ShopSearch handelSubmit={handelSubmit} />
           {/* categories buttons part */}
           <div className="py-10 px-7 flex flex-col justify-center bg-[#e9f1ea] mt-4">
-            <ShopCategorie data={"all products"} setCategory={setCategory} />
+            <ShopCategorie
+              data={"all products"}
+              setCategory={setCategory}
+              isTrue={true}
+            />
             {data?.map((item, idx) => (
               <ShopCategorie data={item} key={idx} setCategory={setCategory} />
             ))}

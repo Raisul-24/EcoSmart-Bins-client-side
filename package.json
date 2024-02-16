@@ -35,6 +35,7 @@
     "react-router-dom": "^6.21.2",
     "react-scroll-trigger": "^0.6.14",
     "react-toastify": "^10.0.4",
+    "recharts": "^2.12.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5"

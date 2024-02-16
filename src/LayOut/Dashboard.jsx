@@ -18,25 +18,29 @@ import {
   MdWorkOutline,
 } from "react-icons/md";
 import { FaCartShopping } from "react-icons/fa6";
-import {Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { useGetApiQuery } from "../Redux/userApi/getApi";
 import useUsers from "../API/UserApi/useUsers";
 import Footer from "../SharedComponents/Footer";
-import "./dasboard.css"
+import "./dasboard.css";
 
 const Dashboard = () => {
   const { user, loading } = UseAuth();
   console.log(user);
   // const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
-  const[allUsers, isPending, refetch] = useUsers()
+  const [allUsers, isPending, refetch] = useUsers();
   console.log(allUsers);
-  
-  const isAdmin = allUsers?.filter(data => data?.role === "admin" && data?.email === user?.email)
-  const isUser = allUsers?.filter(data => data?.role === "user" && data?.email === user?.email)
-  const isWorker = allUsers?.filter(data => data?.role === "worker" && data?.email === user?.email)
 
-
+  const isAdmin = allUsers?.filter(
+    (data) => data?.role === "admin" && data?.email === user?.email
+  );
+  const isUser = allUsers?.filter(
+    (data) => data?.role === "user" && data?.email === user?.email
+  );
+  const isWorker = allUsers?.filter(
+    (data) => data?.role === "worker" && data?.email === user?.email
+  );
 
   if (loading) {
     return (
@@ -58,20 +62,18 @@ const Dashboard = () => {
           </label>
           {/* open content */}
           <div className="p-3 flex gap-3 items-center lg:hidden ">
-             {/* <h1 className="lg:text-3xl font-bold">
+            {/* <h1 className="lg:text-3xl font-bold">
                 <span className="bold text-brand-color">Eco</span>SmartBin
               </h1> */}
-          <h2 className="font-semibold lg:text-xl"> {user?.displayName}</h2>
+            <h2 className="font-semibold lg:text-xl"> {user?.displayName}</h2>
             <div className="">
-                    <img
-                      className="w-10 h-10 rounded-full border-2 border-brand-color"
-                      src={user?.photoURL}
-                      alt="https://i.ibb.co/8X8stTp/user.webp"
-                    />
-                </div>
-                
+              <img
+                className="w-10 h-10 rounded-full border-2 border-brand-color"
+                src={user?.photoURL}
+                alt="https://i.ibb.co/8X8stTp/user.webp"
+              />
+            </div>
           </div>
-         
         </div>
         <div className="drawer-side z-20">
           <label
@@ -79,22 +81,22 @@ const Dashboard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          
+
           <div className=" pr-2 lg:pr-0 w-52 lg:w-64 min-h-screen bg-gradient-to-r from-brand-color to-green-800 ... text-white overflow-hidden">
             <div className="card px-0 pt-8 pb-5 lg:pb-0 items-center mx-auto">
               <Link to={"/"} className="text-xl lg:text-3xl font-bold">
-              Eco<span className="bold text-green-950">SmartBin</span>
+                Eco<span className="bold text-green-950">SmartBin</span>
               </Link>
               <div className="hidden lg:block">
-              <figure className="px-10 py-3">
-                <div className="">
+                <figure className="px-10 py-3">
+                  <div className="">
                     <img
                       className="w-28 h-28 rounded-full border-2"
                       src={user?.photoURL}
                       alt="https://i.ibb.co/8X8stTp/user.webp"
                     />
-                </div>
-              </figure>
+                  </div>
+                </figure>
               </div>
               <div className="card-body px-0 pt-0 items-center text-center hidden lg:block">
                 {/* {data?.role === "user" &&
@@ -106,23 +108,24 @@ const Dashboard = () => {
                       <p className="font-bold">{data?.points}</p>
                     </p>
                   ))} */}
-              
-                  <h2 className="font-bold lg:text-xl"> {user?.displayName}</h2>
-                
-                  <p className="text-sm lg:text-md font-bold">{user?.email}</p>
-               
+
+                <h2 className="font-bold lg:text-xl"> {user?.displayName}</h2>
+
+                <p className="text-sm lg:text-md font-bold">{user?.email}</p>
               </div>
             </div>
 
-            <ul className="pl-2 lg:pl-4 z-20 px-0 font-semibold ">
-
-            <li className="text-xs md:text-sm w-full">
-                <NavLink to="/dashboard/overview"
-                 className={({ isActive}) =>
-                 isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
-                
-               }
-        
+            <ul className="pl-2 lg:pl-4 menu px-0 font-semibold ">
+              <li className="">
+                <NavLink
+                  to="/dashboard"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? " bg-white text-black lg:rounded-r-none"
+                      : isPending
+                      ? "pending"
+                      : ""
+                  }
                 >
                   <FaPlusSquare />
                   Overview
@@ -339,9 +342,7 @@ const Dashboard = () => {
           <Outlet></Outlet>
         </div>
       </div>
-      <div>
-       
-      </div>
+      <div></div>
     </div>
   );
 };
