@@ -60,7 +60,7 @@ const Feedback = () => {
         >
           {reviews?.map((review) => (
             <SwiperSlide key={review?._id}>
-              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16 rounded-lg p-5  flex flex-col border text-center items-center ">
+              <div className="mb-10 mx-4 md:mx-10 md:ml-5 md:my-16 rounded-lg shadow-lg shadow-brand-color p-5  flex flex-col border text-center items-center ">
                 <Rating
                   style={{ maxWidth: 180 }}
                   itemStyles={customStyles}
