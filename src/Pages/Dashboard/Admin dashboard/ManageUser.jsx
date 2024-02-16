@@ -35,11 +35,13 @@ const ManageUser = () => {
   return (
     <div>
       <div className="font-andika">
-        <div className="flex justify-evenly my-4">
-          <h2 className="text-3xl">All Users</h2>
-          <h2 className="text-3xl">Total Users: {users.length}</h2>
+        <div className="flex justify-evenly mb-5 text-2xl md:text-3xl font-semibold">
+          <h2 className="">All Users</h2>
+          <h2 className="">Total Users: {users.length}</h2>
+         
         </div>
-        <div className="overflow-x-auto">
+        <hr />
+        <div className="overflow-x-auto mt-5">
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>

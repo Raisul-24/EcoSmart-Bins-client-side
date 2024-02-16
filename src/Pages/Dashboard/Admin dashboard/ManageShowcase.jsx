@@ -4,6 +4,8 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../axios/axiosPublic";
 import toast from "react-hot-toast";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import { FaPlus, FaRightLeft } from "react-icons/fa6";
 
 const ManageShowcase = () => {
   const [showcase, setShowcase] = useState([]);
@@ -61,8 +63,8 @@ const ManageShowcase = () => {
   return (
     <div className="">
       <div>
-        <div className="border-b-2 font-montserrat">
-          <h2 className="text-4xl mb-5 text-center ">Manage Showcase</h2>
+        <div className=" font-andika">
+        <SectionTitle heading={"Manage showcase"}/>
         </div>
 
         <div className="overflow-x-auto">
@@ -83,9 +85,9 @@ const ManageShowcase = () => {
                 <tr key={item._id}>
                   <td>{index + 1}</td>
                   <td>
-                    <div className="flex items-center gap-3">
+                    <div className="">
                       <div className="avatar">
-                        <div className="mask mask-decagon  w-12 h-12">
+                        <div className="mask rounded-full w-12 h-12">
                           <img
                             src={item.img}
                             alt="Avatar Tailwind CSS Component"
@@ -101,7 +103,8 @@ const ManageShowcase = () => {
                       onClick={() => handleStatus(item.name, item.img, item.title, item.date, item._id)}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
-                      Add</button>
+                      <FaPlus/>
+                    </button>
                   </td>
 
 

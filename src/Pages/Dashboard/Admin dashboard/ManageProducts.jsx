@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import useProducts from "../../../Hooks/useProducts";
 import {  FaRegEdit, FaTrash } from "react-icons/fa";
 import useAxiosPrivate from "../../../axios/axiosprivate";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const ManageProducts = () => {
   const [products, loading, refetch] = useProducts();
@@ -37,8 +38,8 @@ const ManageProducts = () => {
 
   return (
     <div className="font-andika">
-      <div className="border-b-2">
-        <h2 className="text-4xl mb-5 text-center ">Manage Shop Data</h2>
+      <div className="">
+      <SectionTitle heading={"manage all product"}/>
       </div>
       {loading ? (
         <div className="text-center mt-20">
@@ -64,9 +65,9 @@ const ManageProducts = () => {
                 <tr key={item._id}>
                   <td>{index + 1}</td>
                   <td>
-                    <div className="flex items-center gap-3">
+                    <div className="">
                       <div className="avatar">
-                        <div className="mask mask-decagon  w-12 h-12">
+                        <div className="mask rounded-full w-12 h-12">
                           <img
                             src={item.img}
                             alt="Avatar Tailwind CSS Component"
@@ -77,12 +78,12 @@ const ManageProducts = () => {
                   </td>
                   <td>{item.title}</td>
                   <td>$ {item.price}</td>
-                  <td className="text-right">
+                  <td className="text-center">
                     <Link
                       to={`/shop/${item._id}`}
-                      className="btn btn-ghost hover:text-brand-color"
+                      className="btn btn-sm rounded-full w-8 h-8 bg-brand-color text-white hover:bg-white hover:text-brand-color font-bold"
                     >
-                      See Details
+                      i
                     </Link>
                   </td>
                   <td>
