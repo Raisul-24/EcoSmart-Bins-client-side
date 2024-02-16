@@ -4,7 +4,7 @@ import useAxiosPublic from './../../axios/axiosPublic';
 const useGetBlog = ()=>{
     const axios = useAxiosPublic()
     const blogData = async () =>{
-        const {data} = await axios.get(`/blogs`)
+        const {data} = await axios.get(``)
         return data
     }
     const {data,isPending,refetch} = useQuery({
