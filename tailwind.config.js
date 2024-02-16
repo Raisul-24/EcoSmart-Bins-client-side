@@ -10,9 +10,9 @@ export default {
         'brand-color': '#3A9E1E',
       },
       fontFamily: {
-        'montserrat': ['Montserrat', 'sans-serif'],
+        'andika': ["Andika", "sans-serif"],
       },
-      
+
     },
   },
   daisyui: {

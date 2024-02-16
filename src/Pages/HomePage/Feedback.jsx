@@ -36,11 +36,11 @@ const Feedback = () => {
   }, [axiosPublic]);
 
   return (
-    <div className="font-montserrat">
+    <div className="font-andika">
       <div className="md:flex  items-center">
         <div className="flex-1 text-center md:text-start md:w-5/6 p-10">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500">What Our Clients Say About Us</h2>
-          <p className="text-medium md:text-xl font-medium md:w-4/5  my-5">
+          <p className="text-sm md:text-xl font-medium md:w-4/5  my-5">
             We Devote Time And Effort To Provide Quality Services.
           </p>
           <span className="text-amber-500 flex justify-center md:justify-start text-3xl md:text-5xl">
