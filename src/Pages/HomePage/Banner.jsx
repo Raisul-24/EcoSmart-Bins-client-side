@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 
 
 import { Autoplay, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   useEffect(() => {
@@ -33,7 +34,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide className="font-andika">
-          <div className="hero min-h-screen bg-gradient-to-r from-green-100 to-slate-100 ...">
+          <div className="hero min-h-screen bg-gradient-to-r from-slate-50 ... to-green-200 ...">
             <div className="hero-content  flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
                 <img src="https://i.ibb.co/BV13fHZ/banner-img-2.png" />
@@ -47,7 +48,7 @@ const Banner = () => {
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900"
                 >
                   Best waste pickup solutaions
                 </h1>
@@ -57,15 +58,17 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
+                <Link to={"/pickUpReq"}>
                 <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Let’s Explore
+                  Pickup Request
                 </button>
+                </Link>
               </div>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="font-andika">
-          <div className="hero min-h-screen bg-gradient-to-r from-green-100 to-slate-100 ...">
+          <div className="hero min-h-screen bg-gradient-to-r from-slate-50 ... to-green-200 ...">
             <div className="hero-content  flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
                 <img src="https://i.ibb.co/vs6R7RC/banner-img-1.png" />
@@ -79,9 +82,9 @@ const Banner = () => {
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900"
                 >
-                  Best waste pickup solutaions
+                  Smart waste pickup solutaions
                 </h1>
                 <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
@@ -89,15 +92,17 @@ const Banner = () => {
                   waste infrastructure and low carbon collections.
                 </p>
 
+                <Link to={"/pickUpReq"}>
                 <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Let’s Explore
+                  Pickup Request
                 </button>
+                </Link>
               </div>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="font-andika">
-          <div className="hero min-h-screen bg-gradient-to-r from-green-100 to-slate-100 ...">
+          <div className="hero min-h-screen bg-gradient-to-r from-slate-50 ... to-green-200 ...">
             <div className="hero-content  flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
                 <img src="https://i.ibb.co/8cvLPYm/banner-img-4.png" />
@@ -111,7 +116,7 @@ const Banner = () => {
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900"
                 >
                   Best waste pickup solutaions
                 </h1>
@@ -120,10 +125,11 @@ const Banner = () => {
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
-
+                <Link to={"/pickUpReq"}>
                 <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Let’s Explore
+                  Pickup Request
                 </button>
+                </Link>
               </div>
             </div>
           </div>

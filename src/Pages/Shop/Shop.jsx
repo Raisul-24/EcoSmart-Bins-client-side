@@ -51,7 +51,7 @@ const Shop = () => {
       </div>
 
       {/* content */}
-      <SectionTitle heading={"shop"} subHeading={"Waste Less, Live More."} />
+      <SectionTitle heading={"Waste Less, Live More."} />
       <div className="grid grid-cols-12 mx-8 space-x-4">
         <div className="lg:col-span-9 col-span-12">
           <div className=" my-12 grid md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-8 pt-8">

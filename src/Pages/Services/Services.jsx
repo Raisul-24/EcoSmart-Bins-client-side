@@ -25,8 +25,7 @@ const Services = () => {
 
       <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
         <SectionTitle
-          heading={"Services"}
-          subHeading={"Your Needs, Our Expertise."}
+          heading={"Your Needs, Our Expertise."}
         />
         {dataLoading ? (
           <div className="text-center py-20">
