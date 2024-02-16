@@ -143,8 +143,8 @@ const router = createBrowserRouter([
     children: [
       // admin dashboard
       {
+        path: "overview",
         element: <Overview></Overview>,
-        index: true,
       },
       {
         path: "adminProfile",
