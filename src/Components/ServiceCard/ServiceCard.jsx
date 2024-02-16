@@ -4,8 +4,18 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ data, isTrue, DeleteFun }) => {
   return (
     <div className="card  mb-72 font-montserrat">
-      <figure className="relative">
+      {/*<figure className="relative">
         <img src={data?.img} className="w-96 h-80 rounded-lg " alt="Shoes" />
+      </figure>*/}
+      <figure className="relative">
+        <div className="group w-96 h-80 rounded-lg overflow-hidden relative">
+          <img
+            src={data?.img}
+            className="w-full h-full object-cover"
+            alt="Shoes"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#257830] opacity-0 group-hover:opacity-95 transition-opacity duration-300"></div>
+        </div>
       </figure>
       <div className="card-body absolute text-start  w-[350px] h-96 rounded-xl shadow-xl p-10 bg-white top-0 mt-52 ">
         <Link
