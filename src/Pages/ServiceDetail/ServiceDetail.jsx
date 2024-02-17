@@ -3,7 +3,7 @@ import useGetAService from "../../API/ServiceApi/useGetAService";
 import toast from "react-hot-toast";
 import { FaArrowCircleRight } from "react-icons/fa";
 import getServicesCategories from "../../API/BlogApi/getServicesCategory";
-
+import sidebarBg from "../../assets/images/sideber-of-service-details.webp";
 const ServiceDetail = () => {
   const [categories] = getServicesCategories();
   console.log(categories);
@@ -65,13 +65,42 @@ const ServiceDetail = () => {
                       rounded-md text-start w-72 flex justify-start items-center
                       gap-4 text-white text-md font-bold mb-6"
                 >
-                  {category?.servicesCategory}
                   <span className="text-2xl">
                     <FaArrowCircleRight />
                   </span>
+                  {category?.servicesCategory}
                 </Link>
               </button>
             ))}
+          </div>
+          <div
+            className="mt-8 h-[450px] relative flex flex-col justify-center items-start gap-6 pl-8"
+            style={{
+              backgroundImage: `url(${sidebarBg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="absolute inset-0 bg-[#f0901f] bg-opacity-95"></div>
+            <div className="flex flex-col justify-center items-start gap-6 my-8 relative z-10">
+              <h4 className="text-2xl font-bold">
+                Trusted And Reliable <br /> Waste Collection!
+              </h4>
+              <p className="text-lg font-semibold">
+                We offer customers regular <br /> collection of trash, on a
+                scheduled <br /> or call basis, with a safe level of <br />
+                service.
+              </p>
+              <Link
+                to={`/pickUpReq`}
+                className=" btn btn-outline text-lg font-sans font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white  hover:bg-[#f0901f] h-[70px] gap-4 w-[250px] border-0"
+              >
+                Request PickUp
+                <span className="text-3xl">
+                  <FaArrowCircleRight />
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className=" col-span-6">
@@ -81,20 +110,24 @@ const ServiceDetail = () => {
 
               <p className=" text-lg">{data?.description1}</p>
               <div className="md:w-full my-8 overflow-hidden rounded-xl">
-                <img src={data?.img} alt="" className="w-full" />
+                <img
+                  src={data?.img}
+                  alt=""
+                  className="w-full overflow-scroll object-cover"
+                />
               </div>
               <p className=" text-lg">{data?.description2}</p>
 
-              <div className="md:w-full my-8 overflow-hidden rounded-xl flex justify-center items-center gap-12">
+              <div className="md:w-full my-8 overflow-hidden rounded-xl flex justify-center items-center gap-12 object-cover">
                 <img
                   src={data?.img1}
                   alt=""
-                  className="w-full h-96 rounded-xl "
+                  className="w-full h-96 rounded-xl overflow-scroll"
                 />
                 <img
                   src={data?.img2}
                   alt=""
-                  className="w-full h-96 rounded-xl "
+                  className="w-full h-96 rounded-xl overflow-scroll"
                 />
               </div>
               <div className="my-8">
