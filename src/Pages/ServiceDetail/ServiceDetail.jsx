@@ -1,7 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import useGetAService from "../../API/ServiceApi/useGetAService";
 import toast from "react-hot-toast";
-import { FaArrowCircleRight } from "react-icons/fa";
+import {
+  FaArrowCircleRight,
+  FaFacebookMessenger,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import getServicesCategories from "../../API/BlogApi/getServicesCategory";
 import sidebarBg from "../../assets/images/sideber-of-service-details.webp";
 const ServiceDetail = () => {
@@ -53,10 +57,11 @@ const ServiceDetail = () => {
       </div>
 
       <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
+        {/* sidebar content */}
         <div className="col-span-3 mt-16">
-          {/* categories buttons part */}
-          <div className="rounded-lg p-10 bg-[#e9f1ea] mt-4">
-            <p className="text-2xl font-extrabold py-5">Our Services</p>
+          {/* categories buttons part 1 */}
+          <div className="rounded-xl p-10 bg-[#e9f1ea] mt-4">
+            <p className="text-xl font-extrabold py-5">Our Services</p>
             {categories?.map((category) => (
               <button key={category?._id}>
                 <Link
@@ -73,36 +78,53 @@ const ServiceDetail = () => {
               </button>
             ))}
           </div>
+          {/* content with get start button part 2 */}
           <div
-            className="mt-8 h-[450px] relative flex flex-col justify-center items-start gap-6 pl-8"
+            className="mt-12 h-[550px] relative flex flex-col justify-center items-start gap-6 text-white overflow-hidden rounded-xl"
             style={{
               backgroundImage: `url(${sidebarBg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute inset-0 bg-[#f0901f] bg-opacity-95"></div>
-            <div className="flex flex-col justify-center items-start gap-6 my-8 relative z-10">
-              <h4 className="text-2xl font-bold">
+            <div className="absolute inset-0 bg-[#f29829] bg-opacity-95"></div>
+
+            <div className="flex flex-col justify-center items-start gap-6  relative z-10 px-12">
+              <h4 className="text-2xl font-bold pb-2">
                 Trusted And Reliable <br /> Waste Collection!
               </h4>
               <p className="text-lg font-semibold">
-                We offer customers regular <br /> collection of trash, on a
-                scheduled <br /> or call basis, with a safe level of <br />
-                service.
+                We offer customers regular collection of trash, on a scheduled
+                or call basis, with a safe level of service.
               </p>
               <Link
-                to={`/pickUpReq`}
-                className=" btn btn-outline text-lg font-sans font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white  hover:bg-[#f0901f] h-[70px] gap-4 w-[250px] border-0"
+                to={`/`}
+                className="mt-6 btn btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-brand-color h-[70px] gap-4 w-full border-0"
               >
-                Request PickUp
+                Get Started Now
                 <span className="text-3xl">
                   <FaArrowCircleRight />
                 </span>
               </Link>
+              <div className="flex flex-col justify-center items-start gap-4 mt-8">
+                <p className="text-xl font-bold flex justify-center items-center gap-5 hover:text-brand-color">
+                  <span className="text-xl">
+                    <FaFacebookMessenger />
+                  </span>
+                  ecosmart@bin.com
+                </p>
+                <p className="text-xl font-bold flex justify-center items-center gap-5 hover:text-brand-color">
+                  <span className="text-xl">
+                    <FaPhoneAlt />
+                  </span>
+                  +2 01161145741
+                </p>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* main content part */}
         <div className=" col-span-6">
           <div className="py-20 flex md:flex-row flex-col items-center">
             <div className="">
@@ -140,12 +162,58 @@ const ServiceDetail = () => {
                   operators.
                 </p>
               </div>
+              <div className="border-b-4 border-brand-color mb-5"></div>
 
-              <button
+              <div>
+                <div className="collapse collapse-plus rounded-lg  text-[#101a30] hover:text-brand-color">
+                  <input type="checkbox" name="accordion" />
+                  <div className="collapse-title  text-xl font-bold">
+                    <p>Food Recycling And Anaerobic Digestion</p>
+                  </div>
+                  <div className="collapse-content">
+                    <p>
+                      Recycling Facilities essential in providing quality raw
+                      materials to the production industry, as they designed to
+                      separate recyclables into their individual material
+                      streams and prepare them for sale
+                    </p>
+                  </div>
+                </div>
+                <div className="collapse collapse-plus rounded-lg  text-[#101a30] hover:text-brand-color">
+                  <input type="checkbox" name="accordion" />
+                  <div className="collapse-title  text-xl font-bold">
+                    <p>Mechanical And Biological Treatment</p>
+                  </div>
+                  <div className="collapse-content">
+                    <p>
+                      Recycling Facilities essential in providing quality raw
+                      materials to the production industry, as they designed to
+                      separate recyclables into their individual material
+                      streams and prepare them for sale
+                    </p>
+                  </div>
+                </div>
+                <div className="collapse collapse-plus rounded-lg  text-[#101a30] hover:text-brand-color">
+                  <input type="checkbox" name="accordion" />
+                  <div className="collapse-title  text-xl font-bold">
+                    <p>Metal And Plastic Recycling Facilities</p>
+                  </div>
+                  <div className="collapse-content">
+                    <p>
+                      Recycling Facilities essential in providing quality raw
+                      materials to the production industry, as they designed to
+                      separate recyclables into their individual material
+                      streams and prepare them for sale
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/*<button
                 onClick={() => toast.success("Service Added Successfully!")}
                 className="btn lg:px-10 capitalize bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-1/2"
-              ></button>
+              ></button>*/}
             </div>
+            <hr />
           </div>
         </div>
       </div>
