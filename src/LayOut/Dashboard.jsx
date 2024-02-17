@@ -5,6 +5,7 @@ import {
   FaHistory,
   FaHome,
   FaPlusSquare,
+  FaSignOutAlt,
   FaStar,
   FaUsers,
 } from "react-icons/fa";
@@ -376,18 +377,9 @@ const Dashboard = () => {
                   Home
                 </NavLink>
               </li>
-              {/* <li className="">
-                <NavLink to="/services">
-                  <FaSearch></FaSearch>
-                  Available Services
-                </NavLink>
-              </li>
-              <li className="">
-                <NavLink to="/contact">
-                  <FaEnvelope></FaEnvelope>
-                  Contact
-                </NavLink>
-              </li> */}
+
+              
+              
             </ul>
           </div>
         </div>
