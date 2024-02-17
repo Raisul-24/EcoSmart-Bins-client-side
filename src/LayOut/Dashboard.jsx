@@ -2,12 +2,10 @@ import {
   FaBars,
   FaCameraRetro,
   FaEdit,
-  FaEnvelope,
   FaHistory,
   FaHome,
   FaMoneyCheck,
   FaPlusSquare,
-  FaSearch,
   FaStar,
   FaUsers,
 } from "react-icons/fa";
@@ -22,14 +20,13 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { useGetApiQuery } from "../Redux/userApi/getApi";
 import useUsers from "../API/UserApi/useUsers";
-import Footer from "../SharedComponents/Footer";
 import "./dasboard.css";
 
 const Dashboard = () => {
   const { user, loading } = UseAuth();
   console.log(user);
   // const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
-  const [allUsers, isPending, refetch] = useUsers();
+  const [allUsers] = useUsers();
   console.log(allUsers);
 
   const isAdmin = allUsers?.filter(
@@ -69,8 +66,8 @@ const Dashboard = () => {
             <div className="">
               <img
                 className="w-10 h-10 rounded-full border-2 border-brand-color"
-                src={user?.photoURL}
-                alt="https://i.ibb.co/8X8stTp/user.webp"
+                src={user? user?.photoURL : "https://i.ibb.co/WBTGdby/user.webp"}
+                alt="photo"
               />
             </div>
           </div>
@@ -92,8 +89,8 @@ const Dashboard = () => {
                   <div className="">
                     <img
                       className="w-28 h-28 rounded-full border-2"
-                      src={user?.photoURL}
-                      alt="https://i.ibb.co/8X8stTp/user.webp"
+                      src={user? user?.photoURL : "https://i.ibb.co/8X8stTp/user.webp" }
+                      alt="image"
                     />
                   </div>
                 </figure>
