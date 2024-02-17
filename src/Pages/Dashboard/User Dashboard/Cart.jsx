@@ -34,7 +34,7 @@ const Cart = () => {
       <div className="font-andika">
         <div className="overflow-x-auto">
           <table className="table w-full">
-            <thead className="text-center bg-brand-color">
+            <thead className="text-center text-white bg-brand-color">
               <tr>
                 <th>Number</th>
                 <th>Image</th>

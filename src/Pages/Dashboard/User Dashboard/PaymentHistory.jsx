@@ -16,7 +16,7 @@ const PaymentHistory = () => {
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
-            <tr className="text-center">
+            <tr className="text-center bg-brand-color text-white">
               <th>#</th>
               <th>Transaction Id</th>
               <th>Email</th>
@@ -34,7 +34,7 @@ const PaymentHistory = () => {
                 <td>{user?.transaction_ID}</td>
                 <td>{user?.payableOrder?.cus_email}</td>
                 <td>{user?.payableOrder?.product_name}</td>
-                <td>{user?.payableOrder?.total_amount } Tk</td>
+                <td className="font-bold">{user?.payableOrder?.total_amount } Tk</td>
                 <td
                   className={`badge ${
                     user?.paidStatus ? "bg-green-600 text-white mt-2" : "bg-red-600 text-white mt-2"
