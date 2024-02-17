@@ -212,7 +212,9 @@ const Navbar = () => {
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className=" rounded-full">
-                    <img src={user.photoURL} alt="" className="rounded-full" />
+                    <img src={
+                      user?.photoURL ? user?.photoURL : "https://i.ibb.co/8X8stTp/user.webp"} 
+                      alt="" className="rounded-full" />
                   </div>
                 </label>
                 <ul
