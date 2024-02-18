@@ -43,9 +43,10 @@ const PickupWork = () => {
               <tr>
                 <th>Image</th>
                 <th>Email</th>
+                <th>Price</th>
                 <th>status</th>
                 <th>details</th>
-                <th>Action</th>
+                <th>Add to Ongoing</th>
               </tr>
             </thead>
             <tbody className="text-center font-medium">
@@ -69,6 +70,7 @@ const PickupWork = () => {
                     </div>
                   </th>
                   <td>{item?.email}</td>
+                  <td>{item?.price}</td>
                   <td>
                     <h2
                       className={`badge ${item?.status === "requested" &&
@@ -89,7 +91,7 @@ const PickupWork = () => {
                       i
                     </button>
                     <dialog id={item?._id} className="modal">
-                      <div className="modal-box bg-white">
+                    <div className="modal-box bg-white">
                         <h3 className="text-2xl font-bold capitalize text-brand-color">
                           pickup details
                         </h3>
@@ -112,11 +114,20 @@ const PickupWork = () => {
                           <div className="text-start">
                             <h4>{item?.name}</h4>
                             <p>{item?.email}</p>
+                            <p>{item?.date}</p>
                           </div>
                         </div>
                         <div className="text-start text-lg capitalize mt-5 flex gap-1">
                           <p className="text-brand-color">pickup address:</p>
                           <p>{item?.address}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Service Type:</p>
+                          <p>{item?.enquiryType}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Container:</p>
+                          <p>{item?.container} Gallon Trash</p>
                         </div>
                         <div className="text-start">
                           <p className="space-x-2">

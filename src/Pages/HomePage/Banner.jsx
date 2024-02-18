@@ -8,7 +8,6 @@ import "swiper/css/navigation";
 
 
 import { Autoplay, Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
 
 const Banner = () => {
   useEffect(() => {

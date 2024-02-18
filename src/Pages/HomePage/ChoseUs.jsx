@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { motion } from 'framer-motion';
 import icon1 from "../../assets/images/5065663-200.png"
 import icon2 from "../../assets/images/icon.png"
@@ -9,7 +9,7 @@ import Lottie from "lottie-react";
 const ChoseUs = () => {
   return (
     <div className=" font-andika" >
-      <div className="max-w-7xl mx-auto xl:px-0 px-5  my-12 md:flex justify-start items-center gap-12 ">
+      <div className="max-w-7xl mx-auto xl:px-0 px-5  my-12 lg:flex justify-start items-center gap-12 ">
 
         {/* image section */}
         <div className=" lg:w-1/2 ">
