@@ -47,19 +47,21 @@ const Banner = () => {
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900"
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p className="py-6 text-lg">
+                <p  className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
 
+                <Link to={"/pickUpReq"}>
                 <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Let’s Explore
+                  Pickup Request
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -71,22 +73,29 @@ const Banner = () => {
                 <img src="https://i.ibb.co/vs6R7RC/banner-img-1.png" />
               </div>
               <div className="lg:w-3/5 mr-auto">
-                <p data-aos="fade-down" className="text-brand-color md:text-xl font-bold mb-3">
-                  Building a Greener Future Together
+                <p
+                  data-aos="fade-down"
+                  className="text-brand-color md:text-xl font-bold mb-3"
+                >
+                  Empowering Communities for a Cleaner Planet
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900"
                 >
-                  Best waste pickup solutaions
+                  Smart waste pickup solutaions
                 </h1>
-                <p className="py-6 text-lg">
-                  Join us in our mission to reduce waste and preserve our environment. With our innovative waste management solutions, we're making it easier than ever to make a positive impact.
+                <p  className="py-6 text-lg">
+                  We have already made huge strides in our sustainability
+                  journey by investing in plastic recycling and energy from
+                  waste infrastructure and low carbon collections.
                 </p>
 
+                <Link to={"/pickUpReq"}>
                 <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Let’s Explore
+                  Pickup Request
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -98,22 +107,28 @@ const Banner = () => {
                 <img src="https://i.ibb.co/8cvLPYm/banner-img-4.png" />
               </div>
               <div className="lg:w-3/5 mr-auto">
-                <p data-aos="fade-down" className="text-brand-color md:text-xl font-bold mb-3">
-                  Leading the Way in Environmental Responsibility
+                <p
+                  data-aos="fade-down"
+                  className="text-brand-color md:text-xl font-bold mb-3"
+                >
+                  Empowering Communities for a Cleaner Planet
                 </p>
                 <h1
                   data-aos="fade-up-right"
-                  className="text-4xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-color to-amber-500"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900"
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p className="py-6 text-lg">
-                  Discover how we're pioneering sustainable solutions and driving positive change. From cutting-edge recycling initiatives to community-driven programs, we're committed to creating a cleaner, healthier planet for future generations.
+                <p  className="py-6 text-lg">
+                  We have already made huge strides in our sustainability
+                  journey by investing in plastic recycling and energy from
+                  waste infrastructure and low carbon collections.
                 </p>
-
+                <Link to={"/pickUpReq"}>
                 <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Let’s Explore
+                  Pickup Request
                 </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -2,12 +2,10 @@ import {
   FaBars,
   FaCameraRetro,
   FaEdit,
-  FaEnvelope,
   FaHistory,
   FaHome,
-  FaMoneyCheck,
   FaPlusSquare,
-  FaSearch,
+  FaSignOutAlt,
   FaStar,
   FaUsers,
 } from "react-icons/fa";
@@ -22,15 +20,13 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { useGetApiQuery } from "../Redux/userApi/getApi";
 import useUsers from "../API/UserApi/useUsers";
-import Footer from "../SharedComponents/Footer";
-import "./dasboard.css";
 
 const Dashboard = () => {
   const { user, loading } = UseAuth();
-  console.log(user);
+  // console.log(user);
   // const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
   const [allUsers, isPending, refetch] = useUsers();
-  console.log(allUsers);
+  // console.log(allUsers);
 
   const isAdmin = allUsers?.filter(
     (data) => data?.role === "admin" && data?.email === user?.email
@@ -66,13 +62,18 @@ const Dashboard = () => {
                 <span className="bold text-brand-color">Eco</span>SmartBin
               </h1> */}
             <h2 className="font-semibold lg:text-xl"> {user?.displayName}</h2>
-            <div className="">
-              <img
-                className="w-10 h-10 rounded-full border-2 border-brand-color"
-                src={user?.photoURL}
-                alt="https://i.ibb.co/8X8stTp/user.webp"
-              />
-            </div>
+         
+              <div className="">
+                <img
+                  className="w-10 h-10 rounded-full border-2 border-brand-color"
+                  src={
+                    user?.photoURL ? user?.photoURL : "https://i.ibb.co/8X8stTp/user.webp"
+                  }
+                  alt="image"
+                />
+              </div>
+            
+              
           </div>
         </div>
         <div className="drawer-side z-20">
@@ -92,8 +93,12 @@ const Dashboard = () => {
                   <div className="">
                     <img
                       className="w-28 h-28 rounded-full border-2"
-                      src={user?.photoURL}
-                      alt="https://i.ibb.co/8X8stTp/user.webp"
+                      src={
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://i.ibb.co/8X8stTp/user.webp"
+                      }
+                      alt="image"
                     />
                   </div>
                 </figure>
@@ -115,16 +120,14 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <ul className="pl-2 lg:pl-4 menu px-0 font-semibold ">
-              <li className="">
+            <ul className="pl-2 lg:pl-4 z-20 px-0 font-semibold ">
+              <li className="text-xs md:text-sm w-full">
                 <NavLink
                   to="/dashboard/overview"
-                  className={({ isActive, isPending }) =>
+                  className={({ isActive }) =>
                     isActive
-                      ? " bg-white text-black lg:rounded-r-none"
-                      : isPending
-                      ? "pending"
-                      : ""
+                      ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"
+                      : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                   }
                 >
                   <FaPlusSquare />
@@ -308,6 +311,7 @@ const Dashboard = () => {
                       Add Showcase
                     </NavLink>
                   </li>
+
                   <li className="text-xs md:text-sm w-full">
                     <NavLink
                       to="/dashboard/feedback"
@@ -320,7 +324,18 @@ const Dashboard = () => {
                       <FaStar /> Feedback
                     </NavLink>
                   </li>
-                  <li className="text-xs md:text-sm w-full">
+
+                  {/* <li className="text-xs md:text-sm w-full">
+               <NavLink to="/dashboard/RewardPoints"
+                    className={({ isActive}) =>
+                    isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
+              }
+               >
+                 <VscActivateBreakpoints /> Reward Points
+               </NavLink>
+             </li> */}
+
+                  {/* <li className="text-xs md:text-sm w-full">
                     <NavLink
                       to="/dashboard/RewardPoints"
                       className={({ isActive }) =>
@@ -329,22 +344,10 @@ const Dashboard = () => {
                           : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
                       }
                     >
-                      <VscActivateBreakpoints /> Reward Points
+                      <VscActivateBreakpoints /> Pickup
                     </NavLink>
-                  </li>
-                  <li className="text-xs md:text-sm w-full">
-                    <NavLink
-                      to="/dashboard/payment"
-                      className={({ isActive }) =>
-                        isActive
-                          ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"
-                          : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
-                      }
-                    >
-                      <FaMoneyCheck></FaMoneyCheck>
-                      Make Payment
-                    </NavLink>
-                  </li>
+                  </li> */}
+
                   <li className="text-xs md:text-sm w-full">
                     <NavLink
                       to="/dashboard/paymentHistory"
@@ -374,18 +377,9 @@ const Dashboard = () => {
                   Home
                 </NavLink>
               </li>
-              {/* <li className="">
-                <NavLink to="/services">
-                  <FaSearch></FaSearch>
-                  Available Services
-                </NavLink>
-              </li>
-              <li className="">
-                <NavLink to="/contact">
-                  <FaEnvelope></FaEnvelope>
-                  Contact
-                </NavLink>
-              </li> */}
+
+              
+              
             </ul>
           </div>
         </div>
