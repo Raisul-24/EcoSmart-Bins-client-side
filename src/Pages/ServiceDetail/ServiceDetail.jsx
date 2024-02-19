@@ -1,21 +1,26 @@
-import { useParams } from "react-router-dom";
-import useGetAService from "../../API/ServiceApi/useGetAService";
-//import toast from "react-hot-toast";
-import { Cell, Legend, Pie, PieChart } from "recharts";
+import { useEffect, useState } from "react";
+import {
+  Cell,
+  Legend,
+  Pie,
+  PieChart,
+  Tooltip,
+} from "recharts";
 import ServiceDetailsBanner from "./ServiceDetailsBanner";
 import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import ServiceDetailsDescription from "./ServiceDetailsDescription";
 import ServiceDetailsFAQ from "./ServiceDetailsFAQ";
+import useAxiosPublic from "../../axios/axiosPublic";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "pink"];
+
+const COLORS = ["#257830", "#F72798", "#FF8042", "red", "blue"];
 
 const ServiceDetail = () => {
-  const { id } = useParams();
-  const [data, dataLoading] = useGetAService(id);
+  const [charts, setCharts] = useState([]);
+  const axios = useAxiosPublic();
 
-  //  console.log(categories);
 
-  //  custom service for the pie chart
+  // custom pie chart on service details
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -40,32 +45,41 @@ const ServiceDetail = () => {
       </text>
     );
   };
-  const pieChartData = { name: data?.category, value: 50 };
-  //  console.log(data);
 
-  if (dataLoading) {
-    return (
-      <div className="text-center py-20">
-        <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/serviceDetails-chart");
+        setCharts(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [axios, setCharts]);
+
+  const pieChartData = charts.map((chart) => ({
+    name: chart?.name,
+    value: chart?.n,
+  }));
+  //  console.log(pieChartData);
+
   return (
     <div className="font-andika">
       <ServiceDetailsBanner />
+
       <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
-        {/* sidebar content */}
         <div className="col-span-3 mt-16">
           <ServiceDetailsSidebar />
         </div>
-        {/* main content part */}
-        <div className=" col-span-6">
+        <div className="col-span-6">
           <div className="py-20 flex md:flex-row flex-col items-center">
-            <div className="">
+            <div>
               <ServiceDetailsDescription />
               <ServiceDetailsFAQ />
-              <div className="grid grid-cols-2 justify-center items-center gap-8 mt-20">
-                <div className="col-span-1">
+              <div className="  mt-14">
+                <div className="">
                   <h4 className="text-3xl font-bold pb-6">Stats & Charts</h4>
                   <p>
                     Our mix of company-owned and contractor assets allows us to
@@ -84,9 +98,10 @@ const ServiceDetail = () => {
                     ensure all freight is are shipped, trans-shipped.
                   </p>
                 </div>
-                <div className="col-span-1">
+                <div className="flex mt-8">
+                  
                   <div className="">
-                    <PieChart width={400} height={400}>
+                    <PieChart width={600} height={60} data={pieChartData}>
                       <Pie
                         data={pieChartData}
                         cx="50%"
@@ -97,23 +112,20 @@ const ServiceDetail = () => {
                         fill="#8884d8"
                         dataKey="value"
                       >
-                        <Cell
-                          key={`cell-${pieChartData?.index}`}
-                          fill={COLORS[pieChartData?.index % COLORS.length]}
-                        />
+                        {pieChartData?.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={COLORS[index % COLORS.length]}
+                          />
+                        ))}
                       </Pie>
-                      <Legend></Legend>
+                      <Tooltip />
+                      <Legend />
                     </PieChart>
                   </div>
                 </div>
               </div>
-
-              {/*<button
-                onClick={() => toast.success("Service Added Successfully!")}
-                className="btn lg:px-10 capitalize bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-1/2"
-              ></button>*/}
             </div>
-            <hr />
           </div>
         </div>
       </div>
