@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchService } from "../../Redux/ServiceSlice";
 import ServiceNavbar from "./ServiceNavbar";
+import Btn from "../../Components/Btn";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -65,7 +66,8 @@ const Navbar = () => {
           className="lg:text-xl text-sm btn-xs lg:bt hover:text-brand-color font-semibold flex justify-center items-center lg:gap-2"
           onClick={toggleServicesDropdown}
         >
-          <p>Services</p> {servicesDropdownOpen ? (<FaAngleUp />) : (<FaAngleDown />)}
+          <p>Services</p>{" "}
+          {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
           className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-56 overflow-hidden ${
@@ -78,9 +80,14 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <Link className="border-b rounded-none border-slate-400" to={"/services"}>All Services</Link>
+            <Link
+              className="border-b rounded-none border-slate-400"
+              to={"/services"}
+            >
+              All Services
+            </Link>
           </motion.li>
-          
+
           {data?.map((service) => (
             <ServiceNavbar key={service?._id} data={service} />
           ))}
@@ -95,13 +102,13 @@ const Navbar = () => {
 
       {/* Pages Dropdown */}
       <div className="dropdown">
-      <div
+        <div
           tabIndex={0}
           role="button"
           className="lg:text-xl text-sm btn-xs hover:text-brand-color font-semibold flex justify-center items-center lg:gap-2"
           onClick={togglePagesDropdown}
         >
-          <p>Pages</p> {pagesDropdownOpen ? (<FaAngleUp />) : (<FaAngleDown />)}
+          <p>Pages</p> {pagesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
           className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-52 overflow-hidden ${
@@ -114,7 +121,12 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <Link className="border-b rounded-none border-slate-400" to={"/about"}>About Us</Link>
+            <Link
+              className="border-b rounded-none border-slate-400"
+              to={"/about"}
+            >
+              About Us
+            </Link>
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
@@ -122,7 +134,12 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <Link className="border-b rounded-none border-slate-400" to={"/team"}>Team</Link>
+            <Link
+              className="border-b rounded-none border-slate-400"
+              to={"/team"}
+            >
+              Team
+            </Link>
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
@@ -130,18 +147,28 @@ const Navbar = () => {
             className="font-semibold text-white"
           >
             {" "}
-            <Link className="border-b rounded-none border-slate-400" to={"/contact"}>Contact Us</Link>
+            <Link
+              className="border-b rounded-none border-slate-400"
+              to={"/contact"}
+            >
+              Contact Us
+            </Link>
           </motion.li>
-          
+
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
             {" "}
-            <Link className="border-b rounded-none border-slate-400" to={"/blogs"}>Blog</Link>
+            <Link
+              className="border-b rounded-none border-slate-400"
+              to={"/blogs"}
+            >
+              Blog
+            </Link>
           </motion.li>
-          
+
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -213,9 +240,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <ul
-                className="bg-white bg-opacity-90 menu-sm dropdown-content mt-3 z-[2] p-2 shadow space-y-2 rounded-box w-52"
-              >
+              <ul className="bg-white bg-opacity-90 menu-sm dropdown-content mt-3 z-[2] p-2 shadow space-y-2 rounded-box w-52">
                 {navLinks}
               </ul>
             </div>
@@ -275,18 +300,12 @@ const Navbar = () => {
           ) : (
             <div className="navbar-end capitalize">
               {location.pathname === "/login" ? (
-                <Link
-                  to={"/register"}
-                  className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color "
-                >
-                  register
+                <Link to={"/register"}>
+                  <Btn>register</Btn>
                 </Link>
               ) : (
-                <Link
-                  to={"/login"}
-                  className="btn lg:px-10 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color "
-                >
-                  login
+                <Link to={"/login"}>
+                  <Btn>login</Btn>
                 </Link>
               )}
             </div>
