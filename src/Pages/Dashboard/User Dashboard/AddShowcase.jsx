@@ -73,11 +73,11 @@ const AddShowcase = () => {
 
             {/* content */}
 
-            <div className="lg:flex gap-10 py-10">
-                <div className="lg:w-1/2 lg:text-xl lg:py-10">Welcome to our Waste Art Showcase! We believe that creativity knows no bounds, especially when it comes to turning waste into art. We invite you to contribute to our growing gallery of waste-inspired masterpieces. Follow these simple steps to showcase your talent and inspire others. Stay tuned for special challenges and events. It is an opportunity to create new, exciting pieces and add a dynamic twist to our waste art community.</div>
+            <div className="lg:flex gap-10">
+               
                 <div data-aos="zoom-out-left"><img src="https://i.imgur.com/bCiHngO.jpg" alt="" className="w-96" /></div>
             </div>
-            <div className="my-20">
+            <div className="">
                 <h3 className="w-fit mx-auto capitalize pt-5 pb-2 text-3xl border-b-4 border-brand-color mb-10 font-semibold text-[#101a30]">
                     Share your showcased art
                 </h3>
@@ -94,7 +94,7 @@ const AddShowcase = () => {
                 </div>
                 <Lottie className="h-52 w-64 mx-auto mt-10" animationData={send} loop={true} />
 
-                {/* form */}
+                 {/* form  */}
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className="max-w-xl p-5 shadow-2xl rounded-xl mx-auto space-y-4"

@@ -76,7 +76,7 @@ const ManageShowcase = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Title</th>
-                <th>Status</th>
+                <th>Add</th>
                 <th>Delete</th>
               </tr>
             </thead>
