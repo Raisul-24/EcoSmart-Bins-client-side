@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const ServiceNavbar = ({ data }) => {
-  console.log(data);
+//  console.log(data);
   return (
     <div className="overflow-hidden">
       <motion.li
