@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import ShopSearch from "../Shop/ShopSearch";
 import ShopCategorie from "../Shop/ShopCategorie";
+import banner from "../../assets/BannerImages/BlogBanner.jpg";
 
 const Blog = () => {
   const [category, setCategory] = useState("");
@@ -23,7 +24,11 @@ const Blog = () => {
     <div className="font-andika">
       <div
         className="hero h-[desired-height] relative"
-        style={{ backgroundImage: "url(https://i.imgur.com/OmENS5F.jpg)" }}
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div>
           <div
@@ -65,7 +70,11 @@ const Blog = () => {
               <ShopSearch handelSubmit={handelSubmit} />
               {/* categories buttons part */}
               <div className="py-10 px-7 flex flex-col justify-center bg-[#e9f1ea] mt-4">
-                <ShopCategorie data={"all blogs"} setCategory={setCategory} isTrue={true} />
+                <ShopCategorie
+                  data={"all blogs"}
+                  setCategory={setCategory}
+                  isTrue={true}
+                />
                 {data?.map((item, idx) => (
                   <ShopCategorie
                     data={item}

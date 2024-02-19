@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Map from "../../Components/Map/Map";
+import banner from "../../assets/BannerImages/aboutBanner.jpg";
 
 const ContactUs = () => {
   const form = useRef();
@@ -45,7 +46,11 @@ const ContactUs = () => {
       {/* banner */}
       <div
         className="hero h-96 relative"
-        style={{ backgroundImage: "url(https://i.imgur.com/AqxEdqd.jpg)" }}
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">

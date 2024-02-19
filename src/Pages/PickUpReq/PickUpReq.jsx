@@ -1,12 +1,16 @@
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import PickUpForm from "./PickUpForm";
-
+import banner from "../../assets/BannerImages/picupBanner.webp";
 
 const PickUpReq = () => {
   return (
     <div className="font-andika">
       {/* banner */}
-      <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/8Byjy1H.jpg)' }}>
+      <div className="hero h-96 relative" style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">
           <div className="max-w-md text-white">
