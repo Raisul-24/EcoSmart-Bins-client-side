@@ -5,6 +5,8 @@ import ShopCategorie from "./ShopCategorie";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import { useState } from "react";
 import Pagination from "../../Components/Pagination/Pagination";
+import banner from "../../assets/BannerImages/serviceBanner.jpg";
+
 const Shop = () => {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
@@ -39,7 +41,11 @@ const Shop = () => {
       {/* banner */}
       <div
         className="hero h-96 relative"
-        style={{ backgroundImage: "url(https://i.imgur.com/parYYjq.jpg)" }}
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">

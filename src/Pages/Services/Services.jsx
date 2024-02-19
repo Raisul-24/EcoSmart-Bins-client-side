@@ -3,17 +3,27 @@ import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import ServiceCard from "../../Components/ServiceCard/ServiceCard";
 import { fetchService } from "../../Redux/ServiceSlice";
 import { useEffect } from "react";
+import banner from "../../assets/BannerImages/serviceBanner.jpg";
 
 const Services = () => {
-  const dispatch = useDispatch()
-  const { service: data, isLoading: dataLoading } = useSelector((state) => state.services)
+  const dispatch = useDispatch();
+  const { service: data, isLoading: dataLoading } = useSelector(
+    (state) => state.services
+  );
   useEffect(() => {
-    dispatch(fetchService())
-  }, [dispatch])
+    dispatch(fetchService(6));
+  }, [dispatch]);
   return (
     <div className="font-andika">
       {/* banner */}
-      <div className="hero h-96 relative" style={{ backgroundImage: 'url(https://i.imgur.com/WTXqvCy.jpg)' }}>
+      <div
+        className="hero h-96 relative"
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">
           <div className="max-w-md text-white">
@@ -24,9 +34,7 @@ const Services = () => {
       </div>
 
       <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
-        <SectionTitle
-          heading={"Your Needs, Our Expertise."}
-        />
+        <SectionTitle heading={"Your Needs, Our Expertise."} />
         {dataLoading ? (
           <div className="text-center py-20">
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>

@@ -45,7 +45,7 @@ const ManageUser = () => {
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="text-white text-center bg-brand-color">
                 <th></th>
                 <th>Name</th>
                 <th>Email</th>
@@ -56,7 +56,9 @@ const ManageUser = () => {
             </thead>
             <tbody>
               {users?.map((user) => (
-                <tr key={user._id}>
+                <tr key={user._id}
+                className="text-center" 
+                >
                   <th>
                     <div className="avatar">
                       {user?.photo ? (

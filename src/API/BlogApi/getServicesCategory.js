@@ -5,10 +5,9 @@ const getServicesCategories = (id) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const axios = useAxiosPublic();
   const servicesData = async () => {
-
     const { data } = await axios.get(`/service-category`);
 
-    console.log(data);
+    //console.log(data);
     return data;
   };
   // eslint-disable-next-line react-hooks/rules-of-hooks

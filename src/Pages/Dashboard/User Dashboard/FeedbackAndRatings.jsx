@@ -48,13 +48,10 @@ const FeedbackAndRatings = () => {
   return (
     <div className="font-andika">
         <SectionTitle
-                heading=""
-                subHeading="Share Your FeedBack"
+                heading="Share Your FeedBack"
             ></SectionTitle>
-        {/* <div>
-            <h2 className="text-4xl font-medium text-center"></h2>
-        </div> */}
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="max-w-xl lg:max-w-3xl border rounded-xl mx-auto p-5">
+    <form onSubmit={handleSubmit(onSubmit)}>
        <div className="flex flex-col md:flex-row gap-5 w-full">
        <div className="form-control flex-1">
           <label className="label">
@@ -118,9 +115,10 @@ const FeedbackAndRatings = () => {
         </div>
         </div>
         <div className="form-control  mt-6">
-          <input  className="btn w-40 mx-auto bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white " type="submit" value="Add Review" />
+          <input  className="btn  bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white " type="submit" value="Add Review" />
         </div>
       </form>
+    </div>
     </div>
   );
 };
