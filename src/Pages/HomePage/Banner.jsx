@@ -30,7 +30,7 @@ const Banner = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[ Pagination]}
         className="mySwiper"
       >
         <SwiperSlide className="font-andika">
@@ -59,7 +59,10 @@ const Banner = () => {
                 </p>
 
                 <Link to={"/pickUpReq"}>
-                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+                <button 
+                // className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white"
+                className="btn border-0 text-lg bg-gradient-to-r from-brand-color via-green-400 to-green-900 ... hover:bg-gradient-to-r hover:from-green-500 hover:via-green-900 hover:to-brand-color text-white"
+                >
                   Pickup Request
                 </button>
                 </Link>
