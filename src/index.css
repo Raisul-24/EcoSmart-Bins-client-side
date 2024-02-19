@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,6 +35,36 @@
   transform-origin: center;
   transform: scale(0) rotate(0);
   z-index: -1;
+}
+.btnStyle span:before {
+  position: absolute;
+  content: "";
+  background: #3a9e1e;
+  width: 30px;
+  height: 30px;
+  left: -10px;
+  top: -10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+.btnStyle span:after {
+  position: absolute;
+  content: "";
+  background: #3a9e1e;
+  width: 30px;
+  height: 30px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+.btnStyle:hover span:before {
+  transform: scale(1);
+}
+.btnStyle:hover span:after {
+  transform: scale(1);
 }
 .btnStyle:hover:before {
   border-radius: 0;

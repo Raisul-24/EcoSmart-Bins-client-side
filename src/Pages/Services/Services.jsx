@@ -8,7 +8,7 @@ const Services = () => {
   const dispatch = useDispatch()
   const { service: data, isLoading: dataLoading } = useSelector((state) => state.services)
   useEffect(() => {
-    dispatch(fetchService(6))
+    dispatch(fetchService())
   }, [dispatch])
   return (
     <div className="font-andika">
