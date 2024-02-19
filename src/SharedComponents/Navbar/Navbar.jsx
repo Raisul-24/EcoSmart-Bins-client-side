@@ -1,3 +1,4 @@
+import  { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
@@ -5,6 +6,8 @@ import { Badge } from "@material-tailwind/react";
 import useAuth from "../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
 import {
+  FaAngleDown,
+  FaAngleUp,
   FaRegBell,
   FaRegUser,
   FaShoppingCart,
@@ -35,24 +38,39 @@ const Navbar = () => {
       toast.error(error.message);
     }
   };
+
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const toggleServicesDropdown = () => {
+    setServicesDropdownOpen(!servicesDropdownOpen);
+  };
+
+  const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
+  const togglePagesDropdown = () => {
+    setPagesDropdownOpen(!pagesDropdownOpen);
+  };
+
   const navLinks = (
     <>
+      {/* Home */}
       <li className="text-xl hover:text-brand-color font-semibold">
         {" "}
         <NavLink to={"/"}>Home </NavLink>
       </li>
-      <div className="dropdown dropdown-hover">
+
+      {/* Services Dropdown */}
+      <div className="dropdown ">
         <div
-          tabIndex={-1}
+          tabIndex={0}
           role="button"
-          className="lg:text-xl hover:text-brand-color font-semibold"
+          className="lg:text-xl text-sm btn-xs lg:bt hover:text-brand-color font-semibold flex justify-center items-center lg:gap-2"
+          onClick={toggleServicesDropdown}
         >
-          Services+
+          <p>Services</p> {servicesDropdownOpen ? (<FaAngleUp />) : (<FaAngleDown />)}
         </div>
         <ul
-          tabIndex={-1}
-          // onClick={toggleServicesDropdown}
-          className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-80 shadow bg-blue-950 rounded-md w-40 lg:w-52"
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-56 overflow-hidden ${
+            servicesDropdownOpen ? "block" : "hidden"
+          }`}
         >
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
@@ -60,31 +78,35 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <Link to={"/services"}>All Services</Link>
+            <Link className="border-b rounded-none border-slate-400" to={"/services"}>All Services</Link>
           </motion.li>
-          <span className="border border-slate-400"></span>
+          
           {data?.map((service) => (
             <ServiceNavbar key={service?._id} data={service} />
           ))}
         </ul>
       </div>
 
+      {/* Shop */}
       <li className="text-xl hover:text-brand-color font-semibold">
         {" "}
         <NavLink to={"/shop"}>Shop</NavLink>
       </li>
-      <div className="dropdown dropdown-hover">
-        <div
-          tabIndex={-2}
+
+      {/* Pages Dropdown */}
+      <div className="dropdown">
+      <div
+          tabIndex={0}
           role="button"
-          className="lg:text-xl hover:text-brand-color font-semibold"
+          className="lg:text-xl text-sm btn-xs hover:text-brand-color font-semibold flex justify-center items-center lg:gap-2"
+          onClick={togglePagesDropdown}
         >
-          Pages+{" "}
+          <p>Pages</p> {pagesDropdownOpen ? (<FaAngleUp />) : (<FaAngleDown />)}
         </div>
         <ul
-          tabIndex={-2}
-          // onClick={togglePagesDropdown}
-          className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52"
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-52 overflow-hidden ${
+            pagesDropdownOpen ? "block" : "hidden"
+          }`}
         >
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
@@ -92,36 +114,34 @@ const Navbar = () => {
             className="font-semibold text-white pb-2 "
           >
             {" "}
-            <Link to={"/about"}>About Us</Link>
+            <Link className="border-b rounded-none border-slate-400" to={"/about"}>About Us</Link>
           </motion.li>
-          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="font-semibold text-white pb-2"
+            className="font-semibold text-white pb-2 "
           >
             {" "}
-            <Link to={"/team"}>Team</Link>
+            <Link className="border-b rounded-none border-slate-400" to={"/team"}>Team</Link>
           </motion.li>
-          <span className="border border-slate-400"></span>
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
             {" "}
-            <Link to={"/contact"}>Contact Us</Link>
+            <Link className="border-b rounded-none border-slate-400" to={"/contact"}>Contact Us</Link>
           </motion.li>
-          <span className="border border-slate-400"></span>
+          
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
             {" "}
-            <Link to={"/blogs"}>Blog</Link>
+            <Link className="border-b rounded-none border-slate-400" to={"/blogs"}>Blog</Link>
           </motion.li>
-          <span className="border border-slate-400"></span>
+          
           <motion.li
             whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -132,12 +152,16 @@ const Navbar = () => {
           </motion.li>
         </ul>
       </div>
+
+      {/* Dashboard */}
       {user && (
         <li className="text-xl hover:text-brand-color font-semibold">
           {" "}
           <NavLink to={"/dashboard/overview"}>Dashboard</NavLink>
         </li>
       )}
+
+      {/* PickUp Request */}
       <li className="text-xl hover:text-brand-color font-semibold">
         {" "}
         <NavLink to="/pickUpReq">PickUp Request</NavLink>
@@ -146,29 +170,27 @@ const Navbar = () => {
   );
 
   return (
-    <div>
+    <div className="">
+      {/* Top Bar */}
       <div className="flex lg:min-h-16 min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
         <div>
           <p className="flex items-center gap-2">
             <FaPhone className=" text-xl"></FaPhone> Phone: 333 666 0000
           </p>
         </div>
-
         <div className=" flex gap-5 lg:gap-10 ">
-          
           <Badge content={cart.length}>
             <FaShoppingCart className="md:text-2xl text-xl" />
           </Badge>
-          <div>
           <Badge content="0">
-          <FaRegBell className="md:text-2xl text-xl" />
+            <FaRegBell className="md:text-2xl text-xl" />
           </Badge>
-            
-          </div>
         </div>
       </div>
+
+      {/* Navbar */}
       <div className="sticky border-b-2 border bg-white bg-opacity-90 top-0 z-20 font-andika">
-        <div className="navbar  lg:px-10 lg:py-7 drop-shadow-md">
+        <div className="navbar lg:px-10 lg:py-7 drop-shadow-md">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -192,7 +214,6 @@ const Navbar = () => {
                 </svg>
               </div>
               <ul
-                tabIndex={0}
                 className="bg-white bg-opacity-90 menu-sm dropdown-content mt-3 z-[2] p-2 shadow space-y-2 rounded-box w-52"
               >
                 {navLinks}
@@ -212,9 +233,15 @@ const Navbar = () => {
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className=" rounded-full">
-                    <img src={
-                      user?.photoURL ? user?.photoURL : "https://i.ibb.co/8X8stTp/user.webp"} 
-                      alt="" className="rounded-full" />
+                    <img
+                      src={
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://i.ibb.co/8X8stTp/user.webp"
+                      }
+                      alt=""
+                      className="rounded-full"
+                    />
                   </div>
                 </label>
                 <ul
