@@ -18,13 +18,13 @@ const PickUpReq = () => {
         <motion.div
           className="bottom-10 left-20 absolute "
           animate={{
-            scale: [1, 1.2, 1], // Zooming animation from 100% to 120% to 100%
+            scale: [1, 1.2, 1], 
           }}
           transition={{
-            duration: 5, // Duration of each animation loop
-            repeat: Infinity, // Repeat indefinitely
-            ease: 'easeInOut', // Easing function
-            repeatDelay: 1, // Delay between repeats
+            duration: 5, 
+            repeat: Infinity, 
+            ease: 'easeInOut', 
+            repeatDelay: 1, 
           }}
         >
           <motion.img
@@ -44,12 +44,12 @@ const PickUpReq = () => {
         <motion.div
           className="absolute top-20 right-40 "
           animate={{
-            rotate: 360, // Rotate 360 degrees
+            rotate: 360, 
           }}
           transition={{
-            duration: 10, // Duration of each rotation
-            repeat: Infinity, // Repeat indefinitely
-            ease: 'linear', // Easing function
+            duration: 10, 
+            repeat: Infinity, 
+            ease: 'linear', 
           }}
           originX={0.5}
           originY={0.5}
@@ -57,7 +57,7 @@ const PickUpReq = () => {
           <motion.img
             src={img2}
             alt="Rotating Image"
-            className="w-20 h-20"
+            className="w-24 h-24"
           />
         </motion.div>
       </div>

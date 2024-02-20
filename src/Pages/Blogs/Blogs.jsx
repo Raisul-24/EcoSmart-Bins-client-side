@@ -4,6 +4,9 @@ import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import ShopSearch from "../Shop/ShopSearch";
 import ShopCategorie from "../Shop/ShopCategorie";
 import banner from "../../assets/BannerImages/BlogBanner.jpg";
+import { motion } from 'framer-motion';
+import img1 from "../../assets/images/shape-4.png"
+import img2 from "../../assets/images/shape-5.png"
 
 const Blog = () => {
   const [category, setCategory] = useState("");
@@ -23,7 +26,7 @@ const Blog = () => {
   return (
     <div className="font-andika">
       <div
-        className="hero h-[desired-height] relative"
+        className="hero h-96 relative"
         style={{
           backgroundImage: `url(${banner})`,
           backgroundSize: "cover",
@@ -32,10 +35,27 @@ const Blog = () => {
       >
         <div>
           <div
-            className="hero h-96 relative"
-            style={{ backgroundImage: "url(https://i.imgur.com/OmENS5F.jpg)" }}
+          
           >
-            <div className="hero-overlay bg-black bg-opacity-60  inset-0"></div>
+            <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
+            <motion.div
+          className="bottom-10 left-20 absolute "
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            repeatDelay: 1,
+          }}
+        >
+          <motion.img
+            src={img1}
+            alt="Zooming Image"
+            className="w-32"
+          />
+        </motion.div>
             <div className="hero-content text-center text-neutral-content relative z-10">
               <div className="max-w-md text-white">
                 <h1 className="mb-5 text-5xl font-bold">Discover Our Blog</h1>
@@ -44,6 +64,25 @@ const Blog = () => {
                 </p>
               </div>
             </div>
+            <motion.div
+          className="absolute top-20 right-40 "
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          originX={0.5}
+          originY={0.5}
+        >
+          <motion.img
+            src={img2}
+            alt="Rotating Image"
+            className="w-24 h-24"
+          />
+        </motion.div>
           </div>
         </div>
       </div>
