@@ -43,6 +43,8 @@ import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFailed from "../Pages/Payment/PaymentFailed";
 import Overview from "../Pages/Dashboard/Admin dashboard/Overview/Overview";
 import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
+import Industries from "../Pages/Industries/Industries";
+import MyCart from "../Pages/MyCart/MyCart";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,15 @@ const router = createBrowserRouter([
         path: "/services/:id",
         element: <ServiceDetail></ServiceDetail>,
       },
+      {
+        path: "/industries/:id",
+        element: <Industries></Industries>,
+      },
+      {
+        path: "/industries",
+        element: <Industries></Industries>,
+      },
+
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
@@ -134,6 +145,10 @@ const router = createBrowserRouter([
       {
         path: "/placeOrder",
         element: <PlacedOrder></PlacedOrder>,
+      },
+      {
+        path: '/my-cart',
+        element:<MyCart></MyCart>
       },
     ],
   },

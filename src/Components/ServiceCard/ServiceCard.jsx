@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ data, isTrue, DeleteFun }) => {
   return (
     <div className="card  mb-72 font-montserrat">
-      {/*<figure className="relative">
-        <img src={data?.img} className="w-96 h-80 rounded-lg " alt="Shoes" />
-      </figure>*/}
       <figure className="relative">
         <div className="group w-96 h-80 rounded-lg overflow-hidden relative">
           <img

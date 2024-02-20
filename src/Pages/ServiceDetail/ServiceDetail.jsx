@@ -1,118 +1,121 @@
-import { Link, useParams } from "react-router-dom";
-import useGetAService from "../../API/ServiceApi/useGetAService";
-import toast from "react-hot-toast";
-import { FaArrowCircleRight } from "react-icons/fa";
-import getServicesCategories from "../../API/BlogApi/getServicesCategory";
+import { useEffect, useState } from "react";
+import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
+import ServiceDetailsBanner from "./ServiceDetailsBanner";
+import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
+import ServiceDetailsDescription from "./ServiceDetailsDescription";
+import ServiceDetailsFAQ from "./ServiceDetailsFAQ";
+import useAxiosPublic from "../../axios/axiosPublic";
+
+const COLORS = ["#257830", "#F72798", "#FF8042", "red", "blue"];
 
 const ServiceDetail = () => {
-  const [categories] = getServicesCategories();
-  console.log(categories);
-  const { id } = useParams();
-  const [data, dataLoading] = useGetAService(id);
-  if (dataLoading) {
+  const [charts, setCharts] = useState([]);
+  const axios = useAxiosPublic();
+
+  // custom pie chart on service details
+  const RADIAN = Math.PI / 180;
+  const renderCustomizedLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+  }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
     return (
-      <div className="text-center py-20">
-        <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
-      </div>
+      <text
+        x={x}
+        y={y}
+        fill="white"
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+      >
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
     );
-  }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/serviceDetails-chart");
+        setCharts(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [axios, setCharts]);
+
+  const pieChartData = charts.map((chart) => ({
+    name: chart?.name,
+    value: chart?.n,
+  }));
+  //  console.log(pieChartData);
+
   return (
     <div className="font-andika">
-      <div
-        className="hero h-[700px] relative"
-        style={{
-          backgroundImage: `url(${data?.img})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
-        <div className="hero-overlay bg-black bg-opacity-50 absolute inset-0"></div>
-        <div className="hero-content text-center text-neutral-content relative z-10">
-          <div className="max-w-xl text-white">
-            <h1 className="mb-8 text-5xl font-bold font-sans">{data?.title}</h1>
-            <p className="mb-8 px-20 text-center">{data?.shortDescription}</p>
-            <div className="mt-5 flex justify-center items-center gap-10">
-              <Link
-                to={`/pickUpReq`}
-                className=" btn btn-outline text-lg font-sans font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white  hover:bg-[#f0901f] h-[70px] gap-4 w-[250px] border-0"
-              >
-                Request PickUp
-                <span className="text-3xl">
-                  <FaArrowCircleRight />
-                </span>
-              </Link>
-              <Link
-                to={`/priceTable`}
-                className="btn btn-outline text-lg font-sans font-bold border-0 rounded-md  flex justify-center items-center hover:text-white text-white hover:bg-[#f0901f] bg-[#257830] h-[70px] gap-4 w-[250px]"
-              >
-                Packages & Pricing
-              </Link>
-            </div>
-          </div>
-        </div>
+      <ServiceDetailsBanner />
 
       <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
         <div className="col-span-3 mt-16">
-          {/* categories buttons part */}
-          <div className="rounded-lg p-10 bg-[#e9f1ea] mt-4">
-            <p className="text-2xl font-extrabold py-5">Our Services</p>
-            {categories?.map((category) => (
-              <button key={category?._id}>
-                <Link
-                  to={`/services/${data?._id}`}
-                  className="h-16 px-8 bg-[#182822] hover:bg-[#257830]
-                      rounded-md text-start w-72 flex justify-start items-center
-                      gap-4 text-white text-md font-bold mb-6"
-                >
-                  {category?.servicesCategory}
-                  <span className="text-2xl">
-                    <FaArrowCircleRight />
-                  </span>
-                </Link>
-              </button>
-            ))}
-          </div>
+          <ServiceDetailsSidebar />
         </div>
-        <div className=" col-span-6">
+        <div className="col-span-6">
           <div className="py-20 flex md:flex-row flex-col items-center">
-            <div className="">
-              <p className="text-3xl font-extrabold pb-8">Overview</p>
-
-              <p className=" text-lg">{data?.description1}</p>
-              <div className="md:w-full my-8 overflow-hidden rounded-xl">
-                <img src={data?.img} alt="" className="w-full" />
+            <div>
+              <ServiceDetailsDescription />
+              <ServiceDetailsFAQ />
+              <div className="mt-14">
+                <div className="">
+                  <h4 className="text-3xl font-bold pb-6">Stats & Charts</h4>
+                  <p>
+                    Our mix of company-owned and contractor assets allows us to
+                    retain optimal levels of control whilst expanding our reach
+                    to over 96% of towns in Australia. With 40 years of LTL
+                    experience, we are now a trusted LTL freight provider for
+                    shippers of all sizes and commodity types. <br /> <br /> Our
+                    LTL service extends to all states and territories, and
+                    includes multiple per-week services to places many others
+                    only serve occasionally, including Darwin, Alice Springs,
+                    Newman, Mt. Isa, Launceston and Burnie. <br /> <br /> We
+                    pride ourselves on providing the best transport and shipping
+                    services currently available in Australia. Our skilled
+                    personnel, utilising the latest communications, tracking and
+                    processing software, combined with decades of experience,
+                    ensure all freight is are shipped, trans-shipped.
+                  </p>
+                </div>
+                <div className="flex mt-8">
+                  <div className="">
+                    <PieChart width={600} height={60} data={pieChartData}>
+                      <Pie
+                        data={pieChartData}
+                        cx="50%"
+                        cy="50%"
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        outerRadius={80}
+                        fill="#8884d8"
+                        dataKey="value"
+                      >
+                        {pieChartData?.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={COLORS[index % COLORS.length]}
+                          />
+                        ))}
+                      </Pie>
+                      <Tooltip />
+                      <Legend />
+                    </PieChart>
+                  </div>
+                </div>
               </div>
-              <p className=" text-lg">{data?.description2}</p>
-
-              <div className="md:w-full my-8 overflow-hidden rounded-xl flex justify-center items-center gap-12">
-                <img
-                  src={data?.img1}
-                  alt=""
-                  className="w-full h-96 rounded-xl "
-                />
-                <img
-                  src={data?.img2}
-                  alt=""
-                  className="w-full h-96 rounded-xl "
-                />
-              </div>
-              <div className="my-8">
-                <p className="text-3xl font-extrabold pb-8">Key Benefits</p>
-                <p className=" text-lg">
-                  We’ve been helping cities, utilities, automakers, EVSE
-                  suppliers and commercial businesses take advantage of clean
-                  energy benefits that smart charging infrastructure affords.
-                  Our solutions deliver savings to drivers, businesses and grid
-                  operators.
-                </p>
-              </div>
-
-              <button
-                onClick={() => toast.success("Service Added Successfully!")}
-                className="btn lg:px-10 capitalize bg-gradient-to-r from-brand-color to-green-500 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color w-1/2"
-              >
-                get Service
-              </button>
             </div>
           </div>
         </div>

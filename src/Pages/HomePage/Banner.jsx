@@ -6,9 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+
+
+import Btn from "../../Components/Btn";
+
 
 const Banner = () => {
   useEffect(() => {
@@ -52,16 +55,18 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p  className="py-6 text-lg">
+                <p className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
 
                 <Link to={"/pickUpReq"}>
-                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+
+                <Btn className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white" >
                   Pickup Request
-                </button>
+                </Btn>
+
                 </Link>
               </div>
             </div>
@@ -86,16 +91,18 @@ const Banner = () => {
                 >
                   Smart waste pickup solutaions
                 </h1>
-                <p  className="py-6 text-lg">
+                <p className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
 
                 <Link to={"/pickUpReq"}>
-                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+
+                <Btn>
                   Pickup Request
-                </button>
+                </Btn>
+
                 </Link>
               </div>
             </div>
@@ -120,15 +127,18 @@ const Banner = () => {
                 >
                   Best waste pickup solutaions
                 </h1>
-                <p  className="py-6 text-lg">
+                <p className="py-6 text-lg">
                   We have already made huge strides in our sustainability
                   journey by investing in plastic recycling and energy from
                   waste infrastructure and low carbon collections.
                 </p>
                 <Link to={"/pickUpReq"}>
-                <button className="btn border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+
+
+                <Btn>
                   Pickup Request
-                </button>
+                </Btn>
+
                 </Link>
               </div>
             </div>
