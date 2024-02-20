@@ -1,19 +1,29 @@
+
+import { FaTrash } from "react-icons/fa";
 import useAxiosPublic from "../../../axios/axiosPublic";
+
+
 
 const CartRow = ({ item, index }) => {
   const { _id, title, price, img, status } = item || {};
   //  console.log(_id, title, price, img, status);
   const disabled = true;
   const axios = useAxiosPublic();
+  
+ 
 
   const handleCancel = async (_id) => {
     console.log(_id);
+
+    
     try {
-      const response = await axios.patch(`/my-cart/${_id}`, {
-        status: "cancel",
+      const response = await axios.delete(`/my-cart/${_id}`, {
+        status: "delete",
+        
       });
       console.log("Response from server:", response?.data);
-      if (response?.data?.modifiedCount > 0) {
+      if (response?.data?.deletedCount > 0) {
+        
         console.log("Parcel status updated successfully", response.data);
       } else {
         console.log("Parcel not found or status not updated", response.data);
@@ -27,9 +37,9 @@ const CartRow = ({ item, index }) => {
     <tr className="font-andika">
       <td>{index + 1}</td>
       <td>
-        <div className="flex items-center gap-3">
+        <div className="">
           <div className="avatar">
-            <div className="mask mask-decagon  w-16 h-16">
+            <div className="mask rounded-full  w-16 h-16">
               <img className="" src={img} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
@@ -38,9 +48,9 @@ const CartRow = ({ item, index }) => {
       <td>{title}</td>
       <td>${price}</td>
 
-      <td>
+      {/* <td>
         <p className="badge badge-neutral border-brand-color">{status}</p>
-      </td>
+      </td> */}
 
       <td className="p-3">
         {status === "pending" ? (
@@ -48,11 +58,11 @@ const CartRow = ({ item, index }) => {
             className="btn rounded-lg btn-sm bg-red-600 hover:bg-red-700 text-white"
             onClick={() => handleCancel(_id)}
           >
-            Cancel
+          <FaTrash/>
           </button>
         ) : (
           <button disabled={disabled} className="btn btn-ghost btn-sm bg-black">
-            Cancel
+            <FaTrash/>
           </button>
         )}
       </td>
