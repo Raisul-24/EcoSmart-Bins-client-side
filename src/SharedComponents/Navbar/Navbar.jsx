@@ -30,6 +30,8 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
+// console.log(cart)
+ 
 
   const handleLogOut = async () => {
     try {
@@ -49,6 +51,7 @@ const Navbar = () => {
   const togglePagesDropdown = () => {
     setPagesDropdownOpen(!pagesDropdownOpen);
   };
+  
 
   const navLinks = (
     <>
@@ -196,6 +199,7 @@ const Navbar = () => {
     </>
   );
 
+
   return (
     <div className="">
       {/* Top Bar */}
@@ -207,7 +211,7 @@ const Navbar = () => {
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
           <Badge content={cart.length}>
-            <FaShoppingCart className="md:text-2xl text-xl" />
+            <Link to='my-cart'><FaShoppingCart className="md:text-2xl text-xl" /></Link>
           </Badge>
           <Badge content="0">
             <FaRegBell className="md:text-2xl text-xl" />

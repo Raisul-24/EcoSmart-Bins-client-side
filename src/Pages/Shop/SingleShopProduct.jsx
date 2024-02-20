@@ -2,9 +2,9 @@ import { Link, useParams } from "react-router-dom";
 import useGetAProduct from "../../API/ServiceApi/useGetAProduct";
 import { useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
-import Swal from "sweetalert2";
 import useAxiosPublic from "../../axios/axiosPublic";
 import useAuth from "./../../Hooks/UseAuth";
+import { toast } from "react-hot-toast";
 
 const SingleShopProduct = () => {
   const { id } = useParams();
@@ -43,28 +43,15 @@ const SingleShopProduct = () => {
       axiosPublic
         .post("/my-cart", productValue)
         .then((res) => {
-          console.log(res.data);
-
+          // console.log(res.data);
           if (res.data.insertedId) {
-            console.log(res.data);
-
-            return Swal.fire({
-              title: "Good job",
-              text: "This shop product added on Cart",
-              icon: "success",
-            });
+            // console.log(res.data);
+            toast.success('Successfully added to My cart!');
           }
         })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Sorry",
-        text: "This product is out of stock.",
-      });
-    }
+        
+    } 
+    
   };
 
   return (
