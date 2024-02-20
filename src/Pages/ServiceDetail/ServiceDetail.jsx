@@ -1,24 +1,16 @@
 import { useEffect, useState } from "react";
-import {
-  Cell,
-  Legend,
-  Pie,
-  PieChart,
-  Tooltip,
-} from "recharts";
+import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 import ServiceDetailsBanner from "./ServiceDetailsBanner";
 import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import ServiceDetailsDescription from "./ServiceDetailsDescription";
 import ServiceDetailsFAQ from "./ServiceDetailsFAQ";
 import useAxiosPublic from "../../axios/axiosPublic";
 
-
 const COLORS = ["#257830", "#F72798", "#FF8042", "red", "blue"];
 
 const ServiceDetail = () => {
   const [charts, setCharts] = useState([]);
   const axios = useAxiosPublic();
-
 
   // custom pie chart on service details
   const RADIAN = Math.PI / 180;
@@ -78,7 +70,7 @@ const ServiceDetail = () => {
             <div>
               <ServiceDetailsDescription />
               <ServiceDetailsFAQ />
-              <div className="  mt-14">
+              <div className="mt-14">
                 <div className="">
                   <h4 className="text-3xl font-bold pb-6">Stats & Charts</h4>
                   <p>
@@ -99,7 +91,6 @@ const ServiceDetail = () => {
                   </p>
                 </div>
                 <div className="flex mt-8">
-                  
                   <div className="">
                     <PieChart width={600} height={60} data={pieChartData}>
                       <Pie
