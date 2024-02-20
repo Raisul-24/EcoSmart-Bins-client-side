@@ -7,9 +7,11 @@ import useAuth from "../../../Hooks/UseAuth";
 const Cart = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-  const { carts, isLoading, isError, error } = useSelector(
+  const { carts, isLoading, isError, error, } = useSelector(
     (state) => state.carts
   );
+
+  const myCart = carts?.filter(cart => cart?.email === user?.email)
 
   useEffect(() => {
     dispatch(fetchCart(user?.email));
@@ -19,17 +21,17 @@ const Cart = () => {
   if (isLoading) {
     return;
   }
-  console.log(carts);
+  console.log(myCart);
 
   if (!isLoading && isError) {
     content = <div className="col-span-12">{error}</div>;
   }
 
-  if (!isError && !isLoading && carts?.length === 0) {
+  if (!isError && !isLoading && myCart?.length === 0) {
     content = <div className="col-span-12">No carts found!</div>;
   }
 
-  if (!isError && !isLoading && carts?.length > 0) {
+  if (!isError && !isLoading && myCart?.length > 0) {
     content = (
       <div className="font-andika">
         <div className="overflow-x-auto">
@@ -40,13 +42,13 @@ const Cart = () => {
                 <th>Image</th>
                 <th>Products Name</th>
                 <th>Price</th>
-                <th>Status</th>
+                {/* <th>Status</th> */}
                 <th>Cancel Action</th>
                 <th>Pay Action</th>
               </tr>
             </thead>
             <tbody className="text-center font-medium">
-              {carts.map((item, index) => (
+              {myCart?.map((item, index) => (
                 <CartRow key={item._id} item={item} index={index} />
               ))}
             </tbody>
@@ -59,7 +61,7 @@ const Cart = () => {
   return (
     <div>
       <h2 className="text-4xl mb-6 text-center text-brand-color font-bold">
-        My Carts ({carts?.length})
+        My Carts ({myCart?.length})
       </h2>
       {content}
     </div>
