@@ -1,5 +1,7 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+// import { motion } from 'framer-motion';
+// import img2 from "../../assets/images/shape-5.png"
 
 const RecycleMaterials = () => {
   return (
@@ -24,11 +26,11 @@ const RecycleMaterials = () => {
                     Contact Us
                   </button>
                 </Link>
-               <Link to={"/services"}>
-               <button className="btn btn-primary px-5 text-lg hover:bg-brand-color">
-                  Get services
-                </button>
-               </Link>
+                <Link to={"/services"}>
+                  <button className="btn btn-primary px-5 text-lg hover:bg-brand-color">
+                    Get services
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -42,36 +44,55 @@ const RecycleMaterials = () => {
           }}
         >
           <div className="hero-overlay rounded-xl bg-brand-color "></div>
-          <div className="z-0 lg:w-4/5 flex flex-col md:flex-row lg:gap-60 gap-12 justify-between">
+          <div className="z-0 lg:w-4/5 flex flex-col md:flex-row lg:gap-60 gap-12 justify-between relative">
             <div className="lg:w-80 mx-auto px-5 md:px-0 text-center lg:text-start text-white">
               <p className="text-xl mb-5 font-bold">Recycle Materials</p>
               <h1 className="md:mb-5 text-2xl md:text-3xl lg:text-4xl font-bold">
                 We collect, recycle & disposal all materials
               </h1>
             </div>
+            {/* <motion.div
+              className="absolute hidden lg:block lg:top-10 lg:right-2/4"
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+              originX={0.5}
+              originY={0.5}
+            >
+              <motion.img
+                src={img2}
+                alt="Rotating Image"
+                className="w-28 h-28"
+              />
+            </motion.div> */}
             <div className="flex px-5 md:gap-5 lg:gap-10">
-            <div className="flex flex-col gap-2 lg:gap-5 flex-1">
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""> <FaCheckCircle/> </span>
-                <p>Steel</p>    
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""> <FaCheckCircle/> </span>
-                <p>Plastic</p>
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""> <FaCheckCircle/> </span>
-                <p>Lights & Bulbs</p>
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""><FaCheckCircle/> </span>
-                <p>Books & Papers</p>
-             </div>
-             <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
-                <span className=""><FaCheckCircle/> </span>
-                <p>Bottles</p>
-             </div>
-            </div>
+              <div className="flex flex-col gap-2 lg:gap-5 flex-1">
+                <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
+                  <span className=""> <FaCheckCircle /> </span>
+                  <p>Steel</p>
+                </div>
+                <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
+                  <span className=""> <FaCheckCircle /> </span>
+                  <p>Plastic</p>
+                </div>
+                <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
+                  <span className=""> <FaCheckCircle /> </span>
+                  <p>Lights & Bulbs</p>
+                </div>
+                <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
+                  <span className=""><FaCheckCircle /> </span>
+                  <p>Books & Papers</p>
+                </div>
+                <div className="text-slate-100 flex gap-2 md:gap-5 items-center">
+                  <span className=""><FaCheckCircle /> </span>
+                  <p>Bottles</p>
+                </div>
+              </div>
 
               <div className="">
                 <div className="flex flex-col gap-5 flex-1">
@@ -101,7 +122,7 @@ const RecycleMaterials = () => {
                   </div>
                 </div>
               </div>
-             
+
             </div>
           </div>
         </div>
