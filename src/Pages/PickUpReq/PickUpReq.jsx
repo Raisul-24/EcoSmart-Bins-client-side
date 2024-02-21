@@ -16,7 +16,7 @@ const PickUpReq = () => {
       }}>
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <motion.div
-          className="bottom-10 left-20 absolute "
+          className="lg:bottom-10 lg:left-20 bottom-5 left-5 absolute hidden md:block "
           animate={{
             scale: [1, 1.2, 1], 
           }}
@@ -30,7 +30,7 @@ const PickUpReq = () => {
           <motion.img
             src={img1}
             alt="Zooming Image"
-            className="w-32"
+            className="lg:w-32 w-24"
           />
         </motion.div>
         <div className="hero-content text-center text-neutral-content relative z-10  ">
@@ -42,7 +42,7 @@ const PickUpReq = () => {
 
         </div>
         <motion.div
-          className="absolute top-20 right-40 "
+          className="absolute top-5 right-5 lg:top-20 lg:right-40 hidden md:block"
           animate={{
             rotate: 360, 
           }}
