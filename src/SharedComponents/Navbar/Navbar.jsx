@@ -20,10 +20,13 @@ import { useEffect } from "react";
 import { fetchService } from "../../Redux/ServiceSlice";
 import ServiceNavbar from "./ServiceNavbar";
 import Btn from "../../Components/Btn";
+import getIndustriesApi from "../../API/IndustriesApi/getIndustriesApi";
+import IndustriesNavbar from "./IndustriesNavbar";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { service: data } = useSelector((state) => state.services);
+  const [industry, dataLoading] = getIndustriesApi();
   useEffect(() => {
     dispatch(fetchService(6));
   }, [dispatch]);
@@ -71,7 +74,9 @@ const Navbar = () => {
           {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-[500px] overflow-hidden ${
+
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-[550px] overflow-hidden ${
+
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -107,10 +112,15 @@ const Navbar = () => {
                     className="border-b rounded-none border-slate-400"
                     to={"/industries"}
                   >
-                    Industries
+
+                    All Industries
                   </Link>
                 </div>
               </motion.li>
+              {industry?.map((item) => (
+                <IndustriesNavbar key={item?._id} industry={item} />
+              ))}
+
             </div>
           </div>
         </ul>
