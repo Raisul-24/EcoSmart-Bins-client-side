@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../../axios/axiosPublic";
 import toast from "react-hot-toast";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import { FaPlus, FaRightLeft } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 
 const ManageShowcase = () => {
   const [showcase, setShowcase] = useState([]);
