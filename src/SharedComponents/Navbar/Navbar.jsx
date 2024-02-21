@@ -74,7 +74,9 @@ const Navbar = () => {
           {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
+
           className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-[550px] overflow-hidden ${
+
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -110,6 +112,7 @@ const Navbar = () => {
                     className="border-b rounded-none border-slate-400"
                     to={"/industries"}
                   >
+
                     All Industries
                   </Link>
                 </div>
@@ -117,6 +120,7 @@ const Navbar = () => {
               {industry?.map((item) => (
                 <IndustriesNavbar key={item?._id} industry={item} />
               ))}
+
             </div>
           </div>
         </ul>
