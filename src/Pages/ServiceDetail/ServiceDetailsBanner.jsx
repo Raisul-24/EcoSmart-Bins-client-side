@@ -8,7 +8,7 @@ const ServiceDetailsBanner = () => {
   return (
     <div>
       <div
-        className="hero h-[700px] relative"
+        className="hero h-[550px] relative"
         style={{
           backgroundImage: `url(${data?.img})`,
           backgroundSize: "cover",
