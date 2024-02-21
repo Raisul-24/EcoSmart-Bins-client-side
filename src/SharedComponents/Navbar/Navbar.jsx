@@ -70,23 +70,42 @@ const Navbar = () => {
           {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-56 overflow-hidden ${
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-[500px]  overflow-hidden ${
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
-          <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white pb-2 "
-          >
-            {" "}
-            <Link
-              className="border-b rounded-none border-slate-400"
-              to={"/services"}
+          <div className="md:flex gap-32">
+            <motion.li
+              whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="font-semibold text-white pb-2  overflow-hidden"
             >
-              All Services
-            </Link>
-          </motion.li>
+              {" "}
+              <div className="">
+                <Link
+                  className="border-b rounded-none border-slate-400"
+                  to={"/services"}
+                >
+                  All Services
+                </Link>
+              </div>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="font-semibold text-white pb-2  overflow-hidden"
+            >
+              <div className="">
+                <p className="border-b-4 border-slate-400"></p>
+                <Link
+                  className="border-b rounded-none border-slate-400"
+                  to={"/industries"}
+                >
+                  Industries
+                </Link>
+              </div>
+            </motion.li>
+          </div>
 
           {data?.map((service) => (
             <ServiceNavbar key={service?._id} data={service} />
