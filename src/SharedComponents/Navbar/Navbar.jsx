@@ -75,21 +75,21 @@ const Navbar = () => {
         </div>
         <ul
 
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-[550px] overflow-hidden ${
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
 
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
-          <div className="md:flex gap-20">
-            <div>
+          <div className="flex ">
+            <div className="border-r-2 md:pr-10 border-slate-400">
               <motion.li
-                whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+                whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="font-semibold text-white pb-2 "
               >
                 <div className="">
                   <Link
-                    className="border-b rounded-none border-slate-400"
+                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
                     to={"/services"}
                   >
                     All Services
@@ -100,16 +100,16 @@ const Navbar = () => {
                 <ServiceNavbar key={service?._id} data={service} />
               ))}
             </div>
-            <div>
+            <div className="md:pl-10">
               <motion.li
-                whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+                whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="font-semibold text-white pb-2  overflow-hidden"
               >
                 <div className="">
                   <p className="border-b-4 border-slate-400"></p>
                   <Link
-                    className="border-b rounded-none border-slate-400"
+                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
                     to={"/industries"}
                   >
 
@@ -148,7 +148,7 @@ const Navbar = () => {
           }`}
         >
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white pb-2 "
           >
@@ -161,7 +161,7 @@ const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
             className="font-semibold text-white pb-2 "
           >
@@ -174,7 +174,7 @@ const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -188,7 +188,7 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -202,7 +202,7 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
