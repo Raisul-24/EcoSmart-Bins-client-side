@@ -238,12 +238,12 @@ const Navbar = () => {
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
-          <Badge content={cart.length}>
+          <Badge content={cart.length} className=" w-4 h-4 font-bold">
             <Link to="my-cart">
               <FaShoppingCart className="md:text-2xl text-xl" />
             </Link>
           </Badge>
-          <Badge content="0">
+          <Badge content="0" className=" w-4 h-4 font-bold">
             <FaRegBell className="md:text-2xl text-xl" />
           </Badge>
         </div>
