@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import useGetAProduct from "../../API/ServiceApi/useGetAProduct";
 import { useState } from "react";
-import { FaCartPlus } from "react-icons/fa";
 import useAxiosPublic from "../../axios/axiosPublic";
 import useAuth from "./../../Hooks/UseAuth";
 import { toast } from "react-hot-toast";
