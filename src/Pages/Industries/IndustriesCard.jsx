@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-const ServiceCard = ({ data, isTrue, DeleteFun }) => {
+
+const IndustriesCard = ({ data, isTrue, DeleteFun }) => {
   return (
-    <div className="card  mb-72 font-montserrat">
+    <div className="card mb-72">
       <figure className="relative">
         <div className="group w-96 h-80 rounded-lg overflow-hidden relative">
           <img
@@ -14,14 +15,15 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#257830] opacity-0 group-hover:opacity-95 transition-opacity duration-300"></div>
         </div>
       </figure>
-      <div className="card-body absolute text-start  w-[350px] h-96 rounded-xl shadow-xl p-10 bg-white top-0 mt-52 ">
+      <div className="card-body absolute text-start w-[350px] h-72 rounded-xl shadow-xl bg-white top-0 mt-64 right-0">
         <Link
-          to={`/services/${data?._id}`}
-          className="card-title font-bold hover:text-green-800 justify-center pb-4"
+          to={`/industries/${data?._id}`}
+          className="text-xl font-bold pt-3 hover:text-green-800 justify-center pb-4"
         >
-          {data?.title}
+          {data?.category}
         </Link>
-        <p className="pb-6">{data?.shortDescription}...</p>
+        <p className="pb-4">{data?.shortDescription}...</p>
+        <hr />
 
         {isTrue ? (
           <div className="space-y-4">
@@ -41,12 +43,12 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
         ) : (
           <div className="mb-6">
             <Link
-              to={`/services/${data?._id}`}
-              className="bg-white btn btn-outline text-md font-bold border-2 rounded-md  flex justify-center items-center hover:text-white hover:bg-[#257830] h-14 gap-4 w-[200px]"
+              to={`/industries/${data?._id}`}
+              className="text-lg font-bold hover:border-b-2 hover:border-black flex justify-start items-center hover:text-green-800 h-14 gap-4 w-44"
             >
               Explore More
-              <span className="text-2xl">
-                <FaArrowCircleRight />
+              <span className="text-xl">
+                <FaArrowRightLong />
               </span>
             </Link>
           </div>
@@ -55,8 +57,8 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
     </div>
   );
 };
-ServiceCard.propTypes = {
+IndustriesCard.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default ServiceCard;
+export default IndustriesCard;
