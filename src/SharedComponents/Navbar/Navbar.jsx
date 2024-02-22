@@ -26,7 +26,7 @@ import IndustriesNavbar from "./IndustriesNavbar";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { service: data } = useSelector((state) => state.services);
-  const [industry, dataLoading] = getIndustriesApi();
+  const [industry] = getIndustriesApi();
   useEffect(() => {
     dispatch(fetchService(6));
   }, [dispatch]);
