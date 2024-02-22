@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
@@ -16,14 +16,18 @@ import {
 import { FaPhone } from "react-icons/fa6";
 import useCart from "../../Hooks/useCart";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { fetchService } from "../../Redux/ServiceSlice";
 import ServiceNavbar from "./ServiceNavbar";
 import Btn from "../../Components/Btn";
+import { io } from "socket.io-client";
+import { axiosPrivate } from "../../axios/axiosprivate";
 import getIndustriesApi from "../../API/IndustriesApi/getIndustriesApi";
 import IndustriesNavbar from "./IndustriesNavbar";
 
 const Navbar = () => {
+  const [notification, setNotification] = useState([]);
+  const [loading, setloading] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
   const dispatch = useDispatch();
   const { service: data } = useSelector((state) => state.services);
   const [industry] = getIndustriesApi();
@@ -33,7 +37,18 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
-  // console.log(cart)
+  useEffect(() => {
+    const socket = io(axiosPrivate.defaults.baseURL);
+
+    socket.emit("notification", { email: user?.email });
+    socket.on("receive-notification", (data) => {
+      setNotification(data);
+      setloading(false);
+    });
+    return () => {
+      socket.disconnect();
+    };
+  }, [user]);
 
   const handleLogOut = async () => {
     try {
@@ -74,20 +89,22 @@ const Navbar = () => {
           {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-[550px] overflow-hidden ${
+
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
+
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
-          <div className="md:flex gap-20">
-            <div>
+          <div className="flex ">
+            <div className="border-r-2 md:pr-10 border-slate-400">
               <motion.li
-                whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+                whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="font-semibold text-white pb-2 "
               >
                 <div className="">
                   <Link
-                    className="border-b rounded-none border-slate-400"
+                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
                     to={"/services"}
                   >
                     All Services
@@ -98,18 +115,19 @@ const Navbar = () => {
                 <ServiceNavbar key={service?._id} data={service} />
               ))}
             </div>
-            <div>
+            <div className="md:pl-10">
               <motion.li
-                whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+                whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="font-semibold text-white pb-2  overflow-hidden"
               >
                 <div className="">
                   <p className="border-b-4 border-slate-400"></p>
                   <Link
-                    className="border-b rounded-none border-slate-400"
+                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
                     to={"/industries"}
                   >
+
                     All Industries
                   </Link>
                 </div>
@@ -117,6 +135,7 @@ const Navbar = () => {
               {industry?.map((item) => (
                 <IndustriesNavbar key={item?._id} industry={item} />
               ))}
+
             </div>
           </div>
         </ul>
@@ -144,7 +163,7 @@ const Navbar = () => {
           }`}
         >
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white pb-2 "
           >
@@ -157,7 +176,7 @@ const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
             className="font-semibold text-white pb-2 "
           >
@@ -170,7 +189,7 @@ const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -184,7 +203,7 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -198,7 +217,7 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li
-            whileHover={{ scale: 1.2, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -223,26 +242,47 @@ const Navbar = () => {
       </li>
     </>
   );
-
   return (
     <div className="">
       {/* Top Bar */}
-      <div className="flex lg:min-h-16 min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
+      <div className="flex lg:min-h-16 relative min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
         <div>
           <p className="flex items-center gap-2">
             <FaPhone className=" text-xl"></FaPhone> Phone: 333 666 0000
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
-          <Badge content={cart.length}>
-            <Link to="my-cart">
+          <button>
+            <Badge content={cart?.length}>
               <FaShoppingCart className="md:text-2xl text-xl" />
-            </Link>
-          </Badge>
-          <Badge content="0">
-            <FaRegBell className="md:text-2xl text-xl" />
-          </Badge>
+            </Badge>
+          </button>
+          <button onClick={() => setShowNotification(!showNotification)}>
+            <Badge
+              content={notification?.length > 10 ? "10+" : notification?.length}
+            >
+              <FaRegBell className="md:text-2xl text-xl" />
+            </Badge>
+          </button>
         </div>
+        {!loading && showNotification && (
+          <div className="absolute p-6 bg-[#0e1d40] capitalize text-lg font-bold overflow-y-scroll top-20 sm:right-10 mx-4 right-0 z-30 rounded-xl border-2 outline-brand-color outline lg:w-80 h-96">
+            {notification?.length ? (
+              notification?.map((item) => (
+                <div key={item?._id} className="last:border-none py-4 border-b">
+                  <p>{item?.massage}</p>
+                  <span className="text-sm text-gray-400">
+                    {new Date(item?.date).toLocaleDateString()}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className="flex h-full items-center justify-center">
+                no data
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Navbar */}

@@ -93,6 +93,7 @@ const About = () => {
             by the belief that small actions, when multiplied, can make a
             significant impact on our environment.
           </p>
+          
         </section>
       </div>
 
