@@ -37,6 +37,7 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
+  // console.log(cart.length)
   useEffect(() => {
     const socket = io(axiosPrivate.defaults.baseURL);
 
@@ -252,11 +253,11 @@ const Navbar = () => {
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
-          <button>
+          <Link to="my-cart"><button>
             <Badge content={cart?.length}>
               <FaShoppingCart className="md:text-2xl text-xl" />
             </Badge>
-          </button>
+          </button></Link>
           <button onClick={() => setShowNotification(!showNotification)}>
             <Badge
               content={notification?.length > 10 ? "10+" : notification?.length}
