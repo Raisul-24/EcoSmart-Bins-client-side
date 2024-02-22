@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-const ServiceNavbar = ({ data }) => {
-  //  console.log(data);
+const IndustriesNavbar = ({ industry }) => {
+  //  console.log(industry);
   return (
     <div className="overflow-hidden menu">
       <motion.li
@@ -11,13 +11,13 @@ const ServiceNavbar = ({ data }) => {
       >
         <Link
           className="border-b rounded-none border-slate-400 text-xs md:text-base"
-          to={`/services/${data?._id}`}
+          to={`/industries/${industry?._id}`}
         >
-          {data?.category}
+          {industry?.category}
         </Link>
       </motion.li>
     </div>
   );
 };
 
-export default ServiceNavbar;
+export default IndustriesNavbar;

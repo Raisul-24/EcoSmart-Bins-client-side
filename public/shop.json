@@ -1,86 +1,189 @@
 [
   {
-    "_id": 1,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/fv481Dg/Recycling-Bins.jpg",
     "title": "Recycling Bins",
-    "price": 5,
-    "description": "Offer a variety of recycling bins and containers for different materials such as paper, plastic, glass, and metal. Help customers sort and dispose of waste responsibly, contributing to a cleaner and greener environment."
+    "price": 1500,
+    "short_description": "Offer a variety of recycling bins and containers for different materials.",
+    "detailed_description": "We offer a comprehensive range of recycling bins and containers designed to cater to different materials such as paper, plastic, glass, and metal. Our bins are carefully crafted to facilitate easy sorting and disposal of waste, enabling customers to contribute effectively to environmental sustainability."
   },
   {
-    "_id": 2,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/9txSmn1/Compost-Bins.jpg",
     "title": "Compost Bins",
-    "price": 15,
-    "description": "Promote sustainable living by selling compost bins designed for organic waste. Encourage customers to compost their kitchen scraps, reducing landfill waste and creating nutrient-rich soil for gardens."
+    "price": 1500,
+    "short_description": "Encourage composting to reduce landfill waste.",
+    "detailed_description": "Our compost bins are not just containers; they are the gateway to sustainable living. By composting kitchen scraps, customers can significantly reduce the amount of waste sent to landfills while simultaneously creating nutrient-rich soil that enriches gardens and supports healthy plant growth. Join us in the journey towards a greener, more sustainable future with our compost bins."
   },
   {
-    "_id": 3,
+    "category": "Reusable Products",
     "img": "https://i.ibb.co/JvnrS8G/Reusable-Bags.jpg",
     "title": "Reusable Bags",
-    "price": 3,
-    "description": "Make a positive impact on the environment by offering reusable shopping bags. These eco-friendly bags help reduce the need for single-use plastic bags, providing a convenient and sustainable alternative for customers."
+    "price": 30,
+    "short_description": "Convenient and sustainable alternative to single-use plastic bags.",
+    "detailed_description": "Say goodbye to single-use plastic bags with our reusable bags! Made from durable and eco-friendly materials, our bags offer a convenient and sustainable alternative for customers to carry their groceries and essentials. By choosing reusable bags, you're not just making a purchase; you're making a commitment to reducing plastic waste and protecting our planet for future generations."
   },
   {
-    "_id": 4,
+    "category": "Zero Waste",
     "img": "https://i.ibb.co/qRhjhGv/Zero-Waste-Kits.jpg",
     "title": "Zero-Waste Kits",
-    "price": 20,
-    "description": "Empower individuals to embark on a zero-waste journey with our comprehensive starter kits containing reusable items like bamboo utensils, stainless steel straws, and cloth napkins."
+    "price": 200,
+    "short_description": "Comprehensive starter kits for a zero-waste lifestyle.",
+    "detailed_description": "Embark on your journey towards a zero-waste lifestyle with our comprehensive starter kits. Packed with a curated selection of reusable items including bamboo utensils, stainless steel straws, cloth napkins, and more, our kits provide everything you need to kickstart your eco-friendly lifestyle. Make a positive impact on the environment and embrace sustainable living with our Zero-Waste Kits."
   },
   {
-    "_id": 5,
+    "category": "Household Essentials",
     "img": "https://i.ibb.co/V9wVj7q/Eco-Friendly-Cleaning-Products.jpg",
     "title": "Eco-Friendly Cleaning",
-    "price": 13,
-    "description": "Sell environmentally friendly cleaning products, such as biodegradable soaps and reusable cleaning cloths. Provide effective cleaning solutions while minimizing the environmental impact of traditional cleaning products."
+    "price": 130,
+    "short_description": "Biodegradable soaps and reusable cleaning cloths.",
+    "detailed_description": "Transform your cleaning routine with our range of eco-friendly cleaning products. From biodegradable soaps that effectively remove dirt and grime to reusable cleaning cloths that help minimize waste, our products are designed to keep your home clean while reducing your environmental footprint. Choose sustainability without compromising on cleanliness with our Eco-Friendly Cleaning collection."
   },
   {
-    "_id": 6,
+    "category": "DIY Recycling",
     "img": "https://i.ibb.co/Pj1yz1V/Plastic-Shredders.jpg",
     "title": "Plastic Shredders",
-    "price": 50,
-    "description": "Offer small-scale shredders for individuals to process plastic waste at home, turning items like plastic bottles into smaller pieces for recycling or crafting. Enable DIY recycling and contribute to reducing plastic pollution."
+    "price": 1550,
+    "short_description": "Small-scale shredders for DIY plastic recycling.",
+    "detailed_description": "Take control of plastic waste with our small-scale shredders designed for DIY recycling. Our shredders allow individuals to process plastic waste at home, transforming items like plastic bottles into smaller pieces that can be easily recycled or repurposed for crafting projects. Join the fight against plastic pollution and empower yourself with our Plastic Shredders."
   },
   {
-    "_id": 7,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/L00Ky9v/product-1.webp",
     "title": "32 Gallon Container",
-    "price": 25,
-    "description": "Explore unique upcycled artworks crafted from reclaimed materials, adding a touch of creativity and sustainability to your space. Support local artists and showcase one-of-a-kind pieces that repurpose discarded items into beautiful art."
+    "price": 3000,
+    "short_description": "Sturdy 32-gallon trash bin for efficient waste disposal.",
+    "detailed_description": "Meet your waste management needs with our sturdy 32-gallon container. Designed for efficient waste disposal, this container offers ample space for collecting various types of waste. Additionally, explore unique upcycled artworks crafted from reclaimed materials that add a touch of creativity and sustainability to your space. Support local artists and showcase one-of-a-kind pieces that repurpose discarded items into beautiful art."
   },
   {
-    "_id": 8,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/D4bgG95/product-3-357x500.webp",
     "title": "20 Gallon Trash Bin",
-    "price": 8,
-    "description": "Introduce a range of bamboo products, including utensils, toothbrushes, and kitchenware, known for their eco-friendly and renewable properties. Provide customers with sustainable alternatives for daily essentials, promoting a greener lifestyle."
+    "price": 2000,
+    "short_description": "Sturdy 20-gallon trash bin for efficient waste disposal.",
+    "detailed_description": "Dispose of your waste responsibly with our sturdy 20-gallon trash bin. Designed for efficiency and durability, this bin is ideal for homes, offices, and public spaces. Additionally, explore our range of bamboo products, including utensils, toothbrushes, and kitchenware, known for their eco-friendly and renewable properties. Make sustainable choices a part of your daily life with our 20 Gallon Trash Bin and bamboo products."
   },
   {
-    "_id": 9,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/3dfvgRB/product-8.webp",
     "title": "15 Gallon Trash Bin",
-    "price": 30,
-    "description": "Embrace sustainable living with our collection of solar-powered gadgets, from chargers to garden lights, harnessing the power of the sun. Provide eco-friendly solutions for everyday needs, reducing reliance on conventional power sources."
+    "price": 1500,
+    "short_description": "Sturdy 15-gallon trash bin for efficient waste disposal.",
+    "detailed_description": "Manage your waste effectively with our sturdy 15-gallon trash bin. Designed to handle various types of waste, this bin is perfect for households, offices, and commercial spaces. Additionally, embrace sustainable living with our collection of solar-powered gadgets, from chargers to garden lights, harnessing the power of the sun. Make eco-friendly choices a priority with our 15 Gallon Trash Bin and solar-powered gadgets."
   },
   {
-    "_id": 10,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/5k50yMj/product-9-393x437.webp",
     "title": "15 Yard Dumpster",
-    "price": 7,
-    "description": "Encourage eco-friendly note-taking with recycled notebooks made from repurposed paper, contributing to a circular economy. Provide customers with stationery that supports recycling efforts and reduces the environmental impact of paper production."
+    "price": 7000,
+    "short_description": "Convenient 15-yard dumpster for easy waste disposal.",
+    "detailed_description": "Make waste disposal hassle-free with our convenient 15-yard dumpster. Whether you're tackling residential cleanouts or small-scale commercial projects, our dumpster provides ample space for efficient waste management. Additionally, encourage eco-friendly practices with our recycled notebooks made from repurposed paper, contributing to a circular economy. Choose sustainability with our 15 Yard Dumpster and recycled notebooks."
   },
   {
-    "_id": 11,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/FmZBZyy/product-10.webp",
     "title": "10 Yard Dumpster",
-    "price": 12,
-    "description": "Say goodbye to plastic wrap and try our beeswax wraps, a sustainable alternative for preserving food freshness while reducing single-use plastic waste. Offer an eco-friendly solution for food storage that aligns with sustainable and zero-waste lifestyles."
+    "price": 5000,
+    "short_description": "Convenient 10-yard dumpster for easy waste disposal.",
+    "detailed_description": "Simplify waste management with our convenient 10-yard dumpster. Perfect for residential cleanouts and small-scale commercial projects, this dumpster offers a compact yet efficient solution for waste disposal needs. Additionally, say goodbye to plastic wrap and try our beeswax wraps, a sustainable alternative for preserving food freshness while reducing single-use plastic waste. Make sustainable choices with our 10 Yard Dumpster and beeswax wraps."
   },
   {
-    "_id": 12,
+    "category": "Waste Management",
     "img": "https://i.ibb.co/JsBdk3z/product-12-393x327.webp",
     "title": "64 Gallon Container",
-    "price": 40,
-    "description": "Explore a curated collection of sustainable fashion items, from clothing to accessories, promoting ethical and environmentally conscious choices in your wardrobe. Support fashion brands that prioritize sustainability and contribute to a more eco-friendly and responsible industry."
+    "price": 4000,
+    "short_description": "Spacious 64-gallon container for efficient waste storage.",
+    "detailed_description": "Optimize your waste storage with our spacious 64-gallon container. Designed to accommodate high waste volumes, this container is ideal for households and businesses seeking efficient waste management solutions. Additionally, explore a curated collection of sustainable fashion items, from clothing to accessories, promoting ethical and environmentally conscious choices in your wardrobe. Make a statement with our 64 Gallon Container and sustainable fashion."
+  },
+  {
+    "category": "Reusable Products",
+    "img": "https://i.ibb.co/9qtz4v8/3b55375bfffe513e79ee6752a1feed90-jpg-300x0q75.webp",
+    "title": "Reusable Water Bottles",
+    "price": 650,
+    "short_description": "Stay hydrated sustainably with reusable water bottles.",
+    "detailed_description": "Stay hydrated on-the-go while reducing plastic waste with our reusable water bottles. Made from durable materials, our water bottles are designed to withstand daily use and help you stay hydrated throughout the day. Additionally, explore our range of solar-powered phone chargers, allowing you to charge your devices using renewable energy. Embrace sustainability in every aspect of your life with our Reusable Water Bottles and solar-powered chargers."
+  },
+  {
+    "category": "Electronics",
+    "img": "https://i.ibb.co/VvqSHc3/solar-chargers.webp",
+    "title": "Solar-Powered Phone Chargers",
+    "price": 325,
+    "short_description": "Charge your devices on-the-go with solar-powered chargers.",
+    "detailed_description": "Never run out of battery on your adventures with our solar-powered phone chargers. Harness the power of the sun to charge your devices anytime, anywhere, while reducing your reliance on traditional electricity sources. Additionally, upgrade your dental routine with our eco-friendly bamboo toothbrushes, reducing plastic waste with every brush. Make sustainable choices with our Solar-Powered Phone Chargers and bamboo toothbrushes."
+  },
+  {
+    "category": "Bathroom Essentials",
+    "img": "https://i.ibb.co/QKzLQhx/brush.jpg",
+    "title": "Bamboo Toothbrushes",
+    "price": 90,
+    "short_description": "Upgrade your dental routine with eco-friendly bamboo toothbrushes.",
+    "detailed_description": "Make the switch to eco-friendly dental care with our bamboo toothbrushes. Crafted from sustainable bamboo, our toothbrushes offer a plastic-free alternative to conventional options, reducing plastic waste in landfills and oceans. Additionally, elevate your dining experience with our recycled glassware set, made from reclaimed materials. Embrace sustainability in every aspect of your life with our Bamboo Toothbrushes and recycled glassware."
+  },
+  {
+    "category": "Kitchen Essentials",
+    "img": "https://i.ibb.co/bX6dcV8/board.jpg",
+    "title": "Organic Bamboo Cutting Board",
+    "price": 700,
+    "short_description": "Upgrade your kitchen with an organic bamboo cutting board.",
+    "detailed_description": "Enhance your culinary experience with our organic bamboo cutting board. Crafted from sustainable bamboo, this cutting board offers a durable and eco-friendly surface for chopping fruits, vegetables, and more. Additionally, reduce plastic waste in your kitchen with our reusable silicone food bags, perfect for storing leftovers and snacks. Make sustainable choices for your cooking routine with our Organic Bamboo Cutting Board and reusable food bags."
+  }
+  ,
+  {
+    "category": "Electronics",
+    "img": "https://i.ibb.co/dWPgCDz/Led-Light-Blog-Image-1200x630.jpg",
+    "title": "Energy-Efficient LED Light Bulbs",
+    "price": 350,
+    "short_description": "Illuminate your space sustainably with LED light bulbs.",
+    "detailed_description": "Brighten up your home while reducing energy consumption with our energy-efficient LED light bulbs. Designed to provide optimal lighting with minimal electricity usage, our bulbs help you save on energy bills and reduce your carbon footprint. Additionally, carry your essentials in style with our organic cotton tote bags, reducing plastic bag usage and supporting sustainable fashion. Make environmentally friendly choices for your home with our LED light bulbs and organic cotton tote bags."
+  },
+  {
+    "category": "Household Essentials",
+    "img": "https://i.ibb.co/Qn6f5Ms/tote-bag-nature-23-2150772801.jpg",
+    "title": "Organic Cotton Tote Bags",
+    "price": 200,
+    "short_description": "Carry your essentials in style with organic cotton tote bags.",
+    "detailed_description": "Ditch single-use plastic bags and carry your essentials in our organic cotton tote bags. Made from sustainably sourced materials, our bags offer a stylish and eco-friendly alternative to disposable plastic bags. Additionally, savor ethically sourced coffee with our fair trade coffee beans, supporting farmers and promoting sustainability in coffee production. Make a positive impact on the environment with our Organic Cotton Tote Bags and fair trade coffee beans."
+  },
+  {
+    "category": "Kitchen Essentials",
+    "img": "https://i.ibb.co/mNFsWKX/Fairtrade-Coffee-Bean-Ground-Drunk.jpg",
+    "title": "Fair Trade Coffee Beans",
+    "price": 900,
+    "short_description": "Savor ethically sourced coffee with fair trade beans.",
+    "detailed_description": "Indulge in the rich flavors of ethically sourced coffee with our fair trade coffee beans. By choosing fair trade, you're supporting coffee farmers and their communities while promoting sustainable farming practices. Additionally, clean your dishes responsibly with biodegradable dish soap, minimizing environmental impact and keeping your dishes sparkling clean. Make ethical choices for your morning routine with our Fair Trade Coffee Beans and biodegradable dish soap."
+  },
+  {
+    "category": "Kitchen Essentials",
+    "img": "https://i.ibb.co/h7rd6cR/greenworks.webp",
+    "title": "Biodegradable Dish Soap",
+    "price": 1000,
+    "short_description": "Clean your dishes responsibly with biodegradable dish soap.",
+    "detailed_description": "Keep your dishes clean and the environment happy with our biodegradable dish soap. Formulated with eco-friendly ingredients, our dish soap effectively cuts through grease and grime while minimizing its environmental impact. Additionally, set the mood sustainably with natural beeswax candles, free from harmful chemicals and pollutants. Make eco-conscious choices for your home with our Biodegradable Dish Soap and natural beeswax candles."
+  },
+  {
+    "category": "Household Essentials",
+    "img": "https://i.ibb.co/gy5c8xR/candle.webp",
+    "title": "Natural Beeswax Candles",
+    "price": 800,
+    "short_description": "Set the mood sustainably with natural beeswax candles.",
+    "detailed_description": "Create a warm and inviting atmosphere in your home with our natural beeswax candles. Made from pure beeswax, these candles emit a subtle honey scent and burn cleanly without releasing harmful toxins into the air. Additionally, store your snacks sustainably with reusable silicone food bags, minimizing plastic waste and keeping your snacks fresh. Make environmentally friendly choices in your everyday life with our Natural Beeswax Candles and reusable silicone food bags."
+  },
+  
+  {
+    "category": "Kitchen Essentials",
+    "img": "https://i.ibb.co/pKYWLS6/trashBag.jpg",
+    "title": "Compostable Kitchen Waste Bags",
+    "price": 250,
+    "short_description": "Dispose of kitchen waste responsibly with compostable bags.",
+    "detailed_description": "Make eco-conscious choices in your kitchen with our Compostable Kitchen Waste Bags. These bags are specially designed to handle organic waste, such as food scraps and compostable materials, allowing you to dispose of kitchen waste responsibly. Additionally, complement your sustainable lifestyle with our reusable bamboo kitchen utensils, providing durable and eco-friendly alternatives to plastic utensils. Embrace sustainability in your kitchen with our Compostable Kitchen Waste Bags and bamboo utensils."
+  },
+  
+  {
+    
+    "img": "https://i.ibb.co/Y8B1fBh/Wodd-Bamboo-Sunglasses-1.webp",
+    "title": "Sustainable Bamboo Sunglasses",
+    "price": 1220,
+    "short_description": "Protect your eyes in style with sustainable bamboo sunglasses.",
+    "detailed_description": "Shield your eyes from the sun while making a statement with our sustainable bamboo sunglasses. Crafted from renewable bamboo, these sunglasses offer UV protection and a stylish accessory for any outfit. Additionally, reduce your environmental footprint with our energy-efficient appliances, including refrigerators and air conditioners. Make sustainable living a priority with our Sustainable Bamboo Sunglasses and energy-efficient appliances."
   }
 ]

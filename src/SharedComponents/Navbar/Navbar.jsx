@@ -20,18 +20,20 @@ import { useEffect } from "react";
 import { fetchService } from "../../Redux/ServiceSlice";
 import ServiceNavbar from "./ServiceNavbar";
 import Btn from "../../Components/Btn";
+import getIndustriesApi from "../../API/IndustriesApi/getIndustriesApi";
+import IndustriesNavbar from "./IndustriesNavbar";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { service: data } = useSelector((state) => state.services);
+  const [industry, dataLoading] = getIndustriesApi();
   useEffect(() => {
     dispatch(fetchService(6));
   }, [dispatch]);
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
-// console.log(cart)
- 
+  // console.log(cart)
 
   const handleLogOut = async () => {
     try {
@@ -51,7 +53,6 @@ const Navbar = () => {
   const togglePagesDropdown = () => {
     setPagesDropdownOpen(!pagesDropdownOpen);
   };
-  
 
   const navLinks = (
     <>
@@ -66,34 +67,62 @@ const Navbar = () => {
         <div
           tabIndex={0}
           role="button"
-          className="lg:text-xl text-sm btn-xs lg:bt hover:text-brand-color font-semibold flex justify-center items-center lg:gap-2"
+          className="lg:text-xl text-sm btn-xs hover:text-brand-color font-semibold flex justify-center items-center gap-1"
           onClick={toggleServicesDropdown}
         >
           <p>Services</p>{" "}
           {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md w-40 lg:w-56 overflow-hidden ${
+
+          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
+
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
-          <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white pb-2 "
-          >
-            {" "}
-            <Link
-              className="border-b rounded-none border-slate-400"
-              to={"/services"}
-            >
-              All Services
-            </Link>
-          </motion.li>
+          <div className="flex ">
+            <div className="border-r-2 md:pr-10 border-slate-400">
+              <motion.li
+                whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="font-semibold text-white pb-2 "
+              >
+                <div className="">
+                  <Link
+                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
+                    to={"/services"}
+                  >
+                    All Services
+                  </Link>
+                </div>
+              </motion.li>
+              {data?.map((service) => (
+                <ServiceNavbar key={service?._id} data={service} />
+              ))}
+            </div>
+            <div className="md:pl-10">
+              <motion.li
+                whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="font-semibold text-white pb-2  overflow-hidden"
+              >
+                <div className="">
+                  <p className="border-b-4 border-slate-400"></p>
+                  <Link
+                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
+                    to={"/industries"}
+                  >
 
-          {data?.map((service) => (
-            <ServiceNavbar key={service?._id} data={service} />
-          ))}
+                    All Industries
+                  </Link>
+                </div>
+              </motion.li>
+              {industry?.map((item) => (
+                <IndustriesNavbar key={item?._id} industry={item} />
+              ))}
+
+            </div>
+          </div>
         </ul>
       </div>
 
@@ -108,7 +137,7 @@ const Navbar = () => {
         <div
           tabIndex={0}
           role="button"
-          className="lg:text-xl text-sm btn-xs hover:text-brand-color font-semibold flex justify-center items-center lg:gap-2"
+          className="lg:text-xl text-sm btn-xs lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center gap-1"
           onClick={togglePagesDropdown}
         >
           <p>Pages</p> {pagesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
@@ -119,7 +148,7 @@ const Navbar = () => {
           }`}
         >
           <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white pb-2 "
           >
@@ -132,7 +161,7 @@ const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
             className="font-semibold text-white pb-2 "
           >
@@ -145,7 +174,7 @@ const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -159,7 +188,7 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -173,7 +202,7 @@ const Navbar = () => {
           </motion.li>
 
           <motion.li
-            whileHover={{ scale: 1.3, originX: 0, color: "#3A9E1E" }}
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
@@ -199,7 +228,6 @@ const Navbar = () => {
     </>
   );
 
-
   return (
     <div className="">
       {/* Top Bar */}
@@ -210,10 +238,12 @@ const Navbar = () => {
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
-          <Badge content={cart.length}>
-            <Link to='my-cart'><FaShoppingCart className="md:text-2xl text-xl" /></Link>
+          <Badge content={cart.length} className=" w-4 h-4 font-bold">
+            <Link to="my-cart">
+              <FaShoppingCart className="md:text-2xl text-xl" />
+            </Link>
           </Badge>
-          <Badge content="0">
+          <Badge content="0" className=" w-4 h-4 font-bold">
             <FaRegBell className="md:text-2xl text-xl" />
           </Badge>
         </div>
@@ -254,7 +284,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className=" flex gap-8 px-1 ">{navLinks}</ul>
+            <ul className=" flex gap-4  ">{navLinks}</ul>
           </div>
 
           {user ? (
@@ -278,7 +308,7 @@ const Navbar = () => {
                   className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52 text-white"
                 >
                   <motion.li
-                    whileHover={{ scale: 1.3, originX: 0 }}
+                    whileHover={{ scale: 1.2, originX: 0 }}
                     transition={{ type: "spring", stiffness: 300 }}
                     className="text-white"
                   >
@@ -289,7 +319,7 @@ const Navbar = () => {
                   </motion.li>
                   <span className="border border-slate-400"></span>
                   <motion.li
-                    whileHover={{ scale: 1.3, originX: 0, color: "#f54242" }}
+                    whileHover={{ scale: 1.2, originX: 0, color: "#f54242" }}
                     transition={{ type: "spring", stiffness: 300 }}
                     className="text-white"
                   >

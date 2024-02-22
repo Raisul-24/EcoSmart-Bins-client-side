@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+
 const IndustriesCard = ({ data, isTrue, DeleteFun }) => {
   return (
     <div className="card mb-72">
@@ -16,13 +17,13 @@ const IndustriesCard = ({ data, isTrue, DeleteFun }) => {
       </figure>
       <div className="card-body absolute text-start w-[350px] h-72 rounded-xl shadow-xl bg-white top-0 mt-64 right-0">
         <Link
-          to={`/services/${data?._id}`}
+          to={`/industries/${data?._id}`}
           className="text-xl font-bold pt-3 hover:text-green-800 justify-center pb-4"
         >
           {data?.category}
         </Link>
         <p className="pb-4">{data?.shortDescription}...</p>
-		<hr />
+        <hr />
 
         {isTrue ? (
           <div className="space-y-4">
@@ -42,7 +43,7 @@ const IndustriesCard = ({ data, isTrue, DeleteFun }) => {
         ) : (
           <div className="mb-6">
             <Link
-              to={`/services/${data?._id}`}
+              to={`/industries/${data?._id}`}
               className="text-lg font-bold hover:border-b-2 hover:border-black flex justify-start items-center hover:text-green-800 h-14 gap-4 w-44"
             >
               Explore More
