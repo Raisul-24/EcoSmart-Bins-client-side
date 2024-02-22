@@ -9,11 +9,13 @@ import Aos from "aos";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../../axios/axiosPublic";
 import axios from "axios";
+import { notifyFun } from "../../../fun/notifyFun";
+import useAuth from "../../../Hooks/UseAuth";
 
 
 const AddShowcase = () => {
     const axiosPublic = useAxiosPublic()
-
+    const {user} = useAuth()
     useEffect(() => {
         Aos.init({
             duration: 1000,
@@ -55,6 +57,7 @@ const AddShowcase = () => {
             console.log(serverResponse.data);
             
             if (serverResponse.data.insertedId) {
+                notifyFun(user?.email, `New Artwork Added with for admin.`);
                 reset();
                 toast.success("New Artwork Added Successfully");
             }

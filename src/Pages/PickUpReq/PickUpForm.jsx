@@ -4,6 +4,8 @@ import useAuth from "../../Hooks/UseAuth";
 import UseAxiosPrivate from "../../axios/axiosprivate";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { notifyFun } from "../../fun/notifyFun";
+import toast from "react-hot-toast";
 
 const PickUpForm = () => {
   const [selectedContainer, setSelectedContainer] = useState("");
@@ -60,6 +62,7 @@ const PickUpForm = () => {
       .then((data) => {
         console.log(data.data);
         if (data.data.insertedId) {
+          notifyFun(user?.email, "You Request For New PickUp.");
           Swal.fire({
             title: "Success!",
             text: "Request Sent Successfully and you get 5 reward points collect from Dashboard > reward points page",
@@ -74,7 +77,7 @@ const PickUpForm = () => {
             confirmButtonText: "Cool",
           });
         }
-      });
+      }).catch(()=>toast.error("Fail to Request"))
 
     reset();
   };
