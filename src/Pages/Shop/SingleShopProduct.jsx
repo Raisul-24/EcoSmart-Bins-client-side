@@ -58,7 +58,7 @@ const SingleShopProduct = () => {
     <div className="font-andika my-20 md:flex p-5 justify-start items-center gap-12 bg-white">
       <div className="overflow-hidden flex-1">
         <img
-          className="rounded p-12 bg-[#e9f1ea] h-[450px] w-[550px]"
+          className="rounded p-12 bg-[#e9f1ea] w-full h-full"
           src={img}
           alt=""
         />
