@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useProducts from "../../../Hooks/useProducts";
-import {  FaRegEdit, FaTrash } from "react-icons/fa";
+import { FaRegEdit, FaTrash } from "react-icons/fa";
 import useAxiosPrivate from "../../../axios/axiosprivate";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import { notifyFun } from "../../../fun/notifyFun";
+import useAuth from "../../../Hooks/UseAuth";
 
 const ManageProducts = () => {
+  const {user} = useAuth()
   const [products, loading, refetch] = useProducts();
-  const axiosPrivate = useAxiosPrivate()
+  const axiosPrivate = useAxiosPrivate();
 
   const handleDeleteItem = (item) => {
     Swal.fire({
@@ -20,10 +23,9 @@ const ManageProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosPrivate.delete(`/products/${item._id}`)
-        .then((res) => {
-          console.log(res.data);
+        axiosPrivate.delete(`/products/${item._id}`).then((res) => {
           if (res.data.deletedCount > 0) {
+            notifyFun(user?.email, "You add a new service.");
             refetch();
             Swal.fire({
               title: "Deleted!",
@@ -39,7 +41,7 @@ const ManageProducts = () => {
   return (
     <div className="font-andika">
       <div className="">
-      <SectionTitle heading={"manage all product"}/>
+        <SectionTitle heading={"manage all product"} />
       </div>
       {loading ? (
         <div className="text-center mt-20">
@@ -87,13 +89,12 @@ const ManageProducts = () => {
                     </Link>
                   </td>
                   <td>
-                  <Link
+                    <Link
                       to={`/dashboard/updateProducts/${item?._id}`}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
-                      <FaRegEdit/>
+                      <FaRegEdit />
                     </Link>
-                  
                   </td>
                   <td>
                     <button

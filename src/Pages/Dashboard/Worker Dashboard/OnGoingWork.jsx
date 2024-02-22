@@ -2,23 +2,29 @@ import { IoMdCheckmark } from "react-icons/io";
 import useAuth from "../../../Hooks/UseAuth";
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 import UseAxiosPrivate from "../../../axios/axiosprivate";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { notifyFun } from "../../../fun/notifyFun";
 
 const OnGoingWork = () => {
   const axios = UseAxiosPrivate();
   const { user } = useAuth();
-  const Navigate = useNavigate()
-  const { data, isLoading ,refetch} = useGetApiQuery(
+  const Navigate = useNavigate();
+  const { data, isLoading, refetch } = useGetApiQuery(
     `/pickupReq/${user?.email}?status=ongoing`
   );
-  const handleClick = (id) => {
-    const status = "complete"
-    axios.patch(`/statusUpdate/${id}`,{status}).then(()=>{
-        Navigate('/dashboard/CompleteWorks')
-        toast.success('task complete')
-        refetch()
-    }).catch(()=>toast.error('fail to update'))
+  const handleClick = (id, email) => {
+    const status = "complete";
+    axios
+      .patch(`/statusUpdate/${id}`, { status })
+      .then(() => {
+        notifyFun(user?.email, `you comyour pick up plete a pickup request`);
+        notifyFun(email, `request is complete`);
+        Navigate("/dashboard/CompleteWorks");
+        toast.success("task complete");
+        refetch();
+      })
+      .catch(() => toast.error("fail to update"));
   };
   return (
     <div className="font-andika">
@@ -65,10 +71,11 @@ const OnGoingWork = () => {
                   <td>{item?.email}</td>
                   <td>
                     <h2
-                      className={`badge ${item?.status === "requested" &&
-                        "bg-red-600"} ${item?.status === "ongoing" &&
-                        "bg-yellow-500"} ${item?.status === "complete" &&
-                        "bg-brand-color"} border-none text-white capitalize`}
+                      className={`badge ${
+                        item?.status === "requested" && "bg-red-600"
+                      } ${item?.status === "ongoing" && "bg-yellow-500"} ${
+                        item?.status === "complete" && "bg-brand-color"
+                      } border-none text-white capitalize`}
                     >
                       {item?.status}
                     </h2>
@@ -83,7 +90,7 @@ const OnGoingWork = () => {
                       i
                     </button>
                     <dialog id={item?._id} className="modal">
-                    <div className="modal-box bg-white">
+                      <div className="modal-box bg-white">
                         <h3 className="text-2xl font-bold capitalize text-brand-color">
                           pickup details
                         </h3>
@@ -125,11 +132,13 @@ const OnGoingWork = () => {
                           <p className="space-x-2">
                             <span className="text-lg">status:</span>{" "}
                             <h2
-                              className={`badge ${item?.status ===
-                                "requested" && "bg-red-600"} ${item?.status ===
-                                "ongoing" && "bg-yellow-500"} ${item?.status ===
-                                "complete" &&
-                                "bg-brand-color"} border-none text-white capitalize`}
+                              className={`badge ${
+                                item?.status === "requested" && "bg-red-600"
+                              } ${
+                                item?.status === "ongoing" && "bg-yellow-500"
+                              } ${
+                                item?.status === "complete" && "bg-brand-color"
+                              } border-none text-white capitalize`}
                             >
                               {item?.status}
                             </h2>
@@ -153,7 +162,7 @@ const OnGoingWork = () => {
                   </td>
                   <td>
                     <button
-                      onClick={() => handleClick(item?._id)}
+                      onClick={() => handleClick(item?._id, item?.email)}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
                       <IoMdCheckmark />
