@@ -3,6 +3,7 @@ import useAxiosPublic from '../../axios/axiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../Hooks/UseAuth';
 import { useState, useEffect } from 'react'; // Import useState and useEffect
+import Btn from "../../Components/Btn";
 
 const MyCart = () => {
    const { user } = useAuth();
@@ -104,6 +105,9 @@ const MyCart = () => {
                </table>
                <div className="flex justify-end m-4 ">
                   <h2 className="font-extrabold">Total: <span>{totalPrice}</span></h2>
+               </div>
+               <div className="flex justify-end m-4 ">
+                  <Btn>Order Now</Btn>
                </div>
             </div>}
             </div>
