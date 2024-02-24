@@ -72,7 +72,7 @@ const SingleShopProduct = () => {
           <h5 className="font-bold text-xl md:text-2xl text-[#f29620] w-1/2">
             {price * quantity} Tk
           </h5>
-          <div className="flex gap-3 border-2 px-5  "> 
+          <div className="flex gap-3 border-2 px-5  ">
             <button
               onClick={() =>
                 quantity >= 2 ? setQuantity(quantity - 1) : setQuantity(1)
@@ -96,7 +96,7 @@ const SingleShopProduct = () => {
         </div>
         <p className="lg:py-8 text-lg text-gray-700 border-t-2">{detailed_description}</p>
         <div className="flex gap-4 flex-wrap">
-          <Btn>
+        <Btn>
           <Link
             to={`/checkout/${_id}/${quantity}`}
             
@@ -104,12 +104,12 @@ const SingleShopProduct = () => {
             Buy Now
           </Link>
           </Btn>
-          <Btn
+          <button
             onClick={handleOrder}
-            className="flex"
+            className="flex p-3 text-white transition border rounded font-bold  bg-[#195a07] hover:bg-opacity-90"
           >
             <p>Add to Cart</p>
-          </Btn>
+          </button>
         </div>
       </div>
     </div>
