@@ -39,16 +39,26 @@ const Navbar = () => {
   const [cart] = useCart();
   // console.log(cart.length)
   useEffect(() => {
-    const socket = io(axiosPrivate.defaults.baseURL);
+    try {
+      if (!user) {
+        return;
+      }
 
-    socket.emit("notification", { email: user?.email });
-    socket.on("receive-notification", (data) => {
-      setNotification(data);
-      setloading(false);
-    });
-    return () => {
-      socket.disconnect();
-    };
+      const socket = io(axiosPrivate.defaults.baseURL).connect()
+
+      socket.emit("notification", { email: user.email });
+
+      socket.on("receive-notification", (data) => {
+        setNotification(data);
+        setloading(false);
+      });
+
+      return () => {
+        socket.disconnect();
+      };
+    } catch (error) {
+      console.error("Socket setup error:", error);
+    }
   }, [user]);
 
   const handleLogOut = async () => {
@@ -90,9 +100,7 @@ const Navbar = () => {
           {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-
           className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
-
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -128,7 +136,6 @@ const Navbar = () => {
                     className="border-b rounded-none border-slate-400 text-xs md:text-base"
                     to={"/industries"}
                   >
-
                     All Industries
                   </Link>
                 </div>
@@ -136,7 +143,6 @@ const Navbar = () => {
               {industry?.map((item) => (
                 <IndustriesNavbar key={item?._id} industry={item} />
               ))}
-
             </div>
           </div>
         </ul>
