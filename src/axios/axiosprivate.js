@@ -3,7 +3,12 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/UseAuth";
 export const axiosPrivate = axios.create({
   baseURL: "http://localhost:8085",
+
     //baseURL: "https://eco-smart-bin.vercel.app",
+
+  // baseURL: "https://eco-smart-bin.vercel.app",
+  // baseURL: "https://ecosmart-bins-server-side.onrender.com",
+
   withCredentials: true,
 });
 export const UseAxiosPrivate = () => {
