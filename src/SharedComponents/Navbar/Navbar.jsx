@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
@@ -16,14 +16,18 @@ import {
 import { FaPhone } from "react-icons/fa6";
 import useCart from "../../Hooks/useCart";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { fetchService } from "../../Redux/ServiceSlice";
 import ServiceNavbar from "./ServiceNavbar";
 import Btn from "../../Components/Btn";
+import { io } from "socket.io-client";
+import { axiosPrivate } from "../../axios/axiosprivate";
 import getIndustriesApi from "../../API/IndustriesApi/getIndustriesApi";
 import IndustriesNavbar from "./IndustriesNavbar";
 
 const Navbar = () => {
+  const [notification, setNotification] = useState([]);
+  const [loading, setloading] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
   const dispatch = useDispatch();
   const { service: data } = useSelector((state) => state.services);
   const [industry] = getIndustriesApi();
@@ -33,7 +37,29 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
-  // console.log(cart)
+  // console.log(cart.length)
+  useEffect(() => {
+    try {
+      if (!user) {
+        return;
+      }
+
+      const socket = io(axiosPrivate.defaults.baseURL).connect()
+
+      socket.emit("notification", { email: user.email });
+
+      socket.on("receive-notification", (data) => {
+        setNotification(data);
+        setloading(false);
+      });
+
+      return () => {
+        socket.disconnect();
+      };
+    } catch (error) {
+      console.error("Socket setup error:", error);
+    }
+  }, [user]);
 
   const handleLogOut = async () => {
     try {
@@ -74,9 +100,7 @@ const Navbar = () => {
           {servicesDropdownOpen ? <FaAngleUp className="mt-1" /> : <FaAngleDown className="mt-1" />}
         </div>
         <ul
-
           className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
-
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -112,7 +136,6 @@ const Navbar = () => {
                     className="border-b rounded-none border-slate-400 text-xs md:text-base"
                     to={"/industries"}
                   >
-
                     All Industries
                   </Link>
                 </div>
@@ -120,7 +143,6 @@ const Navbar = () => {
               {industry?.map((item) => (
                 <IndustriesNavbar key={item?._id} industry={item} />
               ))}
-
             </div>
           </div>
         </ul>
@@ -227,26 +249,47 @@ const Navbar = () => {
       </li>
     </>
   );
-
   return (
     <div className="">
       {/* Top Bar */}
-      <div className="flex lg:min-h-16 min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
+      <div className="flex lg:min-h-16 relative min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
         <div>
           <p className="flex items-center gap-2">
             <FaPhone className=" text-lg"></FaPhone> Phone: 333 666 0000
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
-          <Badge content={cart.length} className=" w-4 h-4 font-bold">
-            <Link to="my-cart">
+          <Link to="my-cart"><button>
+            <Badge content={cart?.length}>
               <FaShoppingCart className="md:text-2xl text-lg" />
-            </Link>
-          </Badge>
-          <Badge content="0" className=" w-4 h-4 font-bold">
-            <FaRegBell className="md:text-2xl text-lg" />
-          </Badge>
+            </Badge>
+          </button></Link>
+          <button onClick={() => setShowNotification(!showNotification)}>
+            <Badge
+              content={notification?.length > 10 ? "10+" : notification?.length}
+            >
+              <FaRegBell className="md:text-2xl text-lg" />
+            </Badge>
+          </button>
         </div>
+        {!loading && showNotification && (
+          <div className="absolute p-6 bg-[#0e1d40] capitalize text-lg font-bold overflow-y-scroll top-20 sm:right-10 mx-4 right-0 z-30 rounded-xl border-2 outline-brand-color outline lg:w-80 h-96">
+            {notification?.length ? (
+              notification?.map((item) => (
+                <div key={item?._id} className="last:border-none py-4 border-b">
+                  <p>{item?.massage}</p>
+                  <span className="text-sm text-gray-400">
+                    {new Date(item?.date).toLocaleDateString()}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className="flex h-full items-center justify-center">
+                no data
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Navbar */}
