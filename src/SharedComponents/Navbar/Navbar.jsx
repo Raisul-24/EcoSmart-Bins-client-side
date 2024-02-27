@@ -26,7 +26,7 @@ import IndustriesNavbar from "./IndustriesNavbar";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { service: data } = useSelector((state) => state.services);
-  const [industry, dataLoading] = getIndustriesApi();
+  const [industry] = getIndustriesApi();
   useEffect(() => {
     dispatch(fetchService(6));
   }, [dispatch]);
@@ -57,7 +57,7 @@ const Navbar = () => {
   const navLinks = (
     <>
       {/* Home */}
-      <li className="text-xl hover:text-brand-color font-semibold">
+      <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
         <NavLink to={"/"}>Home </NavLink>
       </li>
@@ -67,15 +67,15 @@ const Navbar = () => {
         <div
           tabIndex={0}
           role="button"
-          className="lg:text-xl text-sm btn-xs hover:text-brand-color font-semibold flex justify-center items-center gap-1"
+          className="lg:text-lg px-2 py-1 lg:px-0 lg:py-0 text-sm hover:text-brand-color font-semibold flex justify-center items-center"
           onClick={toggleServicesDropdown}
         >
           <p>Services</p>{" "}
-          {servicesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
+          {servicesDropdownOpen ? <FaAngleUp className="mt-1" /> : <FaAngleDown className="mt-1" />}
         </div>
         <ul
 
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
 
             servicesDropdownOpen ? "block" : "hidden"
           }`}
@@ -127,7 +127,7 @@ const Navbar = () => {
       </div>
 
       {/* Shop */}
-      <li className="text-xl hover:text-brand-color font-semibold">
+      <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
         <NavLink to={"/shop"}>Shop</NavLink>
       </li>
@@ -137,13 +137,13 @@ const Navbar = () => {
         <div
           tabIndex={0}
           role="button"
-          className="lg:text-xl text-sm btn-xs lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center gap-1"
+          className="lg:text-lg text-sm px-2 py-1 lg:px-0 lg:py-0 lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center "
           onClick={togglePagesDropdown}
         >
-          <p>Pages</p> {pagesDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
+          <p>Pages</p> {pagesDropdownOpen ? <FaAngleUp className="mt-1" /> : <FaAngleDown className="mt-1" />}
         </div>
         <ul
-          className={`dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-52 overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-52 overflow-hidden ${
             pagesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -214,14 +214,14 @@ const Navbar = () => {
 
       {/* Dashboard */}
       {user && (
-        <li className="text-xl hover:text-brand-color font-semibold">
+        <li className="text-lg hover:text-brand-color font-semibold">
           {" "}
           <NavLink to={"/dashboard/overview"}>Dashboard</NavLink>
         </li>
       )}
 
       {/* PickUp Request */}
-      <li className="text-xl hover:text-brand-color font-semibold">
+      <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
         <NavLink to="/pickUpReq">PickUp Request</NavLink>
       </li>
@@ -234,17 +234,17 @@ const Navbar = () => {
       <div className="flex lg:min-h-16 min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
         <div>
           <p className="flex items-center gap-2">
-            <FaPhone className=" text-xl"></FaPhone> Phone: 333 666 0000
+            <FaPhone className=" text-lg"></FaPhone> Phone: 333 666 0000
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
           <Badge content={cart.length} className=" w-4 h-4 font-bold">
             <Link to="my-cart">
-              <FaShoppingCart className="md:text-2xl text-xl" />
+              <FaShoppingCart className="md:text-2xl text-lg" />
             </Link>
           </Badge>
           <Badge content="0" className=" w-4 h-4 font-bold">
-            <FaRegBell className="md:text-2xl text-xl" />
+            <FaRegBell className="md:text-2xl text-lg" />
           </Badge>
         </div>
       </div>
@@ -279,12 +279,12 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <Link to={"/"} className="text-xl lg:text-3xl font-bold">
+            <Link to={"/"} className="text-lg lg:text-3xl font-bold">
               <span className="bold text-brand-color">Eco</span>SmartBin
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className=" flex gap-4  ">{navLinks}</ul>
+            <ul className=" flex gap-5 ">{navLinks}</ul>
           </div>
 
           {user ? (
