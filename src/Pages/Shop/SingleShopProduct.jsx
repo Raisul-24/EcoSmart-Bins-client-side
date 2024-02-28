@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import useGetAProduct from "../../API/ServiceApi/useGetAProduct";
 import { useState } from "react";
 import useAxiosPublic from "../../axios/axiosPublic";
 import useAuth from "./../../Hooks/UseAuth";
@@ -54,7 +53,6 @@ const SingleShopProduct = () => {
       });
     }
   };
-  console.log(category);
   return (
     <div className="font-andika my-20">
       <div className="md:flex p-5 justify-start items-center gap-12 ">
