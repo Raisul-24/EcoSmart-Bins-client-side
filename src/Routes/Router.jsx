@@ -14,7 +14,6 @@ import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
 import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
-import AddShowcase from "../Pages/Dashboard/User Dashboard/AddShowcase";
 import Cart from "../Pages/Dashboard/User Dashboard/Cart";
 import FeedbackAndRatings from "../Pages/Dashboard/User Dashboard/FeedbackAndRatings";
 import AddProducts from "../Pages/Dashboard/Admin dashboard/AddProducts";
@@ -46,6 +45,7 @@ import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
 import Industries from "../Pages/Industries/Industries";
 import MyCart from "../Pages/MyCart/MyCart";
 import IndustriesDetails from "../Pages/Industries/IndustriesDetails/IndustriesDetails";
+import AddShowcase from "../Pages/Showcase/AddShowcase";
 
 const router = createBrowserRouter([
   {
@@ -151,6 +151,10 @@ const router = createBrowserRouter([
         path: "/my-cart",
         element: <MyCart></MyCart>,
       },
+      {
+        path: "/addShowcase",
+        element: <AddShowcase></AddShowcase>,
+      },
     ],
   },
   {
@@ -222,10 +226,7 @@ const router = createBrowserRouter([
         path: "userProfile",
         element: <UserProfile></UserProfile>,
       },
-      {
-        path: "addShowcase",
-        element: <AddShowcase></AddShowcase>,
-      },
+      
       {
         path: "cart",
         element: <Cart></Cart>,

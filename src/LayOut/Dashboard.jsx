@@ -1,6 +1,6 @@
 import {
   FaBars,
-  FaCameraRetro,
+  
   FaEdit,
   FaHistory,
   FaHome,
@@ -298,19 +298,7 @@ const Dashboard = () => {
                       <FaCartShopping></FaCartShopping> My Cart
                     </NavLink>
                   </li>
-                  <li className="text-xs md:text-sm w-full">
-                    <NavLink
-                      to="/dashboard/addShowcase"
-                      className={({ isActive }) =>
-                        isActive
-                          ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"
-                          : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
-                      }
-                    >
-                      <FaCameraRetro />
-                      Add Showcase
-                    </NavLink>
-                  </li>
+                  
 
                   <li className="text-xs md:text-sm w-full">
                     <NavLink
