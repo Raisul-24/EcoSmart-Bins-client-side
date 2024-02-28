@@ -260,15 +260,16 @@ const Navbar = () => {
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
           <Link to="my-cart"><button>
-            <Badge content={cart?.length}>
-              <FaShoppingCart className="md:text-2xl text-lg" />
+            
+            <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
+              <FaShoppingCart className="md:text-2xl text-xl" />
             </Badge>
           </button></Link>
           <button onClick={() => setShowNotification(!showNotification)}>
             <Badge
-              content={notification?.length > 10 ? "10+" : notification?.length}
+              content={notification?.length > 10 ? "10+" : notification?.length} className="lg:w-5 w-3 ml-3"
             >
-              <FaRegBell className="md:text-2xl text-lg" />
+              <FaRegBell className="md:text-2xl text-xl" />
             </Badge>
           </button>
         </div>
