@@ -41,10 +41,12 @@ const Navbar = () => {
   useEffect(() => {
     try {
       if (!user) {
+        setNotification([]);
+        setloading(false);
         return;
       }
 
-      const socket = io(axiosPrivate.defaults.baseURL).connect()
+      const socket = io(axiosPrivate.defaults.baseURL).connect();
 
       socket.emit("notification", { email: user.email });
 
@@ -97,7 +99,11 @@ const Navbar = () => {
           onClick={toggleServicesDropdown}
         >
           <p>Services</p>{" "}
-          {servicesDropdownOpen ? <FaAngleUp className="mt-1" /> : <FaAngleDown className="mt-1" />}
+          {servicesDropdownOpen ? (
+            <FaAngleUp className="mt-1" />
+          ) : (
+            <FaAngleDown className="mt-1" />
+          )}
         </div>
         <ul
           className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
@@ -162,7 +168,12 @@ const Navbar = () => {
           className="lg:text-lg text-sm px-2 py-1 lg:px-0 lg:py-0 lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center "
           onClick={togglePagesDropdown}
         >
-          <p>Pages</p> {pagesDropdownOpen ? <FaAngleUp className="mt-1" /> : <FaAngleDown className="mt-1" />}
+          <p>Pages</p>{" "}
+          {pagesDropdownOpen ? (
+            <FaAngleUp className="mt-1" />
+          ) : (
+            <FaAngleDown className="mt-1" />
+          )}
         </div>
         <ul
           className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-52 overflow-hidden ${
@@ -259,15 +270,17 @@ const Navbar = () => {
           </p>
         </div>
         <div className=" flex gap-5 lg:gap-10 ">
-          <Link to="my-cart"><button>
-            
-            <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
-              <FaShoppingCart className="md:text-2xl text-xl" />
-            </Badge>
-          </button></Link>
+          <Link to="my-cart">
+            <button>
+              <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
+                <FaShoppingCart className="md:text-2xl text-xl" />
+              </Badge>
+            </button>
+          </Link>
           <button onClick={() => setShowNotification(!showNotification)}>
             <Badge
-              content={notification?.length > 10 ? "10+" : notification?.length} className="lg:w-5 w-3 ml-3"
+              content={notification?.length > 10 ? "10+" : notification?.length}
+              className="lg:w-5 w-3 ml-3"
             >
               <FaRegBell className="md:text-2xl text-xl" />
             </Badge>
