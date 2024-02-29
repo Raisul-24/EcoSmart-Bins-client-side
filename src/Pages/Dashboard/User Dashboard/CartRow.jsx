@@ -2,28 +2,24 @@
 import { FaTrash } from "react-icons/fa";
 import useAxiosPublic from "../../../axios/axiosPublic";
 
-
-
 const CartRow = ({ item, index }) => {
   const { _id, title, price, img, status } = item || {};
   //  console.log(_id, title, price, img, status);
   const disabled = true;
   const axios = useAxiosPublic();
-  
- 
 
+
+ 
   const handleCancel = async (_id) => {
     console.log(_id);
 
     
     try {
       const response = await axios.delete(`/my-cart/${_id}`, {
-        status: "delete",
-        
+        status: "delete", 
       });
       console.log("Response from server:", response?.data);
       if (response?.data?.deletedCount > 0) {
-        
         console.log("Parcel status updated successfully", response.data);
       } else {
         console.log("Parcel not found or status not updated", response.data);

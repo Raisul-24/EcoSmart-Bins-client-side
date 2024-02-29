@@ -7,8 +7,11 @@ import useAuth from "../../../Hooks/UseAuth";
 const Cart = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-  const { carts, isLoading, isError, error, } = useSelector(
-    (state) => state.carts
+  const { carts, isLoading, isError, error, refetch } = useSelector(
+    (state) => state.carts,
+    {
+      enabled: true
+    }
   );
 
   const myCart = carts?.filter(cart => cart?.email === user?.email)
