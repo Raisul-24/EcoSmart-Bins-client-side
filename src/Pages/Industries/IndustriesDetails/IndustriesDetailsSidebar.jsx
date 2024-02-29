@@ -47,7 +47,7 @@ const IndustriesDetailsSidebar = () => {
             call basis, with a safe level of service.
           </p>
           <Link
-            to={`/`}
+            to={`/pickUpReq`}
             className="mt-6 btn btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-[#f29829] h-[70px] gap-4 w-full border-0"
           >
             Get Started Now

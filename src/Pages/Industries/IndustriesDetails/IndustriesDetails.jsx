@@ -4,6 +4,7 @@ import getAIndustries from "../../../API/IndustriesApi/getAIndustries";
 import IndustriesDetailsSidebar from "./IndustriesDetailsSidebar";
 import content from "../../../assets/images/industryContent-image.webp";
 import { FaArrowCircleRight } from "react-icons/fa";
+import Btn from "../../../Components/Btn";
 
 const IndustriesDetails = () => {
   const { id } = useParams();
@@ -82,10 +83,10 @@ const IndustriesDetails = () => {
                       vehicle charging management.
                     </p>
                     <Link
-                      to={`/`}
+                      to={`/priceTable`}
                       className="mt-10 btn btn-outline text-lg font-bold rounded-md  flex justify-center items-center hover:text-white bg-gray-700 text-white hover:bg-brand-color h-[70px] gap-4 w-[340px] border-0"
                     >
-                      Our Placement Guidelines
+                      Our Placement
                       <span className="text-2xl">
                         <FaArrowCircleRight />
                       </span>
@@ -110,6 +111,11 @@ const IndustriesDetails = () => {
               </div>
             </div>
           </div>
+          <Link to={"/pickUpReq"}>
+            <Btn className="btn mb-16 border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+              Get Service
+            </Btn>
+          </Link>
         </div>
       </div>
     </div>
