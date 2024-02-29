@@ -5,6 +5,8 @@ import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import ServiceDetailsDescription from "./ServiceDetailsDescription";
 import ServiceDetailsFAQ from "./ServiceDetailsFAQ";
 import useAxiosPublic from "../../axios/axiosPublic";
+import Btn from "../../Components/Btn";
+import { Link } from "react-router-dom";
 
 const COLORS = ["#257830", "#F72798", "#FF8042", "red", "blue"];
 
@@ -116,6 +118,11 @@ const ServiceDetail = () => {
                   </div>
                 </div>
               </div>
+              <Link to={"/pickUpReq"}>
+                <Btn className="btn mt-8 border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+                  Get Service
+                </Btn>
+              </Link>
             </div>
           </div>
         </div>
