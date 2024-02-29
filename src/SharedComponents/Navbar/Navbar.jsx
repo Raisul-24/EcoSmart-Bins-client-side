@@ -229,7 +229,17 @@ const Navbar = () => {
             className="font-semibold text-white"
           >
             {" "}
-            <Link to={"/priceTable"}>Pricing-Table</Link>
+            <Link
+            className="border-b rounded-none border-slate-400"
+             to={"/priceTable"}>Pricing-Table</Link>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="font-semibold text-white"
+          >
+            {" "}
+            <Link to={"/career"}>Career</Link>
           </motion.li>
         </ul>
       </div>
