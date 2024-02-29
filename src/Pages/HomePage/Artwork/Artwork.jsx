@@ -95,11 +95,13 @@ const Artwork = () => {
 
         <div className="w-fit mx-auto">
           {" "}
-          <Link to={"/dashboard/addShowcase"}>
+          <Link to={"/addShowcase"}>
             <Btn>Share Your Waste Art</Btn>
           </Link>
         </div>
       </div>
+      
+
     </div>
   );
 };
