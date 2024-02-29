@@ -46,6 +46,7 @@ import Industries from "../Pages/Industries/Industries";
 import MyCart from "../Pages/MyCart/MyCart";
 import IndustriesDetails from "../Pages/Industries/IndustriesDetails/IndustriesDetails";
 import AddShowcase from "../Pages/Showcase/AddShowcase";
+import Career from "../Pages/Career/Career";
 
 const router = createBrowserRouter([
   {
@@ -155,6 +156,10 @@ const router = createBrowserRouter([
         path: "/addShowcase",
         element: <AddShowcase></AddShowcase>,
       },
+      {
+        path: "/career",
+        element: <Career></Career>
+      }
     ],
   },
   {
