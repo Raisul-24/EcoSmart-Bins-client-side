@@ -16,21 +16,16 @@ const ServiceDetailsSidebar = () => {
     <>
       {/* part 1 categories buttons */}
       <div className="rounded-xl p-10 bg-[#e9f1ea] mt-4">
-        <p className="text-xl font-extrabold py-5">Our Services</p>
+        <p className="text-xl font-extrabold py-5 mb-5">Our Services</p>
         {categories?.map((category) => (
-          <button key={category?._id}>
-            <Link
-              to={`/services}`}
-              className="h-16 px-8 bg-[#182822] hover:bg-[#257830]
-                      rounded-md text-start w-72 flex justify-start items-center
-                      gap-4 text-white text-md font-bold mb-6"
+          <ul className=" " key={category?._id}>
+            <li
+              className="h-12  
+                     w-72 pl-12 font-bold"
             >
-              <span className="text-2xl">
-                <FaArrowCircleRight />
-              </span>
               {category?.servicesCategory}
-            </Link>
-          </button>
+            </li>
+          </ul>
         ))}
       </div>
       {/* part 2 content with get start button */}
@@ -53,7 +48,7 @@ const ServiceDetailsSidebar = () => {
             call basis, with a safe level of service.
           </p>
           <Link
-            to={`/`}
+            to={`/pickUpReq`}
             className="mt-6 btn btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-brand-color h-[70px] gap-4 w-full border-0"
           >
             Get Started Now

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { axiosPrivate } from "./axiosprivate";
 
 export const axiosPublic = axios.create({
-  baseURL: "http://localhost:8085",
+  baseURL: axiosPrivate.defaults.baseURL,
 });
 const useAxiosPublic = () => {
   return axiosPublic;

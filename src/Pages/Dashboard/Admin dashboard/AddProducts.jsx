@@ -3,8 +3,11 @@ import SectionTitle from "./../../../Components/SectionTitle/SectionTitle";
 import useAxiosPrivate from "./../../../axios/axiosprivate";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { notifyFun } from "../../../fun/notifyFun";
+import useAuth from "../../../Hooks/UseAuth";
 
 const AddProducts = () => {
+  const {user} = useAuth()
   const axios = useAxiosPrivate();
   const navigate = useNavigate()
   const { register, handleSubmit, reset } = useForm();
@@ -19,6 +22,7 @@ const AddProducts = () => {
       .post("/products", ProductsData)
       .then(() => reset())
       .then(() => {
+        notifyFun(user?.email, "You add a new service.");
         toast.success("New Product Added Successfully");
         navigate("/dashboard/manageProducts")
       });
