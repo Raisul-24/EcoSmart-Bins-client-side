@@ -120,7 +120,7 @@ const Navbar = () => {
               <motion.li
                 whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="font-semibold text-white pb-2 "
+                className="font-semibold text-white  "
               >
                 <div className="">
                   <Link
@@ -139,7 +139,7 @@ const Navbar = () => {
               <motion.li
                 whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="font-semibold text-white pb-2  overflow-hidden"
+                className="font-semibold text-white   overflow-hidden"
               >
                 <div className="">
                   <p className="border-b-4 border-slate-400"></p>
@@ -181,14 +181,14 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 md:w-60 h-60 overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 md:w-60 py-3 overflow-hidden ${
             pagesDropdownOpen ? "block" : "hidden"
           }`}
         >
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white pb-2 "
+            className="font-semibold text-white  "
           >
             {" "}
             <Link
@@ -201,7 +201,7 @@ const Navbar = () => {
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="font-semibold text-white pb-2 "
+            className="font-semibold text-white  "
           >
             {" "}
             <Link
@@ -214,7 +214,7 @@ const Navbar = () => {
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white"
+            className="font-semibold text-whit e"
           >
             {" "}
             <Link
@@ -228,7 +228,7 @@ const Navbar = () => {
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white"
+            className="font-semibold text-white "
           >
             {" "}
             <Link
@@ -236,6 +236,19 @@ const Navbar = () => {
               to={"/blogs"}
             >
               Blog
+            </Link>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="font-semibold text-white "
+          >
+            {" "}
+            <Link
+              to={"/career"}
+              className=" py-3 rounded-none border-slate-400 "
+            >
+              Career
             </Link>
           </motion.li>
         </ul>
@@ -269,7 +282,7 @@ const Navbar = () => {
               className="border-b py-4 rounded-none border-slate-400"
             >
               PickUp Request
-            </Link>
+            </Link>{" "}
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
