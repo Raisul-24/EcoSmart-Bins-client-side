@@ -1,19 +1,21 @@
-import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Lottie from "lottie-react";
-import animation from "./Animation - 1706186778335.json"
+import animation from "../Dashboard/User Dashboard/Animation - 1706186778335.json"
 import { useForm } from "react-hook-form";
-import send from "./send.json"
-import img from "../../../assets/images/recycle.jpg"
+import send from "../Dashboard/User Dashboard/send.json"
+import img from "../../assets/images/recycle.jpg"
 import { useEffect } from "react";
 import Aos from "aos";
 import toast from "react-hot-toast";
-import useAxiosPublic from "../../../axios/axiosPublic";
+import useAxiosPublic from "../../axios/axiosPublic";
 import axios from "axios";
+import { notifyFun } from "../../fun/notifyFun";
+import useAuth from "../../Hooks/UseAuth";
 
 
 const AddShowcase = () => {
     const axiosPublic = useAxiosPublic()
-
+    const {user} = useAuth()
     useEffect(() => {
         Aos.init({
             duration: 1000,
@@ -55,6 +57,7 @@ const AddShowcase = () => {
             console.log(serverResponse.data);
             
             if (serverResponse.data.insertedId) {
+                notifyFun(user?.email, `New Artwork Added with for admin.`);
                 reset();
                 toast.success("New Artwork Added Successfully");
             }
@@ -65,7 +68,7 @@ const AddShowcase = () => {
     
    
     return (
-        <div className="font-andika">
+        <div className="font-andika mx-20 mb-20 ">
             <SectionTitle
                 heading="Upload Your Artwork"
                 subHeading="Ready to showcase your creativity?"
@@ -73,11 +76,12 @@ const AddShowcase = () => {
 
             {/* content */}
 
-            <div className="lg:flex gap-10 py-10">
-                <div className="lg:w-1/2 lg:text-xl lg:py-10">Welcome to our Waste Art Showcase! We believe that creativity knows no bounds, especially when it comes to turning waste into art. We invite you to contribute to our growing gallery of waste-inspired masterpieces. Follow these simple steps to showcase your talent and inspire others. Stay tuned for special challenges and events. It is an opportunity to create new, exciting pieces and add a dynamic twist to our waste art community.</div>
+            <div className="lg:flex gap-10">
+               
                 <div data-aos="zoom-out-left"><img src="https://i.imgur.com/bCiHngO.jpg" alt="" className="w-96" /></div>
+                <p className="w-1/2 text-center lg:py-20 lg:text-xl">Welcome to our Waste Art Showcase! We believe that creativity knows no bounds, especially when it comes to turning waste into art. We invite you to contribute to our growing gallery of waste-inspired masterpieces. Follow these simple steps to showcase your talent and inspire others.</p>
             </div>
-            <div className="my-20">
+            <div className="">
                 <h3 className="w-fit mx-auto capitalize pt-5 pb-2 text-3xl border-b-4 border-brand-color mb-10 font-semibold text-[#101a30]">
                     Share your showcased art
                 </h3>
@@ -94,7 +98,7 @@ const AddShowcase = () => {
                 </div>
                 <Lottie className="h-52 w-64 mx-auto mt-10" animationData={send} loop={true} />
 
-                {/* form */}
+                 {/* form  */}
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className="max-w-xl p-5 shadow-2xl rounded-xl mx-auto space-y-4"

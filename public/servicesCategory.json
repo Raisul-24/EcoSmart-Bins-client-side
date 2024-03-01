@@ -1,8 +1,7 @@
 [
-	{ "servicesCategory": "Residential Waste" },
-	{ "servicesCategory": "Commercial Waste" },
-	{ "servicesCategory": "Retail & Institutional" },
-	{ "servicesCategory": "Commercial Liquid" },
-	{ "servicesCategory": "Dumpster Rental" },
-	{ "servicesCategory": "Industrial Cleaning" }
-  ]
+  { "name": "Retail & Consumer", "number": "40" },
+  { "name": "Sciences & Healthcare", "number": "20" },
+  { "name": "Industrial & Chemical", "number": "15" },
+  { "name": "Power Generation", "number": "15" },
+  { "name": "Oil & Gas", "number": "10" }
+]

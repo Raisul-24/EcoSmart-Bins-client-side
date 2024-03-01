@@ -14,7 +14,6 @@ import AddServices from "../Pages/Dashboard/Admin dashboard/AddServices";
 import ManageServices from "../Pages/Dashboard/Admin dashboard/ManageServices";
 import Shop from "../Pages/Shop/Shop";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
-import AddShowcase from "../Pages/Dashboard/User Dashboard/AddShowcase";
 import Cart from "../Pages/Dashboard/User Dashboard/Cart";
 import FeedbackAndRatings from "../Pages/Dashboard/User Dashboard/FeedbackAndRatings";
 import AddProducts from "../Pages/Dashboard/Admin dashboard/AddProducts";
@@ -43,6 +42,11 @@ import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFailed from "../Pages/Payment/PaymentFailed";
 import Overview from "../Pages/Dashboard/Admin dashboard/Overview/Overview";
 import PlacedOrder from "../SharedComponents/PlaceOrder/PlacedOrder";
+import Industries from "../Pages/Industries/Industries";
+import MyCart from "../Pages/MyCart/MyCart";
+import IndustriesDetails from "../Pages/Industries/IndustriesDetails/IndustriesDetails";
+import AddShowcase from "../Pages/Showcase/AddShowcase";
+import Career from "../Pages/Career/Career";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +66,15 @@ const router = createBrowserRouter([
         path: "/services/:id",
         element: <ServiceDetail></ServiceDetail>,
       },
+      {
+        path: "/industries/:id",
+        element: <IndustriesDetails></IndustriesDetails>,
+      },
+      {
+        path: "/industries",
+        element: <Industries></Industries>,
+      },
+
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
@@ -135,6 +148,18 @@ const router = createBrowserRouter([
         path: "/placeOrder",
         element: <PlacedOrder></PlacedOrder>,
       },
+      {
+        path: "/my-cart",
+        element: <MyCart></MyCart>,
+      },
+      {
+        path: "/addShowcase",
+        element: <AddShowcase></AddShowcase>,
+      },
+      {
+        path: "/career",
+        element: <Career></Career>
+      }
     ],
   },
   {
@@ -206,10 +231,7 @@ const router = createBrowserRouter([
         path: "userProfile",
         element: <UserProfile></UserProfile>,
       },
-      {
-        path: "addShowcase",
-        element: <AddShowcase></AddShowcase>,
-      },
+      
       {
         path: "cart",
         element: <Cart></Cart>,

@@ -2,15 +2,19 @@ import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 import { FaTrashAlt } from "react-icons/fa";
 import useAxiosPrivate from "../../../axios/axiosprivate";
 import toast from "react-hot-toast";
+import { notifyFun } from "../../../fun/notifyFun";
 
 const ManageUser = () => {
   const axios = useAxiosPrivate();
   const { data: users, isLoading, refetch } = useGetApiQuery("/users");
-  const handlechange = (e, id) => {
-    const changeRole = { role: e.target.value };
+  const handlechange = (e, id, email) => {
+    const role = e.target.value;
+    const changeRole = { role };
+    console.log(changeRole, id, email);
     axios
       .patch(`/user/${id}`, changeRole)
       .then(() => {
+        notifyFun(email, `You role is now ${role}`);
         refetch();
         toast.success("Role update successfully");
       })
@@ -37,15 +41,14 @@ const ManageUser = () => {
       <div className="font-andika">
         <div className="flex justify-evenly my-5 text-2xl md:text-3xl font-semibold">
           <h2 className="">All Users</h2>
-          <h2 className="">Total Users: {users.length}</h2>
-         
+          <h2 className="">Total Users: {users?.length}</h2>
         </div>
         <hr />
         <div className="overflow-x-auto mt-5">
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="text-white text-center bg-brand-color">
                 <th></th>
                 <th>Name</th>
                 <th>Email</th>
@@ -56,7 +59,7 @@ const ManageUser = () => {
             </thead>
             <tbody>
               {users?.map((user) => (
-                <tr key={user._id}>
+                <tr key={user._id} className="text-center">
                   <th>
                     <div className="avatar">
                       {user?.photo ? (
@@ -78,17 +81,18 @@ const ManageUser = () => {
                   <td>{user.email}</td>
                   <td>
                     <h2
-                      className={`badge ${user?.role === "admin" &&
-                        "bg-green-900"} ${user?.role === "user" &&
-                        "bg-brand-color"} ${user?.role === "worker" &&
-                        "bg-yellow-700"} border-none text-white capitalize`}
+                      className={`badge ${
+                        user?.role === "admin" && "bg-green-900"
+                      } ${user?.role === "user" && "bg-brand-color"} ${
+                        user?.role === "worker" && "bg-yellow-700"
+                      } border-none text-white capitalize`}
                     >
                       {user?.role}
                     </h2>
                   </td>
                   <td>
                     <select
-                      onChange={(e) => handlechange(e, user?._id)}
+                      onChange={(e) => handlechange(e, user?._id, user.email)}
                       className="select select-bordered select-sm w-full capitalize"
                       defaultValue={user?.role}
                     >

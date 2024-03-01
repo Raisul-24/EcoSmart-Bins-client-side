@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/UseAuth";
 export const axiosPrivate = axios.create({
   // baseURL: "http://localhost:8085",
-   baseURL: "https://eco-smart-bin.vercel.app",
+  // baseURL: "https://eco-smart-bin.vercel.app",
+  // baseURL: "https://eco-smart-bin.vercel.app",
+  baseURL: "https://ecosmart-bins-server-side.onrender.com",
   withCredentials: true,
 });
 export const UseAxiosPrivate = () => {
@@ -12,13 +14,13 @@ export const UseAxiosPrivate = () => {
 
   // request interceptor to add authorization header for every secure call to teh api
   axiosPrivate.interceptors.request.use(
-    function(config) {
+    function (config) {
       const token = localStorage.getItem("access-token");
       // console.log('request stopped by interceptors', token)
       config.headers.authorization = `Bearer ${token}`;
       return config;
     },
-    function(error) {
+    function (error) {
       // Do something with request error
       return Promise.reject(error);
     }
@@ -26,7 +28,7 @@ export const UseAxiosPrivate = () => {
 
   // intercepts 401 and 403 status
   axiosPrivate.interceptors.response.use(
-    function(response) {
+    function (response) {
       return response;
     },
     async (error) => {

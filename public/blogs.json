@@ -1,5 +1,6 @@
 [
   {
+    "_id": "65cb45852417a8aeb3a6c5ef",
     "category": "Waste Collection",
     "name": "Revolutionizing Waste Collection",
     "shortDescription": "The future of waste management is here.",
@@ -7,6 +8,7 @@
     "description": "Discover the groundbreaking innovations in waste collection that are reshaping urban landscapes. Our smart waste management project integrates IoT sensors and data analytics to optimize collection routes, reduce operational costs, and minimize environmental impact. Explore how technology is transforming the way we handle waste, making our cities cleaner, greener, and more efficient."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f0",
     "category": "Recycling Solutions",
     "name": "Data-Driven Recycling Solutions",
     "shortDescription": "Empowering communities through recycling.",
@@ -14,6 +16,7 @@
     "description": "Dive into the realm of data-driven recycling initiatives designed to promote sustainable practices and boost community engagement. Our project leverages advanced technologies to track recycling patterns, educate residents on proper disposal methods, and incentivize eco-friendly behavior. Uncover how smart recycling solutions contribute to a circular economy and pave the way for a more environmentally conscious future."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f1",
     "category": "Waste Collection",
     "name": "Waste Sorting Reimagined",
     "shortDescription": "Transforming waste sorting with AI.",
@@ -21,6 +24,7 @@
     "description": "Explore the intersection of waste management and artificial intelligence as we revolutionize waste sorting processes. Our project introduces AI-powered sorting systems that enhance the accuracy of separating recyclables from general waste. Delve into the details of how machine learning algorithms are making waste sorting more efficient, reducing contamination, and promoting resource recovery on a large scale."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f2",
     "category": "Retail And Institutional",
     "name": "Community-Led Waste Reduction",
     "shortDescription": "Engaging communities for a cleaner future.",
@@ -28,6 +32,7 @@
     "description": "Join us in the journey towards community-led waste reduction strategies that empower individuals and neighborhoods to take an active role in waste management. Our project fosters a sense of environmental responsibility through educational programs, local clean-up initiatives, and collaborative waste reduction campaigns. Discover the positive impact of community engagement on creating a sustainable and waste-free environment."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f3",
     "category": "Recycling Solutions",
     "name": "Smart Bins: The Future of Waste Containers",
     "shortDescription": "Redesigning waste containers for efficiency.",
@@ -35,6 +40,7 @@
     "description": "Step into the future of waste containers with our innovative smart bins. These connected bins leverage sensor technology to optimize waste collection schedules, notify when they reach capacity, and facilitate real-time monitoring. Learn how smart bins revolutionize waste management logistics, contributing to cleaner streets, reduced operational costs, and a more sustainable urban ecosystem."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f4",
     "category": "Retail And Institutional",
     "name": "IoT Integration in Waste Management",
     "shortDescription": "Unlocking the potential of the Internet of Things.",
@@ -42,6 +48,7 @@
     "description": "Dive deep into the integration of the Internet of Things (IoT) in waste management systems. Our project explores how IoT sensors and connectivity transform traditional waste bins into intelligent assets. Discover the benefits of real-time data analytics, predictive maintenance, and improved operational efficiency as we harness the power of IoT to create smarter, more responsive waste management infrastructure."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f5",
     "category": "Dumpster Rental",
     "name": "Educational Initiatives for Sustainable Waste Practices",
     "shortDescription": "Empowering minds for eco-conscious living.",
@@ -49,6 +56,7 @@
     "description": "Delve into our educational initiatives aimed at fostering eco-conscious living and sustainable waste practices. Through workshops, online resources, and community outreach, we empower individuals with the knowledge and skills to make informed choices about waste disposal. Uncover the pivotal role of education in building a waste-aware society committed to environmental preservation and responsible waste management."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f6",
     "category": "Residential Waste",
     "name": "Green Living: Reducing Household Waste for a Sustainable Future",
     "shortDescription": "Tips on creating an eco-friendly environment at home.",
@@ -56,6 +64,7 @@
     "description": "Embark on a green living journey with practical tips to reduce residential waste. Explore strategies for mindful consumption, effective recycling practices, and adopting eco-friendly alternatives. Discover how small changes in daily routines can contribute to a sustainable and waste-conscious lifestyle."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f7",
     "category": "Commercial Waste",
     "name": "Innovative Approaches to Commercial Waste Reduction",
     "shortDescription": "Exploring creative solutions for minimizing commercial waste.",
@@ -63,6 +72,7 @@
     "description": "Dive into the world of innovation in commercial waste reduction. Learn about creative approaches and sustainable practices adopted by businesses to minimize their environmental impact. From circular economy initiatives to waste-to-energy projects, explore how commercial enterprises are taking strides towards a more sustainable future."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f8",
     "category": "Retail And Institutional",
     "name": "Waste Management Strategies for Retail and Institutional Spaces",
     "shortDescription": "Strategies for efficient waste management in retail and institutional settings.",
@@ -70,6 +80,7 @@
     "description": "Discover effective waste management strategies tailored for retail and institutional environments. This blog explores case studies, best practices, and sustainable initiatives implemented by retail businesses and institutional spaces. Gain insights into waste reduction, recycling programs, and the positive impact on both the environment and corporate responsibility."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5f9",
     "category": "Commercial Liquid",
     "name": "Liquid Waste Management: Challenges and Solutions for Businesses",
     "shortDescription": "Navigating challenges in liquid waste management for commercial entities.",
@@ -77,6 +88,7 @@
     "description": "Explore the complexities of managing liquid waste in commercial settings. This blog delves into the challenges businesses face in handling liquid waste streams and highlights innovative solutions. From efficient dumpster rentals to advanced treatment processes, understand how businesses are addressing the unique demands of liquid waste disposal while prioritizing sustainability."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5fa",
     "category": "Recycling Solutions",
     "name": "Revolutionizing Recycling: Technological Solutions for Waste Recycling",
     "shortDescription": "Examining technological advancements in waste recycling.",
@@ -84,6 +96,7 @@
     "description": "Witness the evolution of recycling through technological innovations. This blog explores the latest advancements in waste recycling, from smart sorting systems to automated recycling plants. Learn how technology is revolutionizing the recycling industry, increasing efficiency, and contributing to a circular economy that minimizes waste and conserves resources."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5fb",
     "category": "Waste Reduction",
     "name": "Strategies for Effective Waste Reduction in Various Settings",
     "shortDescription": "Implementing practical strategies for waste reduction.",
@@ -91,6 +104,7 @@
     "description": "Discover actionable strategies for waste reduction applicable in diverse settings. This blog discusses effective waste reduction measures for households, businesses, and public spaces. Explore the role of education, technology, and community involvement in fostering a culture of waste reduction, leading to a cleaner and more sustainable environment."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5fc",
     "category": "Dumpster Rental",
     "name": "Smart Fleet Management for Waste Collection",
     "shortDescription": "Optimizing waste collection with smart fleets.",
@@ -98,6 +112,7 @@
     "description": "Explore the intersection of smart technology and fleet management as we optimize waste collection processes. Our project introduces intelligent fleet management solutions that enhance route planning, vehicle tracking, and overall operational efficiency. Learn how the integration of smart technologies minimizes fuel consumption, reduces emissions, and maximizes the impact of waste collection efforts."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5fd",
     "category": "Commercial Waste",
     "name": "Blockchain in Waste Traceability",
     "shortDescription": "Ensuring transparency in waste disposal.",
@@ -105,6 +120,7 @@
     "description": "Delve into the world of blockchain technology as we implement it to ensure transparency and traceability in waste disposal processes. Our project leverages blockchain's decentralized ledger to record and verify every step of the waste management journey. Discover how blockchain enhances accountability, reduces fraud, and establishes a trustworthy system for tracking waste from generation to final disposition."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5fe",
     "category": "Residential Waste",
     "name": "Smart Fleet Management for Waste Collection",
     "shortDescription": "Optimizing waste collection with smart fleets.",
@@ -112,6 +128,7 @@
     "description": "Explore the intersection of smart technology and fleet management as we optimize waste collection processes. Our project introduces intelligent fleet management solutions that enhance route planning, vehicle tracking, and overall operational efficiency. Learn how the integration of smart technologies minimizes fuel consumption, reduces emissions, and maximizes the impact of waste collection efforts."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c5ff",
     "category": "Residential Waste",
     "name": "Green Living: A Guide to Sustainable Waste Practices at Home",
     "shortDescription": "Tips and tricks for implementing eco-friendly waste management at home.",
@@ -119,6 +136,7 @@
     "description": "Dive into sustainable living with our comprehensive guide on eco-friendly waste practices for residential spaces. Discover simple yet effective ways to reduce, reuse, and recycle at home. From composting to responsible product disposal, learn how small changes can make a big difference in minimizing your environmental footprint."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c600",
     "category": "Commercial Waste",
     "name": "Revolutionizing Commercial Waste Management: A Tech-Driven Approach",
     "shortDescription": "Tech innovations transforming commercial waste disposal.",
@@ -126,6 +144,7 @@
     "description": "Witness the revolution in commercial waste management fueled by cutting-edge technologies. This blog explores how businesses are adopting innovative solutions for waste disposal, from IoT-enabled waste bins to data-driven waste analytics. Discover how these advancements not only streamline operations but also contribute to a greener, more sustainable business landscape."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c601",
     "category": "Retail and Institutional",
     "name": "Sustainable Practices in Retail Waste Management",
     "shortDescription": "Navigating sustainable waste solutions for retail spaces.",
@@ -133,6 +152,7 @@
     "description": "Uncover the journey of retail spaces towards sustainability with a focus on waste management. Learn about best practices, case studies, and the adoption of circular economy principles in the retail sector. Explore how forward-thinking retailers are minimizing waste generation, optimizing packaging, and engaging consumers in their commitment to environmental responsibility."
   },
   {
+    "_id": "65cb45852417a8aeb3a6c602",
     "category": "Commercial Liquid",
     "name": "Liquid Waste Solutions: Enhancing Efficiency in Commercial Spaces",
     "shortDescription": "Streamlining liquid waste disposal for commercial enterprises.",

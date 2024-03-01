@@ -4,6 +4,8 @@ import useAuth from "../../Hooks/UseAuth";
 import UseAxiosPrivate from "../../axios/axiosprivate";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { notifyFun } from "../../fun/notifyFun";
+import toast from "react-hot-toast";
 
 const PickUpForm = () => {
   const [selectedContainer, setSelectedContainer] = useState("");
@@ -21,7 +23,7 @@ const PickUpForm = () => {
     {
       container: "32 Gallon Trash",
       containerValue: 32,
-      containerPrice: 100
+      containerPrice: 110
     },
     {
       container: "64 Gallon Trash",
@@ -31,7 +33,7 @@ const PickUpForm = () => {
     {
       container: "76 Gallon Trash",
       containerValue: 76,
-      containerPrice: 300
+      containerPrice: 315
     }
   ]
 
@@ -60,6 +62,7 @@ const PickUpForm = () => {
       .then((data) => {
         console.log(data.data);
         if (data.data.insertedId) {
+          notifyFun(user?.email, "You Request For New PickUp.");
           Swal.fire({
             title: "Success!",
             text: "Request Sent Successfully and you get 5 reward points collect from Dashboard > reward points page",
@@ -74,7 +77,7 @@ const PickUpForm = () => {
             confirmButtonText: "Cool",
           });
         }
-      });
+      }).catch(() => toast.error("Fail to Request"))
 
     reset();
   };
@@ -130,9 +133,7 @@ const PickUpForm = () => {
               </p>
             </div>
             <div className=" p-2 md:p-14 col-span-6 md:col-span-4">
-              <h2 className="mb-14 font-bold text-4xl ">
-                Request Pickup
-              </h2>
+
               <p className="mb-14 font-semibold">
                 Please complete the form below, to request a quote, and we will
                 be in touch. Or you can call us +880123456789 and our
@@ -149,16 +150,21 @@ const PickUpForm = () => {
                 <div className="lg:flex gap-10">
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">Enquiry Type</span>
+                      <span className="label-text">Enquiry Type*</span>
                     </label>
                     <select
                       className="select select-bordered w-full text-gray-500"
                       {...register("enquiryType", { required: true })}
                     >
 
-                      <option value="residential">Residential Service</option>
-                      <option value="dumpster">Dumpster Service</option>
-                      <option value="commercial">Commercial Service</option>
+
+                      <option value="commercial">Commercial Waste</option>
+                      <option value="institutional">Retail & Institutional</option>
+                      <option value="commercial liquid">Commercial Liquid</option>
+                      <option value="dumpster">Dumpster Rental</option>
+                      <option value="industrial">Industrial Cleaning</option>
+                      <option value="residential">Residential Waste</option>
+
 
                     </select>
                     {errors.enquiryType && (
@@ -173,17 +179,18 @@ const PickUpForm = () => {
                     </label>
                     <select
                       className="select select-bordered w-full text-gray-500"
-                      {...register("industry", { required: true })}
+                      {...register("industry", { required: false })}
                     >
 
-                      <option value="manufacturing">Manufacturing Facilities</option>
+                      <option value="manufacturing">Manufacturing & Industrial</option>
+                      <option value="retail">Retail Waste Management</option>
                       <option value="educational">Educational Facilities</option>
-                      <option value="commercial">Medical And Pharmaceutical</option>
+                      <option value="medical">Medical And Pharmaceutical</option>
+                      <option value="construction">Construction & Demolition</option>
+                      <option value="hospitality">Hospitality & Events</option>
 
                     </select>
-                    {errors.industry && (
-                      <span className="text-red-600">Industry type is required</span>
-                    )}
+                    
                   </div>
                 </div>
 
@@ -192,7 +199,7 @@ const PickUpForm = () => {
                 <div className="lg:flex gap-10 my-10">
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">Container Size</span>
+                      <span className="label-text">Container Size*</span>
                     </label>
                     <select
                       className="select select-bordered w-full text-gray-500"
@@ -207,14 +214,14 @@ const PickUpForm = () => {
                       ))}
                     </select>
                     {errors.container && (
-                      <span className="text-red-600">Address is required</span>
+                      <span className="text-red-600">Container Size is required</span>
                     )}
 
 
                   </div>
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">price</span>
+                      <span className="label-text">price*</span>
                     </label>
                     <input
                       type="text"
@@ -234,7 +241,7 @@ const PickUpForm = () => {
                 <div className="lg:flex gap-10">
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">Full Name</span>
+                      <span className="label-text">Full Name*</span>
                     </label>
                     <input
                       type="text"
@@ -245,8 +252,8 @@ const PickUpForm = () => {
                   </div>
 
                   <div className="form-control lg:w-1/2">
-                  <label className="label">
-                      <span className="label-text">Date</span>
+                    <label className="label">
+                      <span className="label-text">Date*</span>
                     </label>
                     <input
                       type="date"
@@ -262,7 +269,7 @@ const PickUpForm = () => {
                 <div className="lg:flex gap-10 lg:my-10">
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">Email</span>
+                      <span className="label-text">Email*</span>
                     </label>
                     <input
                       type="email"
@@ -274,7 +281,7 @@ const PickUpForm = () => {
                   </div>
                   <div className="form-control lg:w-1/2">
                     <label className="label">
-                      <span className="label-text">Phone</span>
+                      <span className="label-text">Phone*</span>
                     </label>
                     <input
                       type="number"
@@ -289,7 +296,7 @@ const PickUpForm = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Address</span>
+                    <span className="label-text">Address*</span>
                   </label>
 
                   <textarea

@@ -4,19 +4,22 @@ import { IoMdCheckmark } from "react-icons/io";
 import UseAxiosPrivate from "../../../axios/axiosprivate";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { notifyFun } from "../../../fun/notifyFun";
 
 const PickupWork = () => {
   const { data, isLoading, refetch } = useGetApiQuery("/pickupReqAll");
   const Navigate = useNavigate();
   const axios = UseAxiosPrivate();
   const { user } = useAuth();
-  const handleClick = (id) => {
+  const handleClick = (id, useremail) => {
     const email = user?.email;
-    const status = {status: 'ongoing'}
+    const status = { status: "ongoing" };
     axios
       .patch(`/pickupReq/${id}`, { email })
       .then(() => {
-        axios.patch(`/statusUpdate/${id}`,status);
+        axios.patch(`/statusUpdate/${id}`, status);
+        notifyFun(email, `you pickup new work`);
+        notifyFun(useremail, `your pick up request is accept by worker`);
         toast.success("you accept the request");
         refetch();
         Navigate("/dashboard/OnGoingWork");
@@ -43,9 +46,10 @@ const PickupWork = () => {
               <tr>
                 <th>Image</th>
                 <th>Email</th>
+                <th>Price</th>
                 <th>status</th>
                 <th>details</th>
-                <th>Action</th>
+                <th>Add to Ongoing</th>
               </tr>
             </thead>
             <tbody className="text-center font-medium">
@@ -69,12 +73,14 @@ const PickupWork = () => {
                     </div>
                   </th>
                   <td>{item?.email}</td>
+                  <td>{item?.price}</td>
                   <td>
                     <h2
-                      className={`badge ${item?.status === "requested" &&
-                        "bg-red-600"} ${item?.status === "ongoing" &&
-                        "bg-yellow-500"} ${item?.status === "complete" &&
-                        "bg-brand-color"} border-none text-white capitalize`}
+                      className={`badge ${
+                        item?.status === "requested" && "bg-red-600"
+                      } ${item?.status === "ongoing" && "bg-yellow-500"} ${
+                        item?.status === "complete" && "bg-brand-color"
+                      } border-none text-white capitalize`}
                     >
                       {item?.status}
                     </h2>
@@ -112,21 +118,32 @@ const PickupWork = () => {
                           <div className="text-start">
                             <h4>{item?.name}</h4>
                             <p>{item?.email}</p>
+                            <p>{item?.date}</p>
                           </div>
                         </div>
                         <div className="text-start text-lg capitalize mt-5 flex gap-1">
                           <p className="text-brand-color">pickup address:</p>
                           <p>{item?.address}</p>
                         </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Service Type:</p>
+                          <p>{item?.enquiryType}</p>
+                        </div>
+                        <div className="text-start text-lg capitalize mt-5 flex gap-1">
+                          <p className="text-brand-color">Container:</p>
+                          <p>{item?.container} Gallon Trash</p>
+                        </div>
                         <div className="text-start">
                           <p className="space-x-2">
                             <span className="text-lg">status:</span>{" "}
                             <h2
-                              className={`badge ${item?.status ===
-                                "requested" && "bg-red-600"} ${item?.status ===
-                                "ongoing" && "bg-yellow-500"} ${item?.status ===
-                                "complete" &&
-                                "bg-brand-color"} border-none text-white capitalize`}
+                              className={`badge ${
+                                item?.status === "requested" && "bg-red-600"
+                              } ${
+                                item?.status === "ongoing" && "bg-yellow-500"
+                              } ${
+                                item?.status === "complete" && "bg-brand-color"
+                              } border-none text-white capitalize`}
                             >
                               {item?.status}
                             </h2>
@@ -150,7 +167,7 @@ const PickupWork = () => {
                   </td>
                   <td>
                     <button
-                      onClick={() => handleClick(item?._id)}
+                      onClick={() => handleClick(item?._id,item?.email)}
                       className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
                     >
                       <IoMdCheckmark />
