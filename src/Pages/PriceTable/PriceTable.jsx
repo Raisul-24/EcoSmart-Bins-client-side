@@ -108,7 +108,7 @@ const PriceTable = () => {
               <h2>Max Weight: Approx 18kg</h2>
               <h2 className="my-2">Service: Every Day</h2>
               <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
-                {isYearly ? "$199.99" : "$19.99"}
+              {isYearly ? "7999 tk" : "699 tk"}
               </h2>
               <h2>Per {isYearly ? "year" : "month"}</h2>
               <Link to='/'>
@@ -132,7 +132,7 @@ const PriceTable = () => {
               <h2>Max Weight: Approx 18kg</h2>
               <h2 className="my-2">Service: Every Day</h2>
               <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
-                {isYearly ? "$399.99" : "$49.99"}
+                {isYearly ? "9999 tk" : "1099 tk"}
               </h2>
               <h2>Per {isYearly ? "year" : "month"}</h2>
               <Link to='/'>
@@ -156,7 +156,7 @@ const PriceTable = () => {
               <h2>Max Weight: Approx 18kg</h2>
               <h2 className="my-2">Service: Every Day</h2>
               <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
-                {isYearly ? "$799.99" : "$79.99"}
+              {isYearly ? "14999 tk" : "1399 tk"}
               </h2>
               <h2>Per {isYearly ? "year" : "month"}</h2>
               <Link to='/'>

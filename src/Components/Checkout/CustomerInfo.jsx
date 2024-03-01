@@ -36,7 +36,9 @@ const CustomerInfo = ({ register }) => {
               <div className="relative h-10 w-full min-w-[200px]">
                 <input
                   type="text"
-                  {...register("mobile", { required: true })}
+                  {...register("mobile", 
+                  // { required: true }
+                  )}
                   className="peer h-full w-full rounded-[7px] border border-green-900 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-green-950 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-green-900 placeholder-shown:border-t-green-900 focus:border-2 focus:border-green-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=""
                 />
@@ -76,7 +78,9 @@ const CustomerInfo = ({ register }) => {
               <div className="relative h-10 w-full min-w-[200px]">
                 <input
                   type="text"
-                  {...register("address", { required: true })}
+                  {...register("address", 
+                  // { required: true }
+                  )}
                   className="peer h-full w-full rounded-[7px] border border-green-900 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-green-950 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-green-900 placeholder-shown:border-t-green-900 focus:border-2 focus:border-green-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=""
                 />
@@ -89,7 +93,9 @@ const CustomerInfo = ({ register }) => {
               <div className="relative w-full min-w-[200px]">
                 <textarea
                   type="text"
-                  {...register("comment", { required: true })}
+                  {...register("comment", 
+                  // { required: true }
+                  )}
                   className="peer h-full  min-h-[100px] w-full rounded-[7px] border border-green-900 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-green-950 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-green-900 placeholder-shown:border-t-green-900 focus:border-2 focus:border-green-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=""
                 />
