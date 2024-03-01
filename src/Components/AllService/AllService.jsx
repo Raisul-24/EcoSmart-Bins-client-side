@@ -7,6 +7,17 @@ import { fetchService } from "../../Redux/ServiceSlice";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 const Service = () => {
   const dispatch = useDispatch();
@@ -22,15 +33,7 @@ const Service = () => {
       className="font-andika"
     >
       <div className="max-w-7xl mx-auto xl:px-0 px-5">
-        <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">
-          Our Services
-        </h2>
-        <p className=" text-xl text-center text-brand-color font-semibold mb-10 ">
-          Comprehensive Waste Solutions
-        </p>
-
-        {/* services */}
-        <div className="md:flex gap-20 w-fit mx-auto bg-white">
+      <div className="md:flex gap-20 w-fit mx-auto bg-white mt-20 ">
           <motion.div
             className="md:w-1/3 sm:w-1/2 w-72 text-center lg:p-10 relative"
             whileHover={{ scale: 1.05 }}
@@ -88,9 +91,18 @@ const Service = () => {
             </motion.div>
           </motion.div>
         </div>
+        <h2 className="text-center pt-5 lg:mt-20 text-4xl font-bold  text-[#101a30] mb-5">
+          Our Services
+        </h2>
+        <p className=" text-xl text-center text-brand-color font-semibold mb-10 ">
+          Comprehensive Waste Solutions
+        </p>
+
+        {/* services */}
+        
 
         {/* all services */}
-        {dataLoaing ? (
+        {/* {dataLoaing ? (
           <div className="text-center py-20 ">
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
@@ -100,7 +112,46 @@ const Service = () => {
               <ServiceCard key={item?._id} data={item} />
             ))}
           </div>
+        )} */}
+        <div className="my-20 ">
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          425: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+         {dataLoaing ? (
+          <div className="text-center py-20 ">
+            <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+          </div>
+        ) : (
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 py-20 bg-white">
+            {data?.map((item) => (
+             <SwiperSlide  key={item?._id}><ServiceCard data={item}></ServiceCard></SwiperSlide> 
+            ))}
+          </div>
         )}
+        <SwiperSlide></SwiperSlide>
+        
+      </Swiper>
+    </div>
       </div>
     </div>
   );
