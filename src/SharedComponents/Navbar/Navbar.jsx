@@ -23,6 +23,7 @@ import { io } from "socket.io-client";
 import { axiosPrivate } from "../../axios/axiosprivate";
 import getIndustriesApi from "../../API/IndustriesApi/getIndustriesApi";
 import IndustriesNavbar from "./IndustriesNavbar";
+import { MdManageAccounts } from "react-icons/md";
 
 const Navbar = () => {
   const [notification, setNotification] = useState([]);
@@ -80,6 +81,10 @@ const Navbar = () => {
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const togglePagesDropdown = () => {
     setPagesDropdownOpen(!pagesDropdownOpen);
+  };
+  const [pricingDropdownOpen, setPricingDropdownOpen] = useState(false);
+  const togglePricingDropdown = () => {
+    setPricingDropdownOpen(!pricingDropdownOpen);
   };
 
   const navLinks = (
@@ -168,7 +173,7 @@ const Navbar = () => {
           className="lg:text-lg text-sm px-2 py-1 lg:px-0 lg:py-0 lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center "
           onClick={togglePagesDropdown}
         >
-          <p>Pages</p>{" "}
+          <p>Company</p>{" "}
           {pagesDropdownOpen ? (
             <FaAngleUp className="mt-1" />
           ) : (
@@ -176,7 +181,7 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-52 overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 md:w-60 h-60 overflow-hidden ${
             pagesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -187,7 +192,7 @@ const Navbar = () => {
           >
             {" "}
             <Link
-              className="border-b rounded-none border-slate-400"
+              className="border-b py-3 rounded-none border-slate-400"
               to={"/about"}
             >
               About Us
@@ -200,7 +205,7 @@ const Navbar = () => {
           >
             {" "}
             <Link
-              className="border-b rounded-none border-slate-400"
+              className="border-b py-3 rounded-none border-slate-400"
               to={"/team"}
             >
               Team
@@ -213,7 +218,7 @@ const Navbar = () => {
           >
             {" "}
             <Link
-              className="border-b rounded-none border-slate-400"
+              className="border-b py-3 rounded-none border-slate-400"
               to={"/contact"}
             >
               Contact Us
@@ -227,37 +232,61 @@ const Navbar = () => {
           >
             {" "}
             <Link
-              className="border-b rounded-none border-slate-400"
+              className="border-b py-3 rounded-none border-slate-400"
               to={"/blogs"}
             >
               Blog
             </Link>
           </motion.li>
-
+        </ul>
+      </div>
+      <div className="dropdown">
+        <div
+          tabIndex={0}
+          role="button"
+          className="lg:text-lg text-sm px-2 py-1 lg:px-0 lg:py-0 lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center "
+          onClick={togglePricingDropdown}
+        >
+          <p>Pricing</p>
+          {pricingDropdownOpen ? (
+            <FaAngleUp className="mt-1" />
+          ) : (
+            <FaAngleDown className="mt-1" />
+          )}
+        </div>
+        <ul
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 h-40 md:w-60 overflow-hidden ${
+            pricingDropdownOpen ? "block" : "hidden"
+          }`}
+        >
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-white"
           >
-            {" "}
-            <Link to={"/priceTable"}>Pricing-Table</Link>
+            <Link
+              to="/pickUpReq"
+              className="border-b py-4 rounded-none border-slate-400"
+            >
+              PickUp Request
+            </Link>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="font-semibold text-white"
+          >
+            <Link
+              to={"/priceTable"}
+              className="border-b py-4 rounded-none border-slate-400"
+            >
+              Pricing-Table
+            </Link>
           </motion.li>
         </ul>
       </div>
 
-      {/* Dashboard */}
-      {user && (
-        <li className="text-lg hover:text-brand-color font-semibold">
-          {" "}
-          <NavLink to={"/dashboard/overview"}>Dashboard</NavLink>
-        </li>
-      )}
-
       {/* PickUp Request */}
-      <li className="text-lg hover:text-brand-color font-semibold">
-        {" "}
-        <NavLink to="/pickUpReq">PickUp Request</NavLink>
-      </li>
     </>
   );
   return (
@@ -273,7 +302,7 @@ const Navbar = () => {
           <Link to="my-cart">
             <button>
               <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
-                <FaShoppingCart className="md:text-2xl text-xl" />
+                <FaShoppingCart className="md:text-2xl text-2xl" />
               </Badge>
             </button>
           </Link>
@@ -282,7 +311,7 @@ const Navbar = () => {
               content={notification?.length > 10 ? "10+" : notification?.length}
               className="lg:w-5 w-3 ml-3"
             >
-              <FaRegBell className="md:text-2xl text-xl" />
+              <FaRegBell className="md:text-2xl text-2xl" />
             </Badge>
           </button>
         </div>
@@ -362,23 +391,38 @@ const Navbar = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-80 rounded-md w-40 lg:w-52 text-white"
+                  className="dropdown-content z-[1] menu shadow bg-blue-950 bg-opacity-80 rounded-md w-40 h-48 mt-7 md:w-64 text-white font-bold"
                 >
+                  {user && (
+                    <motion.li
+                      whileHover={{ scale: 1.2, originX: 0 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className="text-white p-2"
+                    >
+                      <NavLink to={"/dashboard/overview"}>
+                        Manage My Account{" "}
+                        <span className="text-2xl">
+                          <MdManageAccounts />
+                        </span>
+                      </NavLink>
+                    </motion.li>
+                  )}
+                  <span className="border border-slate-400"></span>
                   <motion.li
                     whileHover={{ scale: 1.2, originX: 0 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="text-white"
+                    className="text-white p-2"
                   >
-                    {" "}
                     <Link to={"/profile"}>
-                      View Profile <FaRegUser />
+                      View My Profile <FaRegUser />
                     </Link>
                   </motion.li>
                   <span className="border border-slate-400"></span>
+
                   <motion.li
                     whileHover={{ scale: 1.2, originX: 0, color: "#f54242" }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="text-white"
+                    className="text-white p-2 text-lg"
                   >
                     {" "}
                     <button onClick={handleLogOut}>
