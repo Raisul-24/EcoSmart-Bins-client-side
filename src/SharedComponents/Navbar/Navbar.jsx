@@ -82,10 +82,6 @@ const Navbar = () => {
   const togglePagesDropdown = () => {
     setPagesDropdownOpen(!pagesDropdownOpen);
   };
-  const [pricingDropdownOpen, setPricingDropdownOpen] = useState(false);
-  const togglePricingDropdown = () => {
-    setPricingDropdownOpen(!pricingDropdownOpen);
-  };
 
   const navLinks = (
     <>
@@ -158,13 +154,16 @@ const Navbar = () => {
           </div>
         </ul>
       </div>
-
+      {/* PickUp Request */}
+      <li className="text-lg hover:text-brand-color font-semibold">
+        {" "}
+        <NavLink to={"/pickUpReq"}>PickUp Request</NavLink>
+      </li>
       {/* Shop */}
       <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
         <NavLink to={"/shop"}>Shop</NavLink>
       </li>
-
       {/* Pages Dropdown */}
       <div className="dropdown">
         <div
@@ -214,7 +213,7 @@ const Navbar = () => {
           <motion.li
             whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-whit e"
+            className="font-semibold text-white"
           >
             {" "}
             <Link
@@ -253,52 +252,12 @@ const Navbar = () => {
           </motion.li>
         </ul>
       </div>
-      <div className="dropdown">
-        <div
-          tabIndex={0}
-          role="button"
-          className="lg:text-lg text-sm px-2 py-1 lg:px-0 lg:py-0 lg:btn-neutral hover:text-brand-color font-semibold flex justify-center items-center "
-          onClick={togglePricingDropdown}
-        >
-          <p>Pricing</p>
-          {pricingDropdownOpen ? (
-            <FaAngleUp className="mt-1" />
-          ) : (
-            <FaAngleDown className="mt-1" />
-          )}
-        </div>
-        <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 h-40 md:w-60 overflow-hidden ${
-            pricingDropdownOpen ? "block" : "hidden"
-          }`}
-        >
-          <motion.li
-            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white"
-          >
-            <Link
-              to="/pickUpReq"
-              className="border-b py-4 rounded-none border-slate-400"
-            >
-              PickUp Request
-            </Link>{" "}
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="font-semibold text-white"
-          >
-            <Link
-              to={"/priceTable"}
-              className="border-b py-4 rounded-none border-slate-400"
-            >
-              Pricing-Table
-            </Link>
-          </motion.li>
-        </ul>
-      </div>
 
+      {/* PickUp Request */}
+      <li className="text-lg hover:text-brand-color font-semibold">
+        {" "}
+        <NavLink to={"/pricing-table"}>Packages & Pricing</NavLink>
+      </li>
       {/* PickUp Request */}
     </>
   );
