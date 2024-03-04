@@ -66,6 +66,7 @@ const Artwork = () => {
           }}
           modules={[FreeMode, Pagination]}
           className="mySwiper"
+         
         >
           {artworks?.map((artwork, index) => (
             <SwiperSlide key={artwork._id}>
