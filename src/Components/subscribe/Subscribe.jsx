@@ -1,22 +1,30 @@
-import Swal from "sweetalert2";
+import { axiosPublic } from "../../axios/axiosPublic";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 
 const Subscribe = () => {
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-    console.log(email);
+  const onSubmit = (data) => {
+    const subscriber = {
+      email: data.email,
+    };
 
-    if (handleSubscribe) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "User created successfully",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
+      axiosPublic.post('/subscribe', subscriber).then(res => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        reset();
+        toast.success("You Subscribe successfully");
+      }
+    })
+    
   };
+
 
   return (
     <div className="font-andika">
@@ -43,16 +51,16 @@ const Subscribe = () => {
           </div>
           <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]    ">
             <form
-              onSubmit={handleSubscribe}
+              onSubmit={ handleSubmit(onSubmit)}
               className="card-body outline-none  items-center flex-row gap-0"
             >
               <div className="w-full">
                 <input
                   type="email"
-                  name="email"
+                  {...register("email", { required: true })}
                   placeholder="Enter Your Email"
                   className="input focus:outline-none focus:border-none  w-full lg:py-9 rounded-r-none text-black bg-white"
-                  required
+              
                 />
               </div>
               <div className=" ">
