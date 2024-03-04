@@ -119,9 +119,7 @@ const ServiceDetail = () => {
                 </div>
               </div>
               <Link to={"/pickUpReq"}>
-                <Btn className="btn mt-8 border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
-                  Get Service
-                </Btn>
+                <Btn className="mt-16">Get Service</Btn>
               </Link>
             </div>
           </div>

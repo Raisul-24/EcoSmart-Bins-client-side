@@ -70,7 +70,7 @@ const BlogCard = ({ blog }) => {
                 <span className="text-green-700 text-lg">
                   <FaUser />
                 </span>
-                Admin
+                Mahdi Hasan
               </p>
             </div>
           </div>
