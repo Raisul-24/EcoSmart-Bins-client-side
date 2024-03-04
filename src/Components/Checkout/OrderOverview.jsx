@@ -1,7 +1,7 @@
 const OrderOverview = ({ OrderOverviewData }) => {
   return (
     <div>
-      <div className="p-3 lg:px-6 rounded-xl bg-lime-50 my-5">
+      <div className="p-3 lg:px-6 rounded-xl bg-lime-50 mb-5">
         <div className="flex items-center gap-2 pb-3 border-b-2 border-lime-950 text-green-950">
           <button className="btn-circle bg-green-100 ">
             <h2 className="text-base lg:text-xl font-bold text-center p-2">
