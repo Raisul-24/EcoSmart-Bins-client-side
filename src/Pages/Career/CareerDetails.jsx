@@ -51,7 +51,7 @@ const CareerDetails = () => {
                     <p className="font-semibold text-red-500 py-3">Deadline: {career.apply_deadline}</p>
                 </div>
                 <div className="flex justify-center">
-                <Link >
+                <Link to={`/career/${career._id}/apply`}>
                         <Btn>Apply Now</Btn>
                     </Link>
                 </div>
