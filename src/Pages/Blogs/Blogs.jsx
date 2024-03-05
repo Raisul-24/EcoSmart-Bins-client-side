@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable no-undef */
+import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import ShopSearch from "../Shop/ShopSearch";
@@ -7,22 +8,54 @@ import banner from "../../assets/BannerImages/BlogBanner.jpg";
 import { motion } from "framer-motion";
 import img1 from "../../assets/images/shape-4.png";
 import img2 from "../../assets/images/shape-5.png";
+import Pagination from "../../Components/Pagination/Pagination";
+import axios from "axios";
 
 const Blog = () => {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalCount, setTotalCount] = useState(0); // Initialize with 0
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8085/total-blogs")
+      .then((res) => {
+        setTotalCount(res.data.count || 0);
+      })
+      .catch((error) => {
+        console.log("Error fetching:", error);
+      });
+  }, []);
+
+  const itemPerPage = 3;
   const {
     data: blogs,
-    isLoading: loading,
+    isLoading: isLoading,
     refetch,
-  } = useGetApiQuery(`/blogs?search=${search}&category=${category}`);
-  const { data, isLoading } = useGetApiQuery("/blogsCategory");
+  } = useGetApiQuery(
+    `/blogs?search=${search}&category=${category}&page=${currentPage}&size=${itemPerPage}`
+  );
+  const { data, isLoading: loading } = useGetApiQuery("/productsCategory");
+
   const handelSubmit = (e) => {
     e.preventDefault();
     const searchData = e.target.search.value;
     setSearch(searchData);
     refetch();
   };
+
+  if (loading || isLoading) {
+    return (
+      <div className="text-center py-20">
+        <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
+  const totalPage = Math.ceil(totalCount / itemPerPage);
+  const pageCount = [...Array(totalPage).keys()];
+
   return (
     <div className="font-andika">
       <div
@@ -124,6 +157,11 @@ const Blog = () => {
           </div>
         )}
       </div>
+      <Pagination
+        data={pageCount}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
