@@ -4,6 +4,7 @@ import img1 from "../../assets/images/shape-4.png"
 import img2 from "../../assets/images/shape-5.png"
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import Btn from "../../Components/Btn";
+import { Link } from "react-router-dom";
 
 
 const Career = () => {
@@ -69,27 +70,30 @@ const Career = () => {
           />
         </motion.div>
       </div>
-      <div className="my-20 mx-20">
+      <div className="lg:my-20 lg:mx-20 m-10">
         <div className="text-center">
-          <p className="text-lg text-brand-color">WE’RE HIRING</p>
-          <h2 className="text-4xl font-bold py-10">Join With Our Family</h2>
+          <p className="lg:text-lg text-brand-color font-bold">WE’RE HIRING</p>
+          <h2 className="lg:text-4xl text-2xl font-bold py-5 lg:py-8">Join With Our Family</h2>
           <p>Joining the EcoSmartBins team means becoming part of a dynamic and forward-thinking organization that values its employees and fosters a culture of collaboration, innovation, and continuous improvement. We offer competitive salaries, comprehensive benefits packages, and ample opportunities for career growth and advancement</p>
         </div>
-        <div className="lg:flex justify-evenly mt-20">
+        <div className="lg:flex lg:justify-evenly mt-20">
           {
             career?.map((item) => (<div key={item?.id}>
-              <div className="w-96 bg-gray-100 p-10 hover:bg-white hover:drop-shadow-2xl hover:shadow-brand-color h-">
+              <div className="lg:w-96 mx-auto my-10 bg-gray-100 p-10 hover:bg-white hover:drop-shadow-2xl hover:shadow-brand-color ">
                 <p className="bg-brand-color px-2 py-1 w-fit text-white">Full time</p>
                   <h2 className="mt-8 mb-4 text-center text-2xl font-semibold">{item.position}</h2>
                   <p className="text-center border-b-2 border-brand-color pb-3">Minimum 2 Yrs Exp</p>
                   <p className="my-5 text-sm">{item.short_description}</p>
                   <p className="text-red-500 my-8 ">Apply until: {item.apply_deadline}</p>
                   
-                  <Btn className="w-full"> See Job Details</Btn>
+                 <Link to={`/career/${item._id}`}> <Btn  className="w-full"> See Job Details</Btn> </Link>
                   
               </div>
             </div>))
           }
+        </div>
+        <div>
+          
         </div>
       </div>
     </div>
