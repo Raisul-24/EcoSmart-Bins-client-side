@@ -264,52 +264,56 @@ const Navbar = () => {
   return (
     <div className="">
       {/* Top Bar */}
-      <div className="flex lg:min-h-16 relative min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
-        <div>
-          <p className="flex items-center gap-2">
-            <FaPhone className=" text-lg"></FaPhone> Phone: 333 666 0000
-          </p>
-        </div>
-        <div className=" flex gap-5 lg:gap-10 ">
-          <Link to="my-cart">
-            <button>
-              <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
-                <FaShoppingCart className="md:text-2xl text-2xl" />
-              </Badge>
-            </button>
-          </Link>
-          <button onClick={() => setShowNotification(!showNotification)}>
-            <Badge
-              content={notification?.length > 10 ? "10+" : notification?.length}
-              className="lg:w-5 w-3 ml-3"
-            >
-              <FaRegBell className="md:text-2xl text-2xl" />
-            </Badge>
-          </button>
-        </div>
-        {!loading && showNotification && (
-          <div className="absolute p-6 bg-[#0e1d40] capitalize text-lg font-bold overflow-y-scroll top-20 sm:right-10 mx-4 right-0 z-30 rounded-xl border-2 outline-brand-color outline lg:w-80 h-96">
-            {notification?.length ? (
-              notification?.map((item) => (
-                <div key={item?._id} className="last:border-none py-4 border-b">
-                  <p>{item?.massage}</p>
-                  <span className="text-sm text-gray-400">
-                    {new Date(item?.date).toLocaleDateString()}
-                  </span>
-                </div>
-              ))
-            ) : (
-              <div className="flex h-full items-center justify-center">
-                no data
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+    <div className="bg-green-900">
+    <div className="container mx-auto flex lg:min-h-16 relative min-h-12 px-5 lg:px-10 xl:px-0 lg:py-5 p-2 justify-between text-white">
+      
+      <div>
+         <p className="flex items-center gap-2">
+           <FaPhone className=" text-lg"></FaPhone> Phone: 333 666 0000
+         </p>
+       </div>
+       <div className=" flex gap-5 lg:gap-10 ">
+         <Link to="my-cart">
+           <button>
+             <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
+               <FaShoppingCart className="md:text-2xl text-2xl" />
+             </Badge>
+           </button>
+         </Link>
+         <button onClick={() => setShowNotification(!showNotification)}>
+           <Badge
+             content={notification?.length > 10 ? "10+" : notification?.length}
+             className="lg:w-5 w-3 ml-3"
+           >
+             <FaRegBell className="md:text-2xl text-2xl" />
+           </Badge>
+         </button>
+       </div>
+       {!loading && showNotification && (
+         <div className="absolute p-6 bg-[#0e1d40] capitalize text-lg font-bold overflow-y-scroll top-20 sm:right-10 mx-4 right-0 z-30 rounded-xl border-2 outline-brand-color outline lg:w-80 h-96">
+           {notification?.length ? (
+             notification?.map((item) => (
+               <div key={item?._id} className="last:border-none py-4 border-b">
+                 <p>{item?.massage}</p>
+                 <span className="text-sm text-gray-400">
+                   {new Date(item?.date).toLocaleDateString()}
+                 </span>
+               </div>
+             ))
+           ) : (
+             <div className="flex h-full items-center justify-center">
+               no data
+             </div>
+           )}
+         </div>
+       )}
+    
+     </div>
+    </div>
 
       {/* Navbar */}
       <div className="sticky border-b-2 border bg-white bg-opacity-90 top-0 z-20 font-andika">
-        <div className="navbar lg:px-10 lg:py-7 drop-shadow-md">
+        <div className="navbar lg:px-10 xl:px-0 lg:py-7 drop-shadow-md container mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
