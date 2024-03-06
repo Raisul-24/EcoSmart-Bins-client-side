@@ -20,8 +20,9 @@ const Home = () => {
       <FAQ />
       <Artwork />
       <Feedback />
-      <Subscribe />
+      
      </div>
+     <Subscribe />
     </div>
   );
 };
