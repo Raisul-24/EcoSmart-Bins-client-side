@@ -2,6 +2,8 @@
 import Btn from "../../Components/Btn";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import { Link, useParams } from "react-router-dom";
+import Lottie from "lottie-react";
+import animation from "./job.json"
 
 const CareerDetails = () => {
     const { id } = useParams();
@@ -36,22 +38,31 @@ const CareerDetails = () => {
                     <h2 className="md:text-3xl text-2xl font-bold"> Description</h2>
                     <p className="pt-5 pb-10 lg:pb-16">{career.job_description}</p>
                 </div>
-                <div>
-                    <h2 className="md:text-3xl text-2xl font-bold">Requirements</h2>
-                    <p className="py-5">{career.requirements.map((item)=>
-                     (<li key={id}>{item}</li>))}</p>
+                <div className="lg:flex flex-row-reverse lg:justify-between">
+                    <div className="lg:w-1/3 ">
+                        <Lottie className="w-96 md:mx-auto" animationData={animation} loop={true} />
+                    </div>
+                    <div className="lg:w-2/3">
+                        <div >
+                            <h2 className="md:text-3xl text-2xl font-bold">Requirements</h2>
+                            <p className="py-5">{career.requirements.map((item) =>
+                                (<li key={id}>{item}</li>))}</p>
+                        </div>
+                        <div>
+                            <h2 className="md:text-3xl text-2xl  font-bold">Benefits</h2>
+                            <p className="py-5">{career.benefits.map((item) =>
+                                (<li key={id}>{item}</li>))}</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h2 className="md:text-3xl text-2xl  font-bold">Benefits</h2>
-                    <p className="py-5">{career.benefits.map((item)=>
-                     (<li key={id}>{item}</li>))}</p>
-                </div>
+
                 <div className="lg:my-10 my-5">
                     <p className="font-semibold">Salary: Negotiable</p>
                     <p className="font-semibold text-red-500 py-3">Deadline: {career.apply_deadline}</p>
                 </div>
                 <div className="flex justify-center">
-                <Link to={`/career/${career._id}/apply`}>
+                    <Link to={`/career/${career._id}/apply`}>
                         <Btn>Apply Now</Btn>
                     </Link>
                 </div>

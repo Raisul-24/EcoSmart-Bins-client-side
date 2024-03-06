@@ -5,6 +5,7 @@ import {
   FaHistory,
   FaHome,
   FaPlusSquare,
+  FaRegFileAlt,
   FaSignOutAlt,
   FaStar,
   FaUsers,
@@ -104,15 +105,7 @@ const Dashboard = () => {
                 </figure>
               </div>
               <div className="card-body px-0 pt-0 items-center text-center hidden lg:block">
-                {/* {data?.role === "user" &&
-                  (isLoading ? (
-                    ""
-                  ) : (
-                    <p className="px-5 py-3 bg-white flex items-center gap-2 rounded-full">
-                      <VscActivateBreakpoints className="text-brand-color text-xl" />{" "}
-                      <p className="font-bold">{data?.points}</p>
-                    </p>
-                  ))} */}
+                
 
                 <h2 className="font-bold lg:text-xl"> {user?.displayName}</h2>
 
@@ -201,6 +194,19 @@ const Dashboard = () => {
                     >
                       <FaEdit />
                       Manage Pickup
+                    </NavLink>
+                  </li>
+                  <li className="text-xs md:text-sm w-full">
+                    <NavLink
+                      to="/dashboard/application"
+                      className={({ isActive }) =>
+                        isActive
+                          ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"
+                          : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
+                      }
+                    >
+                      <FaRegFileAlt />
+                      Manage Applicant
                     </NavLink>
                   </li>
                   <li className="text-xs md:text-sm w-full">

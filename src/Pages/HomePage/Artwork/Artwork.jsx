@@ -94,7 +94,7 @@ const Artwork = () => {
           ))}
         </Swiper>
 
-        <div className="w-fit mx-auto">
+        <div className="w-fit mx-auto mt-10">
           {" "}
           <Link to={"/addShowcase"}>
             <Btn>Share Your Waste Art</Btn>
