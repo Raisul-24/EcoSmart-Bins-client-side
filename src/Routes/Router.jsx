@@ -47,6 +47,10 @@ import MyCart from "../Pages/MyCart/MyCart";
 import IndustriesDetails from "../Pages/Industries/IndustriesDetails/IndustriesDetails";
 import AddShowcase from "../Pages/Showcase/AddShowcase";
 import Career from "../Pages/Career/Career";
+import CareerDetails from "../Pages/Career/CareerDetails";
+import ApplyForm from "../Pages/Career/ApplyForm";
+import Application from "../Pages/Dashboard/Admin dashboard/Application";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -110,7 +114,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/pickUpReq",
-        element: <PickUpReq />,
+        element: <PrivateRoute><PickUpReq /></PrivateRoute>,
       },
       {
         path: "/login",
@@ -122,7 +126,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/priceTable",
-        element: <PriceTable></PriceTable>,
+        element: <PrivateRoute><PriceTable></PriceTable></PrivateRoute>,
       },
       {
         path: "/profile",
@@ -159,6 +163,14 @@ const router = createBrowserRouter([
       {
         path: "/career",
         element: <Career></Career>
+      },
+      {
+        path: "/career/:id",
+        element: <CareerDetails></CareerDetails>
+      },
+      {
+        path: "/career/:id/apply",
+        element: <ApplyForm></ApplyForm>
       }
     ],
   },
@@ -210,6 +222,10 @@ const router = createBrowserRouter([
       {
         path: "manageShowcase",
         element: <ManageShowcase></ManageShowcase>,
+      },
+      {
+        path: "application",
+        element: <Application></Application>,
       },
 
       // worker dashboard

@@ -66,6 +66,7 @@ const Artwork = () => {
           }}
           modules={[FreeMode, Pagination]}
           className="mySwiper"
+         
         >
           {artworks?.map((artwork, index) => (
             <SwiperSlide key={artwork._id}>
@@ -93,7 +94,7 @@ const Artwork = () => {
           ))}
         </Swiper>
 
-        <div className="w-fit mx-auto">
+        <div className="w-fit mx-auto mt-10">
           {" "}
           <Link to={"/addShowcase"}>
             <Btn>Share Your Waste Art</Btn>

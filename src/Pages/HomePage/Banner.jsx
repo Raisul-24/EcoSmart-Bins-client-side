@@ -21,7 +21,9 @@ const Banner = () => {
 
   return (
     <>
+    
       <Swiper
+      
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -34,9 +36,9 @@ const Banner = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className="font-andika">
+        <SwiperSlide className="font-andika ">
           <div className="hero min-h-screen bg-gradient-to-r from-slate-50 ... to-green-200 ...">
-            <div className="hero-content  flex-col-reverse md:flex-row-reverse">
+            <div className="hero-content px-5 lg:px-10 xl:px-0 2xl:max-w-screen-2xl flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
                 <img src="https://i.ibb.co/BV13fHZ/banner-img-2.png" />
               </div>
@@ -45,7 +47,7 @@ const Banner = () => {
                   data-aos="fade-down"
                   className="text-brand-color md:text-xl font-bold mb-3"
                 >
-                  Empowering Communities for a Cleaner Planet
+                    Empowering Communities for a Cleaner Planet
                 </p>
                 <h1
                   data-aos="fade-up-right"
@@ -65,12 +67,12 @@ const Banner = () => {
                   </Btn>
                 </Link>
               </div>
-            </div>
+              </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="font-andika">
           <div className="hero min-h-screen bg-gradient-to-r from-slate-50 ... to-green-200 ...">
-            <div className="hero-content  flex-col-reverse md:flex-row-reverse">
+            <div className="hero-content px-5 lg:px-10 xl:px-0 2xl:max-w-screen-2xl flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
                 <img src="https://i.ibb.co/vs6R7RC/banner-img-1.png" />
               </div>
@@ -102,7 +104,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide className="font-andika">
           <div className="hero min-h-screen bg-gradient-to-r from-slate-50 ... to-green-200 ...">
-            <div className="hero-content  flex-col-reverse md:flex-row-reverse">
+            <div className="hero-content px-5 lg:px-10 xl:px-0 2xl:max-w-screen-2xl flex-col-reverse md:flex-row-reverse">
               <div data-aos="fade-left" className="lg:w-3/6 lg:max-w-lg ">
                 <img src="https://i.ibb.co/8cvLPYm/banner-img-4.png" />
               </div>

@@ -68,7 +68,7 @@ const AddShowcase = () => {
     
    
     return (
-        <div className="font-andika mx-20 mb-20 ">
+        <div className="font-andika lg:m-20 m-5 ">
             <SectionTitle
                 heading="Upload Your Artwork"
                 subHeading="Ready to showcase your creativity?"
@@ -76,21 +76,21 @@ const AddShowcase = () => {
 
             {/* content */}
 
-            <div className="lg:flex gap-10">
-               
-                <div data-aos="zoom-out-left"><img src="https://i.imgur.com/bCiHngO.jpg" alt="" className="w-96" /></div>
-                <p className="w-1/2 text-center lg:py-20 lg:text-xl">Welcome to our Waste Art Showcase! We believe that creativity knows no bounds, especially when it comes to turning waste into art. We invite you to contribute to our growing gallery of waste-inspired masterpieces. Follow these simple steps to showcase your talent and inspire others.</p>
+            <div className="lg:flex justify-between">
+            <p className="lg:w-1/2  lg:py-20 lg:text-xl">Welcome to our Waste Art Showcase! We believe that creativity knows no bounds, especially when it comes to turning waste into art. We invite you to contribute to our growing gallery of waste-inspired masterpieces. Follow these simple steps to showcase your talent and inspire others.</p>
+                <div className="lg:w-1/2 "><img src="https://i.imgur.com/bCiHngO.jpg" alt="" className="lg:w-2/3 w-96 mx-auto" /></div>
+                
             </div>
             <div className="">
-                <h3 className="w-fit mx-auto capitalize pt-5 pb-2 text-3xl border-b-4 border-brand-color mb-10 font-semibold text-[#101a30]">
+                <h3 className="w-fit mx-auto capitalize pt-5 pb-2 text-xl lg:text-3xl border-b-4 border-brand-color mb-20 font-semibold text-[#101a30]">
                     Share your showcased art
                 </h3>
                 <div className="lg:flex gap-10">
-                    <div className="lg:w-1/3">
+                    <div className="lg:w-1/2">
                         <img src={img} alt="" />
                     </div>
                     <div className="lg:w-1/2">
-                        <p className=" lg:text-xl">Use the submission form below to upload a clear picture of your waste art creation. We want to see the beauty in your work, so make sure the image does justice to your masterpiece.</p>
+                        <p className=" lg:text-xl mb-10">Use the submission form below to upload a clear picture of your waste art creation. We want to see the beauty in your work, so make sure the image does justice to your masterpiece.</p>
                         <div data-aos="fade-down-left" className="h-64 hero lg:w-5/6 lg:ml-32 mt-10" style={{ backgroundImage: 'url(https://i.imgur.com/KzjHrU5.jpg)' }}>
                         </div>
                         <div data-aos="fade-up-right" className="border-4 border-brand-color bg-red-100 p-3 lg:p-10 w-2/3 lg:text-2xl text-brand-color font-bold -mt-28 bg-opacity-80">Ready to showcase your creativity? Start by uploading your waste art masterpiece below and be a part of our growing waste art community!</div>

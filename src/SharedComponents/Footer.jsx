@@ -1,22 +1,28 @@
 import { Link } from "react-router-dom";
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchService } from "../Redux/ServiceSlice";
+
+import ServiceFooter from "./ServiceFooter";
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const { service: data } = useSelector((state) => state.services);
+  useEffect(() => {
+    dispatch(fetchService(6));
+  }, [dispatch]);
   return (
     <div className="bg-green-950 text-white font-andika">
-      <footer className="footer grid-cols-2 md:grid-cols-4 px-5 py-10">
+      <footer className="container mx-auto footer grid-cols-2 md:grid-cols-4 px-5 py-10">
         <nav className="">
-          <img
-            src="logo.png"
-            className="w-16 h-16 rounded-lg "
-            alt=""
-          />
+          <img src="logo.png" className="w-16 h-16 rounded-lg " alt="" />
           <p className="font-bold py-2">Eco Smart Bins</p>
           <p className="w-4/5 ">
             We recognize that the right service for home is most important
-            choice.we provide the waste collection you need for your
-            home with trusted service.
+            choice.we provide the waste collection you need for your home with
+            trusted service.
           </p>
         </nav>
 
@@ -35,14 +41,20 @@ const Footer = () => {
               <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
           </Link>
-          <a className="group relative cursor-pointer inline-block">
+          <Link
+            to={"/services"}
+            className="group relative cursor-pointer inline-block"
+          >
             Services
             <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
+          </Link>
+          <Link
+            to={"/blogs"}
+            className="group relative cursor-pointer inline-block"
+          >
             Blogs
             <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
+          </Link>
           <h2 className="footer-title font-bold my-2">Working Hours</h2>
           <p>Mon - Fri: 9:00AM - 6:00PM</p>
           <p>Sat - Sun: 8:00AM - 4:00PM</p>
@@ -50,56 +62,32 @@ const Footer = () => {
 
         <nav>
           <header className="footer-title">Services</header>
-          <a className="group relative cursor-pointer inline-block">
-            Recycling Programs
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
-            Energy Generation
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
-            Biodegradable
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
-            E-Waste Recycling
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
-            Composting
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
-            Biodegradable Plastics
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
-          <a className="group relative cursor-pointer inline-block">
-            Waste-to-Resource
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-brand-color origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </a>
+
+          {data?.map((service) => (
+            <ServiceFooter key={service?._id} data={service} />
+          ))}
         </nav>
 
         <nav className="">
           <header className="footer-title">Get In Touch</header>
           <a>
-          <p className="flex items-center gap-2">
-            <FaLocationDot className="text-brand-color text-xl"></FaLocationDot>{" "}
-            New Park, NY 11040
-          </p>
+            <p className="flex items-center gap-2">
+              <FaLocationDot className="text-brand-color text-xl"></FaLocationDot>{" "}
+              New Park, NY 11040
+            </p>
           </a>
-         <a>
-         <p className="flex items-center gap-2 my-2">
-            <MdOutlineMail className="text-brand-color text-xl"></MdOutlineMail>{" "}
-            EcoSmart@Bins.com
-          </p>
-         </a>
-         <a>
-         <p className="flex items-center gap-2">
-            <FaPhone className="text-brand-color text-xl"></FaPhone> Phone: 333
-            666 0000
-          </p>
-         </a>
+          <a>
+            <p className="flex items-center gap-2 my-2">
+              <MdOutlineMail className="text-brand-color text-xl"></MdOutlineMail>{" "}
+              EcoSmart@Bins.com
+            </p>
+          </a>
+          <a>
+            <p className="flex items-center gap-2">
+              <FaPhone className="text-brand-color text-xl"></FaPhone> Phone:
+              333 666 0000
+            </p>
+          </a>
           <h2 className="footer-title font-bold mt-8">Follow Us On</h2>
           <div className="grid grid-flow-col gap-4">
             <a href="https://twitter.com/">

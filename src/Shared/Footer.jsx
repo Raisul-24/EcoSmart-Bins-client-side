@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="bg-green-950 text-white">
           <footer className="footer grid-cols-2 md:grid-cols-4 p-10">
         <aside>
-          <img src="logo.png" className="w-24 h-24 rounded-xl border-4 border-green-400 shadow-xl" alt="" />
+          <img src="logo.png" className="w-60 h-60 rounded-xl border-4 border-green-400 shadow-xl" alt="" />
           <p className="font-bold">
             Eco Smart Bins
             </p>
