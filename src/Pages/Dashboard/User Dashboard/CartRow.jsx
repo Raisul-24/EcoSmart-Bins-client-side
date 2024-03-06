@@ -62,9 +62,6 @@ const CartRow = ({ item, index }) => {
       <td>{title}</td>
       <td>${price}</td>
 
-      {/* <td>
-        <p className="badge badge-neutral border-brand-color">{status}</p>
-      </td> */}
 
       <td className="p-3">
         {status === "pending" ? (
