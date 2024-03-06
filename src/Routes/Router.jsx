@@ -49,6 +49,7 @@ import AddShowcase from "../Pages/Showcase/AddShowcase";
 import Career from "../Pages/Career/Career";
 import CareerDetails from "../Pages/Career/CareerDetails";
 import ApplyForm from "../Pages/Career/ApplyForm";
+import Application from "../Pages/Dashboard/Admin dashboard/Application";
 
 const router = createBrowserRouter([
   {
@@ -220,6 +221,10 @@ const router = createBrowserRouter([
       {
         path: "manageShowcase",
         element: <ManageShowcase></ManageShowcase>,
+      },
+      {
+        path: "application",
+        element: <Application></Application>,
       },
 
       // worker dashboard

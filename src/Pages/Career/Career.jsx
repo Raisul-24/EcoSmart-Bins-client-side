@@ -79,7 +79,7 @@ const Career = () => {
         <div className="lg:flex lg:justify-evenly mt-20">
           {
             career?.map((item) => (<div key={item?.id}>
-              <div className="lg:w-96 mx-auto my-10 bg-gray-100 p-10 hover:bg-white hover:drop-shadow-2xl hover:shadow-brand-color ">
+              <div className="lg:w-96 mx-auto my-10 bg-lime-100 p-10 hover:bg-white hover:drop-shadow-2xl hover:shadow-brand-color ">
                 <p className="bg-brand-color px-2 py-1 w-fit text-white">Full time</p>
                   <h2 className="mt-8 mb-4 text-center text-2xl font-semibold">{item.position}</h2>
                   <p className="text-center border-b-2 border-brand-color pb-3">Minimum 2 Yrs Exp</p>
