@@ -1,25 +1,46 @@
 import { HeartSwitch } from "@anatoliygatt/heart-switch";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import banner from "../../assets/BannerImages/priceBanner.webp";
-import { motion } from 'framer-motion';
-import img1 from "../../assets/images/shape-4.png"
-import img2 from "../../assets/images/shape-5.png"
+import { motion } from "framer-motion";
+import img1 from "../../assets/images/shape-4.png";
+import img2 from "../../assets/images/shape-5.png";
+import useAxiosPublic from "../../axios/axiosPublic";
+import Btn from "../../Components/Btn";
+import GetData from "../../Hooks/GetDataHook";
+import useAuth from "../../Hooks/UseAuth";
 
 const PriceTable = () => {
+  const { user } = useAuth();
+  const [data, dataLoaing] = GetData("./priceTable.json");
   const [isYearly, setIsYearly] = useState(false);
-
+  const axiosPublic = useAxiosPublic();
   const handleToggle = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
+  };
+  const handleClick = async (item) => {
+    const price = isYearly ? item?.price * 9 : item?.price;
+    const subscriptionTime = isYearly ? "year" : "Month";
+    const name = user?.displayName;
+    const email = user?.email;
+    const status = item?.status.toLowerCase();
+    const subscriptionData = { price, subscriptionTime, name, email, status };
+      axiosPublic.patch("/subscription",subscriptionData).then((res) => {
+      console.log(res);
+      window.location.replace(res.data.url);
+      console.log("Redirect URL:", res.data.url);
+    });
   };
   return (
     <div className="font-andika">
       {/* banner */}
-      <div className="hero h-96 relative" style={{
-        backgroundImage: `url(${banner})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}>
+      <div
+        className="hero h-96 relative"
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <motion.div
           className="lg:bottom-10 lg:left-20 bottom-5 left-5 absolute hidden md:block "
@@ -29,20 +50,18 @@ const PriceTable = () => {
           transition={{
             duration: 5,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
             repeatDelay: 1,
           }}
         >
-          <motion.img
-            src={img1}
-            alt="Zooming Image"
-            className="w-24 lg:w-32"
-          />
+          <motion.img src={img1} alt="Zooming Image" className="w-24 lg:w-32" />
         </motion.div>
         <div className="hero-content text-center text-neutral-content relative z-10">
           <div className="max-w-md text-white">
             <h1 className="mb-5 text-5xl font-bold">Our Pricing</h1>
-            <p className="mb-5">Choose the Plan That Fits Your Needs and Budget</p>
+            <p className="mb-5">
+              Choose the Plan That Fits Your Needs and Budget
+            </p>
           </div>
         </div>
         <motion.div
@@ -53,21 +72,17 @@ const PriceTable = () => {
           transition={{
             duration: 10,
             repeat: Infinity,
-            ease: 'linear',
+            ease: "linear",
           }}
           originX={0.5}
           originY={0.5}
         >
-          <motion.img
-            src={img2}
-            alt="Rotating Image"
-            className="w-24 h-24"
-          />
+          <motion.img src={img2} alt="Rotating Image" className="w-24 h-24" />
         </motion.div>
       </div>
 
       {/*content  */}
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <h2 className="text-lg md:text-xl lg:text-3xl font-bold text-center text-green-600 my-5">
           Pricing Table
         </h2>
@@ -92,79 +107,54 @@ const PriceTable = () => {
           <span className="text-xl font-extrabold ml-4">Yearly</span>
         </div>
 
-        <div className="my-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="my-10 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 items-center gap-6">
           {/* cards 1*/}
-          <div className="relative flex max-w-96 flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-            <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-              <img
-                className="max-w-96"
-                src="https://i.ibb.co/2NspHcw/Screenshot-2024-02-06-at-2-00-48-PM.png"
-                alt="ui/ux review check"
-              />
+          {dataLoaing ? (
+            <div className="text-center py-20">
+              <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
             </div>
-            <div className="text-xl text-center text-black py-8">
-              <h2>Holds: 2 Trash bags</h2>
-              <h2 className="my-2">Serves: 1-2 people</h2>
-              <h2>Max Weight: Approx 18kg</h2>
-              <h2 className="my-2">Service: Every Day</h2>
-              <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
-              {isYearly ? "7999 tk" : "699 tk"}
-              </h2>
-              <h2>Per {isYearly ? "year" : "month"}</h2>
-              <Link to='/'>
-                <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48">
-                  Select Plan
-                </btn></Link>
-            </div>
-          </div>
-          {/* cards 2*/}
-          <div className="relative flex max-w-96 flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-            <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-              <img
-                className="max-w-96"
-                src="https://i.ibb.co/kSX40j3/Screenshot-2024-02-06-at-2-01-04-PM.png"
-                alt="ui/ux review check"
-              />
-            </div>
-            <div className="text-xl text-center text-black py-8">
-              <h2>Holds: 2 Trash bags</h2>
-              <h2 className="my-2">Serves: 1-2 people</h2>
-              <h2>Max Weight: Approx 18kg</h2>
-              <h2 className="my-2">Service: Every Day</h2>
-              <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
-                {isYearly ? "9999 tk" : "1099 tk"}
-              </h2>
-              <h2>Per {isYearly ? "year" : "month"}</h2>
-              <Link to='/'>
-                <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48">
-                  Select Plan
-                </btn></Link>
-            </div>
-          </div>
-          {/* cards 3*/}
-          <div className="relative flex max-w-96 flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-            <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-              <img
-                className="max-w-96"
-                src="https://i.ibb.co/R0fB5ZD/Screenshot-2024-02-06-at-2-01-20-PM.png"
-                alt="ui/ux review check"
-              />
-            </div>
-            <div className="text-xl text-center text-black py-8">
-              <h2>Holds: 2 Trash bags</h2>
-              <h2 className="my-2">Serves: 1-2 people</h2>
-              <h2>Max Weight: Approx 18kg</h2>
-              <h2 className="my-2">Service: Every Day</h2>
-              <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
-              {isYearly ? "14999 tk" : "1399 tk"}
-              </h2>
-              <h2>Per {isYearly ? "year" : "month"}</h2>
-              <Link to='/'>
-                <btn className="btn lg:px-5 bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:from-green-300 hover:to-brand-color hover:bg-gradient-to-r my-7 max-w-48">
-                  Select Plan
-                </btn></Link>
-            </div>
-          </div>
+          ) : (
+            data?.map((item) => (
+              <div
+                key={item?.id}
+                className="relative flex md:max-w-96 flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+              >
+                <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
+                  <img
+                    className="md:max-w-96 md:h-64 h-72 w-full"
+                    src={item?.img}
+                    alt="ui/ux review check"
+                  />
+                </div>
+                <p
+                  className={`absolute rotate-[-90deg] top-24 ${
+                    item?.status === "Platinum"
+                      ? "-left-8 text-[#E5E4E2]"
+                      : "-left-4"
+                  } uppercase font-bold bg-brand-color  ${
+                    item?.status === "Silver" && "text-[#C4CACE]"
+                  } ${
+                    item?.status === "gold" && "text-[#ffd700]"
+                  } p-4 rounded-b-lg`}
+                >
+                  {item?.status}
+                </p>
+                <div className="text-xl text-center text-black py-8">
+                  <h2>Holds: {item?.holds}</h2>
+                  <h2 className="my-2">Serves: {item?.serves}</h2>
+                  <h2>Max Weight: {item?.maxWeight}</h2>
+                  <h2 className="my-2">Service: {item?.service}</h2>
+                  <h2 className="text-5xl text-green-600 font-extrabold mt-4 mb-2">
+                    {isYearly ? item?.price * 9 : item?.price} tk
+                  </h2>
+                  <h2>Per {isYearly ? "year" : "month"}</h2>
+                  <Btn onClick={() => handleClick(item)} className="my-7">
+                    Select Plan
+                  </Btn>
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>

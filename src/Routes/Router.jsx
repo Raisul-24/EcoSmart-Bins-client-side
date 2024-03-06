@@ -49,6 +49,7 @@ import CareerDetails from "../Pages/Career/CareerDetails";
 import ApplyForm from "../Pages/Career/ApplyForm";
 import Application from "../Pages/Dashboard/Admin dashboard/Application";
 import PickupRequest from "../Pages/Dashboard/User Dashboard/PickupRequest";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -112,7 +113,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/pickUpReq",
-        element: <PickUpReq />,
+        element: <PrivateRoute><PickUpReq /></PrivateRoute>,
       },
       {
         path: "/login",
@@ -124,7 +125,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/priceTable",
-        element: <PriceTable></PriceTable>,
+        element: <PrivateRoute><PriceTable></PriceTable></PrivateRoute>,
       },
       {
         path: "/profile",
