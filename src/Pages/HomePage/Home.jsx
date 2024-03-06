@@ -12,7 +12,8 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <Service />
+     <div className="container mx-auto">
+     <Service />
       <Counter />
       <ChoseUs />
       <RecycleMaterials />
@@ -20,6 +21,7 @@ const Home = () => {
       <Artwork />
       <Feedback />
       <Subscribe />
+     </div>
     </div>
   );
 };

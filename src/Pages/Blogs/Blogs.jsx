@@ -15,7 +15,9 @@ const Blog = () => {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+
   const [totalCount, setTotalCount] = useState(0);
+
   useEffect(() => {
     axios
       .get("http://localhost:8085/total-blogs")
@@ -35,7 +37,9 @@ const Blog = () => {
   } = useGetApiQuery(
     `/blogs?search=${search}&category=${category}&page=${currentPage}&size=${itemPerPage}`
   );
+
   const { data, isLoading: loading } = useGetApiQuery("/blogsCategory");
+
 
   const handelSubmit = (e) => {
     e.preventDefault();

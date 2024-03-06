@@ -27,10 +27,14 @@ const ApplyForm = () => {
         axios
           .post("/application", applyData)
           .then(() => reset())
-          if (applyData.data.insertedId) {
+          .then(() => {
             notifyFun(user?.email, `You apply for ${career.position}`);
             toast.success("Apply Successfully");
-        }
+          });
+        //   if (applyData.insertedId) {
+        //     notifyFun(user?.email, `You apply for ${career.position}`);
+        //     toast.success("Apply Successfully");
+        // }
           
       };
     if (isPending)
