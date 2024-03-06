@@ -57,7 +57,7 @@ const ServiceDetail = () => {
     name: chart?.name,
     value: chart?.n,
   }));
-  //  console.log(pieChartData);
+   console.log(pieChartData);
 
   return (
     <div className="font-andika">
