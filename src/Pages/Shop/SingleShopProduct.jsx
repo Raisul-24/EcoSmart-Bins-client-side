@@ -101,12 +101,14 @@ const SingleShopProduct = () => {
             <Btn>
               <Link to={`/checkout/${details?._id}/${quantity}`}>Buy Now</Link>
             </Btn>
-            <button
-              onClick={handleOrder}
-              className="flex p-3 text-white transition border rounded font-bold  bg-[#195a07] hover:bg-opacity-90"
+           <button onClick={handleOrder}>
+           <Btn
+              
+              // className="flex p-3 text-white transition border rounded font-bold  bg-[#195a07] hover:bg-opacity-90"
             >
               <p>Add to Cart</p>
-            </button>
+            </Btn>
+           </button>
           </div>
         </div>
       </div>
