@@ -15,7 +15,7 @@ const Footer = () => {
   }, [dispatch]);
   return (
     <div className="bg-green-950 text-white font-andika">
-      <footer className="footer grid-cols-2 md:grid-cols-4 px-5 py-10">
+      <footer className="container mx-auto footer grid-cols-2 md:grid-cols-4 px-5 py-10">
         <nav className="">
           <img src="logo.png" className="w-16 h-16 rounded-lg " alt="" />
           <p className="font-bold py-2">Eco Smart Bins</p>
