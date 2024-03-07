@@ -32,7 +32,7 @@ const Overview = () => {
     <>
       {isAdmin?.length > 0 && <AdminOverview />}
       {isWorker?.length > 0 && <WorkerOverview />}
-      {isUser?.length > 0 && <AdminOverview />}
+      {isUser?.length > 0 && <UserOverview />}
     </>
   );
 };
