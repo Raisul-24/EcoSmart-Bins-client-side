@@ -80,7 +80,7 @@ const Services = () => {
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mx-8 py-20">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-6 md:mx-8 py-20">
             {data?.map((item) => (
               <ServiceCard key={item?._id} data={item} />
             ))}

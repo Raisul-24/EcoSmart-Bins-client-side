@@ -1,64 +1,12 @@
-import { useEffect, useState } from "react";
-import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 import ServiceDetailsBanner from "./ServiceDetailsBanner";
 import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import ServiceDetailsDescription from "./ServiceDetailsDescription";
 import ServiceDetailsFAQ from "./ServiceDetailsFAQ";
-import useAxiosPublic from "../../axios/axiosPublic";
 import Btn from "../../Components/Btn";
 import { Link } from "react-router-dom";
-
-const COLORS = ["#257830", "#F72798", "#FF8042", "red", "blue"];
+import { PieChart } from "react-minimal-pie-chart";
 
 const ServiceDetail = () => {
-  const [charts, setCharts] = useState([]);
-  const axios = useAxiosPublic();
-
-  // custom pie chart on service details
-  const RADIAN = Math.PI / 180;
-  const renderCustomizedLabel = ({
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    percent,
-  }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
-    return (
-      <text
-        x={x}
-        y={y}
-        fill="white"
-        textAnchor={x > cx ? "start" : "end"}
-        dominantBaseline="central"
-      >
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
-    );
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/serviceDetails-chart");
-        setCharts(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [axios, setCharts]);
-
-  const pieChartData = charts.map((chart) => ({
-    name: chart?.name,
-    value: chart?.n,
-  }));
-   console.log(pieChartData);
-
   return (
     <div className="font-andika">
       <ServiceDetailsBanner />
@@ -68,13 +16,13 @@ const ServiceDetail = () => {
         <div className="col-span-3 mt-16">
           <ServiceDetailsSidebar />
         </div>
-        <div className="col-span-6">
-          <div className="py-20 flex md:flex-row flex-col items-center">
+        <div className="md:col-span-6">
+          <div className="py-20 px-5 md:flex md:flex-row flex-col items-center">
             <div>
               <ServiceDetailsDescription />
               <ServiceDetailsFAQ />
-              <div className="mt-14">
-                <div className="">
+              <div className="mt-14 md:grid grid-cols-2 gap-8 md:px-0 px-5">
+                <div className="col-span-1">
                   <h4 className="text-3xl font-bold pb-6">Stats & Charts</h4>
                   <p>
                     Our mix of company-owned and contractor assets allows us to
@@ -93,34 +41,42 @@ const ServiceDetail = () => {
                     ensure all freight is are shipped, trans-shipped.
                   </p>
                 </div>
-                <div className="flex mt-8">
+                <div className="flex justify-center mt-8 col-span-1">
                   <div className="">
-                    <PieChart width={600} height={60} data={pieChartData}>
-                      <Pie
-                        data={pieChartData}
-                        cx="50%"
-                        cy="50%"
-                        labelLine={false}
-                        label={renderCustomizedLabel}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                      >
-                        {pieChartData?.map((entry, index) => (
-                          <Cell
-                            key={`cell-${index}`}
-                            fill={COLORS[index % COLORS.length]}
-                          />
-                        ))}
-                      </Pie>
-                      <Tooltip />
-                      <Legend />
-                    </PieChart>
+                    <PieChart
+                      data={[
+                        {
+                          title: "Residential Waste",
+                          value: 18,
+                          color: "#E38627",
+                        },
+                        {
+                          title: "Commercial Waste",
+                          value: 15,
+                          color: "#C13C37",
+                        },
+                        {
+                          title: "Dumpster Rental",
+                          value: 20,
+                          color: "#F15A0E",
+                        },
+                        {
+                          title: "Industrial Cleaning",
+                          value: 25,
+                          color: "#FFC300 ",
+                        },
+                        {
+                          title: "Industrial Cleaning",
+                          value: 29,
+                          color: "#DAF7A6",
+                        },
+                      ]}
+                    />
                   </div>
                 </div>
               </div>
-              <Link to={"/pickUpReq"}>
-                <Btn className="mt-16">Get Service</Btn>
+              <Link to={"/pickUpReq"} className="w-full">
+                <Btn className="mt-16 w-48">Get Service</Btn>
               </Link>
             </div>
           </div>
