@@ -50,6 +50,7 @@ import Career from "../Pages/Career/Career";
 import CareerDetails from "../Pages/Career/CareerDetails";
 import ApplyForm from "../Pages/Career/ApplyForm";
 import Application from "../Pages/Dashboard/Admin dashboard/Application";
+import AddJob from "../Pages/Dashboard/Admin dashboard/AddJob";
 
 const router = createBrowserRouter([
   {
@@ -225,6 +226,10 @@ const router = createBrowserRouter([
       {
         path: "application",
         element: <Application></Application>,
+      },
+      {
+        path: "job",
+        element: <AddJob></AddJob>,
       },
 
       // worker dashboard
