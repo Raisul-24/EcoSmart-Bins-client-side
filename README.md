@@ -65,7 +65,7 @@ The Eco Smart Bins web project utilizes a variety of packages to enhance its fun
 
 These packages collectively contribute to the functionality, user experience, styling, and development workflow of the "ecosmart-bins-client-side" web project.
 
-#Run the project Process
+# Run the project Process
 
 ## Guidelines
 
