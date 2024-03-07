@@ -60,7 +60,7 @@ const Profile = () => {
                             </p>
                         ))}
                     {user ? (
-                        <h2 className="card-title text-xl"> {user?.displayName}</h2>
+                        <h2 className="card-title text-xl"> {user?.displayName} </h2>
                     ) : (
                         <h2 className="card-title text-xl"> displayName</h2>
                     )}
