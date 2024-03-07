@@ -3,7 +3,6 @@ import Payment from "./Payment";
 import Delivery from "./Delivery";
 import { Link, useParams } from "react-router-dom";
 import OrderOverview from "./OrderOverview";
-import Voucher from "./Voucher";
 import { useGetApiQuery } from "../../Redux/userApi/getApi";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -64,7 +63,7 @@ const Checkout = () => {
     });
 
     // Reset the form after submission
-    // reset();
+    reset();
   };
   const OrderOverviewData = { title, price, itemQuantity, totalPrice };
 

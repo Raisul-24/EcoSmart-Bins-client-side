@@ -2,7 +2,6 @@ import { FaTrash } from "react-icons/fa";
 import useAxiosPublic from "../../../axios/axiosPublic";
 import { useDispatch } from "react-redux";
 import { deleteItemFromCart } from "../../../Redux/cartSlice";
-import useUsers from "../../../API/UserApi/useUsers";
 import { Link } from "react-router-dom";
 
 const CartRow = ({ item, index }) => {
@@ -10,17 +9,12 @@ const CartRow = ({ item, index }) => {
   const { _id, title, price, img, status } = item || {};
   const disabled = true;
   const axios = useAxiosPublic();
-  const { data: allUsers, isPending, refetch } = useUsers()
-
-
   const handleCancel = async (_id) => {
     try {
       const response = await axios.delete(`/my-cart/${_id}`, {
         status: "delete",
-        
       });
       if (response?.data?.deletedCount > 0) {
-        
         // Dispatch the action after successful deletion
         dispatch(deleteItemFromCart(_id));
       }
@@ -42,8 +36,7 @@ const CartRow = ({ item, index }) => {
         </div>
       </td>
       <td>{title}</td>
-      <td>${price}</td>
-
+      <td>{price} tk</td>
 
       <td className="p-3">
         {status === "pending" ? (
@@ -61,21 +54,12 @@ const CartRow = ({ item, index }) => {
       </td>
 
       <td className="p-3">
-        {status === "pending" || status === "cancel" ? (
-       
-          <button disabled={disabled} className="btn rounded-lg btn-sm">
-            Pay
-          </button>
-        
-        ) : (
-        
-           <button
-            className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
-          >
-            Pay
-          </button>
-       
-        )}
+        <Link
+          to={`/checkout/${item?.product_id}/${item?.quantity}`}
+          className="btn btn-sm bg-gradient-to-r from-brand-color to-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-brand-color  text-white"
+        >
+          Pay
+        </Link>
       </td>
     </tr>
   );
