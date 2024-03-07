@@ -22,7 +22,7 @@ import useUsers from "../API/UserApi/useUsers";
 const Dashboard = () => {
   const { user, loading } = UseAuth();
  
-  const [allUsers, isPending, refetch] = useUsers();
+  const [allUsers, isPending] = useUsers();
   
 
   const isAdmin = allUsers?.filter(
@@ -35,7 +35,7 @@ const Dashboard = () => {
     (data) => data?.role === "worker" && data?.email === user?.email
   );
 
-  if (loading) {
+  if (loading || isPending) {
     return (
       <div>
         <div className="text-center mt-20">
