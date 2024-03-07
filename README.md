@@ -10,10 +10,10 @@ The Eco Smart Bins project aims to develop a Smart Waste Management System websi
 
 In a world where sustainability is a growing concern, our website aims to address the pressing issue of waste management through innovative and practical solutions.
 
-## Homepage Overview:
+#### Homepage Overview:
 Our homepage offers a comprehensive overview of sustainable waste management solutions and practical tips. From reducing waste to protecting the environment, our website serves as a complete reference for individuals and organizations alike. Explore our about us, contact us, blog pages, and career opportunities to learn more about our mission and values.
 
-Services:
+#### Services:
 Our services cater to a wide range of waste management needs across commercial, retail, and industrial sectors. Whether it's handling liquid waste, dumpster rental, or industrial cleaning, we provide all-inclusive solutions for various industries, including manufacturing, education, healthcare, construction, and hospitality.
 
 Pickup Request Feature:
