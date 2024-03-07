@@ -20,12 +20,11 @@ const Blog = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8085/total-blogs")
+      .get("https://ecosmart-bins-server-side.onrender.com/total-blogs")
       .then((res) => {
         setTotalCount(res.data.count || 0);
       })
-      .catch((error) => {
-      });
+      .catch(() => {});
   }, []);
 
   const itemPerPage = 2;
@@ -38,7 +37,6 @@ const Blog = () => {
   );
 
   const { data, isLoading: loading } = useGetApiQuery("/blogsCategory");
-
 
   const handelSubmit = (e) => {
     e.preventDefault();
