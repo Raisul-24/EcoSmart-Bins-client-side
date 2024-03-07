@@ -1,18 +1,12 @@
-
 import ServiceDetailsBanner from "./ServiceDetailsBanner";
 import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import ServiceDetailsDescription from "./ServiceDetailsDescription";
 import ServiceDetailsFAQ from "./ServiceDetailsFAQ";
-import useAxiosPublic from "../../axios/axiosPublic";
 import Btn from "../../Components/Btn";
 import { Link } from "react-router-dom";
-import { PieChart } from 'react-minimal-pie-chart';
-
+import { PieChart } from "react-minimal-pie-chart";
 
 const ServiceDetail = () => {
-  const axios = useAxiosPublic();
-
-
   return (
     <div className="font-andika">
       <ServiceDetailsBanner />
@@ -26,8 +20,8 @@ const ServiceDetail = () => {
             <div>
               <ServiceDetailsDescription />
               <ServiceDetailsFAQ />
-              <div className="mt-14">
-                <div className="">
+              <div className="mt-14 md:grid grid-cols-2 gap-8 md:px-0 px-5">
+                <div className="col-span-1">
                   <h4 className="text-3xl font-bold pb-6">Stats & Charts</h4>
                   <p>
                     Our mix of company-owned and contractor assets allows us to
@@ -46,23 +40,42 @@ const ServiceDetail = () => {
                     ensure all freight is are shipped, trans-shipped.
                   </p>
                 </div>
-                <div className="flex justify-center mt-8">
+                <div className="flex justify-center mt-8 col-span-1">
                   <div className="">
                     <PieChart
                       data={[
-                        { title: 'Residential Waste', value: 18, color: '#E38627' },
-                        { title: 'Commercial Waste', value: 15, color: '#C13C37' },
-                        { title: 'Dumpster Rental', value: 20, color: '#F15A0E' },
-                        { title: 'Industrial Cleaning', value: 25, color: '#FFC300 ' },
-                        { title: 'Industrial Cleaning', value: 29, color: '#DAF7A6' },
+                        {
+                          title: "Residential Waste",
+                          value: 18,
+                          color: "#E38627",
+                        },
+                        {
+                          title: "Commercial Waste",
+                          value: 15,
+                          color: "#C13C37",
+                        },
+                        {
+                          title: "Dumpster Rental",
+                          value: 20,
+                          color: "#F15A0E",
+                        },
+                        {
+                          title: "Industrial Cleaning",
+                          value: 25,
+                          color: "#FFC300 ",
+                        },
+                        {
+                          title: "Industrial Cleaning",
+                          value: 29,
+                          color: "#DAF7A6",
+                        },
                       ]}
                     />
-
                   </div>
                 </div>
               </div>
-              <Link to={"/pickUpReq"}>
-                <Btn className="mt-16">Get Service</Btn>
+              <Link to={"/pickUpReq"} className="w-full">
+                <Btn className="mt-16 w-48">Get Service</Btn>
               </Link>
             </div>
           </div>
