@@ -24,10 +24,10 @@ const ServiceDetailsBanner = () => {
             <p className="mb-8 md:px-20 px-5 text-center">
               {data?.shortDescription}
             </p>
-            <div className="mt-5 mx-5 md:flex justify-center items-center gap-10">
+            <div className="mt-5 mx-20 md:flex justify-center items-center gap-10">
               <Link
                 to={`/pickUpReq`}
-                className="md:btn btn-sm btn-outline text-lg font-sans font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white  hover:bg-[#f0901f] md:h-[70px] gap-4 md:w-[250px] border-0 mb-5"
+                className="btn btn-sm btn-outline md:text-lg font-sans font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white  hover:bg-[#f0901f] md:h-[70px] gap-4 md:w-[250px] border-0 mb-5"
               >
                 Request PickUp
                 <span className="md:text-3xl">
@@ -36,7 +36,7 @@ const ServiceDetailsBanner = () => {
               </Link>
               <Link
                 to={`/priceTable`}
-                className="md:btn btn-sm btn-outline text-lg font-sans font-bold border-0 rounded-md  flex justify-center items-center hover:text-white text-white hover:bg-[#f0901f] bg-[#257830] md:h-[70px] gap-4 md:w-[250px] mb-5"
+                className="btn btn-sm btn-outline md:text-lg font-sans font-bold border-0 rounded-md  flex justify-center items-center hover:text-white text-white hover:bg-[#f0901f] bg-[#257830] md:h-[70px] gap-4 md:w-[250px] mb-5"
               >
                 Packages & Pricing
               </Link>

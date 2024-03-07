@@ -22,7 +22,7 @@ const IndustriesDetails = () => {
     <div className="font-andika">
       <div>
         <div
-          className="hero h-[550px] relative"
+          className="hero md:h-[550px] h-96 relative"
           style={{
             backgroundImage: `url(${data?.img})`,
             backgroundSize: "cover",
@@ -30,12 +30,12 @@ const IndustriesDetails = () => {
           }}
         >
           <div className="hero-overlay bg-black bg-opacity-50 absolute inset-0"></div>
-          <div className="hero-content text-center text-neutral-content relative z-10">
-            <div className="max-w-3xl text-white">
-              <h1 className="mb-8 text-6xl font-extrabold font-sans">
+          <div className="md:hero-content text-center text-neutral-content relative z-10">
+            <div className="md:max-w-3xl text-white">
+              <h1 className="mb-8 md:text-6xl text-xl font-bold font-sans">
                 {data?.category}
               </h1>
-              <p className="mb-8 px-20 text-xl text-center">
+              <p className="mb-8 md:px-20 px-5 text-center">
                 {data?.shortDescription}
               </p>
             </div>
@@ -43,34 +43,34 @@ const IndustriesDetails = () => {
         </div>
       </div>
 
-      <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
-        <div className="col-span-3 mt-16">
+      <div className="md:grid md:grid-cols-9 gap-12 md:mx-8 xl:px-0 md:px-5 font-andika">
+        <div className="md:col-span-3 mt-16 px-5 md:mx-0">
           <IndustriesDetailsSidebar />
         </div>
-        <div className="col-span-6">
-          <div className="py-20 flex md:flex-row flex-col items-center">
+        <div className="md:col-span-6">
+          <div className="py-20 px-5 md:flex md:flex-row flex-col items-center">
             <div>
-              <div>
+              <div className="px-4">
                 <p className="text-3xl font-extrabold pb-8">Overview</p>
 
-                <p className=" text-lg">{data?.description1}</p>
+                <p className="md:text-lg">{data?.description1}</p>
                 <div className="md:w-full my-8 overflow-hidden rounded-xl">
                   <img
                     src={data?.img}
                     alt=""
-                    className="w-full overflow-scroll object-cover"
+                    className="md:w-full overflow-scroll object-cover"
                   />
                 </div>
-                <p className=" text-lg pb-8">{data?.description}</p>
-                <p className=" text-lg mb-8">{data?.description2}</p>
+                <p className="md:text-lg pb-8">{data?.description}</p>
+                <p className="md:text-lg pb-8">{data?.description2}</p>
                 <div className="md:flex gap-10 justify-start items-center my-20 md:w-full">
                   <img
                     src={content}
                     alt="industries details page content image"
-                    className="overflow-hidden rounded-xl h-[500px] md:w-1/2"
+                    className="overflow-hidden rounded-xl md:h-[500px] md:w-1/2 mb-6"
                   />
                   <div className="md:w-1/2">
-                    <p className="text-lg">
+                    <p className="md:text-lg">
                       We provide professional maintenance and spares management
                       package which is designed to support essential fueling
                       operations and includes around the clock technical support
@@ -84,7 +84,7 @@ const IndustriesDetails = () => {
                     </p>
                     <Link
                       to={`/priceTable`}
-                      className="mt-10 btn btn-outline text-lg font-bold rounded-md  flex justify-center items-center hover:text-white bg-gray-700 text-white hover:bg-brand-color h-[70px] gap-4 w-[340px] border-0"
+                      className="mt-10 btn btn-sm btn-outline md:text-lg font-bold rounded-md  flex justify-center items-center hover:text-white bg-gray-700 text-white hover:bg-brand-color md:h-[70px] gap-4 md:w-[340px] border-0"
                     >
                       Our Placement
                       <span className="text-2xl">
@@ -112,7 +112,7 @@ const IndustriesDetails = () => {
             </div>
           </div>
           <Link to={"/pickUpReq"}>
-            <Btn className="btn mb-16 border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
+            <Btn className="btn mb-16 ml-12 md:ml-0 border-0 text-lg bg-gradient-to-r from-brand-color to-green-300 hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color text-white">
               Get Service
             </Btn>
           </Link>
