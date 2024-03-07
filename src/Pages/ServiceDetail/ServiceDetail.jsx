@@ -63,7 +63,8 @@ const ServiceDetail = () => {
     <div className="font-andika">
       <ServiceDetailsBanner />
 
-      <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
+     <div className="container mx-auto">
+     <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
         <div className="col-span-3 mt-16">
           <ServiceDetailsSidebar />
         </div>
@@ -125,6 +126,7 @@ const ServiceDetail = () => {
           </div>
         </div>
       </div>
+     </div>
     </div>
   );
 };

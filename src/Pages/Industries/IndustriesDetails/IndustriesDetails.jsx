@@ -20,7 +20,7 @@ const IndustriesDetails = () => {
   }
   return (
     <div className="font-andika">
-      <div>
+        <div>
         <div
           className="hero h-[550px] relative"
           style={{
@@ -29,6 +29,7 @@ const IndustriesDetails = () => {
             backgroundPosition: "center",
           }}
         >
+        
           <div className="hero-overlay bg-black bg-opacity-50 absolute inset-0"></div>
           <div className="hero-content text-center text-neutral-content relative z-10">
             <div className="max-w-3xl text-white">
@@ -43,7 +44,7 @@ const IndustriesDetails = () => {
         </div>
       </div>
 
-      <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
+      <div className="container mx-auto md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
         <div className="col-span-3 mt-16">
           <IndustriesDetailsSidebar />
         </div>

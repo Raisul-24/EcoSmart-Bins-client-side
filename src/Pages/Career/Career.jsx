@@ -70,7 +70,7 @@ const Career = () => {
           />
         </motion.div>
       </div>
-      <div className="lg:my-20 lg:mx-20 m-10">
+      <div className="lg:my-20 my-10 container mx-auto">
         <div className="text-center">
           <p className="lg:text-lg text-brand-color font-bold">WE’RE HIRING</p>
           <h2 className="lg:text-4xl text-2xl font-bold py-5 lg:py-8">Join With Our Family</h2>

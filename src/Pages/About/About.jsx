@@ -74,7 +74,8 @@ const About = () => {
         </motion.div>
       </div>
 
-      {/* our story */}
+      <div className="container mx-auto">
+        {/* our story */}
       <div className="lg:px-20 lg:py-20 p-5">
         <SectionTitle
           heading="Our Story"
@@ -195,6 +196,7 @@ const About = () => {
             </Btn>
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

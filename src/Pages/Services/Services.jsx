@@ -46,7 +46,7 @@ const Services = () => {
             className="w-24 lg:w-32"
           />
         </motion.div>
-        <div className="hero-content text-center text-neutral-content relative z-10">
+        <div className="hero-content container mx-auto text-center text-neutral-content relative z-10">
           <div className="max-w-md text-white">
             <h1 className="mb-5 text-5xl font-bold">Services We Offer</h1>
             <p className="mb-5">Explore Our Waste Management Solutions.</p>

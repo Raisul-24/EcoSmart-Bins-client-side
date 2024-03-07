@@ -106,7 +106,7 @@ const ContactUs = () => {
         heading="Contact with Us"
         subHeading="How To Contact"
       ></SectionTitle>
-      <section className="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]">
+      <section className="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px] px-10 md:px-20">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4 lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -114,7 +114,7 @@ const ContactUs = () => {
                 <span className="block mb-4 text-base font-semibold text-[#3A9E1E]">
                   Contact Us
                 </span>
-                <h2 className="text-dark dark:text-white mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                <h2 className="text-dark dark:text-white mb-6 text-[25px] font-bold uppercase sm:text-[36px] lg:text-[36px] xl:text-[40px]">
                   GET IN TOUCH WITH US
                 </h2>
                 <p className="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9">

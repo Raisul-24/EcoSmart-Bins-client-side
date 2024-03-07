@@ -120,7 +120,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className=" mx-8 mt-20">
+      <div className="container mx-auto mt-20">
         <h5 className="text-2xl text-green-600 font-semibold text-center pb-5">
           Our Articles
         </h5>
