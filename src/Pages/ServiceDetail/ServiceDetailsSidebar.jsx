@@ -15,14 +15,13 @@ const ServiceDetailsSidebar = () => {
   return (
     <>
       {/* part 1 categories buttons */}
-      <div className="rounded-xl p-10 bg-[#e9f1ea] mt-4">
-        <p className="text-xl font-extrabold py-5 mb-5">Our Services</p>
+      <div className="rounded-xl p-10 bg-[#e9f1ea] mt-4 ">
+        <p className="text-2xl md:text-center font-bold py-5 mb-5">Our Services</p>
         {categories?.map((category) => (
-          <ul className=" " key={category?._id}>
-            <li
-              className="h-12  
-                     w-72 pl-12 font-bold"
-            >
+
+          <ul className="h-12 " key={category?._id}>
+            <li className=" md:w-72 font-bold md:text-center px-4">
+
               {category?.servicesCategory}
             </li>
           </ul>
@@ -39,7 +38,8 @@ const ServiceDetailsSidebar = () => {
       >
         <div className="absolute inset-0 bg-[#f29829] bg-opacity-95"></div>
 
-        <div className="flex flex-col justify-center items-start gap-6  relative z-10 px-12">
+        <div className="flex flex-col justify-center items-start gap-6 relative z-10 md:px-12 px-8">
+
           <h4 className="text-2xl font-bold pb-2">
             Trusted And Reliable <br /> Waste Collection!
           </h4>
@@ -49,10 +49,12 @@ const ServiceDetailsSidebar = () => {
           </p>
           <Link
             to={`/pickUpReq`}
-            className="mt-6 btn btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-brand-color h-[70px] gap-4 w-full border-0"
+
+            className="mt-6 btn btn-sm btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-brand-color md:h-[70px] gap-4 w-full border-0"
+
           >
             Get Started Now
-            <span className="text-3xl">
+            <span className="md:text-3xl">
               <FaArrowCircleRight />
             </span>
           </Link>

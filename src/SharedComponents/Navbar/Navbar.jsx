@@ -256,7 +256,7 @@ const Navbar = () => {
       {/* PickUp Request */}
       <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
-        <NavLink to={"/priceTable"}>Packages & Pricing</NavLink>
+        <NavLink to={"/priceTable"}>Packages</NavLink>
       </li>
       {/* PickUp Request */}
     </>

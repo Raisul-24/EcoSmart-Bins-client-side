@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "img":"https://i.ibb.co/2NspHcw/Screenshot-2024-02-06-at-2-00-48-PM.png",
+        "status": "Silver",
+        "holds": "2 Trash bags",
+        "serves": "1-2 people",
+        "maxWeight": "Approx 18kg",
+        "service": "Every Day",
+        "price": 699
+    },
+    {
+        "id": 2,
+        "img":"https://i.ibb.co/kSX40j3/Screenshot-2024-02-06-at-2-01-04-PM.png",
+        "status": "gold",
+        "holds": "4 Trash bags",
+        "serves": "3-4 people",
+        "maxWeight": "Approx 25kg",
+        "service": "Every Day",
+        "price": 1099
+    },
+    {
+        "id": 3,
+        "img":"https://i.ibb.co/R0fB5ZD/Screenshot-2024-02-06-at-2-01-20-PM.png",
+        "status": "Platinum",
+        "holds": "10 Trash bags",
+        "serves": "5-10 people",
+        "maxWeight": "Approx 40kg",
+        "service": "Every Day",
+        "price": 1399
+    }
+]

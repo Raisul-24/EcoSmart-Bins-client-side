@@ -1,12 +1,10 @@
 import {
   FaBars,
-  
   FaEdit,
   FaHistory,
   FaHome,
   FaPlusSquare,
   FaRegFileAlt,
-  FaSignOutAlt,
   FaStar,
   FaUsers,
 } from "react-icons/fa";
@@ -19,15 +17,13 @@ import {
 import { FaCalendarPlus, FaCartShopping } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
-import { useGetApiQuery } from "../Redux/userApi/getApi";
 import useUsers from "../API/UserApi/useUsers";
 
 const Dashboard = () => {
   const { user, loading } = UseAuth();
-  // console.log(user);
-  // const { data, isLoading } = useGetApiQuery(`/users/${user?.email}`);
+ 
   const [allUsers, isPending, refetch] = useUsers();
-  // console.log(allUsers);
+  
 
   const isAdmin = allUsers?.filter(
     (data) => data?.role === "admin" && data?.email === user?.email
@@ -49,7 +45,7 @@ const Dashboard = () => {
     );
   }
   return (
-    <div className="">
+    <div className="container mx-auto">
       <div className="drawer lg:drawer-open flex flex-col lg:flex-row font-andika">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content shadow p-2 lg:p-0 pl-3 lg:m-0 flex flex-row items-center justify-between">
@@ -59,9 +55,7 @@ const Dashboard = () => {
           </label>
           {/* open content */}
           <div className="p-3 flex gap-3 items-center lg:hidden ">
-            {/* <h1 className="lg:text-3xl font-bold">
-                <span className="bold text-brand-color">Eco</span>SmartBin
-              </h1> */}
+         
             <h2 className="font-semibold lg:text-xl"> {user?.displayName}</h2>
          
               <div className="">
@@ -332,28 +326,16 @@ const Dashboard = () => {
                     </NavLink>
                   </li>
 
-                  {/* <li className="text-xs md:text-sm w-full">
-               <NavLink to="/dashboard/RewardPoints"
+                  <li className="text-xs md:text-sm w-full">
+               <NavLink to="/dashboard/pickupRequest"
                     className={({ isActive}) =>
                     isActive ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"  : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
               }
                >
-                 <VscActivateBreakpoints /> Reward Points
+                 <VscActivateBreakpoints /> My Pickup Request
                </NavLink>
-             </li> */}
+             </li>
 
-                  {/* <li className="text-xs md:text-sm w-full">
-                    <NavLink
-                      to="/dashboard/RewardPoints"
-                      className={({ isActive }) =>
-                        isActive
-                          ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"
-                          : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
-                      }
-                    >
-                      <VscActivateBreakpoints /> Pickup
-                    </NavLink>
-                  </li> */}
 
                   <li className="text-xs md:text-sm w-full">
                     <NavLink
