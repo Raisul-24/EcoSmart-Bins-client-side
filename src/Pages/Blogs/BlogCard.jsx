@@ -7,7 +7,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { MdOutlineUpdate } from "react-icons/md";
+import { BsCalendar2DateFill } from "react-icons/bs";
 
 const BlogCard = ({ blog }) => {
   const { _id, image, name, description, date } = blog || {};
@@ -63,7 +63,7 @@ const BlogCard = ({ blog }) => {
             </div>
             <button className="btn flex justify-center items-center gap-2 text-black font-bold px-5 text-lg rounded border-0 overflow-hidden">
               <span className="text-green-700 text-2xl">
-                <MdOutlineUpdate />
+                <BsCalendar2DateFill />
               </span>
               {date}
             </button>
