@@ -10,7 +10,7 @@ The Eco Smart Bins project aims to develop a Smart Waste Management System websi
 
 In a world where sustainability is a growing concern, our website aims to address the pressing issue of waste management through innovative and practical solutions.
 
-Homepage Overview:
+## Homepage Overview:
 Our homepage offers a comprehensive overview of sustainable waste management solutions and practical tips. From reducing waste to protecting the environment, our website serves as a complete reference for individuals and organizations alike. Explore our about us, contact us, blog pages, and career opportunities to learn more about our mission and values.
 
 Services:
@@ -62,7 +62,7 @@ The Eco Smart Bins web project utilizes a variety of packages to enhance its fun
 
 These packages collectively contribute to the functionality, user experience, styling, and development workflow of the "ecosmart-bins-client-side" web project.
 
-#### Run the project Process
+#Run the project Process
 
 ## Guidelines
 
