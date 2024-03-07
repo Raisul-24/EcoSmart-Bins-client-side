@@ -51,6 +51,7 @@ import Application from "../Pages/Dashboard/Admin dashboard/Application";
 import PickupRequest from "../Pages/Dashboard/User Dashboard/PickupRequest";
 import PrivateRoute from "./PrivateRoute";
 import WorkerOverview from "../Pages/Dashboard/Worker Dashboard/WorkerOverview";
+import AddJob from "../Pages/Dashboard/Admin dashboard/AddJob";
 
 const router = createBrowserRouter([
   {
@@ -226,6 +227,10 @@ const router = createBrowserRouter([
       {
         path: "application",
         element: <Application></Application>,
+      },
+      {
+        path: "job",
+        element: <AddJob></AddJob>,
       },
 
       // worker dashboard
