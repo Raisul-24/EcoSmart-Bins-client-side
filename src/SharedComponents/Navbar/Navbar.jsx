@@ -344,9 +344,13 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <Link to={"/"} className="text-lg lg:text-3xl font-bold">
-              <span className="bold text-brand-color">Eco</span>SmartBin
+            <div className="flex items-center">
+            <img src="/logo.png" className="w-20 h-20 rounded-lg " alt="" />
+            <Link to={"/"} className="text-lg lg:text-2xl font-bold">
+              <div><span className=" text-brand-color">Eco</span>SmartBin</div>
             </Link>
+            </div>
+            
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className=" flex gap-5 ">{navLinks}</ul>
