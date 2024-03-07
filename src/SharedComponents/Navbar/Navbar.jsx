@@ -107,12 +107,12 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md lg:w-[575px] w-40 overflow-hidden ${
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex ">
-            <div className="border-r-2 md:pr-10 border-slate-400">
+          <div className="lg:flex ">
+            <div className="lg:border-r-2 lg:pr-10 border-slate-400">
               <motion.li
                 whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -120,7 +120,7 @@ const Navbar = () => {
               >
                 <div className="">
                   <Link
-                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
+                    className="border-b rounded-none border-slate-400 "
                     to={"/services"}
                   >
                     All Services
@@ -131,7 +131,7 @@ const Navbar = () => {
                 <ServiceNavbar key={service?._id} data={service} />
               ))}
             </div>
-            <div className="md:pl-10">
+            <div className="lg:pl-10">
               <motion.li
                 whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -140,7 +140,7 @@ const Navbar = () => {
                 <div className="">
                   <p className="border-b-4 border-slate-400"></p>
                   <Link
-                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
+                    className="border-b rounded-none border-slate-400 "
                     to={"/industries"}
                   >
                     All Industries
@@ -180,7 +180,7 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 md:w-60 py-3 overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-60 py-3 overflow-hidden ${
             pagesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -256,7 +256,7 @@ const Navbar = () => {
       {/* PickUp Request */}
       <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
-        <NavLink to={"/priceTable"}>Packages & Pricing</NavLink>
+        <NavLink to={"/priceTable"}>Packages</NavLink>
       </li>
       {/* PickUp Request */}
     </>

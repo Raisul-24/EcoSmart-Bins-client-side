@@ -6,6 +6,7 @@ import banner from "../../assets/BannerImages/aboutBanner2.jpg";
 import { motion } from 'framer-motion';
 import img1 from "../../assets/images/shape-4.png"
 import img2 from "../../assets/images/shape-5.png"
+import Btn from "../../Components/Btn";
 
 const About = () => {
   useEffect(() => {
@@ -184,14 +185,14 @@ const About = () => {
         </div>
         <div className="flex gap-10 justify-center mt-7">
           <Link to="/pickUpReq">
-            <button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color ">
+            <Btn>
               Pick up Request
-            </button>
+            </Btn>
           </Link>
           <Link to={"/contact"}>
-            <button className="btn border-none shadow-lg shadow-brand-color lg:btn-lg bg-gradient-to-r from-brand-color to-green-300 lg:text-xl text-white hover:bg-gradient-to-r hover:from-green-300 hover:to-brand-color">
+            <Btn>
               contact us
-            </button>
+            </Btn>
           </Link>
         </div>
       </div>

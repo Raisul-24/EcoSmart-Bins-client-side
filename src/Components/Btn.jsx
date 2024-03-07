@@ -1,6 +1,6 @@
-const Btn = ({ children, className = "" }) => {
+const Btn = ({ children, className = "",onClick }) => {
   return (
-    <button className={`btnStyle ${className}`}>
+    <button onClick={onClick} className={`btnStyle ${className}`}>
       <span>{children}</span>
     </button>
   );

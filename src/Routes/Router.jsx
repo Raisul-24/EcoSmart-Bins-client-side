@@ -17,7 +17,6 @@ import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 import Cart from "../Pages/Dashboard/User Dashboard/Cart";
 import FeedbackAndRatings from "../Pages/Dashboard/User Dashboard/FeedbackAndRatings";
 import AddProducts from "../Pages/Dashboard/Admin dashboard/AddProducts";
-import MakePayment from "../Pages/Dashboard/User Dashboard/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/User Dashboard/PaymentHistory";
 import ManagePickup from "../Pages/Dashboard/Admin dashboard/ManagePickup";
 import Blogs from "../Pages/Blogs/Blogs";
@@ -33,7 +32,6 @@ import ManageUser from "../Pages/Dashboard/Admin dashboard/ManageUser";
 import PriceTable from "../Pages/PriceTable/PriceTable";
 import PickupWork from "../Pages/Dashboard/Worker Dashboard/PickupWork";
 import OnGoingWork from "../Pages/Dashboard/Worker Dashboard/OnGoingWork";
-import RewardPoints from "../Pages/Dashboard/User Dashboard/rewardPoints";
 import CompleteWorks from "../Pages/Dashboard/Worker Dashboard/CompleteWorks";
 import Checkout from "../Components/Checkout/Checkout";
 import Teams from "../Pages/teams/Teams";
@@ -50,6 +48,9 @@ import Career from "../Pages/Career/Career";
 import CareerDetails from "../Pages/Career/CareerDetails";
 import ApplyForm from "../Pages/Career/ApplyForm";
 import Application from "../Pages/Dashboard/Admin dashboard/Application";
+import PickupRequest from "../Pages/Dashboard/User Dashboard/PickupRequest";
+import PrivateRoute from "./PrivateRoute";
+import WorkerOverview from "../Pages/Dashboard/Worker Dashboard/WorkerOverview";
 
 const router = createBrowserRouter([
   {
@@ -113,7 +114,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/pickUpReq",
-        element: <PickUpReq />,
+        element: <PrivateRoute><PickUpReq /></PrivateRoute>,
       },
       {
         path: "/login",
@@ -125,7 +126,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/priceTable",
-        element: <PriceTable></PriceTable>,
+        element: <PrivateRoute><PriceTable></PriceTable></PrivateRoute>,
       },
       {
         path: "/profile",
@@ -240,6 +241,10 @@ const router = createBrowserRouter([
         path: "CompleteWorks",
         element: <CompleteWorks></CompleteWorks>,
       },
+      {
+        path: 'workerOverview',
+        element: <WorkerOverview></WorkerOverview>
+      },
 
       // user dashboard
       {
@@ -252,16 +257,12 @@ const router = createBrowserRouter([
         element: <Cart></Cart>,
       },
       {
-        path: "RewardPoints",
-        element: <RewardPoints></RewardPoints>,
+        path: "pickupRequest",
+        element: <PickupRequest></PickupRequest>,
       },
       {
         path: "feedback",
         element: <FeedbackAndRatings></FeedbackAndRatings>,
-      },
-      {
-        path: "payment",
-        element: <MakePayment></MakePayment>,
       },
       {
         path: "paymentHistory",
