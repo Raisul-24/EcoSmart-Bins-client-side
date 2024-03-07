@@ -7,7 +7,6 @@ const PaymentHistory = () => {
   const {user} = useAuth()
 
   const  myOrder = allOrders?.filter((order) => order?.payableOrder?.cus_email === user?.email);
-  console.log( myOrder);
   
   return (
     <div className="font-andika">

@@ -27,7 +27,6 @@ const Artwork = () => {
         setArtworks(response.data);
       })
       .catch((error) => {
-        console.log("Error fetching:", error);
       });
   }, [axiosPublic]);
 

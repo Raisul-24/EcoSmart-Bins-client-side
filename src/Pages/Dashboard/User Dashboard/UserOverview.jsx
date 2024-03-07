@@ -1,12 +1,12 @@
 import useAuth from "../../../Hooks/UseAuth";
 import { useGetApiQuery } from "../../../Redux/userApi/getApi";
+import Linechart from "../Admin dashboard/Overview/LineChart";
 import OverviewItem from "../Admin dashboard/Overview/OverviewItem";
-import Linechart from "./../Admin dashboard/Overview/LineChart";
 
-const WorkerOverview = () => {
-  const { user, loading } = useAuth();
+const UserOverview = () => {
+    const { user, loading } = useAuth();
   const { data: overViewData, isLoading } = useGetApiQuery(
-    `/workerOverview/${user?.email}`
+    `/userOverview/${user?.email}`
   );
   if (isLoading || loading) {
     return (
@@ -15,8 +15,8 @@ const WorkerOverview = () => {
       </div>
     );
   }
-  return (
-    <div className="mt-16">
+    return (
+        <div className="mt-16">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {overViewData?.map((item, idx) => (
           <OverviewItem data={item} key={idx} />
@@ -25,7 +25,7 @@ const WorkerOverview = () => {
         <div className="lg:col-span-1 md:col-span-2 col-span-1"></div>
       </div>
     </div>
-  );
+    );
 };
 
-export default WorkerOverview;
+export default UserOverview;

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const IndustriesNavbar = ({ industry }) => {
-  //  console.log(industry);
+  //  //console.log(industry);
   return (
     <div className="overflow-hidden menu hidden lg:block">
       <motion.li

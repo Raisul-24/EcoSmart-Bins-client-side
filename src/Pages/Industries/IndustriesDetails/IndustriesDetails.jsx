@@ -9,7 +9,6 @@ import Btn from "../../../Components/Btn";
 const IndustriesDetails = () => {
   const { id } = useParams();
   const [data, dataLoading] = getAIndustries(id);
-  //  console.log(data);
 
   if (dataLoading) {
     return (
@@ -20,7 +19,7 @@ const IndustriesDetails = () => {
   }
   return (
     <div className="font-andika">
-      <div>
+        <div>
         <div
           className="hero md:h-[550px] h-96 relative"
           style={{
@@ -29,6 +28,7 @@ const IndustriesDetails = () => {
             backgroundPosition: "center",
           }}
         >
+        
           <div className="hero-overlay bg-black bg-opacity-50 absolute inset-0"></div>
           <div className="md:hero-content text-center text-neutral-content relative z-10">
             <div className="md:max-w-3xl text-white">
@@ -43,8 +43,8 @@ const IndustriesDetails = () => {
         </div>
       </div>
 
-      <div className="md:grid md:grid-cols-9 gap-12 md:mx-8 xl:px-0 md:px-5 font-andika">
-        <div className="md:col-span-3 mt-16 px-5 md:mx-0">
+      <div className="container mx-auto md:grid grid-cols-9 gap-12 xl:px-0 px-5 font-andika">
+        <div className="col-span-3 mt-16">
           <IndustriesDetailsSidebar />
         </div>
         <div className="md:col-span-6">

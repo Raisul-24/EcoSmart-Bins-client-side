@@ -18,14 +18,12 @@ const ManageShowcase = () => {
         setShowcase(response.data);
       })
       .catch((error) => {
-        console.log("Error fetching:", error);
       });
   }, [axiosPublic]);
 
   const handleStatus = (name, img, title, date, oldId) => {
     axiosPublic.post("/artworks", { name, img, title, date, oldId })
       .then((res) => {
-        console.log(res.data)
         if (res.data.insertedId) {
 
           toast.success("New Art work Added Successfully");
@@ -46,7 +44,6 @@ const ManageShowcase = () => {
       if (result.isConfirmed) {
         axiosPublic.delete(`/showcase/${item._id}`)
           .then((res) => {
-            console.log(res.data);
             if (res.data.deletedCount > 0) {
 
               Swal.fire({

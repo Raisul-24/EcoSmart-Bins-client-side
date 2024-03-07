@@ -16,7 +16,6 @@ const Subscribe = () => {
     };
 
       axiosPublic.post('/subscribe', subscriber).then(res => {
-      console.log(res.data);
       if (res.data.insertedId) {
         reset();
         toast.success("You Subscribe successfully");
