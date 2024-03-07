@@ -18,9 +18,9 @@ const Industries = () => {
       >
         <div className="hero-overlay bg-black bg-opacity-60 absolute inset-0"></div>
         <div className="hero-content text-center text-neutral-content relative z-10">
-          <div className="max-w-3xl text-white">
-            <h1 className="mb-5 text-7xl font-extrabold">Industries</h1>
-            <p className="mb-5 text-xl font-bold">
+          <div className="md:max-w-3xl text-white">
+            <h1 className="mb-5 text-3xl md:text-7xl font-extrabold">Industries</h1>
+            <p className="mb-5 md:text-xl md:font-bold px-5">
               We understand that we must lead by example and are committed to
               further improving health and wellbeing in our sector because we
               have been awarded five star grading for strong progress.
@@ -31,7 +31,7 @@ const Industries = () => {
 
       <div className="max-w-7xl mx-auto xl:px-0 px-5 mb-20">
         <div className="text-center pt-28">
-          <p className="text-xl font-bold text-[#f29829]">
+          <p className="md:text-xl font-bold text-[#f29829]">
             Safe And Trusted Waste Collection Service
           </p>
           <h2 className="text-4xl font-bold pt-8">
@@ -43,7 +43,7 @@ const Industries = () => {
             <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mx-8 py-20">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-6 md:mx-8 py-20">
             {data?.map((item) => (
               <IndustriesCard key={item?._id} data={item} />
             ))}

@@ -35,7 +35,8 @@ const Dashboard = () => {
     (data) => data?.role === "worker" && data?.email === user?.email
   );
 
-  if (loading || isPending) {
+  if (loading || isPending || refetch) {
+
     return (
       <div>
         <div className="text-center mt-20">
@@ -66,9 +67,7 @@ const Dashboard = () => {
                   }
                   alt="image"
                 />
-              </div>
-            
-              
+              </div>              
           </div>
         </div>
         <div className="drawer-side z-20">
@@ -99,7 +98,6 @@ const Dashboard = () => {
                 </figure>
               </div>
               <div className="card-body px-0 pt-0 items-center text-center hidden lg:block">
-                
 
                 <h2 className="font-bold lg:text-xl"> {user?.displayName}</h2>
 

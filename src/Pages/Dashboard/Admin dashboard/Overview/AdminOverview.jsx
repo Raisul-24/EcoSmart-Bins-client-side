@@ -24,7 +24,7 @@ const AdminOverview = () => {
     return `#00${greenHex}00`;
   };
 
-  const pieChartData = overViewData.map((item, index) => ({
+  const pieChartData = overViewData?.map((item, index) => ({
     title: item.name,
     value: item.total,
     color: generateRandomColor(),
