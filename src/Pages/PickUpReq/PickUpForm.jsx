@@ -73,7 +73,7 @@ const PickUpForm = () => {
             title: "warning!",
             text: data.data.message,
             icon: "warning",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Opps",
           });
         }
       })
@@ -103,7 +103,7 @@ const PickUpForm = () => {
       <div className="relative font-andika flex flex-col justify-center overflow-hidden bg-gray-50 mx-5 lg:py-20 lg:mx-20 py-12">
         <div className="bg-white  mx-auto w-full">
           <div className="grid grid-cols-6 h-full ">
-            <div className="bg-[#3A9E1E] p-2 md:p-10 col-span-6 md:col-span-2">
+            <div className="bg-brand-color p-2 md:p-10 col-span-6 md:col-span-2">
               <h2 className=" mb-10 font-bold text-xl md:text-2xl text-white">
                 Trusted And Reliable Waste Collection!
               </h2>
