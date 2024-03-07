@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../SharedComponents/Footer";
 import Navbar from "../SharedComponents/Navbar/Navbar";
-import { PiMessengerLogoThin } from "react-icons/pi";
+import { BsChatDotsFill } from "react-icons/bs";
 import { useState } from "react";
 import ChatKit from "./../Pages/ChatBot/ChatKit";
+import Btn from "../Components/Btn";
 const MainLayOut = () => {
   const [show, isShow] = useState(false);
   return (
@@ -13,12 +14,12 @@ const MainLayOut = () => {
       <Footer></Footer>
       {show && <ChatKit />}
       <div className="fixed z-10  sm:bottom-12 bottom-6 sm:right-10 right-5">
-        <button
+        <Btn
           onClick={() => isShow(!show)}
-          className="btn w-14 h-14 rounded-full border-none bg-gradient-to-r from-brand-color to-green-400 text-white hover:from-green-400 hover:to-brand-color hover:bg-gradient-to-r"
+          className="btn w-1 h-12 rounded-full border-none bg-gradient-to-r bg-brand-color text-white hover:to-brand-color hover:bg-gradient-to-r text-center"
         >
-          <PiMessengerLogoThin className="sm:text-2xl text-xl" />
-        </button>
+          <BsChatDotsFill className="text-2xl  text-center -ml-3 " />
+        </Btn>
       </div>
     </div>
   );

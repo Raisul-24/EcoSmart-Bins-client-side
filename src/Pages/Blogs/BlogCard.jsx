@@ -11,7 +11,7 @@ import { BsCalendar2DateFill } from "react-icons/bs";
 
 const BlogCard = ({ blog }) => {
   const { _id, image, name, description, date } = blog || {};
-  const [isDetails, setIsDetails] = useState(true);
+  //  const [isDetails, setIsDetails] = useState(true);
 
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
@@ -81,9 +81,12 @@ const BlogCard = ({ blog }) => {
               {name}
             </h5>
             <p className="mb-3 font-normal text-[#370000]">{description}</p>
-            <button className="text-3xl hover:text-brand-color ">
+            <Link
+              to={`/blog/${_id}`}
+              className="text-3xl hover:text-brand-color "
+            >
               <FaArrowRightLong />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -35,7 +35,8 @@ const Dashboard = () => {
     (data) => data?.role === "worker" && data?.email === user?.email
   );
 
-  if (loading || isPending || refetch) {
+  if (loading || isPending ) {
+
 
     return (
       <div>
