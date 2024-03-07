@@ -16,13 +16,16 @@ Our homepage offers a comprehensive overview of sustainable waste management sol
 #### Services:
 Our services cater to a wide range of waste management needs across commercial, retail, and industrial sectors. Whether it's handling liquid waste, dumpster rental, or industrial cleaning, we provide all-inclusive solutions for various industries, including manufacturing, education, healthcare, construction, and hospitality.
 
-Pickup Request Feature:
+#### Pickup Request Feature:
 With our pickup request feature, users can easily submit service inquiries. Select the desired service type, container size, and provide contact details. Upon confirmation, users receive instant notifications, and their requests are seamlessly integrated into our worker dashboard. Explore our pricing table to select plans for monthly or yearly services.
 
-Shop:
+#### Shop:
 Browse our eco-friendly shop page offering a diverse range of waste-management products. Easily select desired quantities, add products to your cart, and proceed to checkout. Our secure checkout process ensures a seamless delivery experience, with various payment and delivery options available.
 
-Dashboard:
+#### Career:
+Users can browse through available job postings, view detailed job descriptions, and apply for positions that match their skills and interests. Administrators have full control over the job portal, with the ability to post new job listings, edit existing postings, and remove outdated positions.
+
+#### Dashboard:
 Access our specially designed dashboards for admins, users, and workers. Admins can monitor vital data and manage services, shop products, and user accounts efficiently. Users can manage their cart items, view previous service requests, leave feedback, and review payment history. Workers can oversee pickup tasks, ongoing work, and completed assignments effortlessly.
 
 
