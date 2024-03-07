@@ -63,12 +63,12 @@ const ServiceDetail = () => {
     <div className="font-andika">
       <ServiceDetailsBanner />
 
-      <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
-        <div className="col-span-3 mt-16">
+      <div className="md:grid md:grid-cols-9 gap-12 md:mx-8 xl:px-0 md:px-5 font-andika">
+        <div className="md:col-span-3 mt-16 mx-5 md:mx-0">
           <ServiceDetailsSidebar />
         </div>
-        <div className="col-span-6">
-          <div className="py-20 flex md:flex-row flex-col items-center">
+        <div className="md:col-span-6">
+          <div className="py-20 px-5 md:flex md:flex-row flex-col items-center">
             <div>
               <ServiceDetailsDescription />
               <ServiceDetailsFAQ />
