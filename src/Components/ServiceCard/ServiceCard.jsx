@@ -9,12 +9,12 @@ const ServiceCard = ({ data, isTrue, DeleteFun }) => {
           <img
             src={data?.img}
             className="w-full h-full object-cover"
-            alt="Shoes"
+            alt="Services"
           />
           <div className="md:absolute inset-0 bg-gradient-to-b from-transparent to-[#257830] opacity-0 group-hover:opacity-95 transition-opacity duration-300"></div>
         </div>
       </figure>
-      <div className="card-body md:absolute text-start md:w-[350px] md:h-96 rounded-xl shadow-xl p-10 bg-white top-0 px-5 md:mt-52 ">
+      <div className="card-body md:absolute text-start md:w-[350px] md:h-[345px] rounded-xl shadow-xl p-10 bg-white top-0 px-5 md:mt-52 ">
         <Link
           to={`/services/${data?._id}`}
           className="card-title font-bold hover:text-green-800 justify-center pb-4"

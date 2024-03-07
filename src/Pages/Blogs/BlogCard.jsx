@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { FaComment, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -7,9 +7,11 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MdOutlineUpdate } from "react-icons/md";
 
 const BlogCard = ({ blog }) => {
-  const { _id, image, name, description } = blog || {};
+  const { _id, image, name, description, date } = blog || {};
+  const [isDetails, setIsDetails] = useState(true);
 
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
@@ -43,7 +45,7 @@ const BlogCard = ({ blog }) => {
           />
         </div>
         <div className="flex flex-col">
-          <div className="flex justify-between items-center pb-5 ">
+          <div className="md:flex justify-between items-center pb-5 ">
             <div className="flex justify-center items-center gap-6 text-green-700 text-xl">
               <button
                 className={liked ? "text-green-500" : "#0000"}
@@ -59,18 +61,18 @@ const BlogCard = ({ blog }) => {
               </button>
               <ToastContainer />
             </div>
-            <button className="btn flex justify-center items-center gap-2 text-black font-bold px-5 rounded border-0 overflow-hidden">
-              <span className="text-green-700 text-lg">
-                <FaComment />
+            <button className="btn flex justify-center items-center gap-2 text-black font-bold px-5 text-lg rounded border-0 overflow-hidden">
+              <span className="text-green-700 text-2xl">
+                <MdOutlineUpdate />
               </span>
-              5 Comments
+              {date}
             </button>
             <div>
               <p className="flex justify-end items-center gap-2 text-black font-bold px-5 p-2 rounded mr-4">
                 <span className="text-green-700 text-lg">
                   <FaUser />
                 </span>
-                Mahdi Hasan
+                Admin
               </p>
             </div>
           </div>
@@ -79,12 +81,9 @@ const BlogCard = ({ blog }) => {
               {name}
             </h5>
             <p className="mb-3 font-normal text-[#370000]">{description}</p>
-            <Link
-              to={`/blog/${_id}`}
-              className="text-3xl hover:text-brand-color "
-            >
+            <button className="text-3xl hover:text-brand-color ">
               <FaArrowRightLong />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

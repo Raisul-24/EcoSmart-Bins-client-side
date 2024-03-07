@@ -29,7 +29,7 @@ const Blog = () => {
       });
   }, []);
 
-  const itemPerPage = 3;
+  const itemPerPage = 2;
   const {
     data: blogs,
     isLoading: isLoading,
