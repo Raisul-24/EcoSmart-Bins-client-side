@@ -50,6 +50,7 @@ import ApplyForm from "../Pages/Career/ApplyForm";
 import Application from "../Pages/Dashboard/Admin dashboard/Application";
 import PickupRequest from "../Pages/Dashboard/User Dashboard/PickupRequest";
 import PrivateRoute from "./PrivateRoute";
+import WorkerOverview from "../Pages/Dashboard/Worker Dashboard/WorkerOverview";
 
 const router = createBrowserRouter([
   {
@@ -239,6 +240,10 @@ const router = createBrowserRouter([
       {
         path: "CompleteWorks",
         element: <CompleteWorks></CompleteWorks>,
+      },
+      {
+        path: 'workerOverview',
+        element: <WorkerOverview></WorkerOverview>
       },
 
       // user dashboard

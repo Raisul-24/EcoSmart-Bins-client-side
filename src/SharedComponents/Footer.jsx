@@ -17,7 +17,7 @@ const Footer = () => {
     <div className="bg-green-950 text-white font-andika">
       <footer className="container mx-auto footer grid-cols-2 md:grid-cols-4 px-5 py-10">
         <nav className="">
-          <img src="logo.png" className="w-16 h-16 rounded-lg " alt="" />
+          <img src="/logo.png" className="w-16 h-16 rounded-lg " alt="" />
           <p className="font-bold py-2">Eco Smart Bins</p>
           <p className="w-4/5 ">
             We recognize that the right service for home is most important
