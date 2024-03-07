@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 
 const IndustriesCard = ({ data, isTrue, DeleteFun }) => {
   return (
-    <div className="card mb-72">
+    <div className="card md:mb-72 mb-6 font-montserrat">
       <figure className="relative">
-        <div className="group w-96 h-80 rounded-lg overflow-hidden relative">
+        <div className="group md:w-96 md:h-80 rounded-lg overflow-hidden relative">
           <img
             src={data?.img}
             className="w-full h-full object-cover"
-            alt="Shoes"
+            alt="industries"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#257830] opacity-0 group-hover:opacity-95 transition-opacity duration-300"></div>
+          <div className="md:absolute inset-0 bg-gradient-to-b from-transparent to-[#257830] opacity-0 group-hover:opacity-95 transition-opacity duration-300"></div>
         </div>
       </figure>
-      <div className="card-body absolute text-start w-[350px] h-72 rounded-xl shadow-xl bg-white top-0 mt-64 right-0">
+      <div className="card-body md:absolute text-start md:w-[350px] md:h-96 rounded-xl shadow-xl p-10 bg-white top-0 px-5 md:mt-52 ">
         <Link
           to={`/industries/${data?._id}`}
-          className="text-xl font-bold pt-3 hover:text-green-800 justify-center pb-4"
+          className="card-title font-bold hover:text-green-800 justify-center pb-4"
         >
           {data?.category}
         </Link>
