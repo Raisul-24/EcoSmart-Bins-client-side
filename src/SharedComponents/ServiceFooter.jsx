@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 const ServiceFooter = ({ data }) => {
-  //  console.log(data);
+  //  //console.log(data);
   return (
     <div className="overflow-hidden ">
       <Link

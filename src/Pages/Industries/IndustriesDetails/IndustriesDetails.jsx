@@ -9,7 +9,6 @@ import Btn from "../../../Components/Btn";
 const IndustriesDetails = () => {
   const { id } = useParams();
   const [data, dataLoading] = getAIndustries(id);
-  //  console.log(data);
 
   if (dataLoading) {
     return (

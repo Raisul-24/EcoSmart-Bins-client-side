@@ -24,7 +24,6 @@ const Cart = () => {
   if (isLoading) {
     return;
   }
-  console.log(myCart);
 
   if (!isLoading && isError) {
     content = <div className="col-span-12">{error}</div>;

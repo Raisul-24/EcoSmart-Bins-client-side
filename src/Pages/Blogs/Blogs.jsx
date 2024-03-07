@@ -25,7 +25,6 @@ const Blog = () => {
         setTotalCount(res.data.count || 0);
       })
       .catch((error) => {
-        console.log("Error fetching:", error);
       });
   }, []);
 

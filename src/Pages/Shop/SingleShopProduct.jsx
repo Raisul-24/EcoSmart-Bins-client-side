@@ -45,9 +45,9 @@ const SingleShopProduct = () => {
 
     if (quantity > 0) {
       axiosPublic.post("/my-cart", productValue).then((res) => {
-        // console.log(res.data);
+        //console.log(res.data);
         if (res.data.insertedId) {
-          // console.log(res.data);
+          //console.log(res.data);
           toast.success("Successfully added to My cart!");
         }
       });
@@ -101,14 +101,14 @@ const SingleShopProduct = () => {
             <Btn>
               <Link to={`/checkout/${details?._id}/${quantity}`}>Buy Now</Link>
             </Btn>
-           <button onClick={handleOrder}>
-           <Btn
-              
+            <button onClick={handleOrder}>
+              <Btn
+
               // className="flex p-3 text-white transition border rounded font-bold  bg-[#195a07] hover:bg-opacity-90"
-            >
-              <p>Add to Cart</p>
-            </Btn>
-           </button>
+              >
+                <p>Add to Cart</p>
+              </Btn>
+            </button>
           </div>
         </div>
       </div>

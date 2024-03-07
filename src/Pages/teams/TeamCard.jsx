@@ -1,7 +1,7 @@
 import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const TeamCard = ({ team }) => {
-  //  console.log(team);
+  //  //console.log(team);
   const { name, img_url, role, github, linkedin, facebook } = team || {};
   return (
     <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">

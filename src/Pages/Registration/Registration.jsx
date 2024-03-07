@@ -27,7 +27,7 @@ const Registration = () => {
       //       phone: data.phone
       //    }
       //   axiosPublic.post('/users', userInfo)
-      // console.log("created");
+      //console.log("created");
       toast.success("Register In Successfully!!", { id: toastId });
       if (location.state && location.state.from) {
         navigate(location.state.from.pathname);
@@ -35,7 +35,7 @@ const Registration = () => {
         navigate("/");
       }
     } catch (error) {
-      // console.log(error)
+      //console.log(error)
       toast.error(error.message, { id: toastId });
     }
   };

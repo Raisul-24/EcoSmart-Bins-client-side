@@ -7,7 +7,6 @@ const getIndustriesCategory = (id) => {
   const servicesData = async () => {
     const { data } = await axios.get(`/industries-category`);
 
-    //console.log(data);
     return data;
   };
   // eslint-disable-next-line react-hooks/rules-of-hooks

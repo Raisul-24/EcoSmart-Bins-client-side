@@ -10,7 +10,6 @@ const ManageUser = () => {
   const handlechange = (e, id, email) => {
     const role = e.target.value;
     const changeRole = { role };
-    console.log(changeRole, id, email);
     axios
       .patch(`/user/${id}`, changeRole)
       .then(() => {
