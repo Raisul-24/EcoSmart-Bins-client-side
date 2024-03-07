@@ -20,8 +20,8 @@ const ServiceDetailsSidebar = () => {
         {categories?.map((category) => (
           <ul className=" " key={category?._id}>
             <li
-              className="h-12  
-                     w-72 pl-12 font-bold"
+              className="h-12 
+                     md:w-72 w-96 md:pl-12 font-bold"
             >
               {category?.servicesCategory}
             </li>
@@ -39,7 +39,7 @@ const ServiceDetailsSidebar = () => {
       >
         <div className="absolute inset-0 bg-[#f29829] bg-opacity-95"></div>
 
-        <div className="flex flex-col justify-center items-start gap-6  relative z-10 px-12">
+        <div className="flex flex-col justify-center items-start gap-6  relative z-10 md:px-12 px-8">
           <h4 className="text-2xl font-bold pb-2">
             Trusted And Reliable <br /> Waste Collection!
           </h4>
@@ -49,10 +49,10 @@ const ServiceDetailsSidebar = () => {
           </p>
           <Link
             to={`/pickUpReq`}
-            className="mt-6 btn btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-brand-color h-[70px] gap-4 w-full border-0"
+            className="mt-6 md:btn btn-sm btn-outline text-lg font-bold rounded-md text-black flex justify-center items-center hover:text-white bg-white hover:bg-brand-color md:h-[70px] gap-4 w-full border-0"
           >
             Get Started Now
-            <span className="text-3xl">
+            <span className="md:text-3xl">
               <FaArrowCircleRight />
             </span>
           </Link>
