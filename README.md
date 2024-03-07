@@ -28,7 +28,7 @@ Access our specially designed dashboards for admins, users, and workers. Admins 
 
 The Eco Smart Bins web project utilizes a variety of packages to enhance its functionality and user experience. Here's a brief overview of the key packages used in the project:
 
-### Frontend Frameworks and Libraries:
+# Frontend Frameworks and Libraries:
 1. **React**: A popular JavaScript library for building user interfaces.
 2. **@material-tailwind/react**: Provides ready-to-use UI components based on Tailwind CSS for building modern web applications.
 3. **@reduxjs/toolkit**: A powerful toolset for managing state in React applications, including actions, reducers, and the Redux store.
