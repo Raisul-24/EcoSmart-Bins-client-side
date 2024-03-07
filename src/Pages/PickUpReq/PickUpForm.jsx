@@ -1,4 +1,3 @@
-
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/UseAuth";
 import UseAxiosPrivate from "../../axios/axiosprivate";
@@ -11,35 +10,37 @@ const PickUpForm = () => {
   const [selectedContainer, setSelectedContainer] = useState("");
   const [dependentInputValue, setDependentInputValue] = useState("");
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const axios = UseAxiosPrivate();
   const { user } = useAuth();
 
   const containerInfo = [
-
     {
       container: "Select",
     },
     {
       container: "32 Gallon Trash",
       containerValue: 32,
-      containerPrice: 110
+      containerPrice: 110,
     },
     {
       container: "64 Gallon Trash",
       containerValue: 64,
-      containerPrice: 200
+      containerPrice: 200,
     },
     {
       container: "76 Gallon Trash",
       containerValue: 76,
-      containerPrice: 315
-    }
-  ]
-
+      containerPrice: 315,
+    },
+  ];
 
   const handleReqPickup = (data) => {
-
     const newData = {
       name: user?.displayName,
       email: user?.email,
@@ -51,16 +52,14 @@ const PickUpForm = () => {
       workerEmail: null,
       industry: data.industry,
       container: data.container,
-      price: parseFloat(data.price)
-
+      price: parseFloat(data.price),
     };
 
-    console.log(newData);
-
     //send data to the server
-    axios.post("/pickupReq", newData)
+    axios
+      .post("/pickupReq", newData)
       .then((data) => {
-        console.log(data.data);
+        //console.log(data.data);
         if (data.data.insertedId) {
           notifyFun(user?.email, "You Request For New PickUp.");
           Swal.fire({
@@ -74,10 +73,11 @@ const PickUpForm = () => {
             title: "warning!",
             text: data.data.message,
             icon: "warning",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Opps",
           });
         }
-      }).catch(() => toast.error("Fail to Request"))
+      })
+      .catch(() => toast.error("Fail to Request"));
 
     reset();
   };
@@ -86,7 +86,9 @@ const PickUpForm = () => {
     setSelectedContainer(selectedValue);
 
     // Find the selected container's price
-    const selectedContainerInfo = containerInfo.find(container => container.containerValue === parseInt(selectedValue));
+    const selectedContainerInfo = containerInfo.find(
+      (container) => container.containerValue === parseInt(selectedValue)
+    );
 
     // Set the dependent input value based on the selected container's price
     if (selectedContainerInfo) {
@@ -97,11 +99,11 @@ const PickUpForm = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="relative font-andika flex flex-col justify-center overflow-hidden bg-gray-50 mx-5 lg:py-20 lg:mx-20 py-12">
         <div className="bg-white  mx-auto w-full">
           <div className="grid grid-cols-6 h-full ">
-            <div className="bg-[#3A9E1E] p-2 md:p-10 col-span-6 md:col-span-2">
+            <div className="bg-brand-color p-2 md:p-10 col-span-6 md:col-span-2">
               <h2 className=" mb-10 font-bold text-xl md:text-2xl text-white">
                 Trusted And Reliable Waste Collection!
               </h2>
@@ -133,14 +135,12 @@ const PickUpForm = () => {
               </p>
             </div>
             <div className=" p-2 md:p-14 col-span-6 md:col-span-4">
-
               <p className="mb-14 font-semibold">
                 Please complete the form below, to request a quote, and we will
                 be in touch. Or you can call us +880123456789 and our
                 specialists will provide the necessary help!
               </p>
               <form
-
                 onSubmit={handleSubmit(handleReqPickup)}
                 className="font-semibold   "
               >
@@ -156,19 +156,21 @@ const PickUpForm = () => {
                       className="select select-bordered w-full text-gray-500"
                       {...register("enquiryType", { required: true })}
                     >
-
-
                       <option value="commercial">Commercial Waste</option>
-                      <option value="institutional">Retail & Institutional</option>
-                      <option value="commercial liquid">Commercial Liquid</option>
+                      <option value="institutional">
+                        Retail & Institutional
+                      </option>
+                      <option value="commercial liquid">
+                        Commercial Liquid
+                      </option>
                       <option value="dumpster">Dumpster Rental</option>
                       <option value="industrial">Industrial Cleaning</option>
                       <option value="residential">Residential Waste</option>
-
-
                     </select>
                     {errors.enquiryType && (
-                      <span className="text-red-600">Enquiry type is required</span>
+                      <span className="text-red-600">
+                        Enquiry type is required
+                      </span>
                     )}
                   </div>
 
@@ -181,16 +183,21 @@ const PickUpForm = () => {
                       className="select select-bordered w-full text-gray-500"
                       {...register("industry", { required: false })}
                     >
-
-                      <option value="manufacturing">Manufacturing & Industrial</option>
+                      <option value="manufacturing">
+                        Manufacturing & Industrial
+                      </option>
                       <option value="retail">Retail Waste Management</option>
-                      <option value="educational">Educational Facilities</option>
-                      <option value="medical">Medical And Pharmaceutical</option>
-                      <option value="construction">Construction & Demolition</option>
+                      <option value="educational">
+                        Educational Facilities
+                      </option>
+                      <option value="medical">
+                        Medical And Pharmaceutical
+                      </option>
+                      <option value="construction">
+                        Construction & Demolition
+                      </option>
                       <option value="hospitality">Hospitality & Events</option>
-
                     </select>
-                    
                   </div>
                 </div>
 
@@ -208,16 +215,19 @@ const PickUpForm = () => {
                       onChange={handleContainerChange}
                     >
                       {containerInfo.map((container) => (
-                        <option key={container.containerValue} value={container.containerValue}>
+                        <option
+                          key={container.containerValue}
+                          value={container.containerValue}
+                        >
                           {container.container}
                         </option>
                       ))}
                     </select>
                     {errors.container && (
-                      <span className="text-red-600">Container Size is required</span>
+                      <span className="text-red-600">
+                        Container Size is required
+                      </span>
                     )}
-
-
                   </div>
                   <div className="form-control lg:w-1/2">
                     <label className="label">
@@ -231,9 +241,7 @@ const PickUpForm = () => {
                       disabled={selectedContainer === ""}
                       {...register("price", { required: true })}
                     />
-
                   </div>
-
                 </div>
 
                 {/* personal */}
@@ -277,7 +285,6 @@ const PickUpForm = () => {
                       className="input input-bordered w-full text-gray-500"
                       {...register("email", { required: true })}
                     />
-
                   </div>
                   <div className="form-control lg:w-1/2">
                     <label className="label">
@@ -290,7 +297,9 @@ const PickUpForm = () => {
                       {...register("phone", { required: true })}
                     />
                     {errors.phone && (
-                      <span className="text-red-600">Phone Number is required</span>
+                      <span className="text-red-600">
+                        Phone Number is required
+                      </span>
                     )}
                   </div>
                 </div>
@@ -307,7 +316,6 @@ const PickUpForm = () => {
                   {errors.address && (
                     <span className="text-red-600">Address is required</span>
                   )}
-
                 </div>
                 <input
                   type="submit"

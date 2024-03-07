@@ -47,10 +47,10 @@ const ParchesShopProduct = () => {
       axiosPublic
         .post("/my-cart", productValue)
         .then((res) => {
-          console.log(res.data);
+          //console.log(res.data);
 
           if (res.data.insertedId) {
-            console.log(res.data);
+            //console.log(res.data);
 
             return Swal.fire({
               title: "Good job",
@@ -60,7 +60,7 @@ const ParchesShopProduct = () => {
           }
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
         });
     } else {
       Swal.fire({

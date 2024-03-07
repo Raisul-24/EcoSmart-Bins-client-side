@@ -25,9 +25,7 @@ const PriceTable = () => {
     const status = item?.status.toLowerCase();
     const subscriptionData = { price, subscriptionTime, name, email, status };
       axiosPublic.patch("/subscription",subscriptionData).then((res) => {
-      console.log(res);
       window.location.replace(res.data.url);
-      console.log("Redirect URL:", res.data.url);
     });
   };
   return (

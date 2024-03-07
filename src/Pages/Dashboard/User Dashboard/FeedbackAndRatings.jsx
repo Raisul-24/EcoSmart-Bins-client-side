@@ -18,7 +18,6 @@ const FeedbackAndRatings = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // console.log(data);
 
     const reviewItem = {
       title: data.title,
@@ -28,7 +27,6 @@ const FeedbackAndRatings = () => {
     };
 
     axiosPublic.post("/reviews", reviewItem).then((res) => {
-      console.log(res.data);
       if (res.data.insertedId) {
         notifyFun(user?.email, `your feedback is added`);
         reset();

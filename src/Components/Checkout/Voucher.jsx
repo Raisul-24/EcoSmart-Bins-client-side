@@ -7,7 +7,6 @@ const Voucher = () => {
 
    const onSubmit = async (data) => {
       // Log the form data
-      console.log(data);
 
       // Reset the form after submission
       // reset();

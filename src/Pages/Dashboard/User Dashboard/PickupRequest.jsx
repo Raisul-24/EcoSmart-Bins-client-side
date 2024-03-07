@@ -5,10 +5,15 @@ import { useGetApiQuery } from "../../../Redux/userApi/getApi";
 const PickupRequest = () => {
   const { user } = useAuth();
 
-  const { data, } = useGetApiQuery(
-    `/pickupReq/${user?.email}`);
- 
+  const { data, isLoading } = useGetApiQuery(`/userpickupReq/${user?.email}`);
 
+  if (isLoading) {
+    return (
+      <div className="text-center">
+        <span className="loading bg-[#3A9E1E] loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
   return (
     <div className="font-andika">
       <SectionTitle heading={"My Pickup Request"} />
@@ -34,14 +39,14 @@ const PickupRequest = () => {
                 <td>{item?.container}</td>
                 <td className="font-bold">{item?.price}</td>
                 <td
-              className={`badge ${
-                item?.status === "complete" && "bg-green-900"
-              } ${item?.status === "requested" && "bg-brand-color"} ${
-                item?.status === "ongoing" && "bg-yellow-700"
-              } border-none text-white capitalize mt-2`}
-            >
-              {item?.status}
-            </td>
+                  className={`badge ${
+                    item?.status === "complete" && "bg-green-900"
+                  } ${item?.status === "requested" && "bg-brand-color"} ${
+                    item?.status === "ongoing" && "bg-yellow-700"
+                  } border-none text-white capitalize mt-2`}
+                >
+                  {item?.status}
+                </td>
               </tr>
             ))}
           </tbody>

@@ -14,7 +14,7 @@ import {
   MdOutlineWork,
   MdWorkOutline,
 } from "react-icons/md";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCalendarPlus, FaCartShopping } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import useUsers from "../API/UserApi/useUsers";
@@ -22,7 +22,7 @@ import useUsers from "../API/UserApi/useUsers";
 const Dashboard = () => {
   const { user, loading } = UseAuth();
  
-  const [allUsers, isPending, refetch] = useUsers();
+  const [allUsers, isPending] = useUsers();
   
 
   const isAdmin = allUsers?.filter(
@@ -35,7 +35,9 @@ const Dashboard = () => {
     (data) => data?.role === "worker" && data?.email === user?.email
   );
 
-  if (loading || isPending || refetch) {
+
+  if (loading || isPending ) {
+
     return (
       <div>
         <div className="text-center mt-20">
@@ -185,6 +187,19 @@ const Dashboard = () => {
                     >
                       <FaEdit />
                       Manage Pickup
+                    </NavLink>
+                  </li>
+                  <li className="text-xs md:text-sm w-full">
+                    <NavLink
+                      to="/dashboard/job"
+                      className={({ isActive }) =>
+                        isActive
+                          ? " bg-white flex items-center gap-2 py-2 w-full pl-2 lg:pl-4 text-black rounded lg:rounded-r-none"
+                          : "flex items-center gap-2 pl-2 lg:pl-4 py-2"
+                      }
+                    >
+                      <FaCalendarPlus />
+                      Add Job Post
                     </NavLink>
                   </li>
                   <li className="text-xs md:text-sm w-full">

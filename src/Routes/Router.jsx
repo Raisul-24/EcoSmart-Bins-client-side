@@ -51,6 +51,8 @@ import Application from "../Pages/Dashboard/Admin dashboard/Application";
 import PickupRequest from "../Pages/Dashboard/User Dashboard/PickupRequest";
 import PrivateRoute from "./PrivateRoute";
 import WorkerOverview from "../Pages/Dashboard/Worker Dashboard/WorkerOverview";
+import AddJob from "../Pages/Dashboard/Admin dashboard/AddJob";
+import PaymentCancel from "../Pages/Payment/PaymentCancel";
 
 const router = createBrowserRouter([
   {
@@ -149,6 +151,10 @@ const router = createBrowserRouter([
         element: <PaymentFailed></PaymentFailed>,
       },
       {
+        path: "/payment/cancel",
+        element: <PaymentCancel></PaymentCancel>
+      },
+      {
         path: "/placeOrder",
         element: <PlacedOrder></PlacedOrder>,
       },
@@ -226,6 +232,10 @@ const router = createBrowserRouter([
       {
         path: "application",
         element: <Application></Application>,
+      },
+      {
+        path: "job",
+        element: <AddJob></AddJob>,
       },
 
       // worker dashboard

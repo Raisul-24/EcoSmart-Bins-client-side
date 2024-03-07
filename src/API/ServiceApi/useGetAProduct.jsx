@@ -5,7 +5,6 @@ const useGetAProduct = (id)=>{
     const axios = useAxiosPublic()
     const productData = async () =>{
         const {data} = await axios.get(`/products/${id}`)
-        // console.log(data);
         return data
         
     }

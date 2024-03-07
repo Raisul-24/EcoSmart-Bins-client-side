@@ -18,11 +18,8 @@ const Login = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-  // console.log('state in the location login page', location.state)
 
   const onSubmit = async (data) => {
-    // console.log(data);
-    // console.log(errors)
     const toastId = toast.loading("Logging In....");
     try {
       await signIn(data.email, data.password);

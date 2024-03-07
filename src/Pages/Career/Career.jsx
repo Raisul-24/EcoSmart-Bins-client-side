@@ -70,16 +70,17 @@ const Career = () => {
           />
         </motion.div>
       </div>
-      <div className="lg:my-20 lg:mx-20 m-10">
+      <div className="lg:my-20 my-10 container mx-auto">
         <div className="text-center">
           <p className="lg:text-lg text-brand-color font-bold">WE’RE HIRING</p>
           <h2 className="lg:text-4xl text-2xl font-bold py-5 lg:py-8">Join With Our Family</h2>
           <p>Joining the EcoSmartBins team means becoming part of a dynamic and forward-thinking organization that values its employees and fosters a culture of collaboration, innovation, and continuous improvement. We offer competitive salaries, comprehensive benefits packages, and ample opportunities for career growth and advancement</p>
         </div>
-        <div className="lg:flex lg:justify-evenly mt-20">
+        {/* CAREER card */}
+        <div className="grid lg:grid-cols-3 lg:gap-5 mt-20">
           {
             career?.map((item) => (<div key={item?.id}>
-              <div className="lg:w-96 mx-auto my-10 bg-lime-100 p-10 hover:bg-white hover:drop-shadow-2xl hover:shadow-brand-color ">
+              <div className="lg:w-80 mx-auto my-10 bg-lime-100 p-10 hover:bg-white hover:drop-shadow-2xl hover:shadow-brand-color ">
                 <p className="bg-brand-color px-2 py-1 w-fit text-white">Full time</p>
                   <h2 className="mt-8 mb-4 text-center text-2xl font-semibold">{item.position}</h2>
                   <p className="text-center border-b-2 border-brand-color pb-3">Minimum 2 Yrs Exp</p>
