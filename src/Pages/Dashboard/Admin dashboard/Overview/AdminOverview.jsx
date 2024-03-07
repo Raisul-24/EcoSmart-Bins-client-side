@@ -14,7 +14,7 @@ const AdminOverview = () => {
       </div>
     );
   }
-  console.log(overViewData)
+  // console.log(overViewData)
 
   const generateRandomColor = () => {
     const minGreen = 30; // Minimum green value
