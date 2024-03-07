@@ -42,7 +42,7 @@ const ServiceDetail = () => {
                   </p>
                 </div>
                 <div className="flex justify-center mt-8 col-span-1">
-                  <div className="">
+                  <div className="flex justify-center mt-8 col-span-1">
                     <PieChart
                       data={[
                         {
