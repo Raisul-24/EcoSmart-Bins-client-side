@@ -34,7 +34,7 @@ const MyCart = () => {
       refetch();
    }
    return (
-      <div>
+      <div className="container mx-auto">
          <div className="p-3 lg:px-6 rounded-xl bg-lime-50 my-5">
             <div className="flex items-center gap-2 pb-3 border-b-2 border-lime-950 text-green-950">
                <h2 className="text-base lg:text-xl font-bold">Shopping Cart</h2>
@@ -63,11 +63,11 @@ const MyCart = () => {
                         </th>
                         <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
                            <p className="block font-sans text-sm antialiased font-normal leading-none text-green-950 opacity-70">
-                              Price
+                           Price
                            </p>
                         </th>
                         <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                           
+                            
                         </th>
 
                      </tr>
@@ -103,7 +103,7 @@ const MyCart = () => {
                      }
                   </tbody>
                </table>
-               <div className="flex justify-end m-4 ">
+               <div className="flex justify-end m-4 lg:pr-10">
                   <h2 className="font-extrabold">Total: <span>{totalPrice}</span></h2>
                </div>
                <div className="flex justify-end m-4 ">
