@@ -12,26 +12,26 @@ const OrderOverview = ({ OrderOverviewData }) => {
         </div>
         <div className="my-5">
           <div className="relative flex flex-col w-full h-full overflow-scroll text-green-950 bg-transparent shadow-md rounded-xl bg-clip-border">
-            <table className="w-full text-left table-auto min-w-max">
-              <thead className=" bg-lime-100">
+            <table className="w-full text-left table-auto min-w-max ">
+              <thead className=" bg-lime-100 ">
                 <tr>
-                  <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-none text-green-950 opacity-70">
+                  <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50 ">
+                    <p className="block font-sans text-sm antialiased font-bold leading-none text-green-950 opacity-70">
                       Name
                     </p>
                   </th>
                   <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-none text-green-950 opacity-70">
+                    <p className="block font-sans font-bold  text-sm antialiased  leading-none text-green-950 opacity-70">
                       quantity
                     </p>
                   </th>
                   <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-none text-green-950 opacity-70">
+                    <p className="block font-sans text-sm antialiased font-bold  leading-none text-green-950 opacity-70">
                       Price
                     </p>
                   </th>
                   <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-none text-green-950 opacity-70">
+                    <p className="block font-sans text-sm antialiased font-bold  leading-none text-green-950 opacity-70">
                       Total
                     </p>
                   </th>
@@ -40,22 +40,22 @@ const OrderOverview = ({ OrderOverviewData }) => {
               <tbody>
                 <tr>
                   <td className="p-4 border-b border-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                    <p className="block font-sans text-sm antialiased font-semibold  leading-normal text-black">
                       {OrderOverviewData.title}
                     </p>
                   </td>
                   <td className="p-4 border-b border-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                    <p className="block font-sans text-sm antialiased font-semibold  leading-normal text-black">
                       {OrderOverviewData.itemQuantity}
                     </p>
                   </td>
                   <td className="p-4 border-b border-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                    <p className="block font-sans text-sm antialiased font-semibold  leading-normal text-black">
                       {OrderOverviewData.price * OrderOverviewData.itemQuantity}
                     </p>
                   </td>
                   <td className="p-4 border-b border-blue-gray-50">
-                    <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                    <p className="block font-sans text-sm antialiased font-semibold  leading-normal text-black">
                       {OrderOverviewData.totalPrice}
                     </p>
                   </td>
