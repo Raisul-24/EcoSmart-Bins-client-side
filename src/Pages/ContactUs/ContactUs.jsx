@@ -33,13 +33,11 @@ const ContactUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           toast.success("Message sent successfully!");
           // Reset the form after successful submission
           form.current.reset();
         },
         (error) => {
-          console.log(error.text);
           toast.error("Error sending message. Please try again later.");
         }
       );

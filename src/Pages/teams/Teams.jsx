@@ -3,7 +3,7 @@ import TeamCard from "./TeamCard";
 
 const Teams = () => {
   const [teams, loading] = useGetTeam();
-  //  console.log(teams);
+  //  //console.log(teams);
   return (
     <div className="py-20 font-andika container mx-auto">
       <h5 className="text-2xl text-green-600 font-semibold text-center pb-5">

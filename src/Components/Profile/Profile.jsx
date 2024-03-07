@@ -18,7 +18,6 @@ const Profile = () => {
             setUsers(response.data);
         })
         .catch((error) => {
-            console.log("Error fetching:", error);
         });
 }, [axiosPublic]);
 

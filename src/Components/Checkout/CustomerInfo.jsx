@@ -7,7 +7,6 @@ const CustomerInfo = ({ register }) => {
   //   return !(name || mobile || email || city || address || comment);
   // };
   const {user} = useAuth();
-  console.log(user)
 
   return (
     <div>

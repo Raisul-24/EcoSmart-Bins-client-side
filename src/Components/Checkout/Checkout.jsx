@@ -17,7 +17,6 @@ const Checkout = () => {
   const [paymentData, setPaymentdata] = useState("");
   const [deliveryData, setDeliverydata] = useState(100);
   const product = data?.details;
-  console.log(product);
   const {
     register,
     handleSubmit,
@@ -58,13 +57,10 @@ const Checkout = () => {
       totalPrice,
       product_id: _id,
     };
-    console.log(checkoutData);
 
     axiosPublic.post("/order", checkoutData).then((res) => {
       // window.location.replace(data.url)
-      console.log(res);
       window.location.replace(res.data.url);
-      console.log("Redirect URL:", res.data.url);
     });
 
     // Reset the form after submission

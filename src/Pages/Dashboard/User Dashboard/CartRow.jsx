@@ -19,14 +19,10 @@ const CartRow = ({ item, index }) => {
         status: "delete",
         
       });
-      console.log("Response from server:", response?.data);
       if (response?.data?.deletedCount > 0) {
         
-        console.log("Parcel status updated successfully", response.data);
         // Dispatch the action after successful deletion
         dispatch(deleteItemFromCart(_id));
-      } else {
-        console.log("Parcel not found or status not updated", response.data);
       }
     } catch (error) {
       console.error("Error updating status:", error);
