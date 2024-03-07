@@ -38,7 +38,7 @@ const Navbar = () => {
   const location = useLocation();
   const { user, logOut } = useAuth();
   const [cart] = useCart();
-  // console.log(cart.length)
+  //console.log(cart.length)
   useEffect(() => {
     try {
       if (!user) {
@@ -107,12 +107,12 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md md:w-[575px] overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 bg-opacity-90 shadow bg-blue-950 rounded-md lg:w-[575px] w-40 overflow-hidden ${
             servicesDropdownOpen ? "block" : "hidden"
           }`}
         >
-          <div className="flex ">
-            <div className="border-r-2 md:pr-10 border-slate-400">
+          <div className="lg:flex ">
+            <div className="lg:border-r-2 lg:pr-10 border-slate-400">
               <motion.li
                 whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -120,7 +120,7 @@ const Navbar = () => {
               >
                 <div className="">
                   <Link
-                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
+                    className="border-b rounded-none border-slate-400 "
                     to={"/services"}
                   >
                     All Services
@@ -131,7 +131,7 @@ const Navbar = () => {
                 <ServiceNavbar key={service?._id} data={service} />
               ))}
             </div>
-            <div className="md:pl-10">
+            <div className="lg:pl-10">
               <motion.li
                 whileHover={{ scale: 1.1, originX: 0, color: "#3A9E1E" }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -140,7 +140,7 @@ const Navbar = () => {
                 <div className="">
                   <p className="border-b-4 border-slate-400"></p>
                   <Link
-                    className="border-b rounded-none border-slate-400 text-xs md:text-base"
+                    className="border-b rounded-none border-slate-400 "
                     to={"/industries"}
                   >
                     All Industries
@@ -180,7 +180,7 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 md:w-60 py-3 overflow-hidden ${
+          className={`dropdown-content lg:mt-10 ml-28 lg:ml-0 z-[1] menu p-2 shadow bg-blue-950 bg-opacity-90 rounded-md w-40 lg:w-60 py-3 overflow-hidden ${
             pagesDropdownOpen ? "block" : "hidden"
           }`}
         >
@@ -256,7 +256,7 @@ const Navbar = () => {
       {/* PickUp Request */}
       <li className="text-lg hover:text-brand-color font-semibold">
         {" "}
-        <NavLink to={"/priceTable"}>Packages & Pricing</NavLink>
+        <NavLink to={"/priceTable"}>Packages</NavLink>
       </li>
       {/* PickUp Request */}
     </>
@@ -264,52 +264,59 @@ const Navbar = () => {
   return (
     <div className="">
       {/* Top Bar */}
-      <div className="flex lg:min-h-16 relative min-h-12 lg:px-10 lg:py-5 p-2 justify-between bg-green-900 text-white">
-        <div>
-          <p className="flex items-center gap-2">
-            <FaPhone className=" text-lg"></FaPhone> Phone: 333 666 0000
-          </p>
-        </div>
-        <div className=" flex gap-5 lg:gap-10 ">
-          <Link to="my-cart">
-            <button>
-              <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
-                <FaShoppingCart className="md:text-2xl text-2xl" />
+      <div className="bg-green-900">
+        <div className="container mx-auto flex lg:min-h-16 relative min-h-12 px-5 lg:px-10 xl:px-0 lg:py-5 p-2 justify-between text-white">
+          <div>
+            <p className="flex items-center gap-2">
+              <FaPhone className=" text-lg"></FaPhone> Phone: 333 666 0000
+            </p>
+          </div>
+          <div className=" flex gap-5 lg:gap-10 ">
+            <Link to="my-cart">
+              <button>
+                <Badge content={cart?.length} className="lg:w-5 w-3 ml-3">
+                  <FaShoppingCart className="md:text-2xl text-2xl" />
+                </Badge>
+              </button>
+            </Link>
+            <button onClick={() => setShowNotification(!showNotification)}>
+              <Badge
+                content={
+                  notification?.length > 10 ? "10+" : notification?.length
+                }
+                className="lg:w-5 w-3 ml-3"
+              >
+                <FaRegBell className="md:text-2xl text-2xl" />
               </Badge>
             </button>
-          </Link>
-          <button onClick={() => setShowNotification(!showNotification)}>
-            <Badge
-              content={notification?.length > 10 ? "10+" : notification?.length}
-              className="lg:w-5 w-3 ml-3"
-            >
-              <FaRegBell className="md:text-2xl text-2xl" />
-            </Badge>
-          </button>
-        </div>
-        {!loading && showNotification && (
-          <div className="absolute p-6 bg-[#0e1d40] capitalize text-lg font-bold overflow-y-scroll top-20 sm:right-10 mx-4 right-0 z-30 rounded-xl border-2 outline-brand-color outline lg:w-80 h-96">
-            {notification?.length ? (
-              notification?.map((item) => (
-                <div key={item?._id} className="last:border-none py-4 border-b">
-                  <p>{item?.massage}</p>
-                  <span className="text-sm text-gray-400">
-                    {new Date(item?.date).toLocaleDateString()}
-                  </span>
-                </div>
-              ))
-            ) : (
-              <div className="flex h-full items-center justify-center">
-                no data
-              </div>
-            )}
           </div>
-        )}
+          {!loading && showNotification && (
+            <div className="absolute p-6 bg-[#0e1d40] capitalize text-lg font-bold overflow-y-scroll top-20 sm:right-10 mx-4 right-0 z-30 rounded-xl border-2 outline-brand-color outline lg:w-80 h-96">
+              {notification?.length ? (
+                notification?.map((item) => (
+                  <div
+                    key={item?._id}
+                    className="last:border-none py-4 border-b"
+                  >
+                    <p>{item?.massage}</p>
+                    <span className="text-sm text-gray-400">
+                      {new Date(item?.date).toLocaleDateString()}
+                    </span>
+                  </div>
+                ))
+              ) : (
+                <div className="flex h-full items-center justify-center">
+                  no data
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Navbar */}
       <div className="sticky border-b-2 border bg-white bg-opacity-90 top-0 z-20 font-andika">
-        <div className="navbar lg:px-10 lg:py-7 drop-shadow-md">
+        <div className="navbar lg:px-10 xl:px-0 lg:py-7 drop-shadow-md container mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -337,9 +344,13 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <Link to={"/"} className="text-lg lg:text-3xl font-bold">
-              <span className="bold text-brand-color">Eco</span>SmartBin
+            <div className="flex items-center">
+            <img src="/logo.png" className="w-20 h-20 rounded-lg " alt="" />
+            <Link to={"/"} className="text-lg lg:text-2xl font-bold">
+              <div><span className=" text-brand-color">Eco</span>SmartBin</div>
             </Link>
+            </div>
+            
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className=" flex gap-5 ">{navLinks}</ul>

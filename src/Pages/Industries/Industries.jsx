@@ -4,7 +4,6 @@ import getIndustriesApi from "../../API/IndustriesApi/getIndustriesApi";
 
 const Industries = () => {
   const [data, dataLoading] = getIndustriesApi();
-  //  console.log(data);
 
   return (
     <div className="font-andika">

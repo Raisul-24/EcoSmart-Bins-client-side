@@ -8,9 +8,11 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
   const { carts, isLoading, isError, error, } = useSelector(
-    (state) => state.carts
+    (state) => state.carts,
+    {
+      enabled: true
+    }
   );
-
   const myCart = carts?.filter(cart => cart?.email === user?.email)
 
   useEffect(() => {
@@ -21,7 +23,6 @@ const Cart = () => {
   if (isLoading) {
     return;
   }
-  console.log(myCart);
 
   if (!isLoading && isError) {
     content = <div className="col-span-12">{error}</div>;

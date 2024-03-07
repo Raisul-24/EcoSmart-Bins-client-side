@@ -16,7 +16,9 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const { data: totalData, isLoading: isPending } =
     useGetApiQuery("/totalproducts");
+
   const itemPerPage = 6;
+
   const {
     data: shop,
     isLoading,
@@ -92,11 +94,11 @@ const Shop = () => {
 
       {/* content */}
       <SectionTitle heading={"Waste Less, Live More."} />
-      <div className="grid grid-cols-12 mx-8 space-x-4">
+      <div className="container mx-auto grid grid-cols-12  space-x-4">
         <div className="lg:col-span-9 col-span-12">
           <div className=" my-12 grid md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-8 pt-8">
             {shop?.map((item) => (
-              <ShopCard key={item?.id} item={item}></ShopCard>
+              <ShopCard key={item?._id} item={item}></ShopCard>
             ))}
           </div>
         </div>

@@ -1,0 +1,53 @@
+[
+    {
+        "position": "Frontline Operation",
+        "job_description": "We are seeking dedicated individuals to join our frontline operation team. Responsibilities include waste collection, sorting, and ensuring proper disposal procedures are followed. The ideal candidate should have strong communication skills, attention to detail, and the ability to work in a fast-paced environment.",
+        "requirements": [
+          "High school diploma or equivalent",
+          "Valid driver's license",
+          "Ability to lift heavy objects and work outdoors in various weather conditions",
+          "Experience in waste management or related field is a plus"
+        ],
+        "benefits": [
+          "Competitive salary",
+          "Health insurance",
+          "Paid time off",
+          "Opportunities for advancement"
+        ],
+        "apply_deadline": "2024-05-15"
+      },
+      {
+        "position": "Equipment Operator",
+        "job_description": "We are looking for skilled equipment operators to manage our machinery and ensure efficient waste processing operations. Responsibilities include operating compactors, balers, and other equipment, performing routine maintenance checks, and adhering to safety protocols.",
+        "requirements": [
+          "Experience operating heavy machinery",
+          "Knowledge of safety regulations and procedures",
+          "Ability to troubleshoot equipment issues",
+          "Strong teamwork and communication skills"
+        ],
+        "benefits": [
+          "Competitive wages",
+          "401(k) retirement plan",
+          "Health and dental insurance",
+          "Training and development opportunities"
+        ],
+        "apply_deadline": "2024-05-20"
+      },
+      {
+        "position": "Dump Truck Driver",
+        "job_description": "We are seeking experienced dump truck drivers to transport waste materials to designated disposal sites. Responsibilities include loading, transporting, and unloading materials safely and efficiently, conducting pre-trip and post-trip inspections, and maintaining accurate records.",
+        "requirements": [
+          "Valid commercial driver's license (CDL) with clean driving record",
+          "Experience operating dump trucks or similar heavy vehicles",
+          "Knowledge of DOT regulations",
+          "Ability to work independently and follow instructions"
+        ],
+        "benefits": [
+          "Competitive pay with overtime opportunities",
+          "Home nightly",
+          "Health and retirement benefits",
+          "Safety incentives"
+        ],
+        "apply_deadline": "2024-05-25"
+      }
+]

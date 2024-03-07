@@ -1,30 +1,39 @@
-import Swal from "sweetalert2";
+import { axiosPublic } from "../../axios/axiosPublic";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 
 const Subscribe = () => {
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-    console.log(email);
+  const onSubmit = (data) => {
+    const subscriber = {
+      email: data.email,
+    };
 
-    if (handleSubscribe) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "User created successfully",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
+      axiosPublic.post('/subscribe', subscriber).then(res => {
+      if (res.data.insertedId) {
+        reset();
+        toast.success("You Subscribe successfully");
+      }
+    })
+    
   };
 
+
   return (
-    <div className="font-andika">
+    <div className="font-andika" 
+    style={{
+      backgroundImage: "url(https://i.ibb.co/vdg30h5/shape-27.png)",
+    }}
+    >
       <div
-        className="z-0 relative md:px-10 py-5 lg:py-0"
-        style={{
-          backgroundImage: "url(https://i.ibb.co/vdg30h5/shape-27.png)",
-        }}
+        className="container mx-auto z-0 relative md:px-10 py-5 lg:py-0"
+       
       >
         <div>
           <div className="absolute h-32 -top-0  z-20">
@@ -33,9 +42,6 @@ const Subscribe = () => {
         </div>
         <div className="lg:h-96 px-5 md:px-0 pt-10 flex justify-between md:gap-10 items-center flex-col md:flex-row">
           <div className="text-center flex-1 lg:flex-none pt-10">
-            {/* <div className="">
-                <img src={`https://i.ibb.co/3s7Yjt7/shape-2.png`} alt="" />
-            </div> */}
             <h1 className="text-3xl lg:text-5xl font-bold">Subscribe Now</h1>
             <p className="py-4 text-lg lg:text-xl">
               Do not miss. Get our latest news & update regularly
@@ -43,16 +49,16 @@ const Subscribe = () => {
           </div>
           <div className="lg:flex-1 rounded  border bg-[rgba(156,219,135,0.2)]    ">
             <form
-              onSubmit={handleSubscribe}
+              onSubmit={ handleSubmit(onSubmit)}
               className="card-body outline-none  items-center flex-row gap-0"
             >
               <div className="w-full">
                 <input
                   type="email"
-                  name="email"
+                  {...register("email", { required: true })}
                   placeholder="Enter Your Email"
                   className="input focus:outline-none focus:border-none  w-full lg:py-9 rounded-r-none text-black bg-white"
-                  required
+              
                 />
               </div>
               <div className=" ">

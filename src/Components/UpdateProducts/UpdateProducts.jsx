@@ -9,7 +9,6 @@ const UpdateProducts = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [data,isPending,refetch] = useGetAProduct(id)
-  console.log(data);
   const axios = useAxiosPrivate();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
