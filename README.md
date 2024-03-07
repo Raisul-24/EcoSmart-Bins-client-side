@@ -6,7 +6,7 @@ The Eco Smart Bins project aims to develop a Smart Waste Management System websi
 # Development Site: https://eco-smart-bins.netlify.app
 
 
-#### Eco Smart Bins - Summary
+# Eco Smart Bins - Summary
 
 In a world where sustainability is a growing concern, our website aims to address the pressing issue of waste management through innovative and practical solutions.
 
