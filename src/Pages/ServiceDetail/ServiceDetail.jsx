@@ -13,7 +13,7 @@ const ServiceDetail = () => {
 
      <div className="container mx-auto">
      <div className="md:grid grid-cols-9 gap-12 mx-8 xl:px-0 px-5 font-andika">
-        <div className="col-span-3 mt-16">
+        <div className="col-span-3 mt-16 sticky">
           <ServiceDetailsSidebar />
         </div>
         <div className="md:col-span-6">
