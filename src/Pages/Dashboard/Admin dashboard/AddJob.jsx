@@ -10,16 +10,16 @@ const AddJob = () => {
     const axios = UseAxiosPrivate();
     
     const onSubmit = (data) => {
-        const requirementsArray = data.requirements.map((requirement) => requirement.text);
-        const benefitsArray = data.benefits.map((benefit) => benefit.text);
+        const requirements = data.requirements.map(tag => tag.text);
+        const benefits = data.benefits.map(tag => tag.text);
+        
         const jobData = {
             position: data.position,
             job_description: data.description,
-            requirements: requirementsArray,
-            benefits: benefitsArray,
+            requirements: requirements,
+            benefits: benefits,
             apply_deadline: data.date,
             short_description: data.short
-            
         };
         
         axios
